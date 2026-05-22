@@ -73,7 +73,7 @@ npm install classnames
 - `src/tokens/colors.ts` — TypeScript enum of all color token references (type-safe access to `tokens.css` values)
 - `src/styles/tokens.css` — all design tokens (CSS custom properties)
 
-## Claude Code skills
+## Skills
 
 Available when running Claude Code **in this repo directory**:
 
