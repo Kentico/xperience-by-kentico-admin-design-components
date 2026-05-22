@@ -1,0 +1,116 @@
+@layer components {
+  .FormItemWrapper-inline {
+    display: inline-block;
+    margin-right: var(--spacing-l);
+  }
+
+  .FormItemWrapper-labelWrapper {
+    display: flex;
+    margin-bottom: var(--spacing-element-label);
+    align-items: center;
+  }
+
+  .FormItemWrapper-labelWrapper.FormItemWrapper-readOnly {
+    margin-bottom: var(--spacing-xs) !important;
+  }
+
+  .FormItemWrapper-label {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-low-emphasis);
+    display: flex;
+    align-items: center;
+  }
+
+  .FormItemWrapper-label .FormItemWrapper-required {
+    color: var(--color-alert-icon);
+  }
+
+  .FormItemWrapper-label.FormItemWrapper-disabled {
+    color: var(--color-text-disabled);
+  }
+
+  .FormItemWrapper-label.FormItemWrapper-readOnly {
+    color: var(--color-text-low-emphasis) !important;
+  }
+
+  .FormItemWrapper-icon {
+    font-size: var(--icon-s);
+    color: var(--color-icon-low-emphasis);
+    margin-left: var(--spacing-s);
+  }
+
+  .FormItemWrapper-icon svg {
+    display: inherit !important;
+  }
+
+  .FormItemWrapper-icon.FormItemWrapper-disabled {
+    color: var(--color-text-disabled);
+  }
+
+  .FormItemWrapper-icon.FormItemWrapper-readOnly {
+    color: var(--color-text-low-emphasis);
+  }
+
+  .FormItemWrapper-inlineIcon {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .FormItemWrapper-footer {
+    padding-top: var(--spacing-s);
+  }
+
+  .FormItemWrapper-validationMessage {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1ch;
+    color: var(--color-alert-text);
+    display: flex;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .FormItemWrapper-validationMessage.FormItemWrapper-withExplanationText {
+    padding-bottom: var(--spacing-s);
+  }
+
+  .FormItemWrapper-validationMessage .FormItemWrapper-alertIcon {
+    margin-right: var(--spacing-xs);
+    fill: var(--color-alert-icon);
+    font-size: var(--icon-s);
+  }
+
+  .FormItemWrapper-explanationText,
+  .FormItemWrapper-statusText {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-text-low-emphasis);
+  }
+
+  .FormItemWrapper-statusText + .FormItemWrapper-explanationText {
+    margin-top: var(--spacing-xs);
+  }
+
+  .FormItemWrapper-explanationText ul {
+    margin: 0;
+  }
+
+  .FormItemWrapper-explanationText ul + ul {
+    margin-top: var(--spacing-m);
+  }
+
+  .FormItemWrapper-footer.FormItemWrapper-disabled * {
+    color: var(--color-text-disabled);
+  }
+
+  .FormItemWrapper-action {
+    margin-left: var(--spacing-s);
+  }
+}

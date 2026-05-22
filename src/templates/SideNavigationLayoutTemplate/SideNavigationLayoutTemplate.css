@@ -1,0 +1,41 @@
+@layer components {
+  /* SideNavigationLayoutTemplate styles */
+
+  .SideNavigationLayoutTemplate-viewMenuWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .SideNavigationLayoutTemplate-layoutWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .SideNavigationLayoutTemplate-content {
+    flex: 1 1 auto;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .SideNavigationLayoutTemplate-scrollable {
+    height: 100%;
+    overflow: hidden auto;
+    padding-left: 16px;
+    margin-left: -16px;
+    padding-right: 8px;
+  }
+
+  .SideNavigationLayoutTemplate-sidebar {
+    width: 104px;
+    flex: 0 0 104px;
+    max-width: 104px;
+    min-width: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+}

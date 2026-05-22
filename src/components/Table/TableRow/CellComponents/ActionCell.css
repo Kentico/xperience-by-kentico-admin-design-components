@@ -1,0 +1,21 @@
+@layer components {
+  /**
+   * ActionCell styles
+   * Converted from ActionCell.ActionCell-module.ActionCell-scss
+   */
+
+  .ActionCell {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .ActionCell-button {
+    display: inline-flex;
+  }
+
+  .ActionCell-button:not(:last-child) {
+    padding-right: var(--spacing-l);
+  }
+}

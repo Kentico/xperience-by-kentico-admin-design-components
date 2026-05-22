@@ -1,0 +1,16 @@
+@layer components {
+  .Pagination-container {
+    display: flex;
+  }
+
+  .Pagination-pageNext,
+  .Pagination-pagePrevious,
+  .Pagination-pageButton {
+    display: inline-block;
+  }
+
+  .Pagination-pagePrevious,
+  .Pagination-pageButton {
+    margin-right: var(--spacing-l);
+  }
+}

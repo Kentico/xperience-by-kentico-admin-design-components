@@ -1,0 +1,25 @@
+@layer components {
+  .Spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    line-height: 0;
+  }
+
+  .Spinner-small {
+    font-size: var(--icon-s);
+  }
+
+  .Spinner-medium {
+    font-size: var(--icon-l);
+  }
+
+  .Spinner-large {
+    font-size: var(--icon-xxl);
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

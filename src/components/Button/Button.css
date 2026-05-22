@@ -1,0 +1,329 @@
+@layer components {
+  .Button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--spacing-xl);
+    border: var(--border-width-default) solid transparent;
+    border-radius: var(--radius-pill);
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-m);
+    letter-spacing: 0.1ch;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: none;
+    transition:
+      background-color var(--transition-duration-default) var(--transition-timing-default),
+      color var(--transition-duration-default) var(--transition-timing-default);
+    white-space: nowrap;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .Button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-default);
+  }
+
+  /* ===== Size variants ===== */
+
+  /* XS: label-M typography (400, 12px, 13.2px, no uppercase) */
+  .Button-XS {
+    height: var(--size-xs);
+    padding: 0 var(--spacing-s);
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-s);
+    font-weight: var(--weight-regular);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  /* S: action-S typography (400, 12px, 16px, 0.1ch, uppercase) */
+  .Button-S {
+    height: var(--size-s);
+    padding: 0 var(--spacing-l);
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-s);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-m);
+  }
+
+  /* M: action-M typography (700, 12px, 16px, 0.1ch, uppercase) — base defaults */
+  .Button-M {
+    height: var(--size-m);
+    padding: 0 var(--spacing-xl);
+    gap: var(--spacing-s);
+  }
+
+  /* L: action-L typography (700, 14px, 20px, 0.1ch, uppercase) */
+  .Button-L {
+    height: var(--size-l);
+    padding: 0 var(--spacing-xxl);
+    gap: var(--spacing-s);
+    font-size: var(--font-size-m);
+    line-height: var(--line-xl);
+  }
+
+  /* Icon gap handled per size via gap */
+
+  /* ===== Primary color ===== */
+  .Button-primary {
+    background: var(--gradient-product);
+    background-position: 0% -100%;
+    background-size: 100% 200%;
+    color: var(--color-text-default-on-dark);
+    border: none;
+    box-shadow: var(--glow-primary);
+  }
+
+  .Button-primary:hover:not(:disabled) {
+    background: var(--gradient-product-hover);
+  }
+
+  .Button-primary:active:not(:disabled) {
+    background: var(--gradient-product-hover);
+  }
+
+  .Button-primary:focus-visible {
+    box-shadow: var(--glow-primary), var(--focus-default);
+  }
+
+  .Button-primary:disabled {
+    background: var(--color-background-disabled);
+    color: var(--color-text-disabled);
+    border-color: transparent;
+    box-shadow: none;
+    cursor: default;
+  }
+
+  /* Primary + destructive */
+  .Button-primary.Button-destructive {
+    background: var(--color-alert-background-high-emphasis);
+    box-shadow: none;
+  }
+
+  .Button-primary.Button-destructive:hover:not(:disabled) {
+    background: var(--color-alert-hover);
+  }
+
+  .Button-primary.Button-destructive:focus-visible {
+    box-shadow: var(--focus-alert);
+  }
+
+  /* ===== Secondary color ===== */
+  .Button-secondary {
+    background-color: transparent;
+    border-color: var(--color-product);
+    color: var(--color-product);
+  }
+
+  .Button-secondary:hover:not(:disabled) {
+    background-color: var(--color-hover);
+    border-color: var(--color-product-hover);
+    color: var(--color-product-hover);
+  }
+
+  .Button-secondary:active:not(:disabled) {
+    background-color: var(--color-background-selected-hover);
+  }
+
+  .Button-secondary:disabled {
+    background-color: transparent;
+    border-color: var(--color-border-disabled);
+    color: var(--color-text-disabled);
+    cursor: default;
+  }
+
+  /* Secondary + destructive */
+  .Button-secondary.Button-destructive {
+    border-color: var(--color-alert-text);
+    color: var(--color-alert-text);
+  }
+
+  .Button-secondary.Button-destructive:hover:not(:disabled) {
+    background-color: var(--color-alert-hover);
+    border-color: var(--color-border-alert);
+    color: var(--color-text-default-on-dark);
+  }
+
+  .Button-secondary.Button-destructive:focus-visible {
+    box-shadow: var(--focus-alert);
+  }
+
+  /* ===== Tertiary color (ghost/text button) ===== */
+  .Button-tertiary {
+    background-color: transparent;
+    border: none;
+    color: var(--color-product);
+  }
+
+  .Button-tertiary:hover:not(:disabled) {
+    background-color: var(--color-hover);
+    color: var(--color-product-hover);
+  }
+
+  .Button-tertiary:active:not(:disabled) {
+    background-color: var(--color-background-selected);
+  }
+
+  .Button-tertiary:disabled {
+    background-color: transparent;
+    color: var(--color-text-disabled);
+    cursor: default;
+  }
+
+  /* Tertiary + destructive */
+  .Button-tertiary.Button-destructive {
+    color: var(--color-alert-text);
+  }
+
+  .Button-tertiary.Button-destructive:hover:not(:disabled) {
+    background-color: var(--color-alert-hover);
+    color: var(--color-text-default-on-dark);
+  }
+
+  .Button-tertiary.Button-destructive:focus-visible {
+    box-shadow: var(--focus-alert);
+  }
+
+  /* ===== Quinary color (icon-only, subtle) ===== */
+  .Button-quinary {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-default-on-light);
+    border-radius: var(--radius-s);
+    padding: 0 var(--spacing-xs);
+    height: var(--spacing-xl);
+    font-size: var(--font-size-s);
+    font-weight: var(--weight-regular);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+  }
+
+  .Button-quinary:hover:not(:disabled) {
+    background-color: var(--color-hover);
+  }
+
+  .Button-quinary:active:not(:disabled) {
+    background-color: var(--color-background-selected);
+  }
+
+  .Button-quinary:disabled {
+    background-color: transparent;
+    color: var(--color-text-disabled);
+    cursor: default;
+  }
+
+  /* Quinary + active */
+  .Button-quinary.Button-stateActive {
+    background-color: var(--color-product-selected);
+    color: var(--color-text-default-on-dark);
+  }
+
+  .Button-quinary.Button-stateActive:hover:not(:disabled) {
+    background-color: var(--color-product-selected-hover);
+    color: var(--color-text-default-on-dark);
+  }
+
+  /* Quinary + destructive */
+  .Button-quinary.Button-destructive {
+    color: var(--color-alert-text);
+  }
+
+  .Button-quinary.Button-destructive:hover:not(:disabled) {
+    background-color: var(--color-alert-hover);
+    color: var(--color-text-default-on-dark);
+  }
+
+  .Button-quinary.Button-destructive:focus-visible {
+    box-shadow: var(--focus-alert);
+  }
+
+  /* ===== Alert color (standalone — keep for backwards compat) ===== */
+  .Button-alert {
+    background-color: var(--color-alert-background-high-emphasis);
+    color: var(--color-text-default-on-dark);
+  }
+
+  .Button-alert:hover:not(:disabled) {
+    background-color: var(--color-alert-hover);
+  }
+
+  .Button-alert:active:not(:disabled) {
+    background-color: var(--color-alert-active);
+  }
+
+  .Button-alert:focus-visible {
+    box-shadow: var(--focus-alert);
+  }
+
+  .Button-alert:disabled {
+    background-color: var(--color-background-disabled);
+    color: var(--color-text-disabled);
+    cursor: default;
+  }
+
+  /* ===== Icon only button ===== */
+  .Button-iconOnly {
+    padding: 0;
+    width: var(--size-m);
+  }
+
+  .Button-iconOnly.Button-XS {
+    padding: 0;
+    width: var(--size-s);
+  }
+
+  .Button-iconOnly.Button-S {
+    padding: 0;
+    width: var(--size-s);
+  }
+
+  .Button-iconOnly.Button-L {
+    padding: 0;
+    width: var(--size-l);
+  }
+
+  /* Quinary always 24×24 regardless of size class */
+  .Button-quinary.Button-iconOnly {
+    width: var(--spacing-xl);
+    padding: 0;
+  }
+
+  /* ===== Fill container ===== */
+  .Button-fillContainer {
+    width: 100%;
+  }
+
+  /* ===== Icons ===== */
+  .Button-icon {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  /* ===== Badge indicator ===== */
+  .Button-badge::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-product);
+  }
+
+  .Button-iconOnly.Button-badge::before {
+    top: 0;
+    right: 0;
+  }
+
+  .Button-quinary.Button-badge::before {
+    top: 2px;
+    right: 2px;
+    background-color: var(--color-text-default-on-light);
+  }
+}

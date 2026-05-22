@@ -1,0 +1,37 @@
+@layer components {
+  .DropDownActionMenu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-drop-down);
+  }
+
+  .DropDownActionMenu-menu {
+    position: fixed;
+    z-index: calc(var(--z-index-drop-down) + 1);
+    min-width: calc(20 * var(--grid-unit));
+    padding: var(--spacing-l) 0;
+    background-color: var(--color-paper-background);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-m);
+    animation: fadeIn var(--transition-duration-default)
+      var(--transition-timing-default);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Menu item divider */
+  .DropDownActionMenu-menu > hr {
+    margin: var(--spacing-xs) 0;
+    border: none;
+    border-top: var(--border-width-default) solid var(--color-divider-default);
+  }
+}

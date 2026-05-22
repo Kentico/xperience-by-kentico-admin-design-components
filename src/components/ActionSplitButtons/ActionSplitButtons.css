@@ -1,0 +1,16 @@
+@layer components {
+  /*
+   * ActionSplitButtons styles
+   *
+   * Note: This component primarily composes SplitButton, MenuItem, and ActionMenuDivider,
+   * which provide all the necessary styling. This file exists for consistency and
+   * potential future customizations.
+   */
+
+  /* Link wrapper for link-type menu items */
+  .ActionSplitButtons-linkWrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+}

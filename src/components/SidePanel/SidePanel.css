@@ -1,0 +1,145 @@
+@layer components {
+  /**
+   * SidePanel styles.
+   * Converted from SidePanel.SidePanel-module.SidePanel-scss
+   */
+
+  .SidePanel-wrapper {
+    transition: 700ms var(--transition-timing-default);
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    top: var(--spacing-s);
+    right: calc(var(--spacing-xxxl) + var(--spacing-s));
+    bottom: var(--spacing-s);
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .SidePanel-full {
+    width: 58.33%; /* Approximately 7/12 columns */
+  }
+
+  .SidePanel-stackable {
+    width: 760px; /* 95 * 8px grid unit */
+  }
+
+  @media only screen and (max-width: 1365.98px) {
+    .SidePanel-full,
+    .SidePanel-stackable {
+      width: calc(100% - 2 * var(--spacing-s));
+    }
+  }
+
+  .SidePanel-wrapped {
+    width: fit-content;
+  }
+
+  .SidePanel-visible {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: initial;
+  }
+
+  .SidePanel {
+    background-color: var(--color-paper-background);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-m);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SidePanel-header {
+    padding: var(--spacing-card);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-s);
+  }
+
+  .SidePanel-headline {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-xxl);
+    color: var(--color-text-default-on-light);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .SidePanel-headerButtons {
+    gap: var(--spacing-s);
+    flex-shrink: 0;
+  }
+
+  .SidePanel-content {
+    font-family: var(--typeface-product-primary);
+    padding-left: var(--spacing-card);
+    padding-right: var(--spacing-card);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    overflow-x: auto;
+    visibility: hidden;
+    /* Focus ring top space - 3px for focus ring */
+    padding-top: 3px;
+  }
+
+  .SidePanel-content.SidePanel-visible {
+    visibility: initial;
+  }
+
+  .SidePanel-innerContent {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .SidePanel-footer {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-card);
+  }
+
+  .SidePanel-footerActions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--spacing-between-buttons);
+  }
+
+  .SidePanel-notification {
+    padding-bottom: var(--spacing-card);
+    width: 0;
+    min-width: 100%;
+  }
+
+  .SidePanel-animate {
+    animation: slideFromLeft 700ms var(--transition-timing-default) both;
+    visibility: initial;
+  }
+
+  @keyframes slideFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .SidePanel-dividerVisible {
+    visibility: inherit;
+  }
+
+  .SidePanel-dividerHidden {
+    visibility: hidden;
+  }
+}

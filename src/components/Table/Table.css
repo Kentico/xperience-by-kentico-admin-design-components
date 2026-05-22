@@ -1,0 +1,13 @@
+@layer components {
+  /**
+   * Table wrapper component styles.
+   *
+   * Minimal styles for the Table wrapper component.
+   * The actual table rendering is handled by the renderTable prop.
+   */
+
+  /* Dialog overlay for confirmation dialogs triggered from table actions */
+  .Table-dialogOverlay {
+    z-index: var(--z-index-sidepanel-dialog, 2400);
+  }
+}

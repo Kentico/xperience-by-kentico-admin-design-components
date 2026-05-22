@@ -1,0 +1,61 @@
+@layer components {
+  /**
+   * ToolBar component styles
+   * Sub-component of BaseTile for displaying tile toolbar (actions, error messages, cancel)
+   */
+
+  .ToolBar-toolbar {
+    cursor: default;
+    position: absolute;
+    width: 100%;
+    background-color: rgb(255 255 255 / 90%);
+    top: 0;
+    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--radius-m);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) var(--spacing-m);
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  .ToolBar-toolbar.ToolBar-noPreview {
+    background-color: white;
+  }
+
+  .ToolBar-toolbar.ToolBar-withError {
+    padding: var(--spacing-s);
+    background: var(--color-alert-background-high-emphasis);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ToolBar-toolbar.ToolBar-withError .ToolBar-errorLabel {
+    padding-right: var(--spacing-s);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .ToolBar-toolbar.ToolBar-withError .ToolBar-selectableLabel {
+    /* label-M-emphasis mixin inline: GT Walsheim, 500, 12px, 13.2px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    color: white;
+  }
+
+  .ToolBar-toolbar.ToolBar-withError .ToolBar-previewLabel {
+    /* label-M-emphasis mixin inline: GT Walsheim, 500, 12px, 13.2px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    color: white;
+  }
+
+  .ToolBar-toolbar.ToolBar-withError button {
+    color: white;
+  }
+}

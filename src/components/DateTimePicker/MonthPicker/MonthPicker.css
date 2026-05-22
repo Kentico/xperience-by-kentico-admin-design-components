@@ -1,0 +1,13 @@
+@layer components {
+  .MonthPicker {
+    height: 100%;
+  }
+
+  .MonthPicker-leftColumn {
+    padding-left: var(--spacing-l);
+  }
+
+  .MonthPicker-rightColumn {
+    padding-right: var(--spacing-l);
+  }
+}

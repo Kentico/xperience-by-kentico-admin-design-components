@@ -1,0 +1,91 @@
+@layer components {
+  .VerticalTab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: var(--tab-vertical-height);
+    padding: var(--tab-vertical-padding-vertical) var(--tab-vertical-padding-horizontal);
+    cursor: pointer;
+    transition: 250ms;
+    transition-property: background-color, color;
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    line-height: var(--line-l);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-default-on-light);
+    user-select: none;
+  }
+
+  /* Indicator line on the left */
+  .VerticalTab::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--tab-vertical-indicator-width);
+    background-color: transparent;
+    transition: background-color 250ms;
+  }
+
+  /* Hover state */
+  .VerticalTab:not(.VerticalTab-disabled):not(.VerticalTab-selected):hover {
+    background-color: var(--color-hover);
+  }
+
+  /* Selected state */
+  .VerticalTab.VerticalTab-selected {
+    color: var(--color-product-selected);
+    background-color: var(--color-background-selected);
+  }
+
+  .VerticalTab.VerticalTab-selected::before {
+    background-color: var(--color-product-selected);
+  }
+
+  /* Disabled state */
+  .VerticalTab.VerticalTab-disabled {
+    color: var(--color-text-disabled);
+    cursor: default;
+  }
+
+  .VerticalTab.VerticalTab-disabled .VerticalTab-icon {
+    color: var(--color-icon-disabled);
+  }
+
+  /* Focus state */
+  .VerticalTab:focus {
+    outline: none;
+  }
+
+  .VerticalTab.VerticalTab-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  /* Active (press) state */
+  .VerticalTab:not(.VerticalTab-disabled):not(.VerticalTab-selected):active {
+    background-color: var(--color-background-highlighted);
+  }
+
+  /* Icon styling */
+  .VerticalTab-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: var(--spacing-s);
+    font-size: var(--icon-m);
+    color: var(--color-icon-default);
+    transition: color 250ms;
+  }
+
+  .VerticalTab.VerticalTab-selected .VerticalTab-icon {
+    color: var(--color-product-selected);
+  }
+
+  /* Label */
+  .VerticalTab-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

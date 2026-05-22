@@ -1,0 +1,18 @@
+@layer components {
+  .Stack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Stack-fullHeight {
+    height: 100%;
+  }
+
+  .Stack > *:first-child {
+    margin-top: 0;
+  }
+
+  .Stack > * {
+    margin-top: var(--kxp-stack-component-spacing-top);
+  }
+}

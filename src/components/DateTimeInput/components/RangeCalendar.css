@@ -1,0 +1,32 @@
+@layer components {
+  .RangeCalendar-root {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+
+  .RangeCalendar-columns {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .RangeCalendar-column {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: var(--spacing-m);
+  }
+
+  .RangeCalendar-calendarWrapper {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .RangeCalendar-required {
+    color: var(--color-alert-icon);
+  }
+}

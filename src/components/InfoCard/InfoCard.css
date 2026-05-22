@@ -1,0 +1,41 @@
+@layer components {
+  .InfoCard-card {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    padding: var(--spacing-xl);
+    gap: var(--spacing-s);
+  }
+
+  .InfoCard-cardStrip {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-s);
+    line-height: var(--line-m);
+    color: var(--color-text-default-on-light);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .InfoCard-cardText {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-xl);
+    line-height: var(--line-xxl);
+    color: var(--color-text-default-on-light);
+    margin: 0;
+    padding: 0;
+  }
+
+  .InfoCard-cardDetail {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-s);
+    line-height: 13.2px;
+    color: var(--color-text-hint);
+  }
+
+  .InfoCard-infoIcon {
+    font-size: var(--icon-s);
+  }
+}

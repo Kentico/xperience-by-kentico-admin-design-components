@@ -1,0 +1,35 @@
+@layer components {
+  /* ApplicationListMobile Styles */
+
+  .ApplicationListMobile-container {
+    width: 100%;
+    padding: 0 var(--spacing-l, 16px);
+    box-sizing: border-box;
+  }
+
+  .ApplicationListMobile-title {
+    font-family: var(--typeface-product-primary, 'GT Walsheim', sans-serif);
+    font-size: var(--font-size-xl, 24px);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-xxl);
+    color: var(--color-text-default-on-light, #151515);
+    padding: var(--spacing-xl, 24px) 0;
+    display: flex;
+    gap: var(--spacing-l, 16px);
+    align-items: center;
+  }
+
+  .ApplicationListMobile-search {
+    margin-bottom: var(--spacing-xl, 24px);
+  }
+
+  .ApplicationListMobile-noItems {
+    font-family: var(--typeface-product-secondary, 'Inter', sans-serif);
+    font-size: var(--font-size-m, 14px);
+    line-height: var(--line-l);
+    padding: var(--spacing-s, 8px) var(--spacing-l, 16px) 0 var(--spacing-l, 16px);
+    display: flex;
+    justify-content: center;
+    color: var(--color-text-low-emphasis, #525252);
+  }
+}

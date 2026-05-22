@@ -1,0 +1,159 @@
+@layer components {
+  /* ApplicationTile Styles */
+
+  .ApplicationTile-container {
+    --icon-size: var(--icon-l, 24px);
+    --icon-wrapper-h-padding: var(--spacing-s, 8px);
+    --icon-wrapper-h-margin: calc(var(--spacing-l, 16px) + var(--spacing-xs, 4px));
+    --tile-max-width: calc(
+      (2 * var(--icon-wrapper-h-margin)) +
+      (2 * var(--icon-wrapper-h-padding)) +
+      var(--icon-size)
+    );
+
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    width: var(--tile-max-width);
+    display: inline-block;
+    border-radius: var(--radius-s, 4px);
+  }
+
+  .ApplicationTile-container.ApplicationTile-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  /* Color transition placeholder */
+  .ApplicationTile-buttonContent,
+  .ApplicationTile-label {
+    transition: color var(--transition-duration-default) var(--transition-timing-default),
+      background-color var(--transition-duration-default) var(--transition-timing-default);
+  }
+
+  .ApplicationTile-buttonContent {
+    border-radius: var(--radius-m, 8px);
+    padding: 0;
+    font-size: var(--icon-size);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .ApplicationTile-buttonContent:focus {
+    outline: none;
+  }
+
+  /* Icon wrapper — nested inside buttonContent */
+  .ApplicationTile-iconWrapper {
+    display: flex;
+  }
+
+  .ApplicationTile-mainIcon {
+    border-radius: var(--radius-m, 8px);
+    margin: var(--spacing-s, 8px) var(--icon-wrapper-h-margin) 0 var(--icon-wrapper-h-margin);
+    padding: var(--icon-wrapper-h-padding);
+    /* Source icons use display:block SVGs with 1em sizing — our Icon uses
+       inline-block with explicit dimensions, so flex is needed to eliminate
+       baseline spacing and ensure a square background. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-duration-default) var(--transition-timing-default);
+  }
+
+  .ApplicationTile-mainIcon > :first-child,
+  .ApplicationTile-favouriteIcon > :first-child {
+    outline: none;
+  }
+
+  .ApplicationTile-favourite {
+    margin-right: var(--spacing-xs, 4px);
+  }
+
+  .ApplicationTile-favourite .ApplicationTile-mainIcon {
+    margin-right: 0;
+  }
+
+  .ApplicationTile-favouriteIcon {
+    color: var(--palette-yellow-30, #ffba31);
+    font-size: var(--icon-xs, 12px);
+  }
+
+  /* Label - base color is set by state classes below (.ApplicationTile-default, .ApplicationTile-activated, .ApplicationTile-disabled) */
+  .ApplicationTile-label {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s, 12px);
+    font-weight: var(--weight-regular);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    word-break: break-word;
+    margin: var(--spacing-xs, 4px) 0 var(--spacing-s, 8px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .ApplicationTile-label > label {
+    cursor: pointer;
+  }
+
+  /* ===== State: default ===== */
+  .ApplicationTile-buttonContent.ApplicationTile-default {
+    color: var(--color-tab-icon, #393939);
+  }
+
+  .ApplicationTile-label.ApplicationTile-default {
+    color: var(--color-tab-text, #393939);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ApplicationTile-buttonContent.ApplicationTile-default:hover .ApplicationTile-mainIcon {
+      background-color: var(--color-hover, rgba(156, 136, 127, 0.3));
+      color: var(--color-tab-icon-selected, #151515);
+    }
+
+    /* .ApplicationTile-label is a sibling of .ApplicationTile-buttonContent, not a descendant - use ~ combinator */
+    .ApplicationTile-buttonContent.ApplicationTile-default:hover ~ .ApplicationTile-label {
+      color: var(--color-tab-text-selected, #151515);
+    }
+  }
+
+  /* ===== State: activated ===== */
+  .ApplicationTile-buttonContent.ApplicationTile-activated {
+    color: var(--color-icon-default-on-dark, #fff);
+  }
+
+  .ApplicationTile-buttonContent.ApplicationTile-activated .ApplicationTile-mainIcon {
+    background-color: var(--color-product-selected, #5d0088);
+  }
+
+  .ApplicationTile-label.ApplicationTile-activated {
+    color: var(--color-product-selected, #5d0088);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ApplicationTile-buttonContent.ApplicationTile-activated:hover .ApplicationTile-mainIcon {
+      background-color: var(--color-product-selected-hover, #40005f);
+    }
+  }
+
+  /* ===== State: disabled ===== */
+  .ApplicationTile-buttonContent.ApplicationTile-disabled {
+    color: var(--color-icon-disabled, #8c8c8c);
+    cursor: default;
+  }
+
+  .ApplicationTile-label.ApplicationTile-disabled {
+    color: var(--color-text-disabled, #8c8c8c);
+    cursor: default;
+  }
+
+  .ApplicationTile-label.ApplicationTile-disabled > label {
+    cursor: default;
+  }
+}

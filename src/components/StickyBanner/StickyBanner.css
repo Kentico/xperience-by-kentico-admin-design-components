@@ -1,0 +1,33 @@
+@layer components {
+  /* StickyBanner Styles */
+
+  .StickyBanner-banner {
+    color: var(--color-text-default-on-dark);
+    z-index: var(--z-index-statusbar);
+    position: sticky;
+    top: 0;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-xs);
+  }
+
+  .StickyBanner-banner a:link,
+  .StickyBanner-banner a:visited {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .StickyBanner-banner p {
+    margin: 0;
+  }
+
+  .StickyBanner-info {
+    background-color: var(--color-info-background-high-emphasis);
+  }
+
+  .StickyBanner-error {
+    background-color: var(--color-alert-background-high-emphasis);
+  }
+}

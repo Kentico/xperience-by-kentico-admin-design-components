@@ -1,0 +1,33 @@
+@layer components {
+  .StickyHeader-sticky {
+    position: sticky;
+    top: -1px;
+    z-index: var(--z-index-sticky-header);
+  }
+
+  .StickyHeader-header {
+    position: relative;
+    padding-top: calc(var(--focus-ring-width) + 1px);
+    background: var(--gradient-background-desk) no-repeat center center fixed;
+    width: 100%;
+  }
+
+  .StickyHeader-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    box-shadow: var(--shadow-sticky-header);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: var(--z-index-hidden);
+    width: calc(100% - var(--spacing-xl));
+    margin-right: calc(2 * var(--spacing-xl));
+    left: 0;
+  }
+
+  .StickyHeader-shadowVisible::before {
+    opacity: 1;
+  }
+}

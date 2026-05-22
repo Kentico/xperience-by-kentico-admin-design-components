@@ -1,0 +1,115 @@
+@layer components {
+  /**
+   * ContentItemTranslateTemplate styles
+   *
+   * Converted from SCSS to CSS Modules.
+   */
+
+  /* Table header background - uses paper background for side panel */
+  .ContentItemTranslateTemplate-tableHeader {
+    background: var(--palette-white);
+    /* Needs to have negative position because there would be space between table header and side panel header */
+    top: calc(-1 * var(--spacing-xs));
+  }
+
+  /* Cascade translate panel styles */
+  .ContentItemTranslateTemplate-cascadeTranslatePanel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Override for table header action column in the panel context */
+  .ContentItemTranslateTemplate-cascadeTranslatePanel [class*='table-header-action-col'] {
+    background: var(--color-paper-background) no-repeat center center fixed !important;
+  }
+
+  /* Table wrapper */
+  .ContentItemTranslateTemplate-tableWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+  }
+
+  /* Table header actions */
+  .ContentItemTranslateTemplate-tableHeaderActions {
+    display: flex;
+    gap: var(--spacing-s);
+    padding: var(--spacing-s);
+    background: var(--palette-white);
+    border-bottom: 1px solid var(--color-border-default);
+  }
+
+  /* Table content */
+  .ContentItemTranslateTemplate-tableContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Table row */
+  .ContentItemTranslateTemplate-tableRow {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-s) var(--spacing-m);
+    border-bottom: 1px solid var(--color-border-default);
+    transition: background-color 0.15s ease;
+  }
+
+  .ContentItemTranslateTemplate-tableRow:hover {
+    background-color: var(--color-background-hover);
+  }
+
+  /* Invalid row styling */
+  .ContentItemTranslateTemplate-tableRowInvalid {
+    background-color: var(--color-background-alert);
+    border-left: 3px solid var(--color-border-alert);
+  }
+
+  .ContentItemTranslateTemplate-tableRowInvalid:hover {
+    background-color: var(--color-background-alert);
+  }
+
+  /* Row checkbox */
+  .ContentItemTranslateTemplate-tableRowCheckbox {
+    display: flex;
+    align-items: center;
+    padding-right: var(--spacing-m);
+  }
+
+  /* Row content */
+  .ContentItemTranslateTemplate-tableRowContent {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+    flex: 1;
+  }
+
+  /* Table cell */
+  .ContentItemTranslateTemplate-tableCell {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    line-height: var(--line-m);
+    color: var(--color-text-default-on-light);
+  }
+
+  /* Loading state */
+  .ContentItemTranslateTemplate-tableLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xxl);
+    color: var(--color-text-low-emphasis);
+  }
+
+  /* Empty state */
+  .ContentItemTranslateTemplate-tableEmpty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xxl);
+    color: var(--color-text-low-emphasis);
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-l);
+  }
+}

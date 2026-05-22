@@ -1,0 +1,263 @@
+@layer components {
+  /**
+   * TableRow styles
+   * Converted from TableRow.TableRow-module.TableRow-scss
+   */
+
+  /* Grid layout mode */
+  .TableRow-grid {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+  }
+
+  /* Flex layout mode */
+  .TableRow-flex {
+    display: flex;
+  }
+
+  /* Base table row styles */
+  .TableRow {
+    position: relative;
+    background: var(--table-row-background);
+    height: var(--table-row-height);
+    z-index: 0;
+
+    align-items: center;
+
+    box-sizing: content-box;
+    border-radius: var(--table-row-border-radius);
+    border: var(--table-row-border-width) var(--border-style-default) var(--table-row-border-color);
+
+    color: var(--color-text-default-on-light);
+  }
+
+  .TableRow:not(:last-child) {
+    margin-bottom: var(--table-row-gap);
+  }
+
+  .TableRow:focus {
+    outline: none;
+  }
+
+  /* Focused state */
+  .TableRow.TableRow-focused {
+    z-index: var(--z-index-elevated);
+  }
+
+  /* Clickable state (hover effect) */
+  .TableRow.TableRow-clickable:hover {
+    background: linear-gradient(var(--color-hover), var(--color-hover)), linear-gradient(var(--table-row-background), var(--table-row-background));
+    cursor: pointer;
+  }
+
+  /* Invalid clickable hover */
+  .TableRow.TableRow-clickable.TableRow-invalid:hover {
+    background: var(--table-row-background-invalid-hover);
+    cursor: pointer;
+  }
+
+  /* Disabled state */
+  .TableRow.TableRow-disabled {
+    color: var(--color-text-disabled);
+    background-color: var(--table-row-background-disabled);
+    cursor: default;
+  }
+
+  /* Skeleton loading state */
+  .TableRow.TableRow-skeleton {
+    background-color: var(--table-row-background-skeleton);
+  }
+
+  /* Invalid state */
+  .TableRow.TableRow-invalid {
+    background: var(--table-row-background-invalid);
+  }
+
+  /* Selected state */
+  .TableRow.TableRow-selected,
+  .TableRow.TableRow-selected.TableRow-clickable {
+    background-color: var(--table-row-background-selected);
+  }
+
+  /* Selected and invalid state */
+  .TableRow.TableRow-selected.TableRow-invalid,
+  .TableRow.TableRow-selected.TableRow-invalid.TableRow-clickable {
+    background: var(--table-row-background-invalid);
+  }
+
+  /* Selected hover state */
+  .TableRow.TableRow-selected:hover {
+    background: var(--table-row-background-selected-hover);
+  }
+
+  /* Selected invalid hover state */
+  .TableRow.TableRow-selected.TableRow-invalid:hover {
+    background: var(--table-row-background-invalid-hover);
+  }
+
+  /* Scrollable mode - fit content width */
+  .TableRow.TableRow-scrollable {
+    width: fit-content;
+  }
+
+  /* Base cell styles */
+  .TableRow-tableRowCell {
+    /* label-L mixin: GT Walsheim, 14px, 16px line-height, 400 weight */
+    font-family: var(--table-cell-font-family);
+    font-size: var(--table-cell-font-size);
+    font-weight: var(--table-cell-font-weight);
+    line-height: var(--table-cell-line-height);
+
+    display: flex;
+    background: inherit;
+    color: inherit;
+    flex: 1;
+    padding: 0 var(--table-cell-padding-horizontal);
+    box-sizing: content-box;
+  }
+
+  /* First cell border radius */
+  .TableRow-tableRowCell:first-child {
+    border-top-left-radius: var(--table-row-border-radius);
+    border-bottom-left-radius: var(--table-row-border-radius);
+  }
+
+  /* Last cell border radius */
+  .TableRow-tableRowCell:last-child {
+    border-top-right-radius: var(--table-row-border-radius);
+    border-bottom-right-radius: var(--table-row-border-radius);
+  }
+
+  /* Expandable cell (for tree-like rows) */
+  .TableRow-tableRowExpandableCell {
+    display: flex;
+  }
+
+  /* Action cell - sticky positioning */
+  .TableRow-tableRowActionCell {
+    position: sticky;
+    right: 0;
+    z-index: 1;
+
+    height: 100%;
+    background: inherit;
+    padding-left: 0;
+    padding-right: var(--spacing-l);
+    justify-content: flex-end;
+
+    border-left: 0;
+    border-radius: 0 var(--table-row-border-radius) var(--table-row-border-radius) 0;
+  }
+
+  .TableRow-tableRowActionCell:focus-within {
+    z-index: var(--z-index-elevated);
+  }
+
+  /* Action cell scroll shadow (pseudo-element) */
+  .TableRow-tableRowActionCell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -24px;
+    width: var(--table-scroll-shadow-width);
+    background: linear-gradient(to left, var(--table-scroll-shadow-color), transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--table-scroll-shadow-transition);
+  }
+
+  .TableRow-tableRowActionCell.TableRow-shadowVisible::before {
+    opacity: 1;
+  }
+
+  /* Flex layout: push action cell to right */
+  .TableRow-flex .TableRow-tableRowActionCell {
+    margin-left: auto;
+  }
+
+  /* Select checkbox cell - sticky positioning */
+  .TableRow-tableRowSelect {
+    position: sticky;
+    left: 0;
+
+    z-index: 1;
+    padding-left: calc(var(--spacing-l) - 4px);
+    padding-right: calc(var(--spacing-l) - 4px);
+    box-sizing: content-box;
+    height: 100%;
+    background: inherit;
+    align-items: center;
+    border-radius: var(--table-row-border-radius) 0 0 var(--table-row-border-radius);
+    max-width: max-content;
+
+    /* Reset button styles when used as button */
+    border: none;
+    margin: 0;
+    font: inherit;
+    cursor: inherit;
+    outline: inherit;
+    display: flex;
+  }
+
+  .TableRow-tableRowSelect:focus-within {
+    z-index: var(--z-index-elevated);
+  }
+
+  /* Select cell scroll shadow (pseudo-element) */
+  .TableRow-tableRowSelect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -24px;
+    width: var(--table-scroll-shadow-width);
+    background: linear-gradient(to right, var(--table-scroll-shadow-color), transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--table-scroll-shadow-transition);
+  }
+
+  .TableRow-tableRowSelect.TableRow-shadowVisible::after {
+    opacity: 1;
+  }
+
+  /* Indent for expandable rows */
+  .TableRow-tableRowIndent {
+    padding-right: var(--spacing-xxl);
+    border-left: var(--border-width-default) var(--border-style-default) var(--color-paper-border);
+  }
+
+  /* Navigable area (for row links/buttons) */
+  .TableRow-tableRowNavigableArea {
+    display: contents;
+    text-decoration: none;
+    color: inherit;
+
+    /* Reset button styles when used as button */
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: inherit;
+    outline: inherit;
+  }
+
+  .TableRow-tableRowNavigableArea:hover,
+  .TableRow-tableRowNavigableArea:focus,
+  .TableRow-tableRowNavigableArea:visited,
+  .TableRow-tableRowNavigableArea:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Make empty cells clickable by ensuring proper sizing */
+  .TableRow-tableRowNavigableArea .TableRow-tableRowCell {
+    position: relative;
+    min-height: var(--table-row-height);
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,22 @@
+@layer components {
+  .YearPicker-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .YearPicker {
+    height: 100%;
+    overflow: hidden auto;
+    padding-top: var(--focus-ring-width);
+    padding-left: var(--focus-ring-width);
+    padding-bottom: var(--focus-ring-width);
+    padding-right: var(--spacing-s);
+    margin-top: calc(-1 * var(--focus-ring-width));
+    margin-left: calc(-1 * var(--focus-ring-width));
+  }
+
+  .YearPicker-yearStack {
+    width: calc(7 * var(--grid-unit));
+  }
+}

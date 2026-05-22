@@ -1,0 +1,153 @@
+@layer components {
+  .InputBase-componentInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .InputBase-componentInput.InputBase-overflowing {
+    margin-right: var(--spacing-l);
+  }
+
+  .InputBase-inputWrapper {
+    display: inline-flex;
+    border-radius: var(--radius-pill);
+    border-width: var(--border-width-default);
+    border-color: var(--color-input-border);
+    border-style: var(--border-style-default);
+    height: var(--size-m);
+    background-color: var(--color-input-background);
+    box-sizing: border-box;
+    transition: background-color var(--transition-250);
+    cursor: text;
+  }
+
+  .InputBase-inputWrapper:hover,
+  .InputBase-inputWrapper:focus-within {
+    border-color: var(--color-border-hover);
+  }
+
+  .InputBase-inputWrapper.InputBase-select {
+    cursor: pointer;
+  }
+
+  .InputBase-inputWrapper.InputBase-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  .InputBase-inputWrapper input {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    flex: 1 1 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-pill);
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 var(--spacing-l);
+    width: 100%;
+  }
+
+  .InputBase-inputWrapper input:focus {
+    outline: none;
+  }
+
+  .InputBase-inputWrapper input:invalid,
+  .InputBase-inputWrapper input:-moz-submit-invalid,
+  .InputBase-inputWrapper input:-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  .InputBase-inputWrapper input:-webkit-autofill {
+    background-clip: text;
+  }
+
+  .InputBase-inputWrapper.InputBase-inputWrapperWithGuard .InputBase-rightGuard {
+    position: relative;
+    border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+    margin-left: calc(-1 * var(--size-xs));
+    width: var(--size-xs);
+    height: 100%;
+    z-index: var(--z-index-elevated);
+    box-sizing: border-box;
+  }
+
+  .InputBase-inputWrapper.InputBase-inputWrapperWithGuard .InputBase-rightGuard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    background: linear-gradient(to left, #fff, transparent);
+    pointer-events: none;
+  }
+
+  .InputBase-inputWrapper.InputBase-inputWrapperWithGuard input {
+    margin-right: 0;
+  }
+
+  .InputBase-inputWrapper.InputBase-inputWrapperWithAction input {
+    margin-right: 0;
+  }
+
+  .InputBase-inputWrapper.InputBase-inputWrapperWithAction .InputBase-rightGuard {
+    border-radius: 0;
+  }
+
+  .InputBase-componentInput.InputBase-disabled > .InputBase-inputWrapper {
+    background-color: var(--color-background-disabled);
+    border-color: var(--color-border-disabled) !important;
+    box-shadow: none !important;
+    cursor: initial;
+  }
+
+  .InputBase-componentInput.InputBase-disabled > .InputBase-inputWrapper input {
+    color: var(--color-text-disabled);
+    background-color: inherit;
+  }
+
+  .InputBase-componentInput.InputBase-invalid > .InputBase-inputWrapper {
+    border-color: var(--color-border-alert);
+  }
+
+  .InputBase-componentInput.InputBase-invalid > .InputBase-inputWrapper:hover,
+  .InputBase-componentInput.InputBase-invalid > .InputBase-inputWrapper:focus-within {
+    border-color: var(--color-alert-hover);
+  }
+
+  .InputBase-componentInput.InputBase-invalid > .InputBase-inputWrapper.InputBase-focused {
+    box-shadow: var(--focus-alert);
+  }
+
+  .InputBase-action {
+    border-radius: var(--radius-pill);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-s);
+    font-size: var(--icon-s);
+  }
+
+  .InputBase-action.InputBase-clear {
+    height: fit-content;
+    align-self: center;
+    overflow: visible;
+    margin-right: var(--spacing-xs);
+  }
+
+  .InputBase-action.InputBase-clear:last-child {
+    margin-right: var(--spacing-l);
+  }
+
+  .InputBase-action.InputBase-icon {
+    margin-right: var(--spacing-l);
+    color: var(--color-text-default-on-light);
+  }
+
+  .InputBase-action.InputBase-icon.InputBase-disabled {
+    color: var(--color-icon-disabled);
+  }
+}

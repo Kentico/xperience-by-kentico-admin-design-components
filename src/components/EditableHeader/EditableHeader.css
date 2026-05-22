@@ -1,0 +1,52 @@
+@layer components {
+  .EditableHeader-headerContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .EditableHeader-headerSpacing {
+    padding-right: var(--spacing-s);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .EditableHeader-overlay {
+    z-index: var(--z-index-prompt);
+  }
+
+  .EditableHeader-disabled {
+    color: var(--color-text-disabled);
+    cursor: default;
+  }
+
+  .EditableHeader-inputWrapper {
+    margin-bottom: var(--spacing-s);
+  }
+
+  .EditableHeader-inputLabel {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-label-l);
+    line-height: var(--line-height-label-l);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-default-on-light);
+  }
+
+  .EditableHeader-validationMessage {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-xs);
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-label-m);
+    line-height: var(--line-height-label-m);
+    color: var(--color-text-us-alert);
+  }
+
+  .EditableHeader-alertIcon {
+    flex-shrink: 0;
+    color: var(--color-icon-alert);
+  }
+}

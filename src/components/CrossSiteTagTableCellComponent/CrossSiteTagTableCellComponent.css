@@ -1,0 +1,14 @@
+@layer components {
+  .CrossSiteTagTableCellComponent-wrapper {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    gap: var(--spacing-l);
+  }
+
+  .CrossSiteTagTableCellComponent-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

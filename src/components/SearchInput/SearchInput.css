@@ -1,0 +1,8 @@
+@layer components {
+  /* SearchInput Styles */
+
+  .SearchInput-wrapper {
+    flex-grow: 1;
+    min-width: calc(15 * var(--grid-unit, 8px));
+  }
+}

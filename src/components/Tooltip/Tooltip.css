@@ -1,0 +1,121 @@
+@layer components {
+  .Tooltip {
+    position: fixed;
+    z-index: var(--z-index-tooltip);
+    padding: var(--spacing-xs) var(--spacing-s);
+    background-color: var(--color-tooltip-background);
+    border-radius: var(--radius-s);
+    box-shadow: var(--shadow-m);
+    pointer-events: none;
+    animation: fadeIn var(--transition-duration-default) var(--transition-timing-default);
+  }
+
+  /* Structured content wrapper for text + shortcuts */
+  .Tooltip-tooltipContent {
+    word-break: break-word;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: calc(-1 * var(--spacing-xs));
+    margin-top: calc(-1 * var(--spacing-xs));
+    text-align: left;
+    white-space: pre-line;
+  }
+
+  .Tooltip-tooltipText {
+    flex: 1 1 auto;
+    padding-left: var(--spacing-xs);
+    padding-top: var(--spacing-xs);
+    color: var(--color-tooltip-text);
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    font-weight: var(--weight-medium);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    letter-spacing: var(--letter-spacing-l);
+  }
+
+  /* Arrow — SVG-based, positioned per data-placement */
+  .Tooltip-arrow {
+    position: absolute;
+    color: var(--color-tooltip-background);
+    display: flex;
+  }
+
+  .Tooltip[data-placement^='top'] > .Tooltip-arrow {
+    bottom: -4px;
+    width: 8px;
+    height: 4px;
+  }
+
+  .Tooltip[data-placement^='bottom'] > .Tooltip-arrow {
+    top: -4px;
+    width: 8px;
+    height: 4px;
+  }
+
+  .Tooltip[data-placement^='left'] > .Tooltip-arrow {
+    right: -4px;
+    width: 4px;
+    height: 8px;
+  }
+
+  .Tooltip[data-placement^='right'] > .Tooltip-arrow {
+    left: -4px;
+    width: 4px;
+    height: 8px;
+  }
+
+  /* Arrow horizontal centering for base top/bottom */
+  .Tooltip[data-placement='top'] > .Tooltip-arrow,
+  .Tooltip[data-placement='bottom'] > .Tooltip-arrow {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Arrow vertical centering for base left/right */
+  .Tooltip[data-placement='left'] > .Tooltip-arrow,
+  .Tooltip[data-placement='right'] > .Tooltip-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Arrow alignment for start/end horizontal variants */
+  .Tooltip[data-placement='top-start'] > .Tooltip-arrow,
+  .Tooltip[data-placement='bottom-start'] > .Tooltip-arrow {
+    left: var(--spacing-s);
+  }
+
+  .Tooltip[data-placement='top-end'] > .Tooltip-arrow,
+  .Tooltip[data-placement='bottom-end'] > .Tooltip-arrow {
+    right: var(--spacing-s);
+    left: auto;
+  }
+
+  /* Arrow alignment for start/end vertical variants */
+  .Tooltip[data-placement='right-start'] > .Tooltip-arrow,
+  .Tooltip[data-placement='left-start'] > .Tooltip-arrow {
+    top: var(--spacing-s);
+  }
+
+  .Tooltip[data-placement='right-end'] > .Tooltip-arrow,
+  .Tooltip[data-placement='left-end'] > .Tooltip-arrow {
+    bottom: var(--spacing-s);
+    top: auto;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .Tooltip-truncate {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

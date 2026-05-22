@@ -1,0 +1,53 @@
+@layer components {
+  /**
+   * SectionLayoutTemplate styles
+   * Menu item styles are now in SecondaryMenu component CSS modules.
+   */
+
+  .SectionLayoutTemplate-templateWrapper {
+    display: flex;
+    position: relative;
+    height: 100%;
+  }
+
+  .SectionLayoutTemplate-templateWrapper .SectionLayoutTemplate-menu {
+    display: none;
+  }
+
+  .SectionLayoutTemplate-contentWrapperFlexible {
+    overflow: hidden auto;
+    flex: auto;
+  }
+
+  .SectionLayoutTemplate-templateWrapper > .SectionLayoutTemplate-contentWrapperFlexible {
+    padding: 0 0 0 var(--spacing-s);
+    margin-left: calc(var(--spacing-s) * -1);
+  }
+
+  /* Nested template wrapper should have no padding */
+  .SectionLayoutTemplate-templateWrapper > .SectionLayoutTemplate-contentWrapperFlexible .SectionLayoutTemplate-templateWrapper {
+    padding: 0;
+  }
+
+  .SectionLayoutTemplate-contentWrapper {
+    /* Base content wrapper styles - specificity rules above add context-specific styles */
+  }
+
+  .SectionLayoutTemplate-templateWrapper > .SectionLayoutTemplate-contentWrapperFlexible > .SectionLayoutTemplate-contentWrapper {
+    height: 100%;
+  }
+
+  /* Template wrapper with menu visible */
+  .SectionLayoutTemplate-templateWrapperWithMenu .SectionLayoutTemplate-menu {
+    flex: 0;
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 100%;
+  }
+
+  .SectionLayoutTemplate-templateWrapperWithMenu > .SectionLayoutTemplate-contentWrapperFlexible {
+    padding: 0 0 0 var(--spacing-xl);
+    margin-left: 0;
+  }
+}

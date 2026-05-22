@@ -1,0 +1,30 @@
+@layer components {
+  .CheckboxTickIcon-tickIcon {
+    fill: var(--color-icon-default-on-dark);
+    margin: auto;
+    display: none;
+  }
+
+  .CheckboxTickIcon-tickIcon.CheckboxTickIcon-checked {
+    display: inline-block;
+  }
+
+  .CheckboxTickIcon-tickIcon.CheckboxTickIcon-sizeLarge {
+    height: var(--icon-m);
+    width: var(--icon-m);
+  }
+
+  .CheckboxTickIcon-tickIcon.CheckboxTickIcon-sizeMedium {
+    height: var(--icon-s);
+    width: var(--icon-s);
+  }
+
+  .CheckboxTickIcon-tickIcon.CheckboxTickIcon-sizeSmall {
+    height: var(--icon-xs);
+    width: var(--icon-xs);
+  }
+
+  .CheckboxTickIcon-tickIcon.CheckboxTickIcon-readOnly {
+    fill: var(--color-text-default-on-light);
+  }
+}

@@ -1,0 +1,70 @@
+@layer components {
+  /**
+   * MainMobile Layout Styles
+   *
+   * Uses CSS variables from SmallStatusBar and ApplicationMenuMobile heights.
+   * These are approximated values - adjust if needed.
+   */
+
+  /* Height variables */
+  :root {
+    --small-status-bar-height: calc(7 * var(--grid-unit));
+    --application-menu-mobile-height: calc(7 * var(--grid-unit));
+  }
+
+  .MainMobile-main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    position: relative;
+    padding: var(--small-status-bar-height) 0 var(--application-menu-mobile-height) 0;
+    background: var(--gradient-background-desk) no-repeat center center fixed;
+  }
+
+  .MainMobile-main.MainMobile-withApplicationList {
+    background: var(--color-paper-background);
+  }
+
+  .MainMobile-applicationHeader {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 1;
+    gap: var(--spacing-xxxl);
+    margin-right: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
+  }
+
+  .MainMobile-statusBarWrapper {
+    padding: var(--spacing-s);
+    position: fixed;
+    top: 0;
+    background: var(--color-paper-background);
+    width: 100%;
+    z-index: var(--z-index-statusbar);
+    box-sizing: border-box;
+  }
+
+  .MainMobile-statusBarOnAppList {
+    border: none;
+    box-shadow: none;
+    position: initial;
+    margin: 0;
+  }
+
+  .MainMobile-canvas {
+    height: 100%;
+    display: flex;
+    padding: 0 var(--spacing-xxl);
+  }
+
+  .MainMobile-placeholder {
+    flex: auto;
+  }
+
+  .MainMobile-guard {
+    box-shadow: var(--shadow-l);
+  }
+}

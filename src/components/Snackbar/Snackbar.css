@@ -1,0 +1,87 @@
+@layer components {
+  /**
+   * Snackbar Container Styles
+   * Converted from Snackbar.Snackbar-module.Snackbar-scss
+   */
+
+  .Snackbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: var(--z-index-snackbar);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Position Classes                                                   */
+  /* ------------------------------------------------------------------ */
+
+  .Snackbar-top {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .Snackbar-topRight {
+    right: 0;
+    top: 0;
+  }
+
+  .Snackbar-topLeft {
+    left: 0;
+    top: 0;
+  }
+
+  .Snackbar-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .Snackbar-bottomRight {
+    right: 0;
+    bottom: 0;
+  }
+
+  .Snackbar-bottomLeft {
+    left: 0;
+    bottom: 0;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Vertical Spacing Classes                                           */
+  /* ------------------------------------------------------------------ */
+
+  .Snackbar-verticalM {
+    margin-top: calc(var(--spacing-m) * 2);
+    margin-bottom: calc(var(--spacing-m) * 2);
+  }
+
+  .Snackbar-verticalL {
+    margin-top: calc(var(--spacing-l) * 2);
+    margin-bottom: calc(var(--spacing-l) * 2);
+  }
+
+  .Snackbar-verticalXl {
+    margin-top: calc(var(--spacing-xl) * 2);
+    margin-bottom: calc(var(--spacing-xl) * 2);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Horizontal Spacing Classes                                         */
+  /* ------------------------------------------------------------------ */
+
+  .Snackbar-horizontalM {
+    margin-left: calc(var(--spacing-m) * 2);
+    margin-right: calc(var(--spacing-m) * 2);
+  }
+
+  .Snackbar-horizontalL {
+    margin-left: calc(var(--spacing-l) * 2);
+    margin-right: calc(var(--spacing-l) * 2);
+  }
+
+  .Snackbar-horizontalXl {
+    margin-left: calc(var(--spacing-xl) * 2);
+    margin-right: calc(var(--spacing-xl) * 2);
+  }
+}

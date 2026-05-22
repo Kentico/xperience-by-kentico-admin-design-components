@@ -1,0 +1,15 @@
+@layer components {
+  .VersionDialog-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .VersionDialog-version {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    color: var(--color-text-default-on-light);
+  }
+}

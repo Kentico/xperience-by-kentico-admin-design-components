@@ -1,0 +1,32 @@
+@layer components {
+  .PickerButton {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    width: 100%;
+    height: calc(3 * var(--grid-unit));
+    border-radius: calc(1 * var(--grid-unit));
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--grey-100);
+    transition: background-color var(--transition-250);
+  }
+
+  .PickerButton:hover {
+    background-color: var(--color-hover);
+  }
+
+  .PickerButton:focus-within {
+    outline: none;
+    box-shadow: var(--focus-default);
+  }
+
+  .PickerButton.PickerButton-selected {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-bold);
+  }
+}

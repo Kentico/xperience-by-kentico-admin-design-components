@@ -1,0 +1,13 @@
+@layer components {
+  .ProgressBar-progressBarWrapper {
+    width: 100%;
+    height: 2px;
+  }
+
+  .ProgressBar {
+    height: 100%;
+    background: var(--gradient-product);
+    text-align: right;
+    transition: width 1s ease-in-out;
+  }
+}

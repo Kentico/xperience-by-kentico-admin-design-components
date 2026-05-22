@@ -1,0 +1,24 @@
+@layer components {
+  .NameButton-nameToggleButton {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    color: var(--color-toggle-text);
+    border-radius: var(--radius-m);
+    padding: var(--spacing-m);
+    user-select: none;
+  }
+
+  .NameButton-nameToggleButton:not(.NameButton-selected):hover {
+    color: var(--color-toggle-text-hover);
+  }
+
+  .NameButton-nameToggleButton.NameButton-selected {
+    color: var(--color-toggle-text-selected);
+  }
+
+  .NameButton-nameToggleButton::after {
+    border-radius: var(--radius-m);
+  }
+}

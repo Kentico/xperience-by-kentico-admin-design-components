@@ -1,0 +1,83 @@
+@layer components {
+  /* TableComponent composition styles */
+
+  /* Main wrapper */
+  .TableComponent-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Header styles */
+  .TableComponent-header {
+    display: flex;
+    padding-bottom: var(--spacing-l);
+  }
+
+  .TableComponent-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-l);
+  }
+
+  .TableComponent-actionsRow {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-m);
+    align-items: center;
+  }
+
+  /* Pagination styles */
+  .TableComponent-pagination {
+    margin-top: var(--spacing-l);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Footer/Empty state styles */
+  .TableComponent-footer {
+    padding: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .TableComponent-emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-m);
+  }
+
+  .TableComponent-emptyStateText {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    color: var(--color-text-default-on-light);
+    margin: 0;
+  }
+
+  /* Mass actions bar styles */
+  .TableComponent-massActionsBar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+    padding: var(--spacing-m) var(--spacing-l);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-m);
+    margin-bottom: var(--spacing-l);
+  }
+
+  .TableComponent-massActionsLabel {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-default-on-light);
+  }
+
+  .TableComponent-massActionsDivider {
+    width: 1px;
+    height: 24px;
+    background: var(--color-border-default);
+  }
+}

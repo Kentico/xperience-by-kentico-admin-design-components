@@ -1,0 +1,130 @@
+@layer components {
+  /**
+   * SimpleStatus Component Styles
+   * Converted from BaseSimpleStatus.SimpleStatus-module.SimpleStatus-scss
+   */
+
+  /* ------------------------------------------------------------------ */
+  /*  Root Container                                                     */
+  /* ------------------------------------------------------------------ */
+
+  .SimpleStatus {
+    display: inline-block;
+    height: fit-content;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .SimpleStatus-spread {
+    height: 100%;
+    width: 100%;
+  }
+
+  .SimpleStatus-sizeS {
+    padding: var(--spacing-xs);
+  }
+
+  .SimpleStatus-sizeXs {
+    padding: 0;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Content Layout                                                     */
+  /* ------------------------------------------------------------------ */
+
+  .SimpleStatus-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Label                                                              */
+  /* ------------------------------------------------------------------ */
+
+  .SimpleStatus-label {
+    /* label-L mixin: GT Walsheim, regular/14px/16px */
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--weight-regular);
+    color: var(--color-text-default-on-light);
+
+    display: block;
+
+    /* text-ellipsis mixin: nowrap + overflow handling */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Safari tooltip fix from text-ellipsis mixin */
+  .SimpleStatus-label::after {
+    content: '';
+    display: block;
+  }
+
+  .SimpleStatus-label.SimpleStatus-default {
+    color: var(--color-text-low-emphasis);
+  }
+
+  .SimpleStatus-label.SimpleStatus-error {
+    color: var(--color-alert-text);
+  }
+
+  .SimpleStatus-label.SimpleStatus-warning {
+    color: var(--color-warning-text);
+  }
+
+  .SimpleStatus-label.SimpleStatus-success {
+    color: var(--color-success-text);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Icon                                                               */
+  /* ------------------------------------------------------------------ */
+
+  .SimpleStatus-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .SimpleStatus-icon.SimpleStatus-default {
+    color: var(--color-text-low-emphasis);
+  }
+
+  .SimpleStatus-icon.SimpleStatus-error {
+    color: var(--color-alert-icon);
+  }
+
+  .SimpleStatus-icon.SimpleStatus-warning {
+    color: var(--color-warning-icon);
+  }
+
+  .SimpleStatus-icon.SimpleStatus-success {
+    color: var(--color-success-icon);
+  }
+
+  .SimpleStatus-icon.SimpleStatus-sizeS {
+    font-size: var(--icon-s);
+  }
+
+  .SimpleStatus-icon.SimpleStatus-sizeXs {
+    font-size: var(--icon-xs);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Icon Spacing                                                       */
+  /* ------------------------------------------------------------------ */
+
+  .SimpleStatus-spacingLeft {
+    margin-left: var(--spacing-s);
+  }
+
+  .SimpleStatus-spacingRight {
+    margin-right: var(--spacing-s);
+  }
+}

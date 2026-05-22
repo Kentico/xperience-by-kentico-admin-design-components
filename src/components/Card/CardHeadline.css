@@ -1,0 +1,11 @@
+@layer components {
+  .CardHeadline {
+    padding-top: var(--spacing-card);
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-xl);
+    line-height: var(--line-xxl);
+    color: var(--color-text-default-on-light);
+    word-break: break-word;
+  }
+}

@@ -1,0 +1,65 @@
+@layer components {
+  .RadioCircle-svg {
+    display: block;
+  }
+
+  .RadioCircle-circleOuter {
+    transition: stroke var(--transition-duration-default) var(--transition-timing-default);
+    fill: transparent;
+    stroke: var(--color-border-default);
+  }
+
+  .RadioCircle-circleOuter.RadioCircle-hovered {
+    stroke: var(--color-border-hover);
+  }
+
+  .RadioCircle-circleOuter.RadioCircle-selected {
+    stroke: var(--color-product);
+  }
+
+  .RadioCircle-circleOuter.RadioCircle-selected.RadioCircle-hovered:not(.RadioCircle-disabled, .RadioCircle-readOnly) {
+    stroke: var(--color-product-hover);
+  }
+
+  .RadioCircle-circleOuter.RadioCircle-alert {
+    stroke: var(--color-border-alert);
+  }
+
+  .RadioCircle-circleOuter.RadioCircle-alert.RadioCircle-hovered:not(.RadioCircle-disabled, .RadioCircle-readOnly) {
+    stroke: var(--color-alert-hover);
+  }
+
+  .RadioCircle-circleOuter.RadioCircle-disabled {
+    stroke: var(--color-border-disabled);
+  }
+
+  .RadioCircle-circleOuter.RadioCircle-readOnly {
+    stroke: var(--color-border-disabled);
+  }
+
+  .RadioCircle-circleInner {
+    transition: fill var(--transition-duration-default) var(--transition-timing-default);
+    fill: var(--color-product);
+  }
+
+  .RadioCircle-circleInner.RadioCircle-hovered {
+    fill: var(--color-product-hover);
+  }
+
+  .RadioCircle-circleInner.RadioCircle-alert {
+    fill: var(--color-border-alert);
+  }
+
+  .RadioCircle-circleInner.RadioCircle-alert.RadioCircle-hovered {
+    fill: var(--color-alert-hover);
+  }
+
+  .RadioCircle-circleInner.RadioCircle-disabled {
+    fill: var(--color-border-disabled);
+  }
+
+  .RadioCircle-circleInner.RadioCircle-readOnly {
+    stroke-dasharray: 4, 2;
+    fill: var(--color-text-default-on-light);
+  }
+}

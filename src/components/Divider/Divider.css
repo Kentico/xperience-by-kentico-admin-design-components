@@ -1,0 +1,19 @@
+@layer components {
+  .Divider {
+    background-color: var(--color-divider-default);
+  }
+
+  .Divider-subheaderDivider {
+    background-color: var(--color-border-default);
+  }
+
+  .Divider-horizontal {
+    height: var(--border-width-default);
+    min-width: 100%;
+  }
+
+  .Divider-vertical {
+    width: var(--border-width-default);
+    min-height: 100%;
+  }
+}

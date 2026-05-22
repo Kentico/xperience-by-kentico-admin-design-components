@@ -1,0 +1,43 @@
+@layer components {
+  /* DashboardTemplate styles - converted from SCSS */
+
+  .DashboardTemplate-dashboard {
+    padding: var(--spacing-s) 0 var(--spacing-xxxl) var(--spacing-xxxl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxxl);
+    box-sizing: content-box;
+  }
+
+  @media only screen and (max-width: 599.98px) {
+    .DashboardTemplate-dashboard {
+      padding-top: var(--spacing-xxxl);
+      gap: var(--spacing-xxl);
+    }
+  }
+
+  .DashboardTemplate-titleWrapper {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-l);
+  }
+
+  .DashboardTemplate-title {
+    /* headline-XXXXL mixin expansion */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-xxxxl);
+    line-height: var(--line-xxxxxl);
+    color: var(--color-text-default-on-light);
+    margin: 0;
+    padding: 0;
+
+    /* Gradient text effect */
+    background: var(--gradient-dark-xperience-violet);
+    width: min-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    align-items: flex-start;
+  }
+}

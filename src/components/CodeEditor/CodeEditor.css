@@ -1,0 +1,96 @@
+@layer components {
+  /* stylelint-disable selector-pseudo-class-no-unknown, selector-class-pattern */
+
+  .CodeEditor-wrapper {
+    outline: none;
+    display: flex;
+  }
+
+  .CodeEditor-wrapper.CodeEditor-readOnly {
+    margin-top: var(--spacing-element-label);
+  }
+
+  .CodeEditor-wrapper .CodeEditor {
+    width: 100%;
+  }
+
+  /* prevents strange focus behavior after click above and below code editor */
+  .CodeEditor-wrapper .CodeEditor::after,
+  .CodeEditor-wrapper .CodeEditor::before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    display: flex;
+  }
+
+  .CodeEditor-wrapper .CodeEditor .cm-editor {
+    border-radius: calc(var(--size-m) * 0.5);
+    border-width: var(--border-width-default);
+    border-color: var(--color-input-border);
+    border-style: var(--border-style-default);
+    overflow: auto;
+  }
+
+  .CodeEditor-wrapper .CodeEditor .cm-editor .cm-scroller {
+    margin: var(--spacing-l) 0;
+  }
+
+  .CodeEditor-wrapper .CodeEditor .cm-editor.cm-focused {
+    outline: none;
+    border-color: var(--color-border-hover);
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-focused .cm-editor {
+    box-shadow: var(--focus-default);
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-focused.CodeEditor-invalid {
+    box-shadow: var(--focus-alert);
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-disabled .cm-editor {
+    border-color: var(--color-border-disabled);
+    background-color: var(--color-background-disabled);
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-disabled .cm-editor:hover {
+    cursor: default;
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-disabled .cm-editor .cm-activeLine,
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-disabled .cm-editor .cm-gutters,
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-disabled .cm-editor .cm-activeLineGutter,
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-disabled .cm-editor .cm-selectionMatch {
+    background-color: var(--color-background-disabled);
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-readOnly .cm-editor {
+    border: none;
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-readOnly .cm-editor:hover {
+    cursor: default;
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-readOnly .cm-editor .cm-gutters,
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-readOnly .cm-editor .cm-activeLineGutter,
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-readOnly .cm-editor .cm-selectionMatch {
+    background-color: var(--color-paper-background);
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-readOnly .cm-editor .cm-scroller {
+    margin: 0;
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-invalid .cm-editor {
+    border-color: var(--color-border-alert) !important;
+  }
+
+  .CodeEditor-wrapper .CodeEditor.CodeEditor-invalid:hover .cm-editor {
+    border-color: var(--color-alert-hover) !important;
+  }
+
+  .CodeEditor-wrapper .CodeEditor-emptyColumn {
+    width: 1px;
+  }
+}

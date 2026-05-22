@@ -1,0 +1,103 @@
+@layer components {
+  /**
+   * TableHeaderButton styles
+   * Converted from TableHeaderButton.TableHeaderButton-module.TableHeaderButton-scss
+   */
+
+  .TableHeaderButton-tableHeaderCol {
+    /* Typography - label-L expansion */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-s);
+
+    /* Layout */
+    color: var(--color-text-low-emphasis);
+    position: relative;
+    display: flex;
+    padding: 0 var(--spacing-l);
+    transition: var(--transition-250);
+    transition-property: background;
+    box-sizing: content-box;
+    gap: var(--spacing-s);
+    background: inherit;
+  }
+
+  .TableHeaderButton-tableHeaderCol:not(.TableHeaderButton-tableHeaderActionCol) {
+    /* "Actions" column casts shadow, so we won't apply overflow: hidden on it */
+    overflow: hidden;
+  }
+
+  /* Sortable header styles */
+  .TableHeaderButton-sortable {
+    cursor: pointer;
+  }
+
+  .TableHeaderButton-sortable:hover {
+    color: var(--color-text-default-on-light);
+    background: var(--color-hover);
+  }
+
+  .TableHeaderButton-sortable:focus {
+    outline: none;
+  }
+
+  .TableHeaderButton-focused {
+    box-shadow: var(--focus-default);
+    z-index: var(--z-index-elevated);
+  }
+
+  /* Sorted state */
+  .TableHeaderButton-sorted {
+    color: var(--color-text-default-on-light);
+  }
+
+  /* Text styling */
+  .TableHeaderButton-text {
+    margin: auto 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Sort icon */
+  .TableHeaderButton-sortIcon {
+    display: inline-flex;
+    margin: auto 0;
+    font-size: var(--icon-xs);
+  }
+
+  /* Tooltip icon container */
+  .TableHeaderButton-tooltip {
+    margin: auto 0;
+  }
+
+  /* Action column - sticky positioning */
+  .TableHeaderButton-tableHeaderActionCol {
+    position: sticky;
+    right: 0;
+    background: inherit;
+    padding-left: 0;
+    padding-right: var(--spacing-l);
+  }
+
+  /* Scroll shadow for action column */
+  .TableHeaderButton-tableHeaderActionCol::before {
+    content: '';
+    position: absolute;
+    width: var(--table-scroll-shadow-width, 24px);
+    height: 100%;
+    top: 0;
+    left: auto;
+    right: 100%;
+    pointer-events: none;
+    opacity: 0;
+    z-index: var(--z-index-elevated);
+    transition: var(--table-scroll-shadow-transition);
+    background: linear-gradient(to left, var(--table-scroll-shadow-color), transparent);
+  }
+
+  .TableHeaderButton-shadowVisible::before {
+    opacity: 1;
+  }
+}

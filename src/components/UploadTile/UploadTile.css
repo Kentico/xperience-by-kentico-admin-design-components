@@ -1,0 +1,52 @@
+@layer components {
+  /* UploadTile Styles */
+
+  .UploadTile-container {
+    /* label-M mixin: GT Walsheim, 400, 12px, 13.2px - color inherited from parent */
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s, 12px);
+    font-weight: var(--weight-regular);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    border: var(--border-width-default, 1px) dashed var(--color-border-default, #8c8c8c);
+    border-radius: var(--radius-m, 8px);
+    box-sizing: border-box;
+    display: flex;
+    text-align: center;
+    word-break: break-all;
+  }
+
+  .UploadTile-container.UploadTile-compact {
+    min-width: calc(17.5 * var(--grid-unit, 8px)); /* 140px */
+    max-width: calc(27.25 * var(--grid-unit, 8px)); /* 218px */
+  }
+
+  .UploadTile-container.UploadTile-full {
+    min-width: calc(26.25 * var(--grid-unit, 8px)); /* 210px */
+    max-width: calc(40.375 * var(--grid-unit, 8px)); /* 323px */
+  }
+
+  .UploadTile-containerDrag {
+    background-color: var(--color-hover);
+  }
+
+  .UploadTile-content {
+    padding: 0 var(--spacing-l, 16px);
+  }
+
+  .UploadTile-enabledClick button {
+    pointer-events: auto;
+  }
+
+  .UploadTile-iconCanvas {
+    width: var(--icon-s, 16px);
+    height: var(--icon-s, 16px);
+    margin: auto;
+    font-size: var(--icon-s, 16px);
+    padding-bottom: var(--spacing-s, 8px);
+  }
+
+  .UploadTile-textPadding {
+    padding-top: var(--spacing-xs, 4px);
+    padding-bottom: var(--spacing-s, 8px);
+  }
+}

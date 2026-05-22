@@ -1,0 +1,173 @@
+@layer components {
+  /* SettingsTemplate styles */
+
+  /* Layout wrapper */
+  .SettingsTemplate-layoutWrapper {
+    padding: var(--spacing-xl);
+    min-height: 100%;
+  }
+
+  /* SettingsLayoutTemplate styles */
+  .SettingsTemplate-templateWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+  }
+
+  .SettingsTemplate-treeWrapper {
+    height: calc(100% - var(--size-m) - 3 * var(--spacing-xl));
+  }
+
+  /* SettingsSearchRowComponent styles */
+  .SettingsTemplate-filter {
+    flex-grow: 1;
+    min-width: calc(40 * var(--grid-unit, 4px));
+  }
+
+  .SettingsTemplate-save {
+    margin-right: var(--spacing-l);
+  }
+
+  /* SettingsBreadcrumbs styles */
+  .SettingsTemplate-breadcrumbsContainer {
+    height: var(--size-s);
+    display: inline-flex;
+  }
+
+  .SettingsTemplate-breadcrumbItem {
+    display: flex;
+    align-items: center;
+  }
+
+  .SettingsTemplate-breadcrumbIcon {
+    font-size: var(--icon-xxs);
+    color: var(--color-icon-default);
+    padding: 0 var(--spacing-s);
+  }
+
+  .SettingsTemplate-breadcrumbCell {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: var(--color-text-default-on-light);
+    text-decoration: none;
+  }
+
+  /* SettingsDetailsTemplate styles */
+  .SettingsTemplate-formComponent {
+    max-width: 325px;
+  }
+
+  .SettingsTemplate-searchHeadline {
+    text-decoration: underline;
+    text-decoration-color: var(--color-product);
+  }
+
+  /* Page message pane stub */
+  .SettingsTemplate-pageMessagePane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xxxl);
+    text-align: center;
+  }
+
+  .SettingsTemplate-pageMessageTitle {
+    font-family: var(--font-family);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-l);
+    color: var(--color-text-default-on-light);
+    margin-bottom: var(--spacing-m);
+  }
+
+  .SettingsTemplate-pageMessageText {
+    font-family: var(--font-family);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    color: var(--color-text-low-emphasis);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  /* Page loader stub */
+  .SettingsTemplate-pageLoader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xxxl);
+    gap: var(--spacing-m);
+  }
+
+  .SettingsTemplate-pageLoaderTitle {
+    font-family: var(--font-family);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    color: var(--color-text-low-emphasis);
+  }
+
+  /* Form stub styles */
+  .SettingsTemplate-formFieldWrapper {
+    margin-bottom: var(--spacing-l);
+  }
+
+  .SettingsTemplate-formFieldLabel {
+    font-family: var(--font-family);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-s);
+    color: var(--color-text-default-on-light);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .SettingsTemplate-formFieldError {
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    color: var(--color-red-70);
+    margin-top: var(--spacing-xs);
+  }
+
+  /* Tree template stub styles */
+  .SettingsTemplate-treeContainer {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .SettingsTemplate-treeNode {
+    padding: var(--spacing-s) var(--spacing-m);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    cursor: pointer;
+    border-radius: var(--border-radius-s);
+    transition: background-color 150ms ease;
+  }
+
+  .SettingsTemplate-treeNode:hover {
+    background-color: var(--color-grey-5);
+  }
+
+  .SettingsTemplate-treeNodeActive {
+    background-color: var(--color-grey-10);
+  }
+
+  .SettingsTemplate-treeNodeChildren {
+    padding-left: var(--spacing-xl);
+  }
+
+  .SettingsTemplate-treeNodeName {
+    font-family: var(--font-family);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    color: var(--color-text-default-on-light);
+  }
+
+  .SettingsTemplate-treeNodeIcon {
+    color: var(--color-icon-default);
+  }
+}

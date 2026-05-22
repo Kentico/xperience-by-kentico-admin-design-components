@@ -1,0 +1,26 @@
+@layer components {
+  .TextWithLabel-label {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-low-emphasis);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .TextWithLabel-value {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    overflow-wrap: break-word;
+  }
+
+  .TextWithLabel-dangerouslySetHtml a {
+    color: var(--color-link);
+  }
+
+  .TextWithLabel-dangerouslySetHtml a:hover {
+    color: var(--color-link-hover);
+  }
+}

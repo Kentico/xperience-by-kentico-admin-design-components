@@ -1,0 +1,74 @@
+@layer components {
+  /* SelectGroupCell Container */
+  .SelectGroupCell-container {
+    width: inherit;
+  }
+
+  /* Button */
+  .SelectGroupCell-button {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    height: var(--size-m);
+    white-space: nowrap;
+    border: none;
+    background-color: inherit;
+    padding: 0 var(--spacing-xl);
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    width: inherit;
+    max-width: inherit;
+  }
+
+  .SelectGroupCell-button.SelectGroupCell-activeSelection {
+    cursor: pointer;
+  }
+
+  /* Hover state - disabled on touch devices */
+  @media (hover: hover) and (pointer: fine) {
+    .SelectGroupCell-button.SelectGroupCell-activeSelection:hover {
+      background-color: var(--color-hover);
+    }
+  }
+
+  /* Focus state */
+  .SelectGroupCell-button:focus {
+    outline: none;
+  }
+
+  .SelectGroupCell-button.SelectGroupCell-focused {
+    box-shadow: var(--focus-default);
+    z-index: var(--z-index-elevated);
+  }
+
+  /* Icon styles */
+  .SelectGroupCell-icon {
+    color: var(--color-icon-default);
+    font-size: var(--icon-s);
+  }
+
+  /* Ellipsis mode - product color for icon */
+  .SelectGroupCell-ellipsis {
+    color: var(--color-product);
+  }
+
+  /* Label */
+  .SelectGroupCell-label {
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Leading element */
+  .SelectGroupCell-leadingElement {
+    width: 28px; /* 3.5 * 8px grid unit */
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-duration-default) var(--transition-timing-default);
+    color: var(--color-product);
+  }
+}

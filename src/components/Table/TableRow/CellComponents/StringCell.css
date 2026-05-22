@@ -1,0 +1,15 @@
+@layer components {
+  /**
+   * StringCell styles
+   * Converted from StringCell.StringCell-module.StringCell-scss
+   */
+
+  .StringCell {
+    color: inherit;
+
+    /* text-ellipsis mixin expansion */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

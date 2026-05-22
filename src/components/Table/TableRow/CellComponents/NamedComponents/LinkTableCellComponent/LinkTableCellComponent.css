@@ -1,0 +1,5 @@
+@layer components {
+  .LinkTableCellComponent-link {
+    min-width: 0;
+  }
+}

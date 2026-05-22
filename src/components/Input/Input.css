@@ -1,0 +1,93 @@
+@layer components {
+  /* Input Styles */
+
+  .Input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .Input-inputWrapper {
+    display: inline-flex;
+    border-radius: var(--radius-pill, 5000px);
+    border-width: var(--border-width-default, 1px);
+    border-color: var(--color-input-border, #8c8c8c);
+    border-style: solid;
+    height: var(--size-m, 40px);
+    background-color: var(--color-input-background, #fff);
+    box-sizing: border-box;
+    transition:
+      background-color var(--transition-duration-default) var(--transition-timing-default);
+    cursor: text;
+  }
+
+  .Input-inputWrapper:hover,
+  .Input-inputWrapper:focus-within {
+    border-color: var(--color-border-hover, #151515);
+  }
+
+  .Input-inputWrapper.Input-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  .Input-inputWrapper input {
+    font-family: var(--typeface-product-secondary, 'Inter', sans-serif);
+    font-size: var(--font-size-m, 14px);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-l);
+    flex: 1 1 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-pill, 5000px);
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 var(--spacing-l, 16px);
+    width: 100%;
+    color: var(--color-text-default-on-light, #151515);
+  }
+
+  .Input-inputWrapper input:focus {
+    outline: none;
+  }
+
+  .Input-inputWrapper input::placeholder {
+    color: var(--color-text-low-emphasis, #525252);
+  }
+
+  .Input-inputWrapper input:invalid,
+  .Input-inputWrapper input:-moz-submit-invalid,
+  .Input-inputWrapper input:-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  .Input-inputWrapper input:-webkit-autofill {
+    background-clip: text;
+  }
+
+  /* Disabled state */
+  .Input-wrapper.Input-disabled .Input-inputWrapper {
+    background-color: var(--color-background-disabled, #f5f5f5);
+    border-color: var(--color-border-disabled, #c6c6c6) !important;
+    box-shadow: none !important;
+    cursor: initial;
+  }
+
+  .Input-wrapper.Input-disabled .Input-inputWrapper input {
+    color: var(--color-text-disabled, #8c8c8c);
+    background-color: inherit;
+  }
+
+  /* Invalid state */
+  .Input-wrapper.Input-invalid .Input-inputWrapper {
+    border-color: var(--color-border-alert, #d32f2f);
+  }
+
+  .Input-wrapper.Input-invalid .Input-inputWrapper:hover,
+  .Input-wrapper.Input-invalid .Input-inputWrapper:focus-within {
+    border-color: var(--color-alert-hover, #b71c1c);
+  }
+
+  .Input-wrapper.Input-invalid .Input-inputWrapper.Input-focused {
+    box-shadow: var(--focus-alert, 0 0 0 3px rgba(211, 47, 47, 0.3));
+  }
+}

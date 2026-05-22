@@ -1,0 +1,11 @@
+@layer components {
+  .Inline {
+    margin-left: calc(-1 * var(--kxp-inline-component-spacing-left));
+  }
+
+  .Inline::before {
+    display: block;
+    margin-top: calc(-1 * var(--kxp-inline-component-spacing-top));
+    content: '';
+  }
+}

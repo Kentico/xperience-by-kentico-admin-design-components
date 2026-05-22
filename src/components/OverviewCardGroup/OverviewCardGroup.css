@@ -1,0 +1,11 @@
+@layer components {
+  /* Overview card group container */
+  .OverviewCardGroup {
+    padding-bottom: var(--spacing-xl);
+  }
+
+  /* Equal width columns */
+  .OverviewCardGroup-fixedWidth {
+    flex: 1 1 0;
+  }
+}

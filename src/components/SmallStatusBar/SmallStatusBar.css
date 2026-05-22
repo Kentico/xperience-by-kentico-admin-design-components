@@ -1,0 +1,28 @@
+@layer components {
+  .SmallStatusBar-statusBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-index-statusbar);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--size-m);
+    padding: 0 var(--spacing-l);
+    gap: var(--spacing-l);
+    margin: var(--spacing-s);
+    width: calc(100vw - 2 * var(--spacing-s));
+    box-sizing: border-box;
+    border: none;
+  }
+
+  .SmallStatusBar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-l);
+    height: var(--icon-l);
+    color: var(--color-product);
+  }
+}

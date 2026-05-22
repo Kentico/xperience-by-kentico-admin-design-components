@@ -1,0 +1,146 @@
+@layer components {
+  .Dialog-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    background-color: var(--color-overlay-background);
+    box-sizing: border-box;
+    z-index: var(--z-index-dialog);
+  }
+
+  .Dialog-overlayContained {
+    position: absolute;
+  }
+
+  .Dialog-wrapper {
+    display: flex;
+    max-height: 100%;
+    opacity: 0;
+    animation: showDialog 0.3s linear forwards;
+  }
+
+  .Dialog-wrapper.Dialog-fullscreen {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Dialog-wrapper:focus-visible {
+    outline: none;
+  }
+
+  @keyframes showDialog {
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .Dialog-dialogContainer {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .Dialog {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .Dialog-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: var(--spacing-xl);
+    column-gap: var(--spacing-s);
+  }
+
+  .Dialog-headline {
+    flex: 1;
+    margin: 0;
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-xxl);
+    color: var(--color-text-default-on-light);
+    word-break: break-word;
+  }
+
+  /* Content area */
+  .Dialog-contentContainer {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    position: relative;
+  }
+
+  .Dialog-content {
+    overflow: auto;
+    padding: 3px var(--spacing-xl);
+    position: relative;
+    height: 100%;
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-l);
+    line-height: var(--line-xl);
+    color: var(--color-text-default-on-light);
+  }
+
+  .Dialog-contentOfContent {
+    height: 100%;
+  }
+
+  /* Dividers that show/hide based on scroll state */
+  .Dialog-divider {
+    height: var(--border-width-default);
+    min-width: 100%;
+    background-color: var(--color-divider-default);
+    flex-shrink: 0;
+  }
+
+  .Dialog-dividerVisible {
+    visibility: inherit;
+  }
+
+  .Dialog-dividerHidden {
+    visibility: hidden;
+  }
+
+  /* Footer */
+  .Dialog-notification {
+    padding: var(--spacing-xl) var(--spacing-xl) 0 var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    width: 0;
+    min-width: 100%;
+  }
+
+  .Dialog-footer {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: var(--spacing-xl);
+    justify-content: space-between;
+    gap: var(--spacing-l) var(--spacing-m);
+  }
+
+  .Dialog-rightActions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    gap: var(--spacing-l) var(--spacing-m);
+  }
+
+  @media only screen and (max-width: 320px) {
+    .Dialog-footer {
+      flex-wrap: wrap-reverse;
+    }
+  }
+}

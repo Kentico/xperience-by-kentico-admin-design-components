@@ -1,0 +1,57 @@
+@layer components {
+  /* NotificationEmailPreviewPageTemplate styles */
+
+  .NotificationEmailTemplate-previewIframe {
+    width: 100%;
+    height: inherit;
+    border: 0;
+    border-radius: var(--radius-m);
+    display: block;
+  }
+
+  .NotificationEmailTemplate-subjectWrapper {
+    padding: var(--spacing-s);
+    font-family: var(--typeface-product-secondary);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-m);
+  }
+
+  .NotificationEmailTemplate-subjectHeader {
+    color: var(--color-text-low-emphasis);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .NotificationEmailTemplate-subject {
+    color: var(--color-text-default-on-light);
+    margin: 0;
+  }
+
+  /* Edit template stub styles */
+  .NotificationEmailTemplate-editTemplateStub {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .NotificationEmailTemplate-editTemplateContent {
+    flex: 1;
+    padding: var(--spacing-m);
+  }
+
+  /* Page message pane stub */
+  .NotificationEmailTemplate-pageMessagePane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-text-low-emphasis);
+  }
+
+  .NotificationEmailTemplate-pageMessageTitle {
+    font-size: var(--font-size-l);
+    font-weight: var(--weight-medium);
+    margin: 0;
+  }
+}

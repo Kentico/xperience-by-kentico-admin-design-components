@@ -1,0 +1,26 @@
+@layer components {
+  /* FilterStatusIndicator styles */
+  .Filters-activeFilterWrapper {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+  }
+
+  .Filters-label {
+    color: var(--color-text-low-emphasis);
+    font-size: var(--font-size-m);
+    white-space: nowrap;
+  }
+
+  /* FilterPanel styles */
+  .Filters-footerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Filters-buttonGroupWrapper {
+    display: flex;
+    gap: var(--spacing-between-buttons);
+  }
+}

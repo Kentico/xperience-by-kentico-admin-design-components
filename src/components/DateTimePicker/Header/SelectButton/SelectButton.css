@@ -1,0 +1,9 @@
+@layer components {
+  .SelectButton {
+    user-select: none;
+  }
+
+  .SelectButton.SelectButton-right {
+    margin-left: auto;
+  }
+}

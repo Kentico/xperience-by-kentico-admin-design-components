@@ -1,0 +1,11 @@
+@layer components {
+  .Card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing-card) var(--spacing-card);
+  }
+
+  .Card-fullHeight {
+    height: 100%;
+  }
+}

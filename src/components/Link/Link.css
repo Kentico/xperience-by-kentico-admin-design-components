@@ -1,0 +1,56 @@
+@layer components {
+  .Link-linkWrapper {
+    border-radius: var(--radius-s);
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-text-default-on-light);
+    overflow-wrap: break-word;
+  }
+
+  .Link-linkWrapper.Link-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  .Link-linkWrapper.Link-ellipsis {
+    width: 100%;
+  }
+
+  .Link-linkWrapper.Link-ellipsis a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Link-linkWrapper.Link-ellipsis a::after {
+    content: '';
+    display: block;
+  }
+
+  .Link-linkWrapper a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .Link-linkWrapper a:hover,
+  .Link-linkWrapper a:active {
+    color: var(--color-link-hover);
+  }
+
+  .Link-linkWrapper a:focus {
+    outline: none;
+  }
+
+  .Link-linkWrapper a:visited {
+    color: var(--color-link-visited);
+  }
+
+  .Link-linkWrapper a:visited:hover {
+    color: var(--color-link-visited-hover);
+  }
+}

@@ -1,0 +1,82 @@
+@layer components {
+  .BreadcrumbItem {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .BreadcrumbItem:first-child a {
+    padding-bottom: var(--spacing-micro); /* fix the Home icon position */
+  }
+
+  .BreadcrumbItem.BreadcrumbItem-ellipsis {
+    flex-shrink: 1;
+  }
+
+  .BreadcrumbItem.BreadcrumbItem-ellipsis:not(:nth-child(2)) {
+    /* prioritize shrinking of the last breadcrumb item */
+    flex-shrink: 100000;
+  }
+
+  .BreadcrumbItem.BreadcrumbItem-text {
+    min-width: calc(5 * var(--grid-unit));
+  }
+
+  .BreadcrumbItem.BreadcrumbItem-textWithArrow {
+    /* 1 grid unit extra for icon background image */
+    min-width: calc(6 * var(--grid-unit));
+  }
+
+  .BreadcrumbItem-icon {
+    font-size: var(--icon-xxs);
+    color: var(--color-icon-default);
+    display: flex;
+    align-items: center;
+  }
+
+  .BreadcrumbItem-cell {
+    padding: 0 var(--spacing-s);
+    position: relative;
+    height: var(--size-m);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    color: var(--color-text-low-emphasis);
+    transition: background-color var(--transition-duration-default) var(--transition-timing-default), color var(--transition-duration-default) var(--transition-timing-default);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .BreadcrumbItem-cell:focus {
+    outline: none;
+  }
+
+  .BreadcrumbItem-cell:focus-visible {
+    box-shadow: var(--focus-default);
+  }
+
+  .BreadcrumbItem-cell.BreadcrumbItem-current {
+    color: var(--color-text-default-on-light);
+  }
+
+  .BreadcrumbItem-cell:hover {
+    background-color: var(--color-hover);
+  }
+
+  .BreadcrumbItem-cell > span {
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Safari ::after ellipsis fix */
+  .BreadcrumbItem-cell > span::after {
+    content: '';
+    display: block;
+  }
+}

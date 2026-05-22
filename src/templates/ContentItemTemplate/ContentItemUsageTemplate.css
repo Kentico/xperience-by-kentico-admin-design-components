@@ -1,0 +1,93 @@
+@layer components {
+  /**
+   * ContentItemUsageTemplate styles
+   *
+   * Styles for the content item usage template showing
+   * structured listing of item usages.
+   */
+
+  /* Template wrapper */
+  .ContentItemUsageTemplate-templateWrapper {
+    width: 100%;
+  }
+
+  /* Header container - flexbox layout for heading with info button */
+  .ContentItemUsageTemplate-headerContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Header text spacing */
+  .ContentItemUsageTemplate-headerSpacing {
+    padding-right: var(--spacing-s);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  /* Structured listing table wrapper */
+  .ContentItemUsageTemplate-table {
+    width: 100%;
+  }
+
+  /* White table header variant */
+  .ContentItemUsageTemplate-tableHeaderWhite {
+    background: var(--palette-white);
+  }
+
+  /* Empty state message pane */
+  .ContentItemUsageTemplate-pageMessagePane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xxl);
+    text-align: center;
+    color: var(--color-grey-70);
+  }
+
+  .ContentItemUsageTemplate-pageMessageTitle {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-m);
+  }
+
+  .ContentItemUsageTemplate-pageMessageText {
+    font-size: var(--font-size-m);
+    color: var(--color-grey-60);
+  }
+
+  /* Table row styles */
+  .ContentItemUsageTemplate-tableRow {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-m);
+    border-bottom: 1px solid var(--color-grey-20);
+  }
+
+  .ContentItemUsageTemplate-tableRow:last-child {
+    border-bottom: none;
+  }
+
+  .ContentItemUsageTemplate-tableCell {
+    padding: var(--spacing-s);
+  }
+
+  /* Expandable row indicator */
+  .ContentItemUsageTemplate-expandButton {
+    margin-right: var(--spacing-s);
+  }
+
+  /* Row level indentation */
+  .ContentItemUsageTemplate-rowLevel1 {
+    padding-left: var(--spacing-l);
+  }
+
+  .ContentItemUsageTemplate-rowLevel2 {
+    padding-left: var(--spacing-xl);
+  }
+
+  .ContentItemUsageTemplate-rowLevel3 {
+    padding-left: var(--spacing-xxl);
+  }
+}

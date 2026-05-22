@@ -1,0 +1,78 @@
+@layer components {
+  /* External library (react-datepicker) does not follow our class naming conventions */
+
+  .DateTimePicker .react-datepicker__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .DateTimePicker-paperWrapper {
+    display: inline-block;
+    padding: var(--spacing-xl) var(--spacing-xl) 0 var(--spacing-xl);
+    background-color: var(--color-paper-background);
+    box-shadow: var(--shadow-m);
+    border-radius: var(--radius-m);
+  }
+
+  .DateTimePicker-paperWrapper.DateTimePicker-openedPicker {
+    background-color: var(--color-background-selected);
+  }
+
+  .DateTimePicker .react-datepicker {
+    display: inline-block;
+    position: relative;
+  }
+
+  .DateTimePicker .react-datepicker__day-names {
+    white-space: nowrap;
+    padding-bottom: var(--spacing-s);
+    border-bottom: var(--border-width-default) solid var(--color-paper-border);
+    user-select: none;
+  }
+
+  .DateTimePicker .react-datepicker__week {
+    white-space: nowrap;
+  }
+
+  .DateTimePicker .react-datepicker__day {
+    display: inline-block;
+    text-align: center;
+    padding: 1px;
+    border-radius: var(--radius-pill);
+  }
+
+  .DateTimePicker .react-datepicker__day-name {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-low-emphasis);
+    display: inline-block;
+    text-align: center;
+    width: calc(5 * var(--grid-unit));
+  }
+
+  .DateTimePicker .react-datepicker__month {
+    padding-top: var(--spacing-s);
+    padding-bottom: var(--spacing-l);
+  }
+
+  .DateTimePicker .react-datepicker__day--outside-month {
+    visibility: hidden;
+  }
+
+  .DateTimePicker.DateTimePicker-openedPicker .react-datepicker__day {
+    visibility: hidden;
+  }
+
+  .DateTimePicker.DateTimePicker-openedPicker .react-datepicker__day-names {
+    visibility: hidden;
+  }
+}

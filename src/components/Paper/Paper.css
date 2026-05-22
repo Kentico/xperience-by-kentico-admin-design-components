@@ -1,0 +1,44 @@
+@layer components {
+  .Paper {
+    background-color: var(--color-paper-background);
+  }
+
+  /* Border radius variants */
+  .Paper-radius-s {
+    border-radius: var(--radius-s);
+  }
+
+  .Paper-radius-m {
+    border-radius: var(--radius-m);
+  }
+
+  .Paper-radius-l {
+    border-radius: var(--radius-l);
+  }
+
+  /* Border variant */
+  .Paper-bordered {
+    border: var(--border-width-default) solid var(--color-paper-border);
+  }
+
+  /* Elevation variants */
+  .Paper-none {
+    box-shadow: none;
+  }
+
+  .Paper-subtle {
+    box-shadow: var(--shadow-xs);
+  }
+
+  .Paper-small {
+    box-shadow: var(--shadow-s);
+  }
+
+  .Paper-medium {
+    box-shadow: var(--shadow-m);
+  }
+
+  .Paper-large {
+    box-shadow: var(--shadow-l);
+  }
+}

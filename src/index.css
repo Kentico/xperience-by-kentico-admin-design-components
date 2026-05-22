@@ -1,0 +1,30 @@
+/* Layer order: reset is lowest priority, components can override it */
+@layer reset, components;
+
+/* Design System Reset */
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  html {
+    background-color: #f5f3f2;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--typeface-product-secondary);
+    color: var(--color-text-default-on-light);
+    background: var(--gradient-background-desk) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background var(--transition-duration-default) var(--transition-timing-default),
+      color var(--transition-duration-default) var(--transition-timing-default);
+  }
+}

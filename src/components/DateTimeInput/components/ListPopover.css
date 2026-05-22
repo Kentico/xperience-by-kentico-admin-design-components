@@ -1,0 +1,58 @@
+@layer components {
+  .ListPopover-menu {
+    max-height: 33vh;
+    overflow-y: auto;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: var(--focus-ring-width);
+  }
+
+  .ListPopover-paperWrapper {
+    padding-top: var(--spacing-s);
+    padding-bottom: var(--spacing-s);
+  }
+
+  .ListPopover-menuItem {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    padding: var(--spacing-l) var(--spacing-l);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    width: 100%;
+    color: var(--color-text-default-on-light);
+    outline: none;
+
+    &:not([data-disabled]) {
+      &:not(:active):not([data-selected]):hover {
+        background-color: var(--color-hover);
+      }
+
+      &:active {
+        color: var(--color-text-default-on-light);
+        background-color: var(--color-background-highlighted);
+      }
+
+      &[data-selected] {
+        color: var(--color-product-selected);
+        background-color: var(--color-background-selected);
+      }
+
+      &[data-focus-visible] {
+        box-shadow: var(--focus-default);
+      }
+    }
+
+    &[data-disabled] {
+      color: var(--color-text-disabled);
+      background-color: transparent;
+      cursor: default;
+    }
+  }
+}

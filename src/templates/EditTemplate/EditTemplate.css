@@ -1,0 +1,123 @@
+@layer components {
+  /**
+   * EditTemplate Styles
+   *
+   * Converted from SCSS to CSS Modules.
+   * Uses CSS custom properties from tokens.EditTemplate-css.
+   */
+
+  .EditTemplate-templateWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: var(--spacing-xl);
+  }
+
+  .EditTemplate-actionsWrapper {
+    display: flex;
+    gap: var(--spacing-l);
+    padding-bottom: var(--spacing-s);
+  }
+
+  /**
+   * KX-8970: Fixing the toolbar position when another sticky element is present
+   *
+   * Adds a top margin to the toolbar to prevent it from overlapping
+   * with the sticky header of ContentItemEditTemplate.
+   *
+   * Note: These styles target global classes used by FroalaEditor.
+   * In CSS Modules, we use :global() to target classes from external libraries.
+   */
+  .EditTemplate-editTemplateContent .fr-toolbar {
+    /* Height of toolbar (--spacing-xxxxl) + 1px for divider */
+    top: calc(var(--spacing-xxxxl) + 1px) !important;
+    /* Prevents the toolbar from being stretched beyond the borders of the editor area */
+    width: auto !important;
+  }
+
+  .EditTemplate-editTemplateContent .fr-sticky-dummy {
+    /* Remove the sticky dummy element since we modify toolbar position manually */
+    display: none !important;
+  }
+
+  /* Layout wrapper for content with sidebar */
+  .EditTemplate-layoutWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    width: 100%;
+  }
+
+  /* Form container styling */
+  .EditTemplate-formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-l);
+  }
+
+  /* Form field wrapper */
+  .EditTemplate-formFieldWrapper {
+    margin-bottom: var(--spacing-l);
+  }
+
+  .EditTemplate-formFieldLabel {
+    display: block;
+    margin-bottom: var(--spacing-s);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-default);
+  }
+
+  .EditTemplate-formFieldError {
+    margin-top: var(--spacing-xs);
+    color: var(--color-text-error);
+    font-size: var(--font-size-s);
+  }
+
+  /* Error message display */
+  .EditTemplate-errorMessage {
+    padding: var(--spacing-l);
+    background-color: var(--color-background-error);
+    border-radius: var(--border-radius-m);
+    color: var(--color-text-error);
+  }
+
+  /* Page message pane styling */
+  .EditTemplate-pageMessagePane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-m);
+    padding: var(--spacing-xxl);
+    text-align: center;
+  }
+
+  .EditTemplate-pageMessageTitle {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-default);
+  }
+
+  .EditTemplate-pageMessageText {
+    color: var(--color-text-default-secondary);
+  }
+
+  /* Callout container */
+  .EditTemplate-calloutsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+  }
+
+  /* Notification list */
+  .EditTemplate-notificationList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+  }
+
+  /* Portal container for action buttons */
+  .EditTemplate-portalContainer {
+    display: contents;
+  }
+}

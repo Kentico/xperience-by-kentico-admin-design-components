@@ -1,0 +1,49 @@
+@layer components {
+  .Icon {
+    display: inline-block;
+    background-color: currentColor;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    flex-shrink: 0;
+  }
+
+  /* Size variants using design tokens */
+  .Icon-sizeXxs {
+    width: var(--icon-xxs);
+    height: var(--icon-xxs);
+  }
+
+  .Icon-sizeXs {
+    width: var(--icon-xs);
+    height: var(--icon-xs);
+  }
+
+  .Icon-sizeS {
+    width: var(--icon-s);
+    height: var(--icon-s);
+  }
+
+  .Icon-sizeM {
+    width: var(--icon-m);
+    height: var(--icon-m);
+  }
+
+  .Icon-sizeL {
+    width: var(--icon-l);
+    height: var(--icon-l);
+  }
+
+  .Icon-sizeXl {
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+  }
+
+  .Icon-sizeXxl {
+    width: var(--icon-xxl);
+    height: var(--icon-xxl);
+  }
+}

@@ -1,0 +1,25 @@
+@layer components {
+  .IconButton-iconToggleButton {
+    color: var(--color-icon-low-emphasis);
+    border-radius: var(--radius-s);
+    padding: var(--spacing-xs);
+    line-height: 0;
+  }
+
+  .IconButton-iconToggleButton:not(.IconButton-selected):hover {
+    color: var(--color-toggle-icon-hover);
+  }
+
+  .IconButton-iconToggleButton.IconButton-selected {
+    color: var(--color-product-selected);
+    background-color: var(--color-background-selected);
+  }
+
+  .IconButton-iconToggleButton.IconButton-selected:hover {
+    background-color: var(--color-background-selected-hover);
+  }
+
+  .IconButton-iconToggleButton::after {
+    border-radius: var(--radius-s);
+  }
+}

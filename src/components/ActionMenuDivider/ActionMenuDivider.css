@@ -1,0 +1,17 @@
+@layer components {
+  .ActionMenuDivider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ActionMenuDivider-horizontal {
+    margin: var(--menu-divider-margin-vertical) var(--menu-divider-margin-horizontal);
+    width: 100%;
+  }
+
+  .ActionMenuDivider-vertical {
+    margin: var(--menu-divider-margin-horizontal) var(--menu-divider-margin-vertical);
+    height: 100%;
+  }
+}

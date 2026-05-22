@@ -1,0 +1,13 @@
+@layer components {
+  .CardBody {
+    padding-top: var(--spacing-card);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--typeface-product-secondary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-l);
+    color: var(--color-text-default-on-light);
+    height: 100%;
+  }
+}

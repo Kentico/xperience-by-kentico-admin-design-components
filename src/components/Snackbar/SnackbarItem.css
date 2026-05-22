@@ -1,0 +1,88 @@
+@layer components {
+  /**
+   * SnackbarItem Styles
+   * Converted from SnackbarItem.SnackbarItem-module.SnackbarItem-scss
+   */
+
+  /* Mobile breakpoint */
+  @media (max-width: 599.98px) {
+    .SnackbarItem-contentWrapper {
+      width: calc(40 * var(--grid-unit));
+    }
+  }
+
+  .SnackbarItem {
+    /* label-L mixin: GT Walsheim, regular/14px/16px */
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--weight-regular);
+    color: var(--color-text-default-on-light);
+    margin: var(--spacing-xs);
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .SnackbarItem-contentWrapper {
+    display: flex;
+    width: calc(70 * var(--grid-unit));
+    padding: var(--spacing-xs) 0;
+  }
+
+  .SnackbarItem-icon {
+    display: flex;
+    flex: 0 1 auto;
+    align-items: center;
+    padding: var(--spacing-l) 0 var(--spacing-l) var(--spacing-xl);
+  }
+
+  .SnackbarItem-iconSuccess {
+    color: var(--color-success-icon);
+  }
+
+  .SnackbarItem-iconWarning {
+    color: var(--color-warning-icon);
+  }
+
+  .SnackbarItem-iconError {
+    color: var(--color-alert-icon);
+  }
+
+  .SnackbarItem-iconInfo {
+    color: var(--color-info-icon);
+  }
+
+  .SnackbarItem-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    align-items: center;
+    padding: var(--spacing-l);
+    column-gap: var(--spacing-xs);
+  }
+
+  .SnackbarItem-divider {
+    margin: var(--spacing-s) 0;
+  }
+
+  .SnackbarItem-close {
+    flex: 0 1 auto;
+    padding: var(--spacing-l);
+  }
+
+  /* Position classes - control alignment within the snackbar container */
+  .SnackbarItem-itemTop,
+  .SnackbarItem-itemBottom {
+    justify-content: center;
+  }
+
+  .SnackbarItem-itemTopRight,
+  .SnackbarItem-itemBottomRight {
+    justify-content: flex-start;
+  }
+
+  .SnackbarItem-itemTopLeft,
+  .SnackbarItem-itemBottomLeft {
+    justify-content: flex-end;
+  }
+}

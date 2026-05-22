@@ -1,0 +1,6 @@
+@layer components {
+  /* Overview card section styling */
+  .OverviewCard-overviewCardSection:not(:last-child):not(:empty) {
+    margin-bottom: var(--spacing-xl);
+  }
+}

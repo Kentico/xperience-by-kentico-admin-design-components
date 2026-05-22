@@ -1,0 +1,14 @@
+@layer components {
+  .ColumnChart-chartWrapper {
+    overflow-x: auto;
+    margin-bottom: var(--spacing-l);
+  }
+
+  .ColumnChart-chart {
+    height: 55%;
+    min-height: 430px;
+    background-color: white;
+    border-radius: var(--radius-l);
+    min-width: var(--columns);
+  }
+}

@@ -1,0 +1,10 @@
+@layer components {
+  .SecondaryMenuWrapper-wrapper {
+    overflow: hidden auto;
+    max-height: calc(100vh - 98px);
+    box-shadow: var(--shadow-s);
+    border-radius: var(--radius-m);
+    background-color: var(--color-paper-background);
+    width: calc(28 * var(--grid-unit));
+  }
+}

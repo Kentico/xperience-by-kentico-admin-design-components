@@ -1,0 +1,119 @@
+@layer components {
+  .AvatarButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .AvatarButton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--color-hover);
+    opacity: 0;
+    transition: opacity var(--transition-duration-default)
+      var(--transition-timing-default);
+    pointer-events: none;
+  }
+
+  .AvatarButton:hover::after {
+    opacity: 1;
+  }
+
+  .AvatarButton:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-default);
+  }
+
+  /* Disabled state */
+  .AvatarButton-disabled {
+    cursor: default;
+  }
+
+  .AvatarButton-disabled::after {
+    display: none;
+  }
+
+  /* Activated/active state */
+  .AvatarButton-activated::after {
+    opacity: 1;
+  }
+
+  /* Shadow variant */
+  .AvatarButton-shadow {
+    box-shadow: var(--shadow-m);
+  }
+
+  /* Size variants */
+  .AvatarButton-XS {
+    width: var(--size-xs);
+    height: var(--size-xs);
+    font-size: var(--font-size-s);
+  }
+
+  .AvatarButton-S {
+    width: var(--size-s);
+    height: var(--size-s);
+    font-size: var(--font-size-s);
+  }
+
+  .AvatarButton-M {
+    width: var(--size-m);
+    height: var(--size-m);
+    font-size: var(--font-size-m);
+  }
+
+  .AvatarButton-L {
+    width: var(--size-l);
+    height: var(--size-l);
+    font-size: var(--font-size-l);
+  }
+
+  /* Initials display */
+  .AvatarButton-initials {
+    color: var(--color-text-default-on-dark);
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--letter-spacing-m);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .AvatarButton-L .AvatarButton-initials {
+    line-height: var(--line-xl);
+  }
+
+  .AvatarButton-M .AvatarButton-initials {
+    line-height: var(--line-m);
+  }
+
+  .AvatarButton-XS .AvatarButton-initials,
+  .AvatarButton-S .AvatarButton-initials {
+    font-weight: var(--weight-regular);
+    line-height: calc(var(--font-size-s) * 1.1);
+  }
+
+  /* Light background text color */
+  .AvatarButton-light .AvatarButton-initials {
+    color: var(--color-text-default-on-light);
+  }
+
+  /* Profile image */
+  .AvatarButton-image {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: var(--border-width-default) solid var(--color-divider-default);
+    border-radius: inherit;
+  }
+}

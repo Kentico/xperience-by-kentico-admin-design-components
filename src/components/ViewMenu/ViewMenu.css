@@ -1,0 +1,5 @@
+@layer components {
+  .ViewMenu-container {
+    display: inline-block;
+  }
+}

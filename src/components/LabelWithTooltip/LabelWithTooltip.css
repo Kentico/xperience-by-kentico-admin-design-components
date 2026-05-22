@@ -1,0 +1,21 @@
+@layer components {
+  .LabelWithTooltip-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-s);
+    color: var(--color-icon-default);
+    height: var(--spacing-l);
+    align-items: center;
+  }
+
+  .LabelWithTooltip-label {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: normal;
+  }
+
+  .LabelWithTooltip-icon {
+    font-size: var(--icon-s);
+  }
+}

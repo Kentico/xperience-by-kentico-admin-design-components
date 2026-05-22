@@ -1,0 +1,16 @@
+@layer components {
+  /**
+   * BarItemGroup styles
+   * Converted from BarItemGroup.BarItemGroup-module.BarItemGroup-scss
+   */
+
+  .BarItemGroup-droppable {
+    position: relative;
+  }
+
+  .BarItemGroup-placeholder {
+    background-color: var(--color-background-dragged);
+    border-radius: var(--radius-m);
+    position: absolute;
+  }
+}

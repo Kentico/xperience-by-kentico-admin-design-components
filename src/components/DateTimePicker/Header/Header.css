@@ -1,0 +1,9 @@
+@layer components {
+  .Header {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+  }
+}

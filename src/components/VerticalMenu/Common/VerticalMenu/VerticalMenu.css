@@ -1,0 +1,71 @@
+@layer components {
+  /**
+   * VerticalMenu styles
+   * Base container for vertical menu lists
+   */
+
+  .VerticalMenu {
+    display: flex;
+    flex-direction: column;
+    min-width: var(--menu-vertical-min-width);
+    background-color: var(--color-paper-background);
+    border-radius: var(--radius-m);
+  }
+
+  /* Size variants */
+  .VerticalMenu-default {
+    padding: var(--spacing-s) 0;
+  }
+
+  .VerticalMenu-compact {
+    padding: var(--spacing-xs) 0;
+  }
+
+  /* Border variant */
+  .VerticalMenu-bordered {
+    border: var(--border-width-default) solid var(--color-paper-border);
+  }
+
+  /* Elevated (shadow) variant */
+  .VerticalMenu-elevated {
+    box-shadow: var(--shadow-m);
+  }
+
+  /* Header section */
+  .VerticalMenu-header {
+    padding: var(--spacing-xs) var(--spacing-l);
+    padding-bottom: var(--spacing-s);
+    border-bottom: var(--border-width-default) solid var(--color-divider-default);
+  }
+
+  /* Content area (scrollable) */
+  .VerticalMenu-content {
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Custom scrollbar styling for content area */
+  .VerticalMenu-content::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .VerticalMenu-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .VerticalMenu-content::-webkit-scrollbar-thumb {
+    background-color: var(--palette-grey-30);
+    border-radius: var(--radius-pill);
+  }
+
+  .VerticalMenu-content::-webkit-scrollbar-thumb:hover {
+    background-color: var(--palette-grey-40);
+  }
+
+  /* Footer section */
+  .VerticalMenu-footer {
+    padding: var(--spacing-s) var(--spacing-l);
+    padding-top: var(--spacing-s);
+    border-top: var(--border-width-default) solid var(--color-divider-default);
+  }
+}

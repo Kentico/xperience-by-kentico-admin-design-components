@@ -1,0 +1,105 @@
+@layer components {
+  .NotificationBar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-l);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-s);
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+
+  .NotificationBar.NotificationBar-increased {
+    align-items: flex-start;
+  }
+
+  .NotificationBar.NotificationBar-alertType {
+    background-color: var(--color-alert-background-high-emphasis);
+  }
+
+  .NotificationBar.NotificationBar-infoType {
+    background-color: var(--color-info-background-high-emphasis);
+  }
+
+  .NotificationBar.NotificationBar-warningType {
+    background-color: var(--color-warning-background-high-emphasis);
+  }
+
+  /* Content wrapper — flex children layout */
+  .NotificationBar-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+    flex-grow: 1;
+  }
+
+  /* Text — title-L typography: GT Walsheim, medium 500, 14px/16px */
+  .NotificationBar-text {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    color: var(--color-text-default-on-light);
+  }
+
+  .NotificationBar-text.NotificationBar-alertType {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .NotificationBar-text.NotificationBar-infoType {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .NotificationBar-text.NotificationBar-warningType {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .NotificationBar-text a {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .NotificationBar-text a:hover {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .NotificationBar-normalFontWeight {
+    font-weight: var(--weight-regular);
+  }
+
+  /* Icon */
+  .NotificationBar-icon {
+    font-size: var(--icon-s);
+    padding-right: var(--spacing-s);
+  }
+
+  .NotificationBar-icon.NotificationBar-alertType {
+    color: var(--color-icon-default-on-dark);
+  }
+
+  .NotificationBar-icon.NotificationBar-infoType {
+    color: var(--color-icon-default-on-dark);
+  }
+
+  .NotificationBar-icon.NotificationBar-warningType {
+    color: var(--color-icon-default-on-dark);
+  }
+
+  /* Dismiss button */
+  .NotificationBar-dismissButton {
+    padding-left: var(--spacing-m);
+    margin-left: auto;
+  }
+
+  .NotificationBar-dismissButton.NotificationBar-alertType :where(svg, span) {
+    color: var(--color-icon-default-on-dark);
+  }
+
+  .NotificationBar-dismissButton.NotificationBar-infoType :where(svg, span) {
+    color: var(--color-icon-default-on-dark);
+  }
+
+  .NotificationBar-dismissButton.NotificationBar-warningType :where(svg, span) {
+    color: var(--color-icon-default-on-dark);
+  }
+}

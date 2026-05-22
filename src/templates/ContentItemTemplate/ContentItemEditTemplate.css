@@ -1,0 +1,96 @@
+@layer components {
+  /**
+   * ContentItemEditTemplate styles
+   *
+   * Converted from SCSS to CSS Modules.
+   */
+
+  /* Subheading - ui-paragraph mixin expansion */
+  .ContentItemEditTemplate-subheading {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-l);
+    line-height: var(--line-xl);
+    color: var(--color-text-default-on-light);
+  }
+
+  /*
+   * KX-8970: Fixing the toolbar position when another sticky element is present
+   * Using global classes in CSS Modules for third-party component styling
+   */
+
+  /* Adds a top margin to the toolbar to prevent it from overlapping
+     with the sticky header of ContentItemEditTemplate */
+  .ContentItemEditTemplate-editTemplateContent .fr-toolbar {
+    /* Height of toolbar + 1px for divider */
+    top: calc(var(--spacing-xxxxl) + 1px) !important;
+    /* Prevents the toolbar from being stretched beyond the borders of the editor area */
+    width: auto !important;
+  }
+
+  /* Remove the sticky dummy element, since we are modifying
+     the toolbar position and size manually */
+  .ContentItemEditTemplate-editTemplateContent .fr-sticky-dummy {
+    display: none !important;
+  }
+
+  /* Layout wrapper for content with sidebar */
+  .ContentItemEditTemplate-layoutWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-l);
+    padding: var(--spacing-m);
+  }
+
+  /* Form field wrapper */
+  .ContentItemEditTemplate-formFieldWrapper {
+    margin-bottom: var(--spacing-m);
+  }
+
+  .ContentItemEditTemplate-formFieldLabel {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-s);
+    line-height: var(--line-m);
+    color: var(--color-text-default-on-light);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .ContentItemEditTemplate-formFieldError {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    line-height: var(--line-m);
+    color: var(--color-border-alert);
+    margin-top: var(--spacing-xxs);
+  }
+
+  /* Page message pane for empty states */
+  .ContentItemEditTemplate-pageMessagePane {
+    padding: var(--spacing-xxl);
+    text-align: center;
+  }
+
+  .ContentItemEditTemplate-pageMessageTitle {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-l);
+    line-height: var(--line-xl);
+    color: var(--color-text-default-on-light);
+    margin-bottom: var(--spacing-s);
+  }
+
+  .ContentItemEditTemplate-pageMessageText {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-l);
+    color: var(--color-text-low-emphasis);
+  }
+
+  /* Content status wrapper */
+  .ContentItemEditTemplate-statusWrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+}

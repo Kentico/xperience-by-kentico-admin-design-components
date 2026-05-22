@@ -1,0 +1,7 @@
+@layer components {
+  .InfoCardGroup-cardGroup {
+    display: flex;
+    gap: var(--spacing-l);
+    flex-flow: row nowrap;
+  }
+}

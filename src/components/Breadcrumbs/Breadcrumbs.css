@@ -1,0 +1,19 @@
+@layer components {
+  .Breadcrumbs-container {
+    height: var(--size-m);
+    padding: 0 var(--spacing-l);
+    display: inline-flex;
+    min-width: 0;
+  }
+
+  .Breadcrumbs-pinIcon {
+    font-size: var(--icon-s);
+    display: flex;
+    align-items: center;
+  }
+
+  .Breadcrumbs-status {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,145 @@
+@layer components {
+  /* label typography by size */
+  .RadioButton-label {
+    user-select: none;
+    height: fit-content;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .RadioButton-label.RadioButton-sizeS {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.2px;
+  }
+
+  .RadioButton-label.RadioButton-sizeM {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.2px;
+  }
+
+  .RadioButton-label.RadioButton-sizeL {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  /* radio button container */
+  .RadioButton {
+    transition: all var(--transition-duration-default) var(--transition-timing-default);
+    transition-property: background-color, color;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-m);
+    cursor: pointer;
+    width: fit-content;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+
+  .RadioButton:not(.RadioButton-disabled):not(.RadioButton-readOnly):hover {
+    background-color: var(--color-hover);
+  }
+
+  .RadioButton:not(.RadioButton-disabled):not(.RadioButton-readOnly).RadioButton-selected:hover {
+    background-color: var(--color-hover);
+  }
+
+  .RadioButton.RadioButton-disabled {
+    cursor: default;
+  }
+
+  .RadioButton.RadioButton-disabled .RadioButton-label {
+    color: var(--color-text-disabled);
+  }
+
+  .RadioButton:not(.RadioButton-disabled):not(.RadioButton-readOnly).RadioButton-alert .RadioButton-label {
+    color: var(--color-alert-text);
+  }
+
+  .RadioButton:not(.RadioButton-disabled):not(.RadioButton-readOnly).RadioButton-alert:hover {
+    background: var(--color-alert-background-low-emphasis);
+  }
+
+  .RadioButton:not(.RadioButton-disabled):not(.RadioButton-readOnly).RadioButton-alert:hover .RadioButton-label {
+    color: var(--color-alert-hover);
+  }
+
+  .RadioButton.RadioButton-readOnly {
+    cursor: default;
+  }
+
+  .RadioButton.RadioButton-readOnly .RadioButton-label {
+    color: var(--color-text-default-on-light);
+  }
+
+  /* circle wrapper */
+  .RadioButton-circleWrapper {
+    align-self: stretch;
+  }
+
+  .RadioButton-circleWrapper.RadioButton-withCaption {
+    padding-right: var(--spacing-xs);
+  }
+
+  /* alert caption */
+  .RadioButton-captionAlert {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1ch;
+    color: var(--color-alert-text);
+    display: flex;
+  }
+
+  .RadioButton-alertIcon {
+    margin-right: var(--spacing-xs);
+    fill: var(--color-alert-icon);
+    font-size: var(--icon-s);
+  }
+
+  /* caption */
+  .RadioButton-caption {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-text-low-emphasis);
+    cursor: default;
+    user-select: none;
+  }
+
+  .RadioButton-caption.RadioButton-withAlertCaption {
+    padding-top: var(--spacing-s);
+  }
+
+  /* caption padding by size — expanded from @mixin caption-padding($circle-width) */
+  /* padding-left = (2 * spacing-xs) + icon-size = (2 * 4px) + icon */
+  .RadioButton-caption.RadioButton-sizeS,
+  .RadioButton-captionAlert.RadioButton-sizeS {
+    padding-left: 20px; /* 8px + 12px (icon-xs) */
+  }
+
+  .RadioButton-caption.RadioButton-sizeM,
+  .RadioButton-captionAlert.RadioButton-sizeM {
+    padding-left: 24px; /* 8px + 16px (icon-s) */
+  }
+
+  .RadioButton-caption.RadioButton-sizeL,
+  .RadioButton-captionAlert.RadioButton-sizeL {
+    padding-left: 32px; /* 8px + 24px (icon-l) */
+  }
+
+  /* wrapper */
+  .RadioButton-radioButtonWrapper {
+    width: fit-content;
+    padding-top: var(--spacing-s);
+    padding-left: var(--spacing-m);
+    position: relative;
+  }
+}

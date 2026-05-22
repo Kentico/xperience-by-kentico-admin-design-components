@@ -1,0 +1,545 @@
+/**
+ * Design System Tokens
+ * Extracted from Kentico Xperience Admin Components
+ * Phase 3: Token Extraction for App Template
+ */
+
+:root {
+  /* ============================================
+   * PRIMITIVE COLORS (Palette)
+   * Source: _palette.scss
+   * ============================================ */
+
+  --palette-white: #fff;
+
+  /* Grey Scale (subset used by components or internal token references) */
+  --palette-grey-20: #dfdfdf;
+  --palette-grey-30: #c6c6c6;
+  --palette-grey-40: #a8a8a8;
+  --palette-grey-50: #8c8c8c;
+
+  /* ============================================
+   * SEMANTIC COLORS (Decisions)
+   * Source: systemTheme.scss
+   * ============================================ */
+
+  /* Alert Colors */
+  --color-alert-active: #a90004;
+  --color-alert-background-high-emphasis: #e10007;
+  --color-alert-background-low-emphasis: linear-gradient(124.56deg, #fff0f0 28.01%, #ffd6d6 202.32%);
+  --color-alert-background-selected: #ffd6d6;
+  --color-alert-background-selected-hover: #ffb3b3;
+  --color-alert-hover: #a90004;
+  --color-alert-icon: #e10007;
+  --color-alert-text: #e10007;
+
+  /* Background Colors */
+  --color-background-disabled: #dfdfdf;
+  --color-background-dragged: #dfdfdf;
+  --color-background-highlighted: #f4f2ff;
+  --color-background-selected-hover: #c8bfff;
+  --color-background-selected: #e0dcff;
+  --color-background-side-menu: #f5f3f2;
+  --color-background-subtle: #f5f5f5;       /* grey-10 — light surface offset */
+  --color-background-subtle-hover: #dfdfdf;  /* grey-20 — hover on subtle surface */
+
+  /* Border Colors */
+  --color-border-alert: #e10007;
+  --color-border-default: #8c8c8c;
+  --color-border-disabled: #c6c6c6;
+  --color-border-hover: #151515;
+  --color-border-low-emphasis: var(--palette-grey-20);
+
+  /* Divider Colors */
+  --color-divider-default: #dfdfdf;
+
+  /* Focus Colors */
+  --color-focus: #3d5dff;
+
+  /* Hover Colors */
+  --color-hover: rgba(156, 136, 127, 0.3); /* rgba(warm-grey-50, 0.3) */
+
+  /* Icon Colors */
+  --color-icon-default-on-dark: #fff;
+  --color-icon-default: #151515;
+  --color-icon-disabled: #8c8c8c;
+  --color-icon-highlighted: #5d0088;
+  --color-icon-low-emphasis: #525252;
+
+  /* Info Colors */
+  --color-info-background-high-emphasis: #3d5dff;
+  --color-info-background-low-emphasis: linear-gradient(124.56deg, #f1f3ff 28.01%, #e0dcff 202.32%);
+  --color-info-icon: #3d5dff;
+  --color-info-text: #3d5dff;
+
+  /* Input Colors */
+  --color-input-background: transparent;
+  --color-input-border: #8c8c8c;
+
+  /* Link Colors */
+  --color-link-hover: #5d0088;
+  --color-link-visited-hover: #40005f;
+  --color-link-visited: #5d0088;
+  --color-link: #7f09b7;
+
+  /* Overlay Colors */
+  --color-overlay-background: rgba(57, 57, 57, 0.4); /* rgba(grey-80, 0.4) */
+
+  /* Paper Colors */
+  --color-paper-background: #fff;
+  --color-paper-border: #dfdfdf;
+
+  /* Product Colors */
+  --color-product-hover: #5d0088;
+  --color-product-selected-hover: #40005f;
+  --color-product-selected: #5d0088;
+  --color-product: #7f09b7;
+
+  /* Shelf Colors */
+  --color-shelf-background: rgba(209, 196, 191, 0.24); /* rgba(warm-grey-30, 0.24) */
+
+  /* Skeleton Colors */
+  --color-skeleton-background: #f5f5f5;
+  --color-skeleton-content: linear-gradient(135deg, #c6c6c6, #dfdfdf);
+
+  /* Success Colors */
+  --color-success-background-high-emphasis: #007d72;
+  --color-success-background-low-emphasis: linear-gradient(124.56deg, #e3f8f4 28.01%, #b4ebe2 202.32%);
+  --color-success-icon: #007d72;
+  --color-success-text: #007d72;
+
+  /* Switch Colors */
+  --color-switch-off-background-hovered: #6f6f6f;
+  --color-switch-off-background: #8c8c8c;
+  --color-switch-on-disabled-background: #ebd8ff;
+
+  /* Tab Colors */
+  --color-tab-icon-selected: #151515;
+  --color-tab-icon: #393939;
+  --color-tab-text-selected: #151515;
+  --color-tab-text: #393939;
+
+  /* Text Colors */
+  --color-text-default-on-dark: #fff;
+  --color-text-default-on-light: #151515;
+  --color-text-disabled: #8c8c8c;
+  --color-text-high-emphasis: #5d0088;
+  --color-text-hint: #6f6f6f;
+  --color-text-low-emphasis: #525252;
+
+  /* Toggle Colors */
+  --color-toggle-icon-hover: #393939;
+  --color-toggle-text-hover: #393939;
+  --color-toggle-text-selected: #fff;
+  --color-toggle-text: #525252;
+
+  /* Tooltip Colors */
+  --color-tooltip-background: #151515;
+  --color-tooltip-text: #fff;
+  --color-tooltip-icon: #8c8c8c;
+
+  /* Warning Colors */
+  --color-warning-background-high-emphasis: #db9d00;
+  --color-warning-background-low-emphasis: linear-gradient(124.56deg, #fff1e4 28.01%, #ffd6d6 202.32%);
+  --color-warning-icon: #9e6200;
+  --color-warning-text: #9e6200;
+
+  /* ============================================
+   * GRADIENTS
+   * Source: systemTheme.scss
+   * ============================================ */
+
+  /* Desktop Background */
+  --gradient-background-desk:
+    linear-gradient(0deg, rgba(198, 67, 0, 0.02), rgba(198, 67, 0, 0.02)),
+    linear-gradient(107.51deg, #fff -22.1%, #f5f3f2 37.88%, #e5dedc 229.14%);
+
+  /* Product Gradients */
+  --gradient-product: linear-gradient(303.62deg, #c64300 -109.97%, #7f09b7 87.4%);
+  --gradient-product-hover: linear-gradient(303.62deg, #953000 -109.97%, #5d0088 87.4%);
+
+  /* ============================================
+   * DIMENSIONS
+   * Source: dimensions.scss
+   * ============================================ */
+
+  --grid-unit: 8px;
+
+  /* ============================================
+   * SPACING
+   * Source: spacing.scss
+   * Based on: $grid-unit = 8px
+   * ============================================ */
+
+  --spacing-micro: 1px;   /* 0.125 * 8 */
+  --spacing-xxs: 2px;     /* 0.25 * 8 */
+  --spacing-xs: 4px;      /* 0.5 * 8 */
+  --spacing-s: 8px;       /* 1 * 8 */
+  --spacing-m: 12px;      /* 1.5 * 8 */
+  --spacing-l: 16px;      /* 2 * 8 */
+  --spacing-xl: 24px;     /* 3 * 8 */
+  --spacing-xxl: 32px;    /* 4 * 8 */
+  --spacing-xxxl: 40px;   /* 5 * 8 */
+
+  /* Derived Spacing */
+  --spacing-element-label: 10px;     /* 1.25 * 8 */
+  --spacing-between-rows: 2px;
+  --spacing-between-buttons: 12px;
+  --spacing-card: 24px;
+
+  /* ============================================
+   * ICON SIZES
+   * Source: size.scss
+   * ============================================ */
+
+  --icon-xxs: 8px;    /* 1 * 8 */
+  --icon-xs: 12px;    /* 1.5 * 8 */
+  --icon-s: 16px;     /* 2 * 8 */
+  --icon-m: 20px;     /* 2.5 * 8 */
+  --icon-l: 24px;     /* 3 * 8 */
+  --icon-xl: 32px;    /* 4 * 8 */
+  --icon-xxl: 40px;   /* 5 * 8 */
+
+  /* Component Sizes */
+  --size-xs: 24px;    /* $spacing-XL */
+  --size-s: 32px;     /* $spacing-XXL */
+  --size-m: 40px;     /* $spacing-XXXL */
+  --size-l: 48px;     /* $spacing-XXXXL */
+
+  /* ============================================
+   * BORDER
+   * Source: border.scss
+   * ============================================ */
+
+  --border-width-default: 1px;
+  --border-style-default: solid;
+
+  /* Border Radius */
+  --radius-l: 16px;     /* 2 * 8 */
+  --radius-m: 8px;      /* 1 * 8 */
+  --radius-s: 4px;      /* 0.5 * 8 */
+  --radius-pill: 5000px;
+
+  /* Focus Ring */
+  --focus-ring-width: 3px; /* width-focus + border-width-default */
+
+  /* ============================================
+   * SHADOWS
+   * Source: shadows.scss
+   * Note: grey-90 = #262626 = rgb(38, 38, 38)
+   * ============================================ */
+
+  --shadow-xs: 0 0 8px rgba(38, 38, 38, 0.03);
+  --shadow-s:
+    0 8px 14px rgba(38, 38, 38, 0.08),
+    0 0 8px rgba(38, 38, 38, 0.03);
+  --shadow-m:
+    0 8px 16px rgba(38, 38, 38, 0.16),
+    0 0 8px rgba(38, 38, 38, 0.03);
+  --shadow-l:
+    0 8px 32px rgba(38, 38, 38, 0.24),
+    0 0 8px rgba(38, 38, 38, 0.03);
+  --shadow-sticky-header: 16px 8px 16px -16px #262626;
+
+  /* Glow */
+  --glow-primary:
+    0 1px 8px rgba(203, 142, 255, 0.4),
+    0 5px 11px rgba(189, 94, 255, 0.1);
+
+  /* Focus Shadows */
+  --focus-default: 0 0 0 1px #fff, 0 0 0 3px #3d5dff;
+  --focus-alert: 0 0 0 1px #fff, 0 0 0 3px #e10007;
+
+  /* ============================================
+   * Z-INDEX
+   * Source: zindex.scss
+   * ============================================ */
+
+  --z-index-hidden: -1;
+  --z-index-elevated: 1;
+  --z-index-rte: 10;
+  --z-index-sticky-header: 100;
+  --z-index-drop-down: 200;
+  --z-index-statusbar: 1000;
+  --z-index-dialog: 2000;
+  --z-index-tooltip: 5000;
+  --z-index-snackbar: 6000;
+  --z-index-prompt: 10000;
+
+  /* ============================================
+   * TYPOGRAPHY
+   * Source: typography.scss
+   * ============================================ */
+
+  /* Font Families */
+  --typeface-product-primary: 'GT Walsheim', sans-serif;
+  --typeface-product-secondary: 'Inter', sans-serif;
+
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Font Sizes */
+  --font-size-xs: 11px;
+  --font-size-s: 12px;
+  --font-size-m: 14px;
+  --font-size-l: 16px;
+  --font-size-xl: 24px;
+
+  /* Line Heights */
+  --line-xs: 12px;
+  --line-s: 14px;
+  --line-m: 16px;
+  --line-l: 20px;
+  --line-xl: 24px;
+  --line-xxl: 32px;
+  --line-height-coefficient: 1.1;
+
+  /* Letter Spacing */
+  --letter-spacing-l: 0.1ch;
+  --letter-spacing-m: 0.08ch;
+
+  /* ============================================
+   * APP TEMPLATE SPECIFIC TOKENS
+   * Source: templates/app/shared.scss
+   * ============================================ */
+
+  --sidebar-width: 96px;           /* 12 * 8 */
+  --application-list-width: 400px; /* 50 * 8 */
+
+  /* ============================================
+   * ANIMATIONS
+   * ============================================ */
+
+  --transition-duration-fast: 150ms; /* project-defined, no source equivalent */
+  --transition-duration-default: 250ms;
+  --transition-duration-normal: 200ms; /* project-defined, no source equivalent */
+  --transition-duration-expand: 500ms;
+  --transition-timing-default: cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-250: 250ms cubic-bezier(0.23, 1, 0.32, 1); /* shorthand: duration + easing combined */
+
+  /* ============================================
+   * SHORTHAND VARIABLES
+   * Simplified access to common tokens
+   * ============================================ */
+
+  /* Grey Scale Shortcuts */
+  --grey-100: #151515;
+
+  /* Spacing Shortcuts (uppercase) */
+  --spacing-S: var(--spacing-s);
+  --spacing-M: var(--spacing-m);
+  --spacing-L: var(--spacing-l);
+  --spacing-XXL: var(--spacing-xxl);
+
+  /* Line Height Shortcuts */
+  --line-height-m: var(--line-m);
+
+  /* Font Family Shortcuts */
+  --font-family-heading: var(--typeface-product-primary);
+  --font-family-inter: var(--typeface-product-secondary);
+  --font-family-default: var(--typeface-product-secondary);
+
+  /* Font Weight Shortcuts */
+  --font-weight-regular: var(--weight-regular);
+  --font-weight-medium: var(--weight-medium);
+  --font-weight-semibold: var(--weight-semibold);
+  --font-weight-bold: var(--weight-bold);
+
+  /* ============================================
+   * TILE COMPONENT TOKENS
+   * Used by BaseTile, ImagePreview
+   * ============================================ */
+
+  /* BaseTile Dimensions (selectable variant) */
+  --tile-selectable-min-width: 140px;   /* 17.5 * 8 */
+  --tile-selectable-max-width: 218px;   /* 27.25 * 8 */
+
+  /* BaseTile Dimensions (preview variant) */
+  --tile-preview-min-width: 210px;      /* 26.25 * 8 */
+  --tile-preview-max-width: 323px;      /* 40.375 * 8 */
+
+  /* ImagePreview Aspect Ratio */
+  --tile-preview-aspect-ratio: 56.25%;  /* 16:9 ratio */
+
+  /* Tile Colors */
+  --tile-dragged-opacity: 0.4;
+
+  /* ============================================
+   * MENU COMPONENT TOKENS
+   * Used by VerticalMenu, VerticalTab, ActionMenuDivider
+   * ============================================ */
+
+  /* Vertical Menu */
+  --menu-vertical-min-width: 200px;      /* 25 * 8 - minimum width for vertical menus */
+
+  /* Vertical Tab */
+  --tab-vertical-indicator-width: 3px;   /* active state indicator width */
+  --tab-vertical-height: 40px;           /* 5 * 8 - standard tab height */
+  --tab-vertical-padding-horizontal: 16px; /* left/right padding */
+  --tab-vertical-padding-vertical: 8px;  /* top/bottom padding */
+
+  /* Menu Divider */
+  --menu-divider-margin-vertical: 16px;   /* margin above/below divider */
+  --menu-divider-margin-horizontal: 0;   /* margin left/right of divider */
+
+  /* ============================================
+   * TABLE COMPONENT TOKENS
+   * Used by Table, TableRow, TableHeader, SkeletonBody
+   * Source: Table component SCSS files
+   * ============================================ */
+
+  /* Table Row Dimensions */
+  --table-row-height: var(--size-l);              /* 48px - standard row height */
+  --table-cell-padding-horizontal: var(--spacing-l);  /* 16px - left/right cell padding */
+  --table-cell-padding-vertical: 0;               /* cells use line-height for centering */
+  --table-row-gap: var(--spacing-between-rows);   /* 2px - gap between rows */
+
+  /* Table Row Colors */
+  --table-row-background: var(--color-paper-background);     /* white - default row background */
+  --table-row-background-selected: var(--color-background-selected);  /* majorelle-blue-20 - selected row */
+  --table-row-background-selected-hover: var(--color-background-selected-hover);  /* majorelle-blue-30 - selected+hover */
+  --table-row-background-disabled: var(--color-background-disabled);  /* grey-20 - disabled rows */
+  --table-row-background-skeleton: var(--color-skeleton-background);  /* grey-10 - skeleton loading */
+  --table-row-background-invalid: var(--color-alert-background-selected);  /* red-20 - validation error */
+  --table-row-background-invalid-hover: var(--color-alert-background-selected-hover);  /* red-30 - invalid+hover */
+
+  /* Table Row Border */
+  --table-row-border-color: var(--color-paper-border);       /* grey-20 */
+  --table-row-border-width: var(--border-width-default);     /* 1px */
+  --table-row-border-radius: var(--radius-m);                /* 8px */
+
+  /* Table Cell Typography */
+  --table-cell-line-height: var(--size-l);       /* 48px - matches row height for vertical centering */
+  --table-cell-font-family: var(--typeface-product-primary);  /* GT Walsheim */
+  --table-cell-font-size: var(--font-size-m);    /* 14px - label-L equivalent */
+  --table-cell-font-weight: var(--weight-regular);  /* 400 */
+
+  /* Table Scroll Shadow (for sticky columns) */
+  --table-scroll-shadow-width: 24px;              /* width of scroll indicator shadows */
+  --table-scroll-shadow-color: rgba(57, 57, 57, 0.1);  /* grey-80 at 10% opacity */
+  --table-scroll-shadow-transition: opacity 0.3s ease-in-out;
+
+  /* ============================================
+   * SHARED COMPONENT TOKENS
+   * ============================================ */
+
+  /* ConditionBuilder Component */
+  --condition-builder-component-width: 264px;  /* 33 * 8px - width for condition inputs */
+
+  /* ============================================
+   * FORM COMPONENT TOKENS
+   * ============================================ */
+
+  --form-component-border-radius: 20px;  /* 2.5 * 8 */
+
+  /* ============================================
+   * ADDITIONAL TOKENS FOR TEMPLATES
+   * Added during template migration
+   * ============================================ */
+
+  /* Border Radius Aliases */
+  --border-radius-xs: var(--radius-s);
+  --border-radius-s: var(--radius-s);
+  --border-radius-m: var(--radius-m);
+
+  /* Background Color Aliases */
+  --color-background-primary: var(--color-paper-background);
+  --color-background-secondary: var(--color-background-subtle);
+  --color-background-hover: var(--color-background-subtle-hover);
+
+  /* Text Color Aliases */
+  --color-text-default: var(--color-text-default-on-light);
+  --color-text-primary: var(--color-text-high-emphasis);
+  --color-text-secondary: var(--color-text-low-emphasis);
+
+  /* Font Size Aliases */
+  --font-size-label-l: var(--font-size-m);
+  --font-size-label-m: var(--font-size-s);
+
+  /* Line Height Aliases */
+  --line-height-s: var(--line-s);
+  --line-height-m: var(--line-m);
+  --line-height-label-l: var(--line-l);
+
+  /* ============================================
+   * WEBSITE COMPONENT TOKENS
+   * ============================================ */
+
+  /* Form Component Border */
+  --form-component-border-style: dashed;
+
+  /* ShareablePreview Tokens */
+  --shareable-preview-max-width: 600px;
+
+  /* ============================================
+   * TYPOGRAPHY ALIASES FOR WEBSITE COMPONENTS
+   * ============================================ */
+
+  --typography-body-size: var(--font-size-m);
+  --typography-label-size: var(--font-size-s);
+  --typography-caption-size: var(--font-size-xs);
+  --typography-weight-medium: var(--font-weight-medium);
+  --typography-weight-semibold: var(--font-weight-semibold);
+
+  /* Text medium composite */
+  --text-m-font-size: var(--font-size-m);
+  --text-m-font-weight: var(--font-weight-regular);
+
+  /* ============================================
+   * ADDITIONAL ALIASES FOR WEBSITE COMPONENTS
+   * ============================================ */
+
+  /* Border Radius Aliases (website overrides) */
+  --border-radius-xs: 2px;
+  --radius-default: var(--radius-m);
+
+  /* Background Color Aliases (website additions) */
+  --color-background-default: var(--color-paper-background);
+  --color-background-hover: var(--color-hover);
+  --color-background-interactive-hover-on-light: var(--color-background-subtle-hover);
+  --color-background-primary: var(--color-product);
+  --color-background-primary-on-light: rgba(127, 9, 183, 0.08);
+  --color-background-primary-subtle: var(--color-background-highlighted);
+  --color-background-secondary-on-light: var(--palette-grey-20);
+  --color-background-tag-success: var(--color-success-background-high-emphasis);
+  --color-background-warning: var(--color-warning-background-high-emphasis);
+
+  /* Border Color Aliases */
+  --color-border-default-on-light: var(--color-border-default);
+  --color-border-input-default: var(--color-input-border);
+
+  /* Icon Color Aliases */
+  --color-icon-primary: var(--color-product);
+  --color-icon-warning: var(--color-warning-icon);
+
+  /* Status Color Aliases */
+  --color-status-info: var(--color-info-icon);
+  --color-status-neutral: var(--palette-grey-50);
+  --color-status-success: var(--color-success-icon);
+  --color-status-warning: var(--color-warning-icon);
+
+  /* Text Color Aliases (website additions) */
+  --color-text-alert: var(--color-alert-text);
+  --color-text-error-on-light: var(--color-alert-text);
+  --color-text-link-default-on-light: var(--color-link);
+  --color-text-placeholder: var(--color-text-hint);
+  --color-text-secondary-on-light: var(--color-text-low-emphasis);
+
+  /* Typography Aliases (website additions) */
+  --font-family-mono: monospace;
+  --font-family-primary: var(--typeface-product-primary);
+
+  /* Animation Aliases */
+  --duration-fast: var(--transition-duration-fast);
+  --easing-standard: var(--transition-timing-default);
+  --transition-timing-function: var(--transition-timing-default);
+
+  /* Spacing Aliases */
+  --spacing-2xs: var(--spacing-xxs);
+
+  /* Line Height */
+  --text-m-line-height: var(--line-l);
+}

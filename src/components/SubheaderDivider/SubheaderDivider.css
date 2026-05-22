@@ -1,0 +1,19 @@
+@layer components {
+  .SubheaderDivider {
+    display: flex;
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.2px;
+    color: var(--color-text-low-emphasis);
+  }
+
+  .SubheaderDivider-dividerWrapper {
+    height: var(--line-m);
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: calc(5 * var(--grid-unit));
+    padding-left: var(--spacing-s);
+  }
+}

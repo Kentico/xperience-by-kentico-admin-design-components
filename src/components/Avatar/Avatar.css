@@ -1,0 +1,93 @@
+@layer components {
+  /* AvatarMenu wrapper */
+  .Avatar-avatarMenu {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Static Avatar circle */
+  .Avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+  }
+
+  /* Size variants */
+  .Avatar-XS {
+    width: var(--size-xs);
+    height: var(--size-xs);
+    font-size: var(--font-size-s);
+  }
+
+  .Avatar-S {
+    width: var(--size-s);
+    height: var(--size-s);
+    font-size: var(--font-size-s);
+  }
+
+  .Avatar-M {
+    width: var(--size-m);
+    height: var(--size-m);
+    font-size: var(--font-size-m);
+  }
+
+  .Avatar-L {
+    width: var(--size-l);
+    height: var(--size-l);
+    font-size: var(--font-size-l);
+  }
+
+  /* Shadow variant */
+  .Avatar-shadow {
+    box-shadow: var(--shadow-m);
+  }
+
+  /* Initials / content text */
+  .Avatar-content {
+    color: var(--color-text-default-on-dark);
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--letter-spacing-m);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .Avatar-L .Avatar-content {
+    line-height: var(--line-xl);
+  }
+
+  .Avatar-M .Avatar-content {
+    line-height: var(--line-m);
+  }
+
+  .Avatar-XS .Avatar-content,
+  .Avatar-S .Avatar-content {
+    font-weight: var(--weight-regular);
+    line-height: calc(var(--font-size-s) * 1.1);
+  }
+
+  /* Light background text color */
+  .Avatar-light .Avatar-content {
+    color: var(--color-text-default-on-light);
+  }
+
+  /* Image */
+  .Avatar-img {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: var(--border-width-default) solid var(--color-divider-default);
+    border-radius: inherit;
+  }
+
+  /* Custom content */
+  .Avatar-customContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

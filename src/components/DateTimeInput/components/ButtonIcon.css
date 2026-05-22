@@ -1,0 +1,44 @@
+@layer components {
+  .ButtonIcon {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    font-weight: var(--font-weight-regular);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--color-text-default-on-light);
+    height: var(--spacing-xl);
+    width: var(--spacing-xl);
+    padding: 0;
+    border-radius: var(--radius-s);
+    transition:
+      background-color var(--transition-250),
+      color var(--transition-250);
+    outline: none;
+
+    &:hover:not([data-disabled]) {
+      background: var(--color-hover);
+    }
+
+    &[data-disabled] {
+      color: var(--color-text-disabled);
+      cursor: default;
+      background: transparent;
+    }
+
+    &[data-focus-visible] {
+      box-shadow: var(--focus-default);
+    }
+
+    & .ButtonIcon-iconWrapper {
+      font-size: var(--icon-s);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

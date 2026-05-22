@@ -1,0 +1,71 @@
+@layer components {
+  /* ApplicationList Styles */
+
+  .ApplicationList-overlay {
+    position: relative;
+  }
+
+  .ApplicationList-overlay::after {
+    content: ' ';
+    z-index: calc(var(--z-index-application-menu, 4000) - 1);
+    position: fixed;
+    inset: 0;
+    background: var(--color-overlay-background, rgba(57, 57, 57, 0.4));
+  }
+
+  .ApplicationList-container {
+    --sidebar-width: calc(12 * var(--grid-unit, 8px));
+    --application-list-width: calc(50 * var(--grid-unit, 8px));
+
+    width: 0;
+    position: fixed;
+    bottom: 0;
+    left: var(--sidebar-width);
+    border-top-right-radius: var(--radius-m, 8px);
+    border-bottom-right-radius: var(--radius-m, 8px);
+    background: var(--color-paper-background, #fff);
+    transition: width var(--transition-duration-expand) var(--transition-timing-default);
+    z-index: var(--z-index-application-menu, 4000);
+  }
+
+  .ApplicationList-container.ApplicationList-visible {
+    box-shadow: var(--shadow-m);
+    width: var(--application-list-width);
+  }
+
+  .ApplicationList-content {
+    padding: var(--spacing-xl, 24px);
+    overflow: clip;
+  }
+
+  .ApplicationList-search {
+    margin-bottom: var(--spacing-xl, 24px);
+  }
+
+  .ApplicationList-noItems {
+    font-family: var(--typeface-product-secondary, 'Inter', sans-serif);
+    font-size: var(--font-size-m, 14px);
+    line-height: var(--line-l);
+    margin-right: var(--spacing-l, 16px);
+    display: flex;
+    justify-content: center;
+    color: var(--color-text-low-emphasis, #525252);
+  }
+
+  .ApplicationList-scrollable {
+    height: calc(100vh - 2 * var(--spacing-xl, 24px) - var(--size-m, 40px) - var(--spacing-xl, 24px));
+  }
+
+  .ApplicationList-scrollableContent {
+    height: 100%;
+    overflow: hidden auto;
+    margin-right: calc(-1 * (var(--spacing-xl, 24px) - var(--spacing-xs, 4px)));
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-l, 16px);
+  }
+
+  .ApplicationList-scrollableContent.ApplicationList-listView {
+    margin-left: calc(-1 * var(--spacing-xs, 4px));
+  }
+}

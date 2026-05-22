@@ -1,0 +1,65 @@
+@layer components {
+  /* BaseTile Component Styles */
+
+  .BaseTile {
+    background: white;
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-s);
+    position: relative;
+    transition: background-color var(--transition-250);
+    cursor: pointer;
+
+    /* Reset link styles when rendered as NavLink */
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .BaseTile-skeleton,
+  .BaseTile-unclickable {
+    cursor: default;
+  }
+
+  .BaseTile-selectable,
+  .BaseTile-skeleton {
+    min-width: var(--tile-selectable-min-width);
+    max-width: var(--tile-selectable-max-width);
+  }
+
+  .BaseTile-preview {
+    min-width: var(--tile-preview-min-width);
+    max-width: var(--tile-preview-max-width);
+  }
+
+  .BaseTile-disabled {
+    cursor: default;
+    background-color: var(--color-background-disabled);
+  }
+
+  .BaseTile:focus {
+    outline: none;
+  }
+
+  .BaseTile-errorTile:hover:not(.BaseTile-disabled) {
+    background-color: white !important;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .BaseTile:hover:not(.BaseTile-skeleton):not(.BaseTile-disabled):not(.BaseTile-unclickable) {
+      background-color: var(--color-hover);
+    }
+  }
+
+  .BaseTile-focused:not(.BaseTile-skeleton):not(.BaseTile-disabled) {
+    box-shadow: var(--shadow-s), var(--focus-default);
+  }
+
+  .BaseTile-focused.BaseTile-errorTile:not(.BaseTile-skeleton):not(.BaseTile-disabled) {
+    box-shadow: var(--shadow-s), var(--focus-alert);
+  }
+
+  .BaseTile-dragged {
+    opacity: var(--tile-dragged-opacity);
+    box-shadow: var(--shadow-s);
+  }
+}

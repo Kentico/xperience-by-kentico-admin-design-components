@@ -1,0 +1,29 @@
+@layer components {
+  /* Cell Styles - Used in SmallStatusBar */
+
+  .Cell {
+    min-width: var(--size-m);
+    height: var(--size-m);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .Cell.Cell-active {
+    background-color: var(--color-background-selected);
+  }
+
+  .Cell:focus {
+    outline: none;
+  }
+
+  .Cell.Cell-focused {
+    box-shadow: var(--focus-default);
+  }
+}

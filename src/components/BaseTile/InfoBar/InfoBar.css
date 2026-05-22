@@ -1,0 +1,104 @@
+@layer components {
+  /**
+   * InfoBar component styles
+   * Sub-component of BaseTile for displaying tile info bar (metadata, checkbox, filename)
+   */
+
+  .InfoBar {
+    position: relative;
+    transition: background-color var(--transition-250);
+    padding: var(--spacing-m);
+    border-bottom-left-radius: var(--radius-m);
+    border-bottom-right-radius: var(--radius-m);
+  }
+
+  .InfoBar.InfoBar-selectable,
+  .InfoBar.InfoBar-skeleton {
+    padding-top: var(--spacing-s);
+  }
+
+  .InfoBar.InfoBar-skeleton {
+    background: var(--color-skeleton-background);
+  }
+
+  .InfoBar.InfoBar-selected {
+    background-color: var(--color-background-selected);
+  }
+
+  .InfoBar.InfoBar-selected.InfoBar-hover {
+    background-color: var(--color-background-selected-hover);
+  }
+
+  .InfoBar-metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .InfoBar-metadata .InfoBar-hiddenCheckbox {
+    visibility: hidden;
+  }
+
+  .InfoBar-skeleton .InfoBar-metadata {
+    height: calc(1.5 * var(--grid-unit));
+    padding: var(--spacing-xs) 0;
+  }
+
+  .InfoBar-fileSizeError {
+    color: var(--color-alert-text);
+  }
+
+  .InfoBar-metadataText {
+    /* label-M mixin inline: GT Walsheim, 400, 12px, 13.2px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    color: var(--color-text-default-on-light);
+    padding: var(--spacing-xs) 0;
+  }
+
+  .InfoBar-metadataText.InfoBar-selectable {
+    padding-right: var(--spacing-xs);
+  }
+
+  .InfoBar-skeleton .InfoBar-metadataText {
+    background: var(--color-skeleton-content);
+    padding-bottom: 0;
+    width: calc(8 * var(--grid-unit));
+    height: 100%;
+    border-radius: var(--radius-pill);
+  }
+
+  .InfoBar-name {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+  }
+
+  .InfoBar-fileName {
+    /* title-M mixin inline: GT Walsheim, 500, 12px, 13.2px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+    height: 14px;
+    display: block;
+
+    /* text-ellipsis mixin inline */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .InfoBar-skeleton .InfoBar-fileName {
+    background: var(--color-skeleton-content);
+    height: calc(1.75 * var(--grid-unit));
+    width: calc(11 * var(--grid-unit));
+    border-radius: var(--radius-pill);
+  }
+
+  .InfoBar-nameLeadingNode {
+    color: var(--color-text-default-on-light);
+  }
+}

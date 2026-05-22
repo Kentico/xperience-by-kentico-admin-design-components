@@ -1,0 +1,16 @@
+@layer components {
+  .RadioGroup {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: calc(-1 * var(--spacing-s));
+    margin-left: calc(-1 * var(--spacing-m));
+  }
+
+  .RadioGroup.RadioGroup-inline {
+    flex-direction: row;
+  }
+
+  .RadioGroup.RadioGroup-readOnly {
+    margin-top: 0;
+  }
+}

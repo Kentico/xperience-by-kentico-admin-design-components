@@ -1,0 +1,216 @@
+@layer components {
+  .Checkbox-checkboxWrapper {
+    display: inline-flex;
+    cursor: pointer;
+    border-radius: var(--radius-s);
+    padding: var(--spacing-xs);
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .Checkbox-checkboxWrapper.Checkbox-disabled {
+    cursor: default;
+  }
+
+  .Checkbox-checkboxWrapper.Checkbox-readOnly {
+    cursor: default;
+  }
+
+  .Checkbox-checkboxWrapper:not(.Checkbox-disabled, .Checkbox-readOnly):hover {
+    background-color: var(--color-hover);
+  }
+
+  .Checkbox-checkboxWrapper:not(.Checkbox-disabled, .Checkbox-readOnly).Checkbox-invalid:hover {
+    background: var(--color-alert-background-low-emphasis);
+  }
+
+  /* Checkbox label */
+  .Checkbox-checkboxLabel {
+    user-select: none;
+    cursor: pointer;
+    padding-left: var(--spacing-xs);
+  }
+
+  .Checkbox-checkboxLabel.Checkbox-sizeS {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.2px;
+    color: var(--color-text-default-on-light);
+  }
+
+  .Checkbox-checkboxLabel.Checkbox-sizeM {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.2px;
+    color: var(--color-text-default-on-light);
+  }
+
+  .Checkbox-checkboxLabel.Checkbox-sizeL {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-default-on-light);
+  }
+
+  .Checkbox-checkboxLabel.Checkbox-invalid {
+    color: var(--color-alert-text);
+  }
+
+  .Checkbox-checkboxLabel.Checkbox-disabled {
+    cursor: default;
+    color: var(--color-text-disabled);
+  }
+
+  .Checkbox-checkboxWrapper:hover .Checkbox-checkboxLabel:not(.Checkbox-disabled).Checkbox-invalid {
+    color: var(--color-alert-hover);
+  }
+
+  .Checkbox-checkboxLabel.Checkbox-readOnly {
+    cursor: default;
+    color: var(--color-text-default-on-light) !important;
+  }
+
+  /* Checkbox frame */
+  .Checkbox-checkboxFrame {
+    border: var(--border-width-default) var(--border-style-default) var(--color-border-default);
+    background-color: transparent;
+    display: flex;
+    box-sizing: border-box;
+    transition: background-color var(--transition-duration-default) var(--transition-timing-default);
+    border-radius: var(--radius-s);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-invalid {
+    border: var(--border-width-default) var(--border-style-default) var(--color-border-alert);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-invalid.Checkbox-checked,
+  .Checkbox-checkboxFrame.Checkbox-invalid.Checkbox-indetermined {
+    background-color: var(--color-alert-background-high-emphasis);
+    border: none;
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-invalid.Checkbox-focused {
+    box-shadow: var(--focus-alert);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-sizeS {
+    height: var(--spacing-m);
+    width: var(--spacing-m);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-sizeM {
+    height: var(--spacing-l);
+    width: var(--spacing-l);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-sizeL {
+    border-radius: var(--radius-m);
+    height: var(--spacing-xl);
+    width: var(--spacing-xl);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-checked,
+  .Checkbox-checkboxFrame.Checkbox-indetermined {
+    background-color: var(--color-product);
+    border: none;
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-disabled {
+    border: var(--border-width-default) var(--border-style-default) var(--color-border-disabled);
+    background-color: inherit;
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-disabled.Checkbox-checked,
+  .Checkbox-checkboxFrame.Checkbox-disabled.Checkbox-indetermined {
+    background-color: var(--color-background-disabled);
+    border: none;
+    box-shadow: 0 0 0 var(--border-width-default) var(--color-border-disabled);
+  }
+
+  /* Hover / highlighted states */
+  .Checkbox-checkboxFrame.Checkbox-highlighted:not(.Checkbox-disabled, .Checkbox-checked, .Checkbox-indetermined),
+  .Checkbox-checkboxWrapper:hover .Checkbox-checkboxFrame:not(.Checkbox-disabled, .Checkbox-checked, .Checkbox-indetermined) {
+    border: var(--border-width-default) var(--border-style-default) var(--color-border-hover);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-highlighted:not(.Checkbox-disabled, .Checkbox-checked, .Checkbox-indetermined).Checkbox-invalid,
+  .Checkbox-checkboxWrapper:hover .Checkbox-checkboxFrame:not(.Checkbox-disabled, .Checkbox-checked, .Checkbox-indetermined).Checkbox-invalid {
+    border: var(--border-width-default) var(--border-style-default) var(--color-alert-hover);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-highlighted:not(.Checkbox-disabled).Checkbox-checked,
+  .Checkbox-checkboxFrame.Checkbox-highlighted:not(.Checkbox-disabled).Checkbox-indetermined,
+  .Checkbox-checkboxWrapper:hover .Checkbox-checkboxFrame:not(.Checkbox-disabled).Checkbox-checked,
+  .Checkbox-checkboxWrapper:hover .Checkbox-checkboxFrame:not(.Checkbox-disabled).Checkbox-indetermined {
+    background-color: var(--color-product-hover);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-highlighted:not(.Checkbox-disabled).Checkbox-checked.Checkbox-invalid,
+  .Checkbox-checkboxFrame.Checkbox-highlighted:not(.Checkbox-disabled).Checkbox-indetermined.Checkbox-invalid,
+  .Checkbox-checkboxWrapper:hover .Checkbox-checkboxFrame:not(.Checkbox-disabled).Checkbox-checked.Checkbox-invalid,
+  .Checkbox-checkboxWrapper:hover .Checkbox-checkboxFrame:not(.Checkbox-disabled).Checkbox-indetermined.Checkbox-invalid {
+    background-color: var(--color-alert-hover);
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-readOnly {
+    outline: 1px dashed var(--color-border-default);
+    background-color: inherit !important;
+    border: initial !important;
+  }
+
+  .Checkbox-checkboxFrame.Checkbox-readOnly:hover {
+    background-color: initial;
+  }
+
+  /* Indetermined icon */
+  .Checkbox-indeterminedIcon {
+    background-color: var(--color-icon-default-on-dark);
+    border-radius: var(--radius-pill);
+    margin: auto;
+  }
+
+  .Checkbox-indeterminedIcon.Checkbox-sizeL {
+    width: var(--spacing-m);
+    height: 2px;
+  }
+
+  .Checkbox-indeterminedIcon.Checkbox-sizeM {
+    width: var(--spacing-s);
+    height: 1px;
+  }
+
+  .Checkbox-indeterminedIcon.Checkbox-sizeS {
+    width: 6px;
+    height: 1px;
+  }
+
+  .Checkbox-indeterminedIcon.Checkbox-readOnly {
+    background-color: var(--color-text-default-on-light);
+  }
+
+  /* Footer */
+  .Checkbox-footer {
+    padding-top: var(--spacing-xs);
+  }
+
+  .Checkbox-footer.Checkbox-sizeL {
+    padding-left: 32px;
+  }
+
+  .Checkbox-footer.Checkbox-sizeM {
+    padding-left: 24px;
+  }
+
+  .Checkbox-footer.Checkbox-sizeS {
+    padding-left: 20px;
+  }
+}

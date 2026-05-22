@@ -1,0 +1,88 @@
+@layer components {
+  /* ApplicationListItem Styles */
+
+  .ApplicationListItem-listItem {
+    width: calc(44 * var(--grid-unit, 8px));
+  }
+
+  @media only screen and (max-width: 599.98px) {
+    .ApplicationListItem-listItem {
+      width: 100%;
+    }
+  }
+
+  .ApplicationListItem-row {
+    cursor: pointer;
+    border-radius: var(--radius-m, 8px);
+    height: calc(5 * var(--grid-unit, 8px));
+    padding: 0 var(--spacing-l, 16px);
+    align-items: center;
+    display: flex;
+    gap: var(--spacing-xl, 24px);
+    text-decoration: none;
+  }
+
+  .ApplicationListItem-row:focus {
+    outline: none;
+  }
+
+  .ApplicationListItem-row:focus-visible {
+    box-shadow: var(--focus-default);
+  }
+
+  .ApplicationListItem-icon {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    font-size: var(--icon-s, 16px);
+    color: var(--color-tab-icon, #393939);
+    flex-shrink: 0;
+  }
+
+  .ApplicationListItem-label {
+    flex-grow: 1;
+    font-family: var(--typeface-product-primary, 'GT Walsheim', sans-serif);
+    font-size: var(--font-size-m, 14px);
+    font-weight: var(--weight-regular, 400);
+    line-height: var(--line-m, 16px);
+    color: var(--color-tab-text, #393939);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Hover state - only for devices with hover capability */
+  @media (hover: hover) and (pointer: fine) {
+    .ApplicationListItem-row:hover {
+      background-color: var(--color-hover, rgba(156, 136, 127, 0.3));
+    }
+
+    .ApplicationListItem-row:hover .ApplicationListItem-icon {
+      color: var(--color-tab-icon-hover, #262626);
+    }
+
+    .ApplicationListItem-row:hover .ApplicationListItem-label {
+      color: var(--color-tab-text-hover, #262626);
+    }
+  }
+
+  /* Activated state */
+  .ApplicationListItem-row.ApplicationListItem-activated {
+    background-color: var(--color-product-selected, #5d0088);
+    cursor: default;
+  }
+
+  .ApplicationListItem-row.ApplicationListItem-activated .ApplicationListItem-icon {
+    color: var(--color-icon-default-on-dark, #fff);
+  }
+
+  .ApplicationListItem-row.ApplicationListItem-activated .ApplicationListItem-label {
+    color: var(--color-text-default-on-dark, #fff);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ApplicationListItem-row.ApplicationListItem-activated:hover {
+      background-color: var(--color-product-selected-hover, #40005f);
+    }
+  }
+}

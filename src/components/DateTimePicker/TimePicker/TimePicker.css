@@ -1,0 +1,13 @@
+@layer components {
+  .TimePicker-wrapper {
+    padding-bottom: var(--spacing-xl);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: var(--spacing-l);
+  }
+
+  .TimePicker-wrapper.TimePicker-hidden {
+    visibility: hidden;
+  }
+}

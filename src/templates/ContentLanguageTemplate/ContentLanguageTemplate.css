@@ -1,0 +1,40 @@
+@layer components {
+  /**
+   * ContentLanguageTemplate styles
+   */
+
+  .ContentLanguageTemplate-languageSelector {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-s) var(--spacing-m);
+  }
+
+  .ContentLanguageTemplate-languageSelectorLabel {
+    font-size: var(--size-font-body-m);
+    font-weight: var(--font-weight-medium);
+    color: var(--palette-grey-100);
+    margin-right: var(--spacing-s);
+  }
+
+  .ContentLanguageTemplate-languageSelectorDropdown {
+    min-width: 150px;
+  }
+
+  .ContentLanguageTemplate-languageOption {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .ContentLanguageTemplate-languageIcon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .ContentLanguageTemplate-contentContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}

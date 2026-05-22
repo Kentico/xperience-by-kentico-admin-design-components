@@ -1,0 +1,26 @@
+@layer components {
+  .Shortcuts {
+    display: block;
+    flex: 1 1 auto;
+    color: var(--color-tooltip-icon);
+    padding-left: var(--spacing-xs);
+    padding-top: var(--spacing-xs);
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-s);
+    line-height: var(--line-m);
+  }
+
+  .Shortcuts-shortcutKey {
+    display: inline-flex;
+    align-items: center;
+    height: calc(2.25 * var(--grid-unit));
+    border: var(--border-width-default) var(--border-style-default) var(--color-tooltip-icon);
+    border-radius: var(--radius-s);
+    padding: 0 var(--spacing-xs);
+  }
+
+  .Shortcuts-shortcutDivider {
+    padding: 0 var(--spacing-xxs);
+  }
+}

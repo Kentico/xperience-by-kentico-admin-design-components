@@ -1,0 +1,109 @@
+@layer components {
+  .Calendar-calendarGrid {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-top: var(--spacing-l);
+
+    & thead tr th {
+      font-family: var(--typeface-product-primary);
+      font-size: var(--font-size-s);
+      line-height: var(--line-m);
+      font-weight: var(--font-weight-regular);
+      border-bottom: 1px solid var(--color-divider-default);
+      border-collapse: separate;
+      border-spacing: 5px 5px;
+      color: var(--color-text-low-emphasis);
+      padding-bottom: var(--spacing-s);
+    }
+  }
+
+  .Calendar-calendarCell {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    text-align: center;
+    width: calc(4.75 * var(--grid-unit));
+    height: calc(4.75 * var(--grid-unit));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    user-select: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--color-hover);
+    }
+
+    &[data-outside-month] {
+      display: none;
+    }
+
+    &[data-weekend] {
+      font-weight: var(--font-weight-medium);
+    }
+
+    &[data-focus-visible] {
+      outline: 2px solid var(--color-focus);
+      outline-offset: 2px;
+    }
+
+    &[data-disabled] {
+      cursor: not-allowed;
+      color: var(--color-text-disabled);
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &[data-range]:not([data-selection-start]):not([data-selection-end]) {
+      background-color: var(--color-background-highlighted);
+      border-radius: 0;
+    }
+
+    &[data-range][data-focus-visible]:not([data-selection-start]):not([data-selection-end]) {
+      border-radius: var(--radius-pill);
+    }
+
+    &[data-edge] {
+      font-weight: var(--font-weight-bold);
+      color: #fff;
+      background-color: var(--color-product-selected);
+
+      &:hover {
+        background-color: var(--color-product-hover);
+      }
+    }
+
+    &[data-selection-start] {
+      border-start-end-radius: 6px;
+      border-end-end-radius: 6px;
+    }
+
+    &[data-selection-end] {
+      border-end-start-radius: 6px;
+      border-start-start-radius: 6px;
+    }
+
+    &[data-selection-start][data-selection-end] {
+      border-radius: var(--radius-pill);
+    }
+
+    &[data-selected] {
+      font-weight: var(--font-weight-bold);
+      color: #fff;
+      background-color: var(--color-product-selected);
+
+      &:hover {
+        background-color: var(--color-product-hover);
+      }
+    }
+
+    &[data-today]:not([data-range]) {
+      box-shadow: 0 0 0 1px var(--color-border-default) inset;
+    }
+  }
+}

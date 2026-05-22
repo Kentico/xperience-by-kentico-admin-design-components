@@ -1,0 +1,68 @@
+@layer components {
+  .TextArea-textarea {
+    width: 100%;
+    padding: var(--spacing-l);
+    border: var(--border-width-default) solid var(--color-input-border);
+    border-radius: calc(var(--size-m) * 0.5);
+    font-family: var(--typeface-product-secondary);
+    font-size: var(--font-size-m);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-l);
+    resize: none;
+    color: var(--color-text-default-on-light);
+    background-color: var(--color-input-background);
+    transition:
+      border-color var(--transition-duration-default) var(--transition-timing-default),
+      background-color var(--transition-duration-default) var(--transition-timing-default);
+  }
+
+  .TextArea-textarea:focus {
+    outline: none;
+    border-color: var(--color-border-hover);
+    box-shadow: var(--focus-default);
+  }
+
+  .TextArea-textarea:hover:not(:focus):not(:disabled):not(:read-only) {
+    border-color: var(--color-border-hover);
+  }
+
+  .TextArea-textarea::placeholder {
+    color: var(--color-text-hint);
+  }
+
+  /* Error/Invalid state */
+  .TextArea-textarea.TextArea-invalid,
+  .TextArea-textarea:invalid {
+    border-color: var(--color-border-alert);
+  }
+
+  .TextArea-textarea.TextArea-invalid:focus,
+  .TextArea-textarea:invalid:focus {
+    box-shadow: var(--focus-alert);
+  }
+
+  .TextArea-textarea.TextArea-invalid:hover:not(:focus):not(:disabled),
+  .TextArea-textarea:invalid:hover:not(:focus):not(:disabled) {
+    border-color: var(--color-alert-hover);
+  }
+
+  /* Disabled state */
+  .TextArea-textarea:disabled {
+    background-color: var(--color-background-disabled);
+    border-color: var(--color-border-disabled);
+    box-shadow: none;
+    color: var(--color-text-disabled);
+    cursor: initial;
+  }
+
+  /* Read-only state */
+  .TextArea-textarea:read-only:not(:disabled) {
+    border: none;
+    padding: 0;
+  }
+
+  .TextArea-autoResize {
+    resize: none;
+    overflow-y: auto;
+  }
+}

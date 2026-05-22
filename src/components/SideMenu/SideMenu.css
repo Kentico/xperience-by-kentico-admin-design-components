@@ -1,0 +1,10 @@
+@layer components {
+  .SideMenu {
+    position: relative;
+    margin: var(--spacing-l) 0;
+    width: calc(11 * var(--grid-unit));
+    background-color: var(--color-background-side-menu);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-s);
+  }
+}

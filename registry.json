@@ -1,0 +1,2558 @@
+{
+  "version": "1.0.0",
+  "description": "Xperience by Kentico admin UI component registry. Copy components directly into your project (shadcn model). All components require the shared files listed in \"requires\".",
+  "requires": {
+    "copy": [
+      "src/lib/cn.ts",
+      "src/styles/tokens.css",
+      "src/index.css"
+    ],
+    "npm": [
+      "classnames"
+    ]
+  },
+  "components": [
+    {
+      "name": "ActionButtons",
+      "category": "layout",
+      "storyTitle": "Layout/ActionButtons",
+      "description": "ActionButtons component - a container for grouping action buttons. Provides consistent spacing and alignment for button groups. ```tsx <ActionButtons align=\"end\" spacing=\"M\"> <Button color=\"secondary\">Cancel</Button> <Button color=\"primary\">Save</Button> </ActionButtons> ``` ActionButtonsAlign: 'start' | 'center' | 'end' | 'space-between'. ActionButtonsSpacing: 'S' | 'M' | 'L'.",
+      "visualDescription": "Stories: AllAlignments, FillContainer, WithWrap.",
+      "useCases": [
+        "AllAlignments",
+        "FillContainer",
+        "WithWrap"
+      ],
+      "files": [
+        "src/components/ActionButtons/ActionButtons.css",
+        "src/components/ActionButtons/ActionButtons.tsx",
+        "src/components/ActionButtons/ActionButtons.types.ts",
+        "src/components/ActionButtons/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/ActionButtons.webp"
+    },
+    {
+      "name": "ActionMenuDivider",
+      "category": "navigation",
+      "storyTitle": "Navigation/ActionMenuDivider",
+      "description": "Renders a thin separator line inside action menus. Accepts an optional `orientation` prop (`DividerOrientation.Horizontal` | `DividerOrientation.Vertical`) to separate menu items either horizontally (between rows) or vertically (between inline items).",
+      "visualDescription": "A thin rule rendered between MenuItems. Stories: Horizontal, Vertical.",
+      "useCases": [
+        "Horizontal",
+        "Vertical"
+      ],
+      "files": [
+        "src/components/ActionMenuDivider/ActionMenuDivider.css",
+        "src/components/ActionMenuDivider/ActionMenuDivider.tsx",
+        "src/components/ActionMenuDivider/ActionMenuDivider.types.ts",
+        "src/components/ActionMenuDivider/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/ActionMenuDivider.webp"
+    },
+    {
+      "name": "ActionSplitButtons",
+      "category": "actions",
+      "storyTitle": "Actions/ActionSplitButton",
+      "description": "ActionSplitButton - A split button with a dropdown menu of actions. Combines a primary action button with a dropdown menu containing additional actions. Supports click-based and link-based actions. ```tsx <ActionSplitButton action={{ type: 'click', label: 'Save', buttonColor: 'primary', onClick: () => console.log('Save clicked'), actions: [ { type: 'click', label: 'Save and close', onClick: () => {} }, { isDivider: true }, { type: 'link', label: 'View history', href: '/history' }, ], }} size=\"M\" /> ``` ActionType: 'click' | 'link'.",
+      "visualDescription": "Variants: click, link. Stories: WithNestedActions, WithDividers, Disabled, InProgress.",
+      "useCases": [
+        "WithNestedActions",
+        "WithDividers",
+        "Disabled",
+        "InProgress"
+      ],
+      "files": [
+        "src/components/ActionSplitButtons/ActionSplitButtons.css",
+        "src/components/ActionSplitButtons/ActionSplitButtons.tsx",
+        "src/components/ActionSplitButtons/ActionSplitButtons.types.ts",
+        "src/components/ActionSplitButtons/index.ts"
+      ],
+      "internalDeps": [
+        "ActionMenuDivider",
+        "Icon",
+        "MenuItem",
+        "SplitButton"
+      ],
+      "npmDeps": [],
+      "preview": "previews/ActionSplitButtons.webp"
+    },
+    {
+      "name": "ActionTile",
+      "category": "actions",
+      "storyTitle": "Actions/ActionTile",
+      "description": "ActionTile component - an action tile with icon, label, and various states. Supports navigation via href or click handling, with different sizes and visual types. ActionTileState: 'Default' | 'Disabled' | 'Selected' | 'InProgress'. ActionTileSize: 'XS' | 'S' | 'L'. ActionTileType: 'Default' | 'Dashboard'.",
+      "visualDescription": "Variants: Default, Dashboard. Sizes: XS, S, L. Stories: AllStates, AllSizes, AllTypes, StateSizeMatrix, TypeSizeMatrix, Selected.",
+      "useCases": [
+        "AllStates",
+        "AllSizes",
+        "AllTypes",
+        "StateSizeMatrix",
+        "TypeSizeMatrix",
+        "Selected"
+      ],
+      "files": [
+        "src/components/ActionTile/ActionTile.css",
+        "src/components/ActionTile/ActionTile.tsx",
+        "src/components/ActionTile/ActionTile.types.ts",
+        "src/components/ActionTile/index.ts"
+      ],
+      "internalDeps": [
+        "Icon",
+        "Paper",
+        "Spinner",
+        "Tooltip"
+      ],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/ActionTile.webp"
+    },
+    {
+      "name": "AppLinkButton",
+      "category": "display",
+      "storyTitle": "Unknown/AppLinkButton",
+      "description": "A LinkButton integrated with react-router for SPA navigation. Accepts `href` (required) plus all LinkButton props (`size`, `color`, `label`, `icon`, `trailingIcon`, `destructive`, `inProgress`, `disabled`, `target`, `fillContainer`, `className`). Relative URLs trigger client-side navigation; absolute URLs or a `target` prop fall back to default browser behavior.",
+      "visualDescription": "Renders identically to LinkButton — a styled anchor as a button. No dedicated Storybook stories; appearance matches the LinkButton stories.",
+      "useCases": [],
+      "files": [
+        "src/components/AppLinkButton/AppLinkButton.tsx",
+        "src/components/AppLinkButton/AppLinkButton.types.ts",
+        "src/components/AppLinkButton/index.ts"
+      ],
+      "internalDeps": [
+        "LinkButton"
+      ],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": null
+    },
+    {
+      "name": "ApplicationMenu",
+      "category": "navigation",
+      "storyTitle": "Navigation/ApplicationMenu",
+      "description": "ApplicationListView: 'list' | 'tiles'. ApplicationListItemState: 'Default' | 'Activated'.",
+      "visualDescription": "Stories: WithDefaultUserProfile, SingleCategory, ManyCategories, Mobile, MobileWithListOpen, ListItemDefault.",
+      "useCases": [
+        "WithDefaultUserProfile",
+        "SingleCategory",
+        "ManyCategories",
+        "Mobile",
+        "MobileWithListOpen",
+        "ListItemDefault"
+      ],
+      "files": [
+        "src/components/ApplicationMenu/ApplicationList.css",
+        "src/components/ApplicationMenu/ApplicationList.tsx",
+        "src/components/ApplicationMenu/ApplicationListGroup.css",
+        "src/components/ApplicationMenu/ApplicationListGroup.tsx",
+        "src/components/ApplicationMenu/ApplicationListItem.css",
+        "src/components/ApplicationMenu/ApplicationListItem.tsx",
+        "src/components/ApplicationMenu/ApplicationListMobile.css",
+        "src/components/ApplicationMenu/ApplicationListMobile.tsx",
+        "src/components/ApplicationMenu/ApplicationMenu.css",
+        "src/components/ApplicationMenu/ApplicationMenu.tsx",
+        "src/components/ApplicationMenu/ApplicationMenu.types.ts",
+        "src/components/ApplicationMenu/ApplicationMenuMobile.css",
+        "src/components/ApplicationMenu/ApplicationMenuMobile.tsx",
+        "src/components/ApplicationMenu/index.ts",
+        "src/components/ApplicationMenu/utils.ts"
+      ],
+      "internalDeps": [
+        "ApplicationTile",
+        "Avatar",
+        "Button",
+        "DropDownActionMenu",
+        "Icon",
+        "Tooltip"
+      ],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/ApplicationMenu.webp"
+    },
+    {
+      "name": "ApplicationTile",
+      "category": "display",
+      "storyTitle": "Tiles/ApplicationTile",
+      "description": "ApplicationTileState: 'Default' | 'Disabled' | 'Activated'.",
+      "visualDescription": "Stories: AllStates, Activated, Disabled, Favourite, FavouriteWithCustomTooltip, FavouriteStates.",
+      "useCases": [
+        "AllStates",
+        "Activated",
+        "Disabled",
+        "Favourite",
+        "FavouriteWithCustomTooltip",
+        "FavouriteStates"
+      ],
+      "files": [
+        "src/components/ApplicationTile/ApplicationTile.css",
+        "src/components/ApplicationTile/ApplicationTile.tsx",
+        "src/components/ApplicationTile/ApplicationTile.types.ts",
+        "src/components/ApplicationTile/index.ts"
+      ],
+      "internalDeps": [
+        "Icon",
+        "Tooltip"
+      ],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/ApplicationTile.webp"
+    },
+    {
+      "name": "AssetTile",
+      "category": "display",
+      "storyTitle": "Tiles/AssetTile",
+      "description": "AssetTile component for displaying asset previews with selection and actions. Thin wrapper around BaseTile that maps AssetTileType to BaseTileType. AssetTileType: 'Preview' | 'Selectable' | 'Skeleton'.",
+      "visualDescription": "Variants: Preview, Selectable, Skeleton. Stories: AllTypes, Preview, Selectable, SelectableSelected, SelectableWithCheckbox, Skeleton.",
+      "useCases": [
+        "AllTypes",
+        "Preview",
+        "Selectable",
+        "SelectableSelected",
+        "SelectableWithCheckbox",
+        "Skeleton"
+      ],
+      "files": [
+        "src/components/AssetTile/AssetTile.tsx",
+        "src/components/AssetTile/AssetTile.types.ts",
+        "src/components/AssetTile/AssetTilePreview.tsx",
+        "src/components/AssetTile/AssetTileSelectable.tsx",
+        "src/components/AssetTile/AssetTileSkeleton.tsx",
+        "src/components/AssetTile/index.ts"
+      ],
+      "internalDeps": [
+        "BaseTile"
+      ],
+      "npmDeps": [],
+      "preview": "previews/AssetTile.webp"
+    },
+    {
+      "name": "Avatar",
+      "category": "display",
+      "storyTitle": "Data Display/Avatar",
+      "description": "Static avatar component — circle with initials or image, wrapped in Tooltip. Does not include any menu or interactive behavior. AvatarStaticSize: 'XS' | 'S' | 'M' | 'L'.",
+      "visualDescription": "Sizes: XS, S, M, L. Stories: AllSizes, WithImage, WithShadow, LightBackground, GradientSampler, WithCustomContent.",
+      "useCases": [
+        "AllSizes",
+        "WithImage",
+        "WithShadow",
+        "LightBackground",
+        "GradientSampler",
+        "WithCustomContent"
+      ],
+      "files": [
+        "src/components/Avatar/Avatar.css",
+        "src/components/Avatar/Avatar.tsx",
+        "src/components/Avatar/Avatar.types.ts",
+        "src/components/Avatar/AvatarMenu.tsx",
+        "src/components/Avatar/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Avatar.webp"
+    },
+    {
+      "name": "AvatarButton",
+      "category": "actions",
+      "storyTitle": "Actions/AvatarButton",
+      "description": "A circular avatar button displaying user initials or profile image. Uses a gradient background when no image is provided. AvatarSize: 'XS' | 'S' | 'M' | 'L'.",
+      "visualDescription": "Sizes: XS, S, M, L. Stories: AllSizes, WithImage, Active, ActiveAllSizes, InitialsVariants, SizeMatrix.",
+      "useCases": [
+        "AllSizes",
+        "WithImage",
+        "Active",
+        "ActiveAllSizes",
+        "InitialsVariants",
+        "SizeMatrix"
+      ],
+      "files": [
+        "src/components/AvatarButton/AvatarButton.css",
+        "src/components/AvatarButton/AvatarButton.tsx",
+        "src/components/AvatarButton/AvatarButton.types.ts",
+        "src/components/AvatarButton/index.ts"
+      ],
+      "internalDeps": [
+        "Tooltip"
+      ],
+      "npmDeps": [],
+      "preview": "previews/AvatarButton.webp"
+    },
+    {
+      "name": "BarItem",
+      "category": "display",
+      "storyTitle": "Data Display/BarItem",
+      "description": "BarItem is an expandable item component typically used in lists or forms. It displays a header with configurable columns and optional action buttons, with expandable content below. ```tsx <BarItem headerColumns={[ { content: 'Item Name', width: 200 }, { content: 'Description', align: BarItemHeaderColumnAlign.Right } ]} leadingButtons={[ { label: 'Edit', icon: 'xp-edit', onClick: handleEdit } ]} > <div>Expandable content goes here</div> </BarItem> ``` BarItemHeaderColumnAlign: 'left' | 'right'.",
+      "visualDescription": "Stories: WithColumns, WithLeadingButtons, Expandable, ExpandedWithActions, Disabled, DraggingState.",
+      "useCases": [
+        "WithColumns",
+        "WithLeadingButtons",
+        "Expandable",
+        "ExpandedWithActions",
+        "Disabled",
+        "DraggingState"
+      ],
+      "files": [
+        "src/components/BarItem/BarItem.css",
+        "src/components/BarItem/BarItem.tsx",
+        "src/components/BarItem/BarItem.types.ts",
+        "src/components/BarItem/BarItemDraggable.css",
+        "src/components/BarItem/BarItemDraggable.tsx",
+        "src/components/BarItem/BarItemGroup.css",
+        "src/components/BarItem/BarItemGroup.tsx",
+        "src/components/BarItem/index.ts"
+      ],
+      "internalDeps": [
+        "Button",
+        "DropDownActionMenu",
+        "Icon",
+        "MenuItem",
+        "Paper"
+      ],
+      "npmDeps": [],
+      "preview": "previews/BarItem.webp"
+    },
+    {
+      "name": "BaseTile",
+      "category": "display",
+      "storyTitle": "Tiles/BaseTile",
+      "description": "BaseTile component for displaying selectable, preview, or skeleton tile states. Composes ToolBar, ImagePreview, and InfoBar sub-components. BaseTileType: 'Preview' | 'Selectable' | 'Skeleton'. BaseTilePreviewIconSize: 'XXL' | 'L'.",
+      "visualDescription": "Variants: Preview, Selectable, Skeleton. Sizes: XXL, L. Stories: AllTypes, Preview, Selectable, SelectableSelected, Skeleton, Disabled.",
+      "useCases": [
+        "AllTypes",
+        "Preview",
+        "Selectable",
+        "SelectableSelected",
+        "Skeleton",
+        "Disabled"
+      ],
+      "files": [
+        "src/components/BaseTile/BaseTile.css",
+        "src/components/BaseTile/BaseTile.tsx",
+        "src/components/BaseTile/BaseTile.types.ts",
+        "src/components/BaseTile/BaseTileUtils.ts",
+        "src/components/BaseTile/ImagePreview/ImagePreview.css",
+        "src/components/BaseTile/ImagePreview/ImagePreview.tsx",
+        "src/components/BaseTile/ImagePreview/index.ts",
+        "src/components/BaseTile/InfoBar/InfoBar.css",
+        "src/components/BaseTile/InfoBar/InfoBar.tsx",
+        "src/components/BaseTile/InfoBar/index.ts",
+        "src/components/BaseTile/ToolBar/ToolBar.css",
+        "src/components/BaseTile/ToolBar/ToolBar.tsx",
+        "src/components/BaseTile/ToolBar/index.ts",
+        "src/components/BaseTile/index.ts"
+      ],
+      "internalDeps": [
+        "Tooltip"
+      ],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/BaseTile.webp"
+    },
+    {
+      "name": "Box",
+      "category": "layout",
+      "storyTitle": "Layout/Box",
+      "description": "Props: spacing, spacingX, spacingY, spacingTop, spacingRight, spacingBottom.",
+      "visualDescription": "Stories: AllSpacingVariants, HorizontalSpacing, VerticalSpacing, IndividualSides, CombinedSpacing, NestedBoxes.",
+      "useCases": [
+        "AllSpacingVariants",
+        "HorizontalSpacing",
+        "VerticalSpacing",
+        "IndividualSides",
+        "CombinedSpacing",
+        "NestedBoxes"
+      ],
+      "files": [
+        "src/components/Box/Box.css",
+        "src/components/Box/Box.tsx",
+        "src/components/Box/Box.types.ts",
+        "src/components/Box/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Box.webp"
+    },
+    {
+      "name": "Breadcrumbs",
+      "category": "navigation",
+      "storyTitle": "Navigation/Breadcrumbs",
+      "description": "Navigation trail accepting a `breadcrumbs` array of `{text, path}` items rendered as NavLinks. Supports an optional `pin` object (`{active, tooltip, onClick}`) for favorite/pin behavior, a `status` ReactNode beside the trail, `shorten` to collapse the trail, and `containerRef`/`onCollapsedToMinWidthChange` for overflow-aware rendering that hides middle items behind an ellipsis dropdown. Use with `BreadcrumbsProvider` and `useBreadcrumbs` hook for programmatic push/pop.",
+      "visualDescription": "A horizontal row of linked path segments separated by chevrons. Stories: Default, SingleItem, DeepNavigation, WithPin, WithPinActive, WithStatus, WithStatusAndPin, Shortened, WithContextProvider, OverflowInNarrowContainer, EmptyBreadcrumbs.",
+      "useCases": [
+        "SingleItem",
+        "DeepNavigation",
+        "WithPin",
+        "WithPinActive",
+        "WithStatus",
+        "WithStatusAndPin"
+      ],
+      "files": [
+        "src/components/Breadcrumbs/AppBreadcrumbs.tsx",
+        "src/components/Breadcrumbs/BreadcrumbItem.css",
+        "src/components/Breadcrumbs/BreadcrumbItem.tsx",
+        "src/components/Breadcrumbs/Breadcrumbs.css",
+        "src/components/Breadcrumbs/Breadcrumbs.tsx",
+        "src/components/Breadcrumbs/Breadcrumbs.types.ts",
+        "src/components/Breadcrumbs/BreadcrumbsContext.tsx",
+        "src/components/Breadcrumbs/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/Breadcrumbs.webp"
+    },
+    {
+      "name": "BrowseButton",
+      "category": "actions",
+      "storyTitle": "Actions/BrowseButton",
+      "description": "A button that opens a file selection dialog. Wraps a hidden FileInput and the existing Button component.",
+      "visualDescription": "Stories: Disabled, ImageFilesOnly, PDFFilesOnly, DocumentFiles, SingleFileOnly, AllVariants.",
+      "useCases": [
+        "Disabled",
+        "ImageFilesOnly",
+        "PDFFilesOnly",
+        "DocumentFiles",
+        "SingleFileOnly",
+        "AllVariants"
+      ],
+      "files": [
+        "src/components/BrowseButton/BrowseButton.tsx",
+        "src/components/BrowseButton/BrowseButton.types.ts",
+        "src/components/BrowseButton/index.ts"
+      ],
+      "internalDeps": [
+        "Button",
+        "FileInput"
+      ],
+      "npmDeps": [],
+      "preview": "previews/BrowseButton.webp"
+    },
+    {
+      "name": "Button",
+      "category": "actions",
+      "storyTitle": "Actions/Button",
+      "description": "A flexible button component supporting multiple color variants and sizes. ButtonColor: 'primary' | 'secondary' | 'tertiary' | 'quinary' | 'alert'. ButtonSize: 'XS' | 'S' | 'M' | 'L'.",
+      "visualDescription": "Variants: primary, secondary, tertiary, quinary, alert. Sizes: XS, S, M, L. Stories: Primary, AllColors, AllSizes, ColorSizeMatrix, Destructive, WithIcons.",
+      "useCases": [
+        "Primary",
+        "AllColors",
+        "AllSizes",
+        "ColorSizeMatrix",
+        "Destructive",
+        "WithIcons"
+      ],
+      "files": [
+        "src/components/Button/Button.css",
+        "src/components/Button/Button.tsx",
+        "src/components/Button/Button.types.ts",
+        "src/components/Button/index.ts"
+      ],
+      "internalDeps": [
+        "Icon",
+        "Spinner"
+      ],
+      "npmDeps": [],
+      "preview": "previews/Button.webp"
+    },
+    {
+      "name": "Callout",
+      "category": "feedback",
+      "storyTitle": "Feedback/Callout",
+      "description": "CalloutType: 'quickTip' | 'friendlyWarning'. CalloutPlacementType: 'onPaper' | 'onDesk'.",
+      "visualDescription": "Variants: quickTip, friendlyWarning. Stories: QuickTip, FriendlyWarning, AllTypes, AllPlacements, TypePlacementMatrix, WithActionButton.",
+      "useCases": [
+        "QuickTip",
+        "FriendlyWarning",
+        "AllTypes",
+        "AllPlacements",
+        "TypePlacementMatrix",
+        "WithActionButton"
+      ],
+      "files": [
+        "src/components/Callout/Callout.css",
+        "src/components/Callout/Callout.tsx",
+        "src/components/Callout/Callout.types.ts",
+        "src/components/Callout/index.ts"
+      ],
+      "internalDeps": [
+        "Icon",
+        "Layout"
+      ],
+      "npmDeps": [],
+      "preview": "previews/Callout.webp"
+    },
+    {
+      "name": "Card",
+      "category": "display",
+      "storyTitle": "Data Display/Card",
+      "description": "Props: children, footer, headline, fullHeight.",
+      "visualDescription": "Stories: WithHeadline, WithFooter, WithHeadlineAndFooter, FullHeight, CardGrid.",
+      "useCases": [
+        "WithHeadline",
+        "WithFooter",
+        "WithHeadlineAndFooter",
+        "FullHeight",
+        "CardGrid"
+      ],
+      "files": [
+        "src/components/Card/Card.css",
+        "src/components/Card/Card.tsx",
+        "src/components/Card/CardBody.css",
+        "src/components/Card/CardBody.tsx",
+        "src/components/Card/CardFooter.css",
+        "src/components/Card/CardFooter.tsx",
+        "src/components/Card/CardHeadline.css",
+        "src/components/Card/CardHeadline.tsx",
+        "src/components/Card/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Card.webp"
+    },
+    {
+      "name": "Cell",
+      "category": "layout",
+      "storyTitle": "Layout/Cell",
+      "description": "A flexible cell component for the small status bar. Renders as NavLink when link is provided, otherwise as button. Supports focus ring styling and active states.",
+      "visualDescription": "Stories: Active, WithIcon, AsNavLink, Group.",
+      "useCases": [
+        "Active",
+        "WithIcon",
+        "AsNavLink",
+        "Group"
+      ],
+      "files": [
+        "src/components/Cell/Cell.css",
+        "src/components/Cell/Cell.tsx",
+        "src/components/Cell/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/Cell.webp"
+    },
+    {
+      "name": "Charts",
+      "category": "display",
+      "storyTitle": "Unknown/Charts",
+      "description": "AmCharts 5 wrappers themed to the Xperience design system. Includes ColumnChart and FunnelChart sub-components, each with their own props for data, labels, and orientation.",
+      "visualDescription": "ColumnChart stories: Default, QuarterlyRevenue, ConversionFunnel, WebsiteTraffic, MinimalData, CustomLabels, ManyColumns. FunnelChart stories: Default, Vertical, Horizontal, SalesFunnel, MarketingFunnel, GermanLocale, OrientationComparison, MinimalData, ManyStages.",
+      "useCases": [],
+      "files": [
+        "src/components/Charts/ChartTheme.ts",
+        "src/components/Charts/ColumnChart/ColumnChart.css",
+        "src/components/Charts/ColumnChart/ColumnChart.tsx",
+        "src/components/Charts/ColumnChart/ColumnChart.types.ts",
+        "src/components/Charts/ColumnChart/ColumnChartCreator.ts",
+        "src/components/Charts/ColumnChart/index.ts",
+        "src/components/Charts/FunnelChart/FunnelChart.css",
+        "src/components/Charts/FunnelChart/FunnelChart.tsx",
+        "src/components/Charts/FunnelChart/FunnelChart.types.ts",
+        "src/components/Charts/FunnelChart/FunnelChartHelper.ts",
+        "src/components/Charts/FunnelChart/index.ts",
+        "src/components/Charts/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "@amcharts/amcharts5"
+      ],
+      "preview": null
+    },
+    {
+      "name": "Checkbox",
+      "category": "form",
+      "storyTitle": "Forms/Checkbox",
+      "description": "Controlled checkbox accepting `checked`, `indetermined` (indeterminate state), `size` (`CheckboxSize.S | .M | .L`), `disabled`, `readOnly`, `invalid`, `highlighted`, `label`, `explanationText`, `validationMessage`, `markAsRequired`, `labelIcon`/`labelIconTooltip`, and `onChange(event, newChecked)` / `onClick` callbacks. Clicking while indeterminate transitions to checked.",
+      "visualDescription": "A square checkbox frame with tick or dash icon beside an optional label. Stories: Default, Checked, Indeterminate, AllSizes, AllSizesChecked, AllSizesIndeterminate, Disabled, ReadOnly, Invalid, WithExplanationText, AllStates, Controlled, SelectAllPattern.",
+      "useCases": [
+        "Checked",
+        "Indeterminate",
+        "AllSizes",
+        "AllSizesChecked",
+        "AllSizesIndeterminate",
+        "Disabled"
+      ],
+      "files": [
+        "src/components/Checkbox/Checkbox.css",
+        "src/components/Checkbox/Checkbox.tsx",
+        "src/components/Checkbox/Checkbox.types.ts",
+        "src/components/Checkbox/CheckboxTickIcon.css",
+        "src/components/Checkbox/CheckboxTickIcon.tsx",
+        "src/components/Checkbox/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Checkbox.webp"
+    },
+    {
+      "name": "CodeEditor",
+      "category": "form",
+      "storyTitle": "Forms/CodeEditor",
+      "description": "Code editor component. CodeEditorLanguage: 'html' | 'css' | 'sql' | 'xml' | 'javascript'.",
+      "visualDescription": "Stories: WithLabel, MarkAsRequired, WithExplanationText, Disabled, ReadOnly, Invalid.",
+      "useCases": [
+        "WithLabel",
+        "MarkAsRequired",
+        "WithExplanationText",
+        "Disabled",
+        "ReadOnly",
+        "Invalid"
+      ],
+      "files": [
+        "src/components/CodeEditor/CodeEditor.css",
+        "src/components/CodeEditor/CodeEditor.tsx",
+        "src/components/CodeEditor/CodeEditor.types.ts",
+        "src/components/CodeEditor/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "@codemirror/lang-css",
+        "@codemirror/lang-html",
+        "@codemirror/lang-javascript",
+        "@codemirror/lang-sql",
+        "@codemirror/lang-xml",
+        "@uiw/react-codemirror"
+      ],
+      "preview": "previews/CodeEditor.webp"
+    },
+    {
+      "name": "ConfirmationDialog",
+      "category": "feedback",
+      "storyTitle": "Feedback/ConfirmationDialog",
+      "description": "A simplified confirmation dialog component. Wraps the Dialog component with a streamlined API for confirm/cancel scenarios. The dialog is always open when rendered - control visibility by conditionally rendering the component. Note: This is a simplified version that removes the Kentico Forms integration from the source. For form-based confirmation dialogs, use Dialog directly with your own form implementation. ```tsx {showConfirmation && ( <ConfirmationDialog headline=\"Delete item?\" isConfirmationButtonDestructive actionInProgress={isDeleting} onConfirmation={handleDelete} onCancellation={() => setShowConfirmation(false)} texts={{ confirmLabel: \"Delete\", cancelLabel: \"Cancel\", closeTooltip: \"Close\" }} > <p>This action cannot be undone.</p> </ConfirmationDialog> )} ```",
+      "visualDescription": "Stories: Destructive, WithIcon, ActionInProgress.",
+      "useCases": [
+        "Destructive",
+        "WithIcon",
+        "ActionInProgress"
+      ],
+      "files": [
+        "src/components/ConfirmationDialog/ConfirmationDialog.tsx",
+        "src/components/ConfirmationDialog/ConfirmationDialog.types.ts",
+        "src/components/ConfirmationDialog/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/ConfirmationDialog.webp"
+    },
+    {
+      "name": "ContentItemTile",
+      "category": "display",
+      "storyTitle": "Tiles/ContentItemTile",
+      "description": "ContentItemTile component for displaying content item previews with selection and actions. Thin wrapper around BaseTile that maps ContentItemTileType to BaseTileType and sets default preview icon size to XXL. ContentItemTileType: 'Preview' | 'Selectable' | 'Skeleton'.",
+      "visualDescription": "Variants: Preview, Selectable, Skeleton. Stories: AllTypes, ContentTypes, Preview, Selectable, SelectableSelected, SelectableWithCheckbox.",
+      "useCases": [
+        "AllTypes",
+        "ContentTypes",
+        "Preview",
+        "Selectable",
+        "SelectableSelected",
+        "SelectableWithCheckbox"
+      ],
+      "files": [
+        "src/components/ContentItemTile/ContentItemTile.tsx",
+        "src/components/ContentItemTile/ContentItemTile.types.ts",
+        "src/components/ContentItemTile/ContentItemTilePreview.tsx",
+        "src/components/ContentItemTile/ContentItemTileSelectable.tsx",
+        "src/components/ContentItemTile/ContentItemTileSkeleton.tsx",
+        "src/components/ContentItemTile/index.ts"
+      ],
+      "internalDeps": [
+        "BaseTile"
+      ],
+      "npmDeps": [],
+      "preview": "previews/ContentItemTile.webp"
+    },
+    {
+      "name": "CrossSiteTagTableCellComponent",
+      "category": "display",
+      "storyTitle": "Unknown/CrossSiteTagTableCellComponent",
+      "description": "Table cell component for cross-site activity columns. Accepts `value` (string displayed beside the tag) and optional `tagLabel` (defaults to `'Yes'`). Renders nothing when `value` is falsy.",
+      "visualDescription": "A Tag chip (defaulting to label 'Yes') followed by a truncating text span showing the value — designed to sit inside a table cell. No dedicated Storybook stories.",
+      "useCases": [],
+      "files": [
+        "src/components/CrossSiteTagTableCellComponent/CrossSiteTagTableCellComponent.css",
+        "src/components/CrossSiteTagTableCellComponent/CrossSiteTagTableCellComponent.tsx",
+        "src/components/CrossSiteTagTableCellComponent/CrossSiteTagTableCellComponent.types.ts",
+        "src/components/CrossSiteTagTableCellComponent/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": null
+    },
+    {
+      "name": "DateTimeInput",
+      "category": "form",
+      "storyTitle": "Forms/DateTimeInput",
+      "description": "onChange: Callback called when a day is selected or when clicked on the action button.. value: Current selected Date.. label: Label for the date input.. minDate: Minimal date that can be selected.. maxDate: Maximal date that can be selected..",
+      "visualDescription": "Stories: WithLabel, WithValue, WithTime, Disabled, ReadOnly, ReadOnlyWithTime.",
+      "useCases": [
+        "WithLabel",
+        "WithValue",
+        "WithTime",
+        "Disabled",
+        "ReadOnly",
+        "ReadOnlyWithTime"
+      ],
+      "files": [
+        "src/components/DateTimeInput/DateTimeInput.css",
+        "src/components/DateTimeInput/DateTimeInput.tsx",
+        "src/components/DateTimeInput/DateTimeInput.types.ts",
+        "src/components/DateTimeInput/DateTimeRangeInput.css",
+        "src/components/DateTimeInput/DateTimeRangeInput.tsx",
+        "src/components/DateTimeInput/DateTimeRangeInput.types.ts",
+        "src/components/DateTimeInput/components/ButtonIcon.css",
+        "src/components/DateTimeInput/components/ButtonIcon.tsx",
+        "src/components/DateTimeInput/components/ButtonIcon.types.ts",
+        "src/components/DateTimeInput/components/Calendar.css",
+        "src/components/DateTimeInput/components/CalendarHeading.css",
+        "src/components/DateTimeInput/components/CalendarHeading.tsx",
+        "src/components/DateTimeInput/components/ClearInputButton.tsx",
+        "src/components/DateTimeInput/components/ClearInputButton.types.ts",
+        "src/components/DateTimeInput/components/ListPopover.css",
+        "src/components/DateTimeInput/components/ListPopover.tsx",
+        "src/components/DateTimeInput/components/ListPopover.types.ts",
+        "src/components/DateTimeInput/components/QuickRangeSelect.css",
+        "src/components/DateTimeInput/components/QuickRangeSelect.tsx",
+        "src/components/DateTimeInput/components/QuickRangeSelect.types.ts",
+        "src/components/DateTimeInput/components/RangeCalendar.css",
+        "src/components/DateTimeInput/components/RangeCalendar.tsx",
+        "src/components/DateTimeInput/components/RangeCalendar.types.ts",
+        "src/components/DateTimeInput/components/TimeInput.css",
+        "src/components/DateTimeInput/components/TimeInput.tsx",
+        "src/components/DateTimeInput/components/TimeInput.types.ts",
+        "src/components/DateTimeInput/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "@react-aria/i18n"
+      ],
+      "preview": "previews/DateTimeInput.webp"
+    },
+    {
+      "name": "DateTimePicker",
+      "category": "form",
+      "storyTitle": "Forms/DateTimePicker",
+      "description": "Calendar-based date picker accepting `value` (`Date | null`), `onChange`, `years` (allowed year array), optional `months` labels, optional `minDate`/`maxDate` constraints, and an optional `timePicker` object with `timeFormat` (`'hours12'` | `'hours24'`), `actionLabel`, `defaultTime` (`{hours, minutes}`), and `onActionClick`.",
+      "visualDescription": "An inline calendar grid with month/year navigation; optionally extends with a time input row. Stories: Default, WithSelectedDate, WithMinDate, WithMaxDate, WithDateConstraints, WithCustomMonths, WithTimePicker12Hour, WithTimePicker24Hour, AllStates, TimePickerFormats, Controlled, ControlledWithTimePicker, LimitedYearRange.",
+      "useCases": [
+        "WithSelectedDate",
+        "WithMinDate",
+        "WithMaxDate",
+        "WithDateConstraints",
+        "WithCustomMonths",
+        "WithTimePicker12Hour"
+      ],
+      "files": [
+        "src/components/DateTimePicker/DateTimePicker.css",
+        "src/components/DateTimePicker/DateTimePicker.tsx",
+        "src/components/DateTimePicker/DateTimePicker.types.ts",
+        "src/components/DateTimePicker/Day/Day.css",
+        "src/components/DateTimePicker/Day/Day.tsx",
+        "src/components/DateTimePicker/Header/Header.css",
+        "src/components/DateTimePicker/Header/Header.tsx",
+        "src/components/DateTimePicker/Header/SelectButton/SelectButton.css",
+        "src/components/DateTimePicker/Header/SelectButton/SelectButton.tsx",
+        "src/components/DateTimePicker/MonthPicker/MonthPicker.css",
+        "src/components/DateTimePicker/MonthPicker/MonthPicker.tsx",
+        "src/components/DateTimePicker/PickerButton/PickerButton.css",
+        "src/components/DateTimePicker/PickerButton/PickerButton.tsx",
+        "src/components/DateTimePicker/PickerOverlay/PickerOverlay.css",
+        "src/components/DateTimePicker/PickerOverlay/PickerOverlay.tsx",
+        "src/components/DateTimePicker/TimePicker/TimePicker.css",
+        "src/components/DateTimePicker/TimePicker/TimePicker.tsx",
+        "src/components/DateTimePicker/TimePicker/TimePickerInput/TimePickerInput.css",
+        "src/components/DateTimePicker/TimePicker/TimePickerInput/TimePickerInput.tsx",
+        "src/components/DateTimePicker/YearPicker/YearPicker.css",
+        "src/components/DateTimePicker/YearPicker/YearPicker.tsx",
+        "src/components/DateTimePicker/index.ts",
+        "src/components/DateTimePicker/utils/parseTimeFromString.ts",
+        "src/components/DateTimePicker/utils/setTimeInDateObject.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "react-datepicker"
+      ],
+      "preview": "previews/DateTimePicker.webp"
+    },
+    {
+      "name": "Dialog",
+      "category": "feedback",
+      "storyTitle": "Feedback/Dialog",
+      "description": "A modal dialog component matching the Kentico source architecture. Features structured footer actions: [Secondary] ... [Cancel] [Confirm]",
+      "visualDescription": "Stories: WithActions, WithAllActions, DestructiveAction, ActionInProgress, NonDismissable, ScrollableContent.",
+      "useCases": [
+        "WithActions",
+        "WithAllActions",
+        "DestructiveAction",
+        "ActionInProgress",
+        "NonDismissable",
+        "ScrollableContent"
+      ],
+      "files": [
+        "src/components/Dialog/Dialog.css",
+        "src/components/Dialog/Dialog.tsx",
+        "src/components/Dialog/Dialog.types.ts",
+        "src/components/Dialog/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Dialog.webp"
+    },
+    {
+      "name": "Divider",
+      "category": "layout",
+      "storyTitle": "Layout/Divider",
+      "description": "DividerOrientation: 'horizontal' | 'vertical'.",
+      "visualDescription": "Stories: Horizontal, Vertical.",
+      "useCases": [
+        "Horizontal",
+        "Vertical"
+      ],
+      "files": [
+        "src/components/Divider/Divider.css",
+        "src/components/Divider/Divider.tsx",
+        "src/components/Divider/Divider.types.ts",
+        "src/components/Divider/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Divider.webp"
+    },
+    {
+      "name": "Draggable",
+      "category": "layout",
+      "storyTitle": "Layout/Draggable",
+      "description": "ItemSelectorViewMode: 'content-item-grid-tile-draggable' | 'table-row-draggable'.",
+      "visualDescription": "Stories: DragDisabled, WithClickHandler.",
+      "useCases": [
+        "DragDisabled",
+        "WithClickHandler"
+      ],
+      "files": [
+        "src/components/Draggable/Draggable.types.ts",
+        "src/components/Draggable/DraggableProviderWrapper/DraggableProviderWrapper.tsx",
+        "src/components/Draggable/DraggableProviderWrapper/DraggableProviderWrapper.types.ts",
+        "src/components/Draggable/DraggableProviderWrapper/index.ts",
+        "src/components/Draggable/ItemDragLayer.tsx",
+        "src/components/Draggable/TableRowDraggable/TableRowDraggable.css",
+        "src/components/Draggable/TableRowDraggable/TableRowDraggable.tsx",
+        "src/components/Draggable/TableRowDraggable/TableRowDraggable.types.ts",
+        "src/components/Draggable/TableRowDraggable/index.ts",
+        "src/components/Draggable/hooks/index.ts",
+        "src/components/Draggable/index.ts",
+        "src/components/Draggable/utils/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "react-dnd",
+        "react-dnd-html5-backend"
+      ],
+      "preview": "previews/Draggable.webp"
+    },
+    {
+      "name": "DropDown",
+      "category": "navigation",
+      "storyTitle": "Navigation/DropDown",
+      "description": "DropDownPlacement: 'top-start' | 'top-end' | 'top' | 'bottom-start' | 'bottom-end' | 'bottom' | 'left-start' | 'left-end' | 'left' | 'right-start' | 'right-end' | 'right'. DropDownTrigger: 'click' | 'hover'.",
+      "visualDescription": "Stories: OnClick, OnHover, Placements, CloseOnContentClick, WithMaxHeight.",
+      "useCases": [
+        "OnClick",
+        "OnHover",
+        "Placements",
+        "CloseOnContentClick",
+        "WithMaxHeight"
+      ],
+      "files": [
+        "src/components/DropDown/DropDown.types.ts",
+        "src/components/DropDown/DropDownOnClick.css",
+        "src/components/DropDown/DropDownOnClick.tsx",
+        "src/components/DropDown/DropDownOnHover.tsx",
+        "src/components/DropDown/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/DropDown.webp"
+    },
+    {
+      "name": "DropDownActionMenu",
+      "category": "navigation",
+      "storyTitle": "Navigation/DropDownActionMenu",
+      "description": "A dropdown action menu component that displays a list of menu items. Renders in a portal for proper z-index stacking. Can be used in two modes: 1. Controlled: Pass isOpen, onClose, and triggerRef 2. Uncontrolled with renderTrigger: Pass renderTrigger function DropDownPlacement: 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' | 'left-start' | 'left-end' | 'right-start' | 'right-end'.",
+      "visualDescription": "Stories: BottomStart, BottomEnd, TopStart, TopEnd, LeftStart, RightEnd.",
+      "useCases": [
+        "BottomStart",
+        "BottomEnd",
+        "TopStart",
+        "TopEnd",
+        "LeftStart",
+        "RightEnd"
+      ],
+      "files": [
+        "src/components/DropDownActionMenu/DropDownActionMenu.css",
+        "src/components/DropDownActionMenu/DropDownActionMenu.tsx",
+        "src/components/DropDownActionMenu/DropDownActionMenu.types.ts",
+        "src/components/DropDownActionMenu/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/DropDownActionMenu.webp"
+    },
+    {
+      "name": "Dropzone",
+      "category": "form",
+      "storyTitle": "Forms/Dropzone",
+      "description": "A drag-and-drop zone for file uploads. The Dropzone component provides a container that accepts file drops. It handles drag events and notifies parent components about drag state changes and file uploads.",
+      "visualDescription": "Stories: Disabled, Interactive, AllStates, DragStateDemo, WithValidation.",
+      "useCases": [
+        "Disabled",
+        "Interactive",
+        "AllStates",
+        "DragStateDemo",
+        "WithValidation"
+      ],
+      "files": [
+        "src/components/Dropzone/Dropzone.css",
+        "src/components/Dropzone/Dropzone.tsx",
+        "src/components/Dropzone/Dropzone.types.ts",
+        "src/components/Dropzone/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Dropzone.webp"
+    },
+    {
+      "name": "DropzoneOverlay",
+      "category": "form",
+      "storyTitle": "Forms/DropzoneOverlay",
+      "description": "DropzoneOverlay component provides drag-and-drop file upload with visual overlay feedback. Shows a backdrop blur overlay with icon and title when files are dragged over the component. <DropzoneOverlay title=\"Drop files here\" onUpload={(files) => console.log('Uploaded:', files)} onActiveChange={(isActive) => console.log('Active:', isActive)} > <YourContent /> </DropzoneOverlay>",
+      "visualDescription": "Stories: ActiveOverlayPreview, Disabled, WithCustomTitle, LargeDropArea.",
+      "useCases": [
+        "ActiveOverlayPreview",
+        "Disabled",
+        "WithCustomTitle",
+        "LargeDropArea"
+      ],
+      "files": [
+        "src/components/DropzoneOverlay/DropzoneOverlay.css",
+        "src/components/DropzoneOverlay/DropzoneOverlay.tsx",
+        "src/components/DropzoneOverlay/DropzoneOverlay.types.ts",
+        "src/components/DropzoneOverlay/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/DropzoneOverlay.webp"
+    },
+    {
+      "name": "EditableHeader",
+      "category": "display",
+      "storyTitle": "Data Display/EditableHeader",
+      "description": "EditableHeader displays a headline with an edit button. Clicking the edit button opens a dialog to edit the value. ```tsx <EditableHeader value=\"Page Title\" texts={{ dialogHeadline: 'Edit page name', inputLabel: 'Name', confirmLabel: 'Save', cancelLabel: 'Cancel', closeTooltip: 'Close', }} onConfirm={async (value) => { const isValid = value.length > 0 return { isValid, validationMessage: isValid ? undefined : 'Name is required' } }} /> ```",
+      "visualDescription": "Stories: WithValidationError, DifferentSizes, Disabled.",
+      "useCases": [
+        "WithValidationError",
+        "DifferentSizes",
+        "Disabled"
+      ],
+      "files": [
+        "src/components/EditableHeader/EditableHeader.css",
+        "src/components/EditableHeader/EditableHeader.tsx",
+        "src/components/EditableHeader/EditableHeader.types.ts",
+        "src/components/EditableHeader/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/EditableHeader.webp"
+    },
+    {
+      "name": "FileDropOverlay",
+      "category": "form",
+      "storyTitle": "Forms/FileDropOverlay",
+      "description": "FileDropOverlay component provides a simplified drag-and-drop file upload with optional file count restrictions on top of DropzoneOverlay. <FileDropOverlay title=\"Drop files here\" maxFiles={5} onDrop={(files) => console.log('Dropped:', files)} onActiveChange={(isActive) => console.log('Active:', isActive)} > <YourContent /> </FileDropOverlay>",
+      "visualDescription": "Stories: MaxFilesOne, MaxFilesThree, MaxFilesFive, Disabled, WithCustomTitle, AllVariants.",
+      "useCases": [
+        "MaxFilesOne",
+        "MaxFilesThree",
+        "MaxFilesFive",
+        "Disabled",
+        "WithCustomTitle",
+        "AllVariants"
+      ],
+      "files": [
+        "src/components/FileDropOverlay/FileDropOverlay.tsx",
+        "src/components/FileDropOverlay/FileDropOverlay.types.ts",
+        "src/components/FileDropOverlay/index.ts"
+      ],
+      "internalDeps": [
+        "DropzoneOverlay"
+      ],
+      "npmDeps": [],
+      "preview": "previews/FileDropOverlay.webp"
+    },
+    {
+      "name": "FileInput",
+      "category": "form",
+      "storyTitle": "Forms/FileInput",
+      "description": "Wraps a hidden HTML file input and allows opening the file selection dialog and handling uploaded files programmatically.",
+      "visualDescription": "Stories: MultipleFiles, ImagesOnly, DocumentsOnly, MultipleImages, AllFilters.",
+      "useCases": [
+        "MultipleFiles",
+        "ImagesOnly",
+        "DocumentsOnly",
+        "MultipleImages",
+        "AllFilters"
+      ],
+      "files": [
+        "src/components/FileInput/FileInput.tsx",
+        "src/components/FileInput/FileInput.types.ts",
+        "src/components/FileInput/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/FileInput.webp"
+    },
+    {
+      "name": "Filters",
+      "category": "display",
+      "storyTitle": "Data Display/FilterStatusIndicator",
+      "description": "FilterStatusIndicator - displays a bar of active filter tags with \"Clear All\" functionality. Shows currently applied filters as removable tags. Users can: - Click \"Clear All\" to remove all filters - Click the remove button on individual tags to clear specific filters - Click a tag to trigger the onTagClick handler (e.g., to open filter panel) ```tsx <FilterStatusIndicator filterItems={[ { name: 'status', label: 'Status: Active' }, { name: 'category', label: 'Category: News', tooltip: 'Filtering by category' }, ]} onClearAll={() => clearAllFilters()} onClear={(name) => clearFilter(name)} onTagClick={() => openFilterPanel()} texts={{ appliedFiltersLabel: 'Applied filters:', clearAllButtonLabel: 'Clear all', }} /> ```",
+      "visualDescription": "Stories: Interactive, WithActions, SingleFilter, Panel.",
+      "useCases": [
+        "Interactive",
+        "WithActions",
+        "SingleFilter",
+        "Panel"
+      ],
+      "files": [
+        "src/components/Filters/Filters.css",
+        "src/components/Filters/Filters.tsx",
+        "src/components/Filters/Filters.types.ts",
+        "src/components/Filters/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Filters.webp"
+    },
+    {
+      "name": "FormItemWrapper",
+      "category": "form",
+      "storyTitle": "Forms/FormItemWrapper",
+      "description": "Props: id, inline, label, markAsRequired, disabled, editMode.",
+      "visualDescription": "Stories: WithRequired, Inline, WithValidation, WithStatusText, WithExplanationText, WithHtmlExplanation.",
+      "useCases": [
+        "WithRequired",
+        "Inline",
+        "WithValidation",
+        "WithStatusText",
+        "WithExplanationText",
+        "WithHtmlExplanation"
+      ],
+      "files": [
+        "src/components/FormItemWrapper/FormItemWrapper.css",
+        "src/components/FormItemWrapper/FormItemWrapper.tsx",
+        "src/components/FormItemWrapper/FormItemWrapper.types.ts",
+        "src/components/FormItemWrapper/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "dompurify"
+      ],
+      "preview": "previews/FormItemWrapper.webp"
+    },
+    {
+      "name": "Forms",
+      "category": "display",
+      "storyTitle": "Unknown/Forms",
+      "description": "Form deletion utilities: `FormDeleteDialog` (a confirmation dialog accepting `onDelete`, `onClose`, `texts` with `headline`/`confirmLabel`/`cancelLabel`/`closeTooltip`, optional `inProgress`, `maxWidth`, and `children`) and `FormDeleteDialogContent` (renders an item list and optional Callout warning or tip inside the dialog body).",
+      "visualDescription": "A modal dialog with a destructive confirm button and cancel button. Stories: Default, SingleItemDeletion, MultipleItemsDeletion, WithWarningCallout, WithTipCallout, InProgress, WithCustomContent, CustomMaxWidth.",
+      "useCases": [],
+      "files": [
+        "src/components/Forms/FormDelete/FormDeleteComponent.tsx",
+        "src/components/Forms/FormDelete/FormDeleteComponent.types.ts",
+        "src/components/Forms/FormDelete/FormDeleteDialog.tsx",
+        "src/components/Forms/FormDelete/FormDeleteDialog.types.ts",
+        "src/components/Forms/FormDelete/FormDeleteDialogContent.css",
+        "src/components/Forms/FormDelete/FormDeleteDialogContent.tsx",
+        "src/components/Forms/FormDelete/FormDeleteDialogContent.types.ts",
+        "src/components/Forms/FormDelete/index.ts",
+        "src/components/Forms/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": null
+    },
+    {
+      "name": "Headline",
+      "category": "display",
+      "storyTitle": "Data Display/Headline",
+      "description": "Typography heading element accepting a required `size` (`HeadlineSize.S | .M | .L`), optional `labelColor` (design-system `Colors` token), and optional Box spacing props `spacingTop`, `spacingBottom`, `spacingY`.",
+      "visualDescription": "A styled heading text block in three sizes. Stories: Small, Medium, Large, AllSizes, WithCustomColor, WithSpacing.",
+      "useCases": [
+        "Small",
+        "Medium",
+        "Large",
+        "AllSizes",
+        "WithCustomColor",
+        "WithSpacing"
+      ],
+      "files": [
+        "src/components/Headline/Headline.css",
+        "src/components/Headline/Headline.tsx",
+        "src/components/Headline/Headline.types.ts",
+        "src/components/Headline/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Headline.webp"
+    },
+    {
+      "name": "HorizontalActionMenu",
+      "category": "navigation",
+      "storyTitle": "Navigation/HorizontalActionMenu",
+      "description": "A horizontal action menu component with overflow handling. Actions are provided as data items and rendered as Buttons internally. Items that don't fit are moved to a \"more\" dropdown menu.",
+      "visualDescription": "Stories: WithLabel, WithOverflow, ActionsHidden, WithDestructiveAction, WithDisabledAction.",
+      "useCases": [
+        "WithLabel",
+        "WithOverflow",
+        "ActionsHidden",
+        "WithDestructiveAction",
+        "WithDisabledAction"
+      ],
+      "files": [
+        "src/components/HorizontalActionMenu/HorizontalActionMenu.css",
+        "src/components/HorizontalActionMenu/HorizontalActionMenu.tsx",
+        "src/components/HorizontalActionMenu/HorizontalActionMenu.types.ts",
+        "src/components/HorizontalActionMenu/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/HorizontalActionMenu.webp"
+    },
+    {
+      "name": "Icon",
+      "category": "display",
+      "storyTitle": "Data Display/Icon",
+      "description": "Icon component that renders SVG icons from public/icons directory. Icons use currentColor for fill, inheriting color from parent. <Icon name=\"xp-home\" size=\"m\" /> <Icon name=\"home\" size=\"l\" className=\"custom-class\" />",
+      "visualDescription": "Stories: AllSizes, IconsLibrary, FlagIcons, WithXpPrefix, CustomColor.",
+      "useCases": [
+        "AllSizes",
+        "IconsLibrary",
+        "FlagIcons",
+        "WithXpPrefix",
+        "CustomColor"
+      ],
+      "files": [
+        "src/components/Icon/Icon.css",
+        "src/components/Icon/Icon.tsx",
+        "src/components/Icon/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Icon.webp"
+    },
+    {
+      "name": "InfoCard",
+      "category": "display",
+      "storyTitle": "Data Display/InfoCard",
+      "description": "Small metric card displaying caption, tooltip icon, primary value text, and detail text. Wraps Paper and Tooltip.",
+      "visualDescription": "Stories: PercentageValue, DurationValue, CurrencyValue, ContentTypeVariants, DashboardLayout.",
+      "useCases": [
+        "PercentageValue",
+        "DurationValue",
+        "CurrencyValue",
+        "ContentTypeVariants",
+        "DashboardLayout"
+      ],
+      "files": [
+        "src/components/InfoCard/InfoCard.css",
+        "src/components/InfoCard/InfoCard.tsx",
+        "src/components/InfoCard/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/InfoCard.webp"
+    },
+    {
+      "name": "InfoCardGroup",
+      "category": "display",
+      "storyTitle": "Data Display/InfoCardGroup",
+      "description": "Renders a row of stat/metric cards. Accepts a `cards` array of `InfoCardData` objects, each with `caption`, `text`, `tooltip`, and optional `details` fields.",
+      "visualDescription": "A horizontal group of bordered metric cards, each showing a caption, large value, and optional detail line. Stories: Default, SingleCard, ManyCards.",
+      "useCases": [
+        "SingleCard",
+        "ManyCards"
+      ],
+      "files": [
+        "src/components/InfoCardGroup/InfoCardGroup.css",
+        "src/components/InfoCardGroup/InfoCardGroup.tsx",
+        "src/components/InfoCardGroup/InfoCardGroup.types.ts",
+        "src/components/InfoCardGroup/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/InfoCardGroup.webp"
+    },
+    {
+      "name": "Input",
+      "category": "form",
+      "storyTitle": "Forms/Input",
+      "description": "value: Current value.. placeholder: Placeholder text.. disabled: Whether the input is disabled.. invalid: Whether the input is invalid.. type: Input type..",
+      "visualDescription": "Stories: WithValue, Placeholder, Disabled, Invalid, InputTypes, AllStates.",
+      "useCases": [
+        "WithValue",
+        "Placeholder",
+        "Disabled",
+        "Invalid",
+        "InputTypes",
+        "AllStates"
+      ],
+      "files": [
+        "src/components/Input/Input.css",
+        "src/components/Input/Input.tsx",
+        "src/components/Input/Input.types.ts",
+        "src/components/Input/InputBase.css",
+        "src/components/Input/InputBase.tsx",
+        "src/components/Input/InputBase.types.ts",
+        "src/components/Input/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Input.webp"
+    },
+    {
+      "name": "LabelWithTooltip",
+      "category": "display",
+      "storyTitle": "Data Display/LabelWithTooltip",
+      "description": "Component for displaying label with tooltip visible when hovering over information icon.",
+      "visualDescription": "Stories: WithShortTooltip, WithLongTooltip, WithLongLabel, MultipleLabels.",
+      "useCases": [
+        "WithShortTooltip",
+        "WithLongTooltip",
+        "WithLongLabel",
+        "MultipleLabels"
+      ],
+      "files": [
+        "src/components/LabelWithTooltip/LabelWithTooltip.css",
+        "src/components/LabelWithTooltip/LabelWithTooltip.tsx",
+        "src/components/LabelWithTooltip/LabelWithTooltip.types.ts",
+        "src/components/LabelWithTooltip/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/LabelWithTooltip.webp"
+    },
+    {
+      "name": "Layout",
+      "category": "layout",
+      "storyTitle": "Layout/Stack",
+      "description": "LayoutAlignment: 'flex-start' | 'center' | 'flex-end'. Spacing: '1px' | '2px' | '4px' | '8px' | '12px' | '16px' | '24px' | '32px' | '40px' | '48px'. Dimensions: '8px'.",
+      "visualDescription": "Stories: RowDefault, RowWithWrap, RowNoWrap, RowAlignment, ColumnWithCols, ColumnResponsive.",
+      "useCases": [
+        "RowDefault",
+        "RowWithWrap",
+        "RowNoWrap",
+        "RowAlignment",
+        "ColumnWithCols",
+        "ColumnResponsive"
+      ],
+      "files": [
+        "src/components/Layout/Column/Column.css",
+        "src/components/Layout/Column/Column.tsx",
+        "src/components/Layout/Column/Column.types.ts",
+        "src/components/Layout/Column/index.ts",
+        "src/components/Layout/Grid/Grid.tsx",
+        "src/components/Layout/Grid/Grid.types.ts",
+        "src/components/Layout/Grid/index.ts",
+        "src/components/Layout/Inline/Inline.css",
+        "src/components/Layout/Inline/Inline.tsx",
+        "src/components/Layout/Inline/Inline.types.ts",
+        "src/components/Layout/Inline/index.ts",
+        "src/components/Layout/Layout.types.ts",
+        "src/components/Layout/Row/Row.css",
+        "src/components/Layout/Row/Row.tsx",
+        "src/components/Layout/Row/Row.types.ts",
+        "src/components/Layout/Row/index.ts",
+        "src/components/Layout/Stack/Stack.css",
+        "src/components/Layout/Stack/Stack.tsx",
+        "src/components/Layout/Stack/Stack.types.ts",
+        "src/components/Layout/Stack/index.ts",
+        "src/components/Layout/constants.ts",
+        "src/components/Layout/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Layout.webp"
+    },
+    {
+      "name": "Link",
+      "category": "actions",
+      "storyTitle": "Actions/Link",
+      "description": "Component wrapping the HTML anchor element.",
+      "visualDescription": "Stories: WithTextAndHref, HrefAsText, AllTargets, OpenInNewTab, Inactive, ActiveVsInactive.",
+      "useCases": [
+        "WithTextAndHref",
+        "HrefAsText",
+        "AllTargets",
+        "OpenInNewTab",
+        "Inactive",
+        "ActiveVsInactive"
+      ],
+      "files": [
+        "src/components/Link/Link.css",
+        "src/components/Link/Link.tsx",
+        "src/components/Link/Link.types.ts",
+        "src/components/Link/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Link.webp"
+    },
+    {
+      "name": "LinkButton",
+      "category": "actions",
+      "storyTitle": "Actions/LinkButton",
+      "description": "A link-styled button that renders as an `<a>` element with button appearance. When disabled or in progress, renders as a non-interactive `<div>`. Reuses Button.css for consistent styling with the Button component.",
+      "visualDescription": "Stories: AllColors, AllSizes, ColorSizeMatrix, Destructive, WithIcons, IconOnly.",
+      "useCases": [
+        "AllColors",
+        "AllSizes",
+        "ColorSizeMatrix",
+        "Destructive",
+        "WithIcons",
+        "IconOnly"
+      ],
+      "files": [
+        "src/components/LinkButton/LinkButton.css",
+        "src/components/LinkButton/LinkButton.tsx",
+        "src/components/LinkButton/LinkButton.types.ts",
+        "src/components/LinkButton/index.ts"
+      ],
+      "internalDeps": [
+        "Button",
+        "Icon",
+        "Spinner",
+        "Tooltip"
+      ],
+      "npmDeps": [],
+      "preview": "previews/LinkButton.webp"
+    },
+    {
+      "name": "MenuItem",
+      "category": "navigation",
+      "storyTitle": "Navigation/MenuItem",
+      "description": "Props: primaryLabel, secondaryLabel, tooltipText, tooltipPlacement, destructive, disabled.",
+      "visualDescription": "Stories: WithSecondaryLabel, WithLeadingIcon, WithTrailingIcon, WithTrailingLabel, WithBothElements, Destructive.",
+      "useCases": [
+        "WithSecondaryLabel",
+        "WithLeadingIcon",
+        "WithTrailingIcon",
+        "WithTrailingLabel",
+        "WithBothElements",
+        "Destructive"
+      ],
+      "files": [
+        "src/components/MenuItem/MenuItem.css",
+        "src/components/MenuItem/MenuItem.tsx",
+        "src/components/MenuItem/MenuItem.types.ts",
+        "src/components/MenuItem/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/MenuItem.webp"
+    },
+    {
+      "name": "NavigationBlockerDialog",
+      "category": "feedback",
+      "storyTitle": "Feedback/NavigationBlockerDialog",
+      "description": "Provider component for navigation blocking functionality. Wrap your application or route with this provider to enable navigation blocking features via the `useNavigationBlocker` hook. Note: This provider must be used inside a React Router context (e.g., inside BrowserRouter or MemoryRouter). ```tsx import { BrowserRouter } from 'react-router-dom' import { NavigationBlockerDialogProvider } from '@/components/NavigationBlockerDialog' function App() { return ( <BrowserRouter> <NavigationBlockerDialogProvider> <Routes> <Route path=\"/\" element={<Home />} /> <Route path=\"/edit\" element={<EditForm />} /> </Routes> </NavigationBlockerDialogProvider> </BrowserRouter> ) } ```",
+      "visualDescription": "Stories: Blocked.",
+      "useCases": [
+        "Blocked"
+      ],
+      "files": [
+        "src/components/NavigationBlockerDialog/NavigationBlockerDialog.css",
+        "src/components/NavigationBlockerDialog/NavigationBlockerDialog.tsx",
+        "src/components/NavigationBlockerDialog/NavigationBlockerDialog.types.ts",
+        "src/components/NavigationBlockerDialog/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/NavigationBlockerDialog.webp"
+    },
+    {
+      "name": "NotificationBar",
+      "category": "feedback",
+      "storyTitle": "Feedback/NotificationBar",
+      "description": "NotificationBarType: 'alert' | 'warning' | 'info'.",
+      "visualDescription": "Variants: alert, warning, info. Stories: Alert, Warning, Info, AllTypes, Dismissible, AllTypesDismissible.",
+      "useCases": [
+        "Alert",
+        "Warning",
+        "Info",
+        "AllTypes",
+        "Dismissible",
+        "AllTypesDismissible"
+      ],
+      "files": [
+        "src/components/NotificationBar/NotificationBar.css",
+        "src/components/NotificationBar/NotificationBar.tsx",
+        "src/components/NotificationBar/index.ts"
+      ],
+      "internalDeps": [
+        "Button",
+        "Icon"
+      ],
+      "npmDeps": [
+        "dompurify"
+      ],
+      "preview": "previews/NotificationBar.webp"
+    },
+    {
+      "name": "OptionTile",
+      "category": "actions",
+      "storyTitle": "Actions/OptionTile",
+      "description": "label: Label text displayed in the tile (required).. startIcon: Icon name to display at the start of the tile.. endIcon: Icon name to display at the end of the tile.. block: Whether the tile should take full width of its container.. maxWidth: Maximum width of the tile..",
+      "visualDescription": "Stories: Inline, Block, WithStartIcon, WithEndIcon, WithBothIcons, WithIconsInline.",
+      "useCases": [
+        "Inline",
+        "Block",
+        "WithStartIcon",
+        "WithEndIcon",
+        "WithBothIcons",
+        "WithIconsInline"
+      ],
+      "files": [
+        "src/components/OptionTile/OptionTile.css",
+        "src/components/OptionTile/OptionTile.tsx",
+        "src/components/OptionTile/OptionTile.types.ts",
+        "src/components/OptionTile/index.ts"
+      ],
+      "internalDeps": [
+        "Icon",
+        "Tooltip"
+      ],
+      "npmDeps": [],
+      "preview": "previews/OptionTile.webp"
+    },
+    {
+      "name": "OverviewCard",
+      "category": "display",
+      "storyTitle": "Data Display/OverviewCard",
+      "description": "A section within an OverviewCard. Wraps content with proper spacing between sections.",
+      "visualDescription": "Stories: WithActions, FullHeight.",
+      "useCases": [
+        "WithActions",
+        "FullHeight"
+      ],
+      "files": [
+        "src/components/OverviewCard/OverviewCard.css",
+        "src/components/OverviewCard/OverviewCard.tsx",
+        "src/components/OverviewCard/OverviewCard.types.ts",
+        "src/components/OverviewCard/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/OverviewCard.webp"
+    },
+    {
+      "name": "OverviewCardGroup",
+      "category": "display",
+      "storyTitle": "Data Display/OverviewCardGroup",
+      "description": "Groups multiple OverviewCard components in a horizontal row. Supports equal-width distribution or content-based sizing.",
+      "visualDescription": "Stories: EqualWidth.",
+      "useCases": [
+        "EqualWidth"
+      ],
+      "files": [
+        "src/components/OverviewCardGroup/OverviewCardGroup.css",
+        "src/components/OverviewCardGroup/OverviewCardGroup.tsx",
+        "src/components/OverviewCardGroup/OverviewCardGroup.types.ts",
+        "src/components/OverviewCardGroup/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/OverviewCardGroup.webp"
+    },
+    {
+      "name": "Pagination",
+      "category": "navigation",
+      "storyTitle": "Navigation/Pagination",
+      "description": "`Pagination` provides page navigation with page numbers and prev/next buttons. Automatically adjusts the number of visible page buttons based on container width.",
+      "visualDescription": "Stories: MiddlePage, LastPage, FewPages, ManyPages, Interactive.",
+      "useCases": [
+        "MiddlePage",
+        "LastPage",
+        "FewPages",
+        "ManyPages",
+        "Interactive"
+      ],
+      "files": [
+        "src/components/Pagination/Pagination.css",
+        "src/components/Pagination/Pagination.tsx",
+        "src/components/Pagination/Pagination.types.ts",
+        "src/components/Pagination/createPageButtons.ts",
+        "src/components/Pagination/index.ts",
+        "src/components/Pagination/useVariablePageButtons.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Pagination.webp"
+    },
+    {
+      "name": "Paper",
+      "category": "layout",
+      "storyTitle": "Layout/Paper",
+      "description": "Paper elevation levels PaperElevation: 'none' | 'subtle' | 'small' | 'medium' | 'large'. BorderRadius: 's' | 'm' | 'l'.",
+      "visualDescription": "Stories: AllElevations, WithBorder, BorderedVariants, AllBorderRadii, ElevationComparison, NestedPapers.",
+      "useCases": [
+        "AllElevations",
+        "WithBorder",
+        "BorderedVariants",
+        "AllBorderRadii",
+        "ElevationComparison",
+        "NestedPapers"
+      ],
+      "files": [
+        "src/components/Paper/Paper.css",
+        "src/components/Paper/Paper.tsx",
+        "src/components/Paper/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Paper.webp"
+    },
+    {
+      "name": "Placeholders",
+      "category": "layout",
+      "storyTitle": "Layout/Placeholders",
+      "description": "Loading/empty-state placeholder components: LanguageSelectorPlaceholder, WorkspaceSelectorPlaceholder, RoutingContentPlaceholder.",
+      "visualDescription": "Stories: LanguageSelector, WorkspaceSelector, RoutingContent, AllPlaceholders, SkeletonUsagePattern.",
+      "useCases": [
+        "LanguageSelector",
+        "WorkspaceSelector",
+        "RoutingContent",
+        "AllPlaceholders",
+        "SkeletonUsagePattern"
+      ],
+      "files": [
+        "src/components/Placeholders/LanguageSelectorPlaceholder.css",
+        "src/components/Placeholders/LanguageSelectorPlaceholder.tsx",
+        "src/components/Placeholders/RoutingContentPlaceholder.tsx",
+        "src/components/Placeholders/WorkspaceSelectorPlaceholder.css",
+        "src/components/Placeholders/WorkspaceSelectorPlaceholder.tsx",
+        "src/components/Placeholders/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Placeholders.webp"
+    },
+    {
+      "name": "ProgressBar",
+      "category": "feedback",
+      "storyTitle": "Feedback/ProgressBar",
+      "description": "Horizontal fill-bar accepting a single optional `completed` number (0–100). Values below 0 clamp to 0%, values above 100 clamp to 100%, and `undefined` shows 0%.",
+      "visualDescription": "A thin full-width track with a colored fill bar. Stories: Default, Determinate, Indeterminate, AnimatedProgress, EdgeCases.",
+      "useCases": [
+        "Determinate",
+        "Indeterminate",
+        "AnimatedProgress",
+        "EdgeCases"
+      ],
+      "files": [
+        "src/components/ProgressBar/ProgressBar.css",
+        "src/components/ProgressBar/ProgressBar.tsx",
+        "src/components/ProgressBar/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/ProgressBar.webp"
+    },
+    {
+      "name": "PromptDialog",
+      "category": "feedback",
+      "storyTitle": "Feedback/PromptDialog",
+      "description": "A dialog that prompts the user for text input. Wraps the Dialog component with a built-in Input field for collecting user input. The confirm button can be disabled until the user enters a value by setting `required={true}`. ```tsx const [showPrompt, setShowPrompt] = useState(false) const [name, setName] = useState('') {showPrompt && ( <PromptDialog isOpen={showPrompt} texts={{ headline: \"Enter your name\", confirmLabel: \"Submit\", cancelLabel: \"Cancel\", inputPlaceholder: \"Your name...\" }} message=\"Please enter your name to continue.\" required onConfirmation={(value) => { setName(value) setShowPrompt(false) }} onCancellation={() => setShowPrompt(false)} /> )} ```",
+      "visualDescription": "Stories: Required, PasswordInput, WithInitialValue, WithMessage.",
+      "useCases": [
+        "Required",
+        "PasswordInput",
+        "WithInitialValue",
+        "WithMessage"
+      ],
+      "files": [
+        "src/components/PromptDialog/PromptDialog.css",
+        "src/components/PromptDialog/PromptDialog.tsx",
+        "src/components/PromptDialog/PromptDialog.types.ts",
+        "src/components/PromptDialog/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/PromptDialog.webp"
+    },
+    {
+      "name": "RadioGroup",
+      "category": "form",
+      "storyTitle": "Forms/RadioGroup",
+      "description": "`RadioGroup` is a container for multiple radio buttons rendered via `RadioButton` components. RadioGroupSize: 'small' | 'medium' | 'large'.",
+      "visualDescription": "Sizes: small, medium, large. Stories: SizeSmall, SizeMedium, SizeLarge, AllSizes, InlineLayout, StackedLayout.",
+      "useCases": [
+        "SizeSmall",
+        "SizeMedium",
+        "SizeLarge",
+        "AllSizes",
+        "InlineLayout",
+        "StackedLayout"
+      ],
+      "files": [
+        "src/components/RadioGroup/RadioButton/RadioButton.css",
+        "src/components/RadioGroup/RadioButton/RadioButton.tsx",
+        "src/components/RadioGroup/RadioButton/RadioButton.types.ts",
+        "src/components/RadioGroup/RadioButton/RadioCircle/RadioCircle.css",
+        "src/components/RadioGroup/RadioButton/RadioCircle/RadioCircle.tsx",
+        "src/components/RadioGroup/RadioButton/RadioCircle/RadioCircle.types.ts",
+        "src/components/RadioGroup/RadioGroup.css",
+        "src/components/RadioGroup/RadioGroup.tsx",
+        "src/components/RadioGroup/RadioGroup.types.ts",
+        "src/components/RadioGroup/RadioGroupContext.tsx",
+        "src/components/RadioGroup/index.ts",
+        "src/components/RadioGroup/utils/getCircleSize.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "@react-aria/radio",
+        "@react-stately/radio"
+      ],
+      "preview": "previews/RadioGroup.webp"
+    },
+    {
+      "name": "ResizableBox",
+      "category": "layout",
+      "storyTitle": "Layout/ResizableBox",
+      "description": "Props: id, children, directions, width, height, minWidth.",
+      "visualDescription": "Stories: RightHandle, LeftHandle, TopHandle, BottomHandle, HorizontalHandles, VerticalHandles.",
+      "useCases": [
+        "RightHandle",
+        "LeftHandle",
+        "TopHandle",
+        "BottomHandle",
+        "HorizontalHandles",
+        "VerticalHandles"
+      ],
+      "files": [
+        "src/components/ResizableBox/ResizableBox.css",
+        "src/components/ResizableBox/ResizableBox.tsx",
+        "src/components/ResizableBox/ResizableBox.types.ts",
+        "src/components/ResizableBox/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/ResizableBox.webp"
+    },
+    {
+      "name": "SearchInput",
+      "category": "form",
+      "storyTitle": "Forms/SearchInput",
+      "description": "A search input component with optional debouncing and clear button. Wraps InputBase with search icon and submit functionality.",
+      "visualDescription": "Stories: Clearable, Debounced, Disabled.",
+      "useCases": [
+        "Clearable",
+        "Debounced",
+        "Disabled"
+      ],
+      "files": [
+        "src/components/SearchInput/SearchInput.css",
+        "src/components/SearchInput/SearchInput.tsx",
+        "src/components/SearchInput/SearchInput.types.ts",
+        "src/components/SearchInput/index.ts"
+      ],
+      "internalDeps": [
+        "Box",
+        "Button",
+        "Icon",
+        "Input"
+      ],
+      "npmDeps": [],
+      "preview": "previews/SearchInput.webp"
+    },
+    {
+      "name": "SecondaryMenu",
+      "category": "navigation",
+      "storyTitle": "Navigation/SecondaryMenu",
+      "description": "SecondaryMenu — Recursive navigation menu for section layouts. Displays navigation items from the navigation stack at the specified level. Level 0 gets a paper-style wrapper. Sub-menus are rendered recursively when the parent item is active and has children. Supports a controlled mode via `activePath` and `onNavigate` props, which override the default window.location-based navigation. ```tsx <SecondaryMenuNavigationProvider> <SecondaryMenu level={0} /> </SecondaryMenuNavigationProvider> ```",
+      "visualDescription": "Stories: WithSubMenus, WithDisabledItem, WithLongLabels, WithSectionHeadlines, CellActive, CellDefault.",
+      "useCases": [
+        "WithSubMenus",
+        "WithDisabledItem",
+        "WithLongLabels",
+        "WithSectionHeadlines",
+        "CellActive",
+        "CellDefault"
+      ],
+      "files": [
+        "src/components/SecondaryMenu/SecondaryMenu.css",
+        "src/components/SecondaryMenu/SecondaryMenu.tsx",
+        "src/components/SecondaryMenu/SecondaryMenu.types.ts",
+        "src/components/SecondaryMenu/SecondaryMenuCell.css",
+        "src/components/SecondaryMenu/SecondaryMenuCell.tsx",
+        "src/components/SecondaryMenu/SecondaryMenuHeadline.css",
+        "src/components/SecondaryMenu/SecondaryMenuHeadline.tsx",
+        "src/components/SecondaryMenu/SecondaryMenuNavigationContext.ts",
+        "src/components/SecondaryMenu/SecondaryMenuNavigationProvider.tsx",
+        "src/components/SecondaryMenu/SecondaryMenuWrapper.css",
+        "src/components/SecondaryMenu/SecondaryMenuWrapper.tsx",
+        "src/components/SecondaryMenu/hooks/useIsPathActive.ts",
+        "src/components/SecondaryMenu/hooks/usePagePath.ts",
+        "src/components/SecondaryMenu/index.ts",
+        "src/components/SecondaryMenu/utils/basePathUtils.ts",
+        "src/components/SecondaryMenu/utils/pathUtils.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/SecondaryMenu.webp"
+    },
+    {
+      "name": "Select",
+      "category": "form",
+      "storyTitle": "Forms/Select",
+      "description": "Props: children, onChange, label, validationMessage, markAsRequired, labelIcon.",
+      "visualDescription": "Stories: WithValue, Placeholder, Clearable, Invalid, Disabled, ReadOnly.",
+      "useCases": [
+        "WithValue",
+        "Placeholder",
+        "Clearable",
+        "Invalid",
+        "Disabled",
+        "ReadOnly"
+      ],
+      "files": [
+        "src/components/Select/Select.css",
+        "src/components/Select/Select.tsx",
+        "src/components/Select/Select.types.ts",
+        "src/components/Select/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Select.webp"
+    },
+    {
+      "name": "SelectGroup",
+      "category": "navigation",
+      "storyTitle": "Navigation/SelectGroup",
+      "description": "Factory function to create a typed SelectGroup component. Use this to create a SelectGroup with a specific select item shape. ```tsx interface MySelect { id: string; label: string } const MySelectGroup = createSelectGroup<MySelect>() <MySelectGroup selects={mySelects} renderSelect={(select, onItemClick, visible, index) => ( <SelectGroupCell label={select.label} onClick={onItemClick} /> )} /> ```",
+      "visualDescription": "Stories: SingleSelect, CellVariants.",
+      "useCases": [
+        "SingleSelect",
+        "CellVariants"
+      ],
+      "files": [
+        "src/components/SelectGroup/SelectGroup.css",
+        "src/components/SelectGroup/SelectGroup.tsx",
+        "src/components/SelectGroup/SelectGroup.types.ts",
+        "src/components/SelectGroup/SelectGroupCell.css",
+        "src/components/SelectGroup/SelectGroupCell.tsx",
+        "src/components/SelectGroup/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/SelectGroup.webp"
+    },
+    {
+      "name": "Shelf",
+      "category": "layout",
+      "storyTitle": "Layout/Shelf",
+      "description": "Container panel accepting `children`, optional `sticky` (`ShelfStickyPosition.Left | .Right`) to remove border-radius on the docked side, `onPaper` (adds box-shadow when placed on a paper background), `fullHeight` (stretches to 100% of parent), and `className`.",
+      "visualDescription": "A rounded card-like container whose corner rounding can be selectively removed on one side. Stories: Default, StickyLeft, StickyRight, OnPaper, FullHeight, AllStickyVariants, CombinedVariants.",
+      "useCases": [
+        "StickyLeft",
+        "StickyRight",
+        "OnPaper",
+        "FullHeight",
+        "AllStickyVariants",
+        "CombinedVariants"
+      ],
+      "files": [
+        "src/components/Shelf/Shelf.css",
+        "src/components/Shelf/Shelf.tsx",
+        "src/components/Shelf/Shelf.types.ts",
+        "src/components/Shelf/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Shelf.webp"
+    },
+    {
+      "name": "SideMenu",
+      "category": "navigation",
+      "storyTitle": "Navigation/SideMenu",
+      "description": "children: Menu item tiles to display in the side menu. className: Optional className for custom styling. testId: Test ID for testing purposes.",
+      "visualDescription": "Stories: WithSelectedItem, AllStates, Interactive, WithDisabledItems, ManyItems.",
+      "useCases": [
+        "WithSelectedItem",
+        "AllStates",
+        "Interactive",
+        "WithDisabledItems",
+        "ManyItems"
+      ],
+      "files": [
+        "src/components/SideMenu/SideMenu.css",
+        "src/components/SideMenu/SideMenu.tsx",
+        "src/components/SideMenu/SideMenu.types.ts",
+        "src/components/SideMenu/SideMenuItemTile/SideMenuItemTile.css",
+        "src/components/SideMenu/SideMenuItemTile/SideMenuItemTile.tsx",
+        "src/components/SideMenu/SideMenuItemTile/SideMenuItemTile.types.ts",
+        "src/components/SideMenu/SideMenuItemTile/index.ts",
+        "src/components/SideMenu/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/SideMenu.webp"
+    },
+    {
+      "name": "SidePanel",
+      "category": "feedback",
+      "storyTitle": "Feedback/SidePanel",
+      "description": "SidePanel component - a slide-in panel from the right side of the viewport. Features: - Three size variants: Full, Wrapped, and Stackable - Maximizable option (can expand to cover whole content) - Click-outside to close behavior (configurable) - Scrollable content with dividers - Header with close/maximize buttons - Footer for actions ```tsx <SidePanelManager> <SidePanel headline=\"Panel Title\" size={SidePanelSize.Stackable} isVisible={isOpen} onClose={handleClose} footer={<Button>Save</Button>} > Panel content </SidePanel> </SidePanelManager> ``` SidePanelSize: 'Full' | 'Wrapped' | 'Stackable'. SidePanelCloseSource: 'user_closed' | 'clicked_outside' | 'foreign_panel_open' | 'blocked_by_foreign_panel' | 'parent_panel_closed'.",
+      "visualDescription": "Sizes: Full, Wrapped, Stackable. Stories: StackableSize, FullSize, WrappedSize, Maximizable, WithoutCloseButton, WithNotification.",
+      "useCases": [
+        "StackableSize",
+        "FullSize",
+        "WrappedSize",
+        "Maximizable",
+        "WithoutCloseButton",
+        "WithNotification"
+      ],
+      "files": [
+        "src/components/SidePanel/SidePanel.css",
+        "src/components/SidePanel/SidePanel.tsx",
+        "src/components/SidePanel/SidePanel.types.ts",
+        "src/components/SidePanel/SidePanelManager.tsx",
+        "src/components/SidePanel/SidePanelManagerContext.ts",
+        "src/components/SidePanel/SidePanelPortal.tsx",
+        "src/components/SidePanel/SidePanelPortal.types.ts",
+        "src/components/SidePanel/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/SidePanel.webp"
+    },
+    {
+      "name": "SimpleStatus",
+      "category": "display",
+      "storyTitle": "Data Display/SimpleStatus",
+      "description": "Default status indicator - configurable with custom colors. Use for neutral or informational status messages. StatusColor: 'var(--color-success-icon)' | 'var(--color-warning-icon)' | 'var(--color-alert-icon)' | 'var(--color-info-icon)' | 'var(--color-icon-default)' | 'var(--color-icon-low-emphasis)' | 'var(--color-icon-highlighted)'. SimpleStatusAlign: 'left' | 'right'. SimpleStatusType: 'default' | 'error' | 'success' | 'warning'. SimpleStatusSize: 'S' | 'XS'.",
+      "visualDescription": "Variants: var(--color-success-icon), var(--color-warning-icon), var(--color-alert-icon), var(--color-info-icon), var(--color-icon-default), var(--color-icon-low-emphasis), var(--color-icon-highlighted). Sizes: S, XS. Stories: AllTypes, AllSizes, TypeSizeMatrix, IconAlignment, IconOnly, WithCustomColors.",
+      "useCases": [
+        "AllTypes",
+        "AllSizes",
+        "TypeSizeMatrix",
+        "IconAlignment",
+        "IconOnly",
+        "WithCustomColors"
+      ],
+      "files": [
+        "src/components/SimpleStatus/BaseSimpleStatus.tsx",
+        "src/components/SimpleStatus/SimpleStatus.css",
+        "src/components/SimpleStatus/SimpleStatus.tsx",
+        "src/components/SimpleStatus/SimpleStatus.types.ts",
+        "src/components/SimpleStatus/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/SimpleStatus.webp"
+    },
+    {
+      "name": "SmallStatusBar",
+      "category": "layout",
+      "storyTitle": "Layout/SmallStatusBar",
+      "description": "A mobile status bar with logo, language selector, and user avatar.",
+      "visualDescription": "Stories: WithUserImage, UsernameOnly, WithCallbacks, InMobileLayout, MultipleProfiles.",
+      "useCases": [
+        "WithUserImage",
+        "UsernameOnly",
+        "WithCallbacks",
+        "InMobileLayout",
+        "MultipleProfiles"
+      ],
+      "files": [
+        "src/components/SmallStatusBar/SmallStatusBar.css",
+        "src/components/SmallStatusBar/SmallStatusBar.tsx",
+        "src/components/SmallStatusBar/SmallStatusBar.types.ts",
+        "src/components/SmallStatusBar/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/SmallStatusBar.webp"
+    },
+    {
+      "name": "Snackbar",
+      "category": "feedback",
+      "storyTitle": "Feedback/Snackbar",
+      "description": "Snackbar container component that displays notification messages. Must be used within a SnackbarProvider to access messages from context. The container is positioned fixed on the screen and renders all active snackbar messages using SnackbarItem components. ```tsx // Wrap your app with SnackbarProvider <SnackbarProvider> <App /> <Snackbar position={SnackbarPosition.TopRight} /> </SnackbarProvider> // Then in any child component, use the hook to show messages const { addMessage } = useSnackbar() addMessage({ message: 'Saved!', variant: 'success' }) ``` SnackbarPosition: 'top-left' | 'top' | 'top-right' | 'bottom-left' | 'bottom' | 'bottom-right'. SnackbarVariant: 'success' | 'error' | 'warning' | 'info'. SnackbarSpacing: 'm' | 'l' | 'xl'.",
+      "visualDescription": "Variants: success, error, warning, info. Stories: AllVariants, PositionTopLeft, PositionTopCenter, PositionBottomRight, PositionBottomLeft, PositionBottomCenter.",
+      "useCases": [
+        "AllVariants",
+        "PositionTopLeft",
+        "PositionTopCenter",
+        "PositionBottomRight",
+        "PositionBottomLeft",
+        "PositionBottomCenter"
+      ],
+      "files": [
+        "src/components/Snackbar/Snackbar.css",
+        "src/components/Snackbar/Snackbar.tsx",
+        "src/components/Snackbar/Snackbar.types.ts",
+        "src/components/Snackbar/SnackbarContext.ts",
+        "src/components/Snackbar/SnackbarItem.css",
+        "src/components/Snackbar/SnackbarItem.tsx",
+        "src/components/Snackbar/SnackbarProvider.tsx",
+        "src/components/Snackbar/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "dompurify"
+      ],
+      "preview": "previews/Snackbar.webp"
+    },
+    {
+      "name": "Spinner",
+      "category": "feedback",
+      "storyTitle": "Feedback/Spinner",
+      "description": "Animated loading indicator accepting `size` (`'small'` | `'medium'` | `'large'`, default `'medium'`) and an optional `className`. Renders an SVG arc with `role='status'` and `aria-label='Loading'`.",
+      "visualDescription": "A circular spinning arc icon in three size variants. Stories: Default, Small, Large, AllSizes.",
+      "useCases": [
+        "Small",
+        "Large",
+        "AllSizes"
+      ],
+      "files": [
+        "src/components/Spinner/Spinner.css",
+        "src/components/Spinner/Spinner.tsx",
+        "src/components/Spinner/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Spinner.webp"
+    },
+    {
+      "name": "SplitButton",
+      "category": "actions",
+      "storyTitle": "Actions/SplitButton",
+      "description": "A compound button with a primary action and a dropdown menu trigger. The left part is a button (or link) and the right part is a chevron that opens a DropDownActionMenu. SplitButtonDisabledState: 'NONE' | 'ALL' | 'PARTIAL'.",
+      "visualDescription": "Stories: AllColors, AllSizes, ColorSizeMatrix, WithIcon, DisabledStateNone, DisabledStateAll.",
+      "useCases": [
+        "AllColors",
+        "AllSizes",
+        "ColorSizeMatrix",
+        "WithIcon",
+        "DisabledStateNone",
+        "DisabledStateAll"
+      ],
+      "files": [
+        "src/components/SplitButton/SplitButton.css",
+        "src/components/SplitButton/SplitButton.tsx",
+        "src/components/SplitButton/SplitButton.types.ts",
+        "src/components/SplitButton/index.ts"
+      ],
+      "internalDeps": [
+        "DropDownActionMenu",
+        "Icon",
+        "Spinner",
+        "Tooltip"
+      ],
+      "npmDeps": [],
+      "preview": "previews/SplitButton.webp"
+    },
+    {
+      "name": "StatusBar",
+      "category": "layout",
+      "storyTitle": "Layout/StatusBar",
+      "description": "StatusBar is the upper part of the application shell. It contains main navigation like breadcrumbs, selects, avatar, and application specific buttons.",
+      "visualDescription": "Stories: WithBreadcrumbs, WithLongBreadcrumbPath, WithCustomClassName, InContextLayout, PlaceholderMountPoints.",
+      "useCases": [
+        "WithBreadcrumbs",
+        "WithLongBreadcrumbPath",
+        "WithCustomClassName",
+        "InContextLayout",
+        "PlaceholderMountPoints"
+      ],
+      "files": [
+        "src/components/StatusBar/StatusBar.css",
+        "src/components/StatusBar/StatusBar.tsx",
+        "src/components/StatusBar/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/StatusBar.webp"
+    },
+    {
+      "name": "StickyBanner",
+      "category": "feedback",
+      "storyTitle": "Feedback/StickyBanner",
+      "description": "Displays a sticky banner on top of the view with a message. StickyBannerType: 'info' | 'error'.",
+      "visualDescription": "Variants: info, error. Stories: Info, Error, WithHtmlContent, AllTypes, LongMessage.",
+      "useCases": [
+        "Info",
+        "Error",
+        "WithHtmlContent",
+        "AllTypes",
+        "LongMessage"
+      ],
+      "files": [
+        "src/components/StickyBanner/StickyBanner.css",
+        "src/components/StickyBanner/StickyBanner.tsx",
+        "src/components/StickyBanner/StickyBanner.types.ts",
+        "src/components/StickyBanner/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "dompurify"
+      ],
+      "preview": "previews/StickyBanner.webp"
+    },
+    {
+      "name": "StickyHeader",
+      "category": "layout",
+      "storyTitle": "Layout/StickyHeader",
+      "description": "Wrapper that positions its `children` with `position: sticky` at the top of a scrollable container. Accepts `children` (required) and an optional `className`.",
+      "visualDescription": "A header band that sticks to the top of a scroll region and shows a shadow as content scrolls beneath it. Stories: Default, WithScrollContent, WithNavigation, CustomClassName.",
+      "useCases": [
+        "WithScrollContent",
+        "WithNavigation",
+        "CustomClassName"
+      ],
+      "files": [
+        "src/components/StickyHeader/StickyHeader.css",
+        "src/components/StickyHeader/StickyHeader.tsx",
+        "src/components/StickyHeader/StickyHeader.types.ts",
+        "src/components/StickyHeader/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/StickyHeader.webp"
+    },
+    {
+      "name": "SubheaderDivider",
+      "category": "layout",
+      "storyTitle": "Layout/SubheaderDivider",
+      "description": "Section divider that displays a required `text` label centered within a horizontal rule, used to label groups of content inside a panel or form.",
+      "visualDescription": "A horizontal line with a text label centered inside it. Stories: Default, ShortLabel, LongLabel.",
+      "useCases": [
+        "ShortLabel",
+        "LongLabel"
+      ],
+      "files": [
+        "src/components/SubheaderDivider/SubheaderDivider.css",
+        "src/components/SubheaderDivider/SubheaderDivider.tsx",
+        "src/components/SubheaderDivider/SubheaderDivider.types.ts",
+        "src/components/SubheaderDivider/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/SubheaderDivider.webp"
+    },
+    {
+      "name": "Switch",
+      "category": "form",
+      "storyTitle": "Forms/Switch",
+      "description": "Toggle switch accepting required `value` (boolean), required `size` (`SwitchSize.M | .L`), required `onChange(value: boolean)` callback, optional `label`, `disabled`, `inProgress` (shows loading state while an async action is underway), and `labelActionsElement`.",
+      "visualDescription": "A pill-shaped toggle that slides between off and on positions, with optional label text beside it. Stories: Default, On, WithLabel, Disabled, DisabledOn, InProgress, SizeVariants, AllStates, Controlled.",
+      "useCases": [
+        "On",
+        "WithLabel",
+        "Disabled",
+        "DisabledOn",
+        "InProgress",
+        "SizeVariants"
+      ],
+      "files": [
+        "src/components/Switch/Switch.css",
+        "src/components/Switch/Switch.tsx",
+        "src/components/Switch/Switch.types.ts",
+        "src/components/Switch/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "@react-aria/switch",
+        "@react-stately/toggle"
+      ],
+      "preview": "previews/Switch.webp"
+    },
+    {
+      "name": "Table",
+      "category": "display",
+      "storyTitle": "Data Display/Table",
+      "description": "Table wrapper component for the shared-components pattern. This is a simplified version that: - Manages table state (sorting, selection, row visibility) - Provides processed rows with visible cells only - Handles row actions with optional confirmation - Works with TableManager for data management Unlike the source component, this version: - Removes CMS-specific command/action system - Removes ActionComponentLoader (dynamic component loading) - Uses simple onClick handlers instead of server commands - Removes i18n (texts are passed as props) ```tsx <Table tableManager={tableManager} isRowsSelectable onSelectedRowChange={setSelectedRows} texts={{ selectRowLabel: 'Select row' }} renderTable={({ columns, rows, onSortChange, sortModel }) => ( <YourTableImplementation columns={columns} rows={rows} sortModel={sortModel} onSortChange={onSortChange} /> )} /> ``` ScrollState: 'noScroll' | 'start' | 'scroll' | 'end'. CellType: 'action' | 'string' | 'component' | 'namedComponent'. SortType: 'asc' | 'desc'. ColumnContentType: 'action' | 'text' | 'component'.",
+      "visualDescription": "Variants: action, string, component, namedComponent. Stories: WithSelection, WithActions, WithComponentCells, DisabledRows, InvalidRows, Loading.",
+      "useCases": [
+        "WithSelection",
+        "WithActions",
+        "WithComponentCells",
+        "DisabledRows",
+        "InvalidRows",
+        "Loading"
+      ],
+      "files": [
+        "src/components/Table/SkeletonBody/SkeletonBody.css",
+        "src/components/Table/SkeletonBody/SkeletonBody.tsx",
+        "src/components/Table/SkeletonBody/SkeletonBody.types.ts",
+        "src/components/Table/SkeletonBody/index.ts",
+        "src/components/Table/Table.css",
+        "src/components/Table/Table.tsx",
+        "src/components/Table/Table.types.ts",
+        "src/components/Table/TableHeader/TableHeader.css",
+        "src/components/Table/TableHeader/TableHeader.tsx",
+        "src/components/Table/TableHeader/TableHeader.types.ts",
+        "src/components/Table/TableHeader/TableHeaderButton.css",
+        "src/components/Table/TableHeader/TableHeaderButton.tsx",
+        "src/components/Table/TableHeader/TableHeaderButton.types.ts",
+        "src/components/Table/TableHeader/index.ts",
+        "src/components/Table/TableRow/CellComponents/ActionCell.css",
+        "src/components/Table/TableRow/CellComponents/ActionCell.tsx",
+        "src/components/Table/TableRow/CellComponents/CellComponent.types.ts",
+        "src/components/Table/TableRow/CellComponents/ComponentCell.tsx",
+        "src/components/Table/TableRow/CellComponents/NamedComponentCell.tsx",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/LinkTableCellComponent/LinkTableCellComponent.css",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/LinkTableCellComponent/LinkTableCellComponent.tsx",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/LinkTableCellComponent/index.ts",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/SimpleStatusTableCellComponent/SimpleStatusTableCellComponent.tsx",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/SimpleStatusTableCellComponent/index.ts",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/StringTableCellComponent/StringTableCellComponent.tsx",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/StringTableCellComponent/index.ts",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/TagTableCellComponent/TagTableCellComponent.tsx",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/TagTableCellComponent/index.ts",
+        "src/components/Table/TableRow/CellComponents/NamedComponents/index.ts",
+        "src/components/Table/TableRow/CellComponents/StringCell.css",
+        "src/components/Table/TableRow/CellComponents/StringCell.tsx",
+        "src/components/Table/TableRow/TableRow.css",
+        "src/components/Table/TableRow/TableRow.tsx",
+        "src/components/Table/TableRow/TableRow.types.ts",
+        "src/components/Table/TableRow/index.ts",
+        "src/components/Table/context/TableContext.ts",
+        "src/components/Table/context/TableContext.types.ts",
+        "src/components/Table/context/TableContextProvider.tsx",
+        "src/components/Table/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "react-router-dom"
+      ],
+      "preview": "previews/Table.webp"
+    },
+    {
+      "name": "TableComponent",
+      "category": "display",
+      "storyTitle": "Data Display/TableComponent",
+      "description": "TableComponent is a composition layer that orchestrates table-related sub-components. It combines: - Header: search, filter actions, and header buttons - Table content: provided via children or renderTable prop - Pagination: page navigation - Footer: empty state messaging This component manages the coordination between these parts and the TableManager, handling state like selection, search, and pagination. **Note:** This is a simplified version that removes the following from the source: - Form system dependencies (FormComponentProps, FormFieldContext) - Command system (useCommandProvider, executeCommand) - FilterPanel integration (use children prop for custom filter UI) - i18n (replaced with texts props) - ActionComponentLoader (dynamic component loading) ```tsx const tableManager = useTableManager({ columns: [...], fetchData: async (params) => { ... }, }); <TableComponent tableManager={tableManager} isSearchAndActionsVisible usePagination headerActions={[ { label: 'Add', icon: 'xp-plus', onClick: handleAdd } ]} headerTexts={{ searchPlaceholder: 'Search items...' }} renderTable={({ tableManager, selectedRows, onSelectedRowChange }) => ( <MyTableImplementation columns={tableManager.columns} rows={tableManager.rows} selectedRows={selectedRows} onSelectionChange={onSelectedRowChange} /> )} /> ```",
+      "visualDescription": "Stories: WithHeaderActions, WithMassActions, WithPagination.",
+      "useCases": [
+        "WithHeaderActions",
+        "WithMassActions",
+        "WithPagination"
+      ],
+      "files": [
+        "src/components/TableComponent/Footer.tsx",
+        "src/components/TableComponent/Header.tsx",
+        "src/components/TableComponent/MassActions.tsx",
+        "src/components/TableComponent/MassActions.types.ts",
+        "src/components/TableComponent/Pagination.tsx",
+        "src/components/TableComponent/TableComponent.css",
+        "src/components/TableComponent/TableComponent.tsx",
+        "src/components/TableComponent/TableComponent.types.ts",
+        "src/components/TableComponent/hooks/index.ts",
+        "src/components/TableComponent/index.ts"
+      ],
+      "internalDeps": [
+        "Table"
+      ],
+      "npmDeps": [],
+      "preview": "previews/TableComponent.webp"
+    },
+    {
+      "name": "Tag",
+      "category": "display",
+      "storyTitle": "Data Display/Tag",
+      "description": "Label chip accepting `label`, optional `background` (`{color: Colors}`), `mode` (`TagMode.Light | .Dark`), `tooltipText`, `onClick`, `onRemoveClick` (renders a remove button), `disabled`, `readOnly`, `removable`, `fullWidth`, `isDragging`, and `leadingButton`. Renders nothing when `value` is empty.",
+      "visualDescription": "A small rounded chip with colored background and truncating label; remove button appears when `onRemoveClick` is provided. Stories: Default, AllColors, AllColorsLightMode, AllColorsDarkBackground, ModeComparison, Removable, Clickable, ClickableAndRemovable, Disabled, DisabledRemovable, ReadOnly, Dragging, DraggableStates, FullWidth, WithTooltip, LongLabel.",
+      "useCases": [
+        "AllColors",
+        "AllColorsLightMode",
+        "AllColorsDarkBackground",
+        "ModeComparison",
+        "Removable",
+        "Clickable"
+      ],
+      "files": [
+        "src/components/Tag/Tag.css",
+        "src/components/Tag/Tag.tsx",
+        "src/components/Tag/Tag.types.ts",
+        "src/components/Tag/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/Tag.webp"
+    },
+    {
+      "name": "TextArea",
+      "category": "form",
+      "storyTitle": "Forms/TextArea",
+      "description": "Props: value, onValueChange, onSubmit, autoResize, maxRows, className.",
+      "visualDescription": "Stories: WithValue, Placeholder, AutoResize, AutoResizeWithContent, Invalid, Disabled.",
+      "useCases": [
+        "WithValue",
+        "Placeholder",
+        "AutoResize",
+        "AutoResizeWithContent",
+        "Invalid",
+        "Disabled"
+      ],
+      "files": [
+        "src/components/TextArea/TextArea.css",
+        "src/components/TextArea/TextArea.tsx",
+        "src/components/TextArea/TextArea.types.ts",
+        "src/components/TextArea/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/TextArea.webp"
+    },
+    {
+      "name": "TextWithLabel",
+      "category": "display",
+      "storyTitle": "Data Display/TextWithLabel",
+      "description": "label: Label used as header to the text.. value: Value used as text to the label.. valueAsHtml: Dangerously sets component value as inner HTML..",
+      "visualDescription": "Stories: WithoutLabel, EmptyValue, WithHtmlContent, HtmlVsPlainText, RichHtmlContent, MultipleFields.",
+      "useCases": [
+        "WithoutLabel",
+        "EmptyValue",
+        "WithHtmlContent",
+        "HtmlVsPlainText",
+        "RichHtmlContent",
+        "MultipleFields"
+      ],
+      "files": [
+        "src/components/TextWithLabel/TextWithLabel.css",
+        "src/components/TextWithLabel/TextWithLabel.tsx",
+        "src/components/TextWithLabel/TextWithLabel.types.ts",
+        "src/components/TextWithLabel/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "dompurify"
+      ],
+      "preview": "previews/TextWithLabel.webp"
+    },
+    {
+      "name": "TileSelector",
+      "category": "form",
+      "storyTitle": "Forms/TileSelector",
+      "description": "TileSelector component for tile-based selection with search filtering. Displays a grid of ActionTiles with search functionality and empty state handling.",
+      "visualDescription": "Stories: WithPreselection, WithDisabledItems, EmptyState, FewItems.",
+      "useCases": [
+        "WithPreselection",
+        "WithDisabledItems",
+        "EmptyState",
+        "FewItems"
+      ],
+      "files": [
+        "src/components/TileSelector/TileSelector.css",
+        "src/components/TileSelector/TileSelector.tsx",
+        "src/components/TileSelector/TileSelector.types.ts",
+        "src/components/TileSelector/index.ts"
+      ],
+      "internalDeps": [
+        "ActionTile",
+        "Box",
+        "Button",
+        "Headline",
+        "Input",
+        "Layout"
+      ],
+      "npmDeps": [
+        "use-debounce"
+      ],
+      "preview": "previews/TileSelector.webp"
+    },
+    {
+      "name": "ToggleButtons",
+      "category": "form",
+      "storyTitle": "Forms/ToggleButtons",
+      "description": "Segmented toggle button groups for mutually exclusive selection. NameToggleButtons for text labels, IconToggleButtons for icon variants.",
+      "visualDescription": "Stories: IconToggleButtonsHorizontal, IconToggleButtonsVertical, NameToggleButtonsHorizontal, NameToggleButtonsVertical, AllVariants, WithTooltips.",
+      "useCases": [
+        "IconToggleButtonsHorizontal",
+        "IconToggleButtonsVertical",
+        "NameToggleButtonsHorizontal",
+        "NameToggleButtonsVertical",
+        "AllVariants",
+        "WithTooltips"
+      ],
+      "files": [
+        "src/components/ToggleButtons/IconToggleButtons/IconButton/IconButton.css",
+        "src/components/ToggleButtons/IconToggleButtons/IconButton/IconButton.tsx",
+        "src/components/ToggleButtons/IconToggleButtons/IconButton/IconButton.types.ts",
+        "src/components/ToggleButtons/IconToggleButtons/IconButton/index.ts",
+        "src/components/ToggleButtons/IconToggleButtons/IconToggleButtons.tsx",
+        "src/components/ToggleButtons/IconToggleButtons/IconToggleButtons.types.ts",
+        "src/components/ToggleButtons/IconToggleButtons/index.ts",
+        "src/components/ToggleButtons/NameToggleButtons/NameButton/NameButton.css",
+        "src/components/ToggleButtons/NameToggleButtons/NameButton/NameButton.tsx",
+        "src/components/ToggleButtons/NameToggleButtons/NameButton/NameButton.types.ts",
+        "src/components/ToggleButtons/NameToggleButtons/NameButton/index.ts",
+        "src/components/ToggleButtons/NameToggleButtons/NameToggleButtons.tsx",
+        "src/components/ToggleButtons/NameToggleButtons/NameToggleButtons.types.ts",
+        "src/components/ToggleButtons/NameToggleButtons/index.ts",
+        "src/components/ToggleButtons/Shared/ToggleButtonBase/ToggleButtonBase.css",
+        "src/components/ToggleButtons/Shared/ToggleButtonBase/ToggleButtonBase.tsx",
+        "src/components/ToggleButtons/Shared/ToggleButtonBase/ToggleButtonBase.types.ts",
+        "src/components/ToggleButtons/Shared/ToggleButtonBase/index.ts",
+        "src/components/ToggleButtons/Shared/ToggleButtonsBase/ToggleButtonsBase.css",
+        "src/components/ToggleButtons/Shared/ToggleButtonsBase/ToggleButtonsBase.tsx",
+        "src/components/ToggleButtons/Shared/ToggleButtonsBase/ToggleButtonsBase.types.ts",
+        "src/components/ToggleButtons/Shared/ToggleButtonsBase/index.ts",
+        "src/components/ToggleButtons/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/ToggleButtons.webp"
+    },
+    {
+      "name": "Tooltip",
+      "category": "feedback",
+      "storyTitle": "Feedback/Tooltip",
+      "description": "TooltipPlacement: 'bottom' | 'top' | 'left' | 'right' | 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end' | 'left-start' | 'left-end' | 'right-start' | 'right-end'.",
+      "visualDescription": "Stories: PlacementVariants, TopPlacements, BottomPlacements, SidePlacements, WithShortcuts, ShortcutsOnly.",
+      "useCases": [
+        "PlacementVariants",
+        "TopPlacements",
+        "BottomPlacements",
+        "SidePlacements",
+        "WithShortcuts",
+        "ShortcutsOnly"
+      ],
+      "files": [
+        "src/components/Tooltip/ArrowImages/PointingElementDown.tsx",
+        "src/components/Tooltip/ArrowImages/PointingElementLeft.tsx",
+        "src/components/Tooltip/ArrowImages/PointingElementRight.tsx",
+        "src/components/Tooltip/ArrowImages/PointingElementUp.tsx",
+        "src/components/Tooltip/ArrowImages/index.ts",
+        "src/components/Tooltip/Shortcuts.css",
+        "src/components/Tooltip/Shortcuts.tsx",
+        "src/components/Tooltip/Tooltip.css",
+        "src/components/Tooltip/Tooltip.tsx",
+        "src/components/Tooltip/Tooltip.types.ts",
+        "src/components/Tooltip/index.ts",
+        "src/components/Tooltip/utils.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "dompurify"
+      ],
+      "preview": "previews/Tooltip.webp"
+    },
+    {
+      "name": "UnsavedChangesWrapper",
+      "category": "feedback",
+      "storyTitle": "Feedback/UnsavedChangesWrapper",
+      "description": "Wrapper for unsaved changes dialog when the page does not navigate away but only wants to display an unsaved changes dialog. This component provides a render function pattern where the child receives a handleClose function. When called, it either: - Shows a confirmation dialog if there are unsaved changes - Immediately calls onCloseAction if there are no unsaved changes",
+      "visualDescription": "Stories: WithoutChanges, WithChanges, Interactive.",
+      "useCases": [
+        "WithoutChanges",
+        "WithChanges",
+        "Interactive"
+      ],
+      "files": [
+        "src/components/UnsavedChangesWrapper/UnsavedChangesWrapper.tsx",
+        "src/components/UnsavedChangesWrapper/UnsavedChangesWrapper.types.ts",
+        "src/components/UnsavedChangesWrapper/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/UnsavedChangesWrapper.webp"
+    },
+    {
+      "name": "UploadTile",
+      "category": "form",
+      "storyTitle": "Forms/UploadTile",
+      "description": "Upload tile component. A drag-and-drop upload tile with an upload icon, instructional text, and a browse button. Supports two sizes: Full and Compact. UploadTileSize: 'Full' | 'Compact'.",
+      "visualDescription": "Sizes: Full, Compact. Stories: AllSizes, Full, Compact, Disabled, WithFileTypeRestriction.",
+      "useCases": [
+        "AllSizes",
+        "Full",
+        "Compact",
+        "Disabled",
+        "WithFileTypeRestriction"
+      ],
+      "files": [
+        "src/components/UploadTile/UploadTile.css",
+        "src/components/UploadTile/UploadTile.tsx",
+        "src/components/UploadTile/UploadTile.types.ts",
+        "src/components/UploadTile/index.ts"
+      ],
+      "internalDeps": [
+        "BrowseButton",
+        "Dropzone",
+        "Icon",
+        "Tooltip"
+      ],
+      "npmDeps": [],
+      "preview": "previews/UploadTile.webp"
+    },
+    {
+      "name": "VersionDialog",
+      "category": "feedback",
+      "storyTitle": "Feedback/VersionDialog",
+      "description": "A dialog showing the application version with a copy button.",
+      "visualDescription": "Stories: CustomProductName, CustomVersion, FullyCustomized.",
+      "useCases": [
+        "CustomProductName",
+        "CustomVersion",
+        "FullyCustomized"
+      ],
+      "files": [
+        "src/components/VersionDialog/VersionDialog.css",
+        "src/components/VersionDialog/VersionDialog.tsx",
+        "src/components/VersionDialog/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/VersionDialog.webp"
+    },
+    {
+      "name": "VerticalMenu",
+      "category": "navigation",
+      "storyTitle": "Navigation/VerticalMenu",
+      "description": "Vertical navigation menu family. Includes ActionMenu (clickable items), SelectMenu (selectable items), and their DropDown variants with headline support.",
+      "visualDescription": "Stories: CompactSize, WithHeaderAndFooter, Bordered, WithMaxHeight, ActionMenuDefault, ActionMenuWithHeadlines.",
+      "useCases": [
+        "CompactSize",
+        "WithHeaderAndFooter",
+        "Bordered",
+        "WithMaxHeight",
+        "ActionMenuDefault",
+        "ActionMenuWithHeadlines"
+      ],
+      "files": [
+        "src/components/VerticalMenu/ActionMenu/ActionMenu.tsx",
+        "src/components/VerticalMenu/ActionMenu/ActionMenu.types.ts",
+        "src/components/VerticalMenu/ActionMenu/ActionMenuHeadline.css",
+        "src/components/VerticalMenu/ActionMenu/ActionMenuHeadline.tsx",
+        "src/components/VerticalMenu/ActionMenu/DropDownActionMenu.tsx",
+        "src/components/VerticalMenu/ActionMenu/DropDownActionMenu.types.ts",
+        "src/components/VerticalMenu/ActionMenu/index.ts",
+        "src/components/VerticalMenu/Common/MenuDropDown/MenuDropDown.tsx",
+        "src/components/VerticalMenu/Common/MenuDropDown/MenuDropDown.types.ts",
+        "src/components/VerticalMenu/Common/MenuDropDown/index.ts",
+        "src/components/VerticalMenu/Common/VerticalMenu/VerticalMenu.css",
+        "src/components/VerticalMenu/Common/VerticalMenu/VerticalMenu.tsx",
+        "src/components/VerticalMenu/Common/VerticalMenu/VerticalMenu.types.ts",
+        "src/components/VerticalMenu/Common/VerticalMenu/index.ts",
+        "src/components/VerticalMenu/SelectMenu/DropDownSelectMenu.tsx",
+        "src/components/VerticalMenu/SelectMenu/DropDownSelectMenu.types.ts",
+        "src/components/VerticalMenu/SelectMenu/SelectMenu.tsx",
+        "src/components/VerticalMenu/SelectMenu/SelectMenu.types.ts",
+        "src/components/VerticalMenu/SelectMenu/index.ts",
+        "src/components/VerticalMenu/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/VerticalMenu.webp"
+    },
+    {
+      "name": "VerticalTab",
+      "category": "navigation",
+      "storyTitle": "Navigation/VerticalTab",
+      "description": "Props: label, selected, disabled, icon, onClick, value.",
+      "visualDescription": "Stories: Selected, Disabled, WithIcon, TabGroup, WithIconsGroup.",
+      "useCases": [
+        "Selected",
+        "Disabled",
+        "WithIcon",
+        "TabGroup",
+        "WithIconsGroup"
+      ],
+      "files": [
+        "src/components/VerticalTab/VerticalTab.css",
+        "src/components/VerticalTab/VerticalTab.tsx",
+        "src/components/VerticalTab/VerticalTab.types.ts",
+        "src/components/VerticalTab/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/VerticalTab.webp"
+    },
+    {
+      "name": "ViewMenu",
+      "category": "navigation",
+      "storyTitle": "Navigation/ViewMenu",
+      "description": "Sticky view-level action/navigation bar. Wraps Shelf with Box and Stack layout. Extends ShelfProps.",
+      "visualDescription": "Stories: Sticky, OnPaper.",
+      "useCases": [
+        "Sticky",
+        "OnPaper"
+      ],
+      "files": [
+        "src/components/ViewMenu/ViewMenu.css",
+        "src/components/ViewMenu/ViewMenu.tsx",
+        "src/components/ViewMenu/ViewMenu.types.ts",
+        "src/components/ViewMenu/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": "previews/ViewMenu.webp"
+    },
+    {
+      "name": "VirtualGrid",
+      "category": "display",
+      "storyTitle": "Data Display/VirtualGrid",
+      "description": "items: Items to be rendered in the grid.. columnCount: Number of columns in the grid.. estimateRowHeight: Estimated height of each row.. rowGap: Gap between rows.. columnGap: Gap between columns..",
+      "visualDescription": "Stories: ManyItems, TwoColumns.",
+      "useCases": [
+        "ManyItems",
+        "TwoColumns"
+      ],
+      "files": [
+        "src/components/VirtualGrid/VirtualGrid.css",
+        "src/components/VirtualGrid/VirtualGrid.tsx",
+        "src/components/VirtualGrid/VirtualGrid.types.ts",
+        "src/components/VirtualGrid/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [
+        "@tanstack/react-virtual"
+      ],
+      "preview": "previews/VirtualGrid.webp"
+    },
+    {
+      "name": "Window",
+      "category": "display",
+      "storyTitle": "Unknown/Window",
+      "description": "Portal infrastructure for overlay rendering. `WindowManager` (place at app root) creates a dedicated DOM container; `WindowPortal` renders content into that container via `createPortal`, escaping overflow constraints. `WindowContext`/`useWindowContext` expose the container ref.",
+      "visualDescription": "No Storybook stories. WindowManager and WindowPortal are infrastructure components with no visual appearance; they enable modals, dialogs, and panels to render above all other content.",
+      "useCases": [],
+      "files": [
+        "src/components/Window/WindowContext.tsx",
+        "src/components/Window/WindowManager.tsx",
+        "src/components/Window/WindowManager.types.ts",
+        "src/components/Window/WindowPortal.tsx",
+        "src/components/Window/WindowPortal.types.ts",
+        "src/components/Window/index.ts"
+      ],
+      "internalDeps": [],
+      "npmDeps": [],
+      "preview": null
+    }
+  ]
+}

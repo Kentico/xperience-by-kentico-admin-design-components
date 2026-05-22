@@ -1,0 +1,6 @@
+@layer components {
+  .CardFooter {
+    padding-top: var(--spacing-card);
+    display: flex;
+  }
+}

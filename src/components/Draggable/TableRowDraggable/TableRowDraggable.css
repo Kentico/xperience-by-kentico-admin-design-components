@@ -1,0 +1,34 @@
+@layer components {
+  /**
+   * TableRowDraggable styles
+   * Converted from TableRowDraggable.TableRowDraggable-module.TableRowDraggable-scss
+   */
+
+  .TableRowDraggable-draggableHandleButton {
+    margin: 0 0 0 var(--spacing-xs);
+    cursor: grab;
+  }
+
+  .TableRowDraggable-draggableHandleButton.TableRowDraggable-dragging {
+    background: transparent;
+  }
+
+  .TableRowDraggable-draggableHandleButton.TableRowDraggable-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .TableRowDraggable-dropzonePlaceholder {
+    background-color: var(--color-background-dragged);
+    border-radius: var(--radius-m);
+  }
+
+  .TableRowDraggable-rowDragging {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .TableRowDraggable-draggableWrapper {
+    position: relative;
+  }
+}

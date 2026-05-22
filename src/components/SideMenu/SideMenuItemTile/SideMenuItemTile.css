@@ -1,0 +1,98 @@
+@layer components {
+  /**
+   * SideMenuItemTile styles
+   * Converted from SCSS to CSS Modules
+   */
+
+  .SideMenuItemTile-tile {
+    /* Label M typography */
+    font-family: var(--typeface-product-secondary);
+    font-size: var(--font-size-s);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-s);
+    letter-spacing: var(--letter-spacing-m);
+    text-align: center;
+
+    /* Layout */
+    width: calc(11 * var(--grid-unit)); /* 88px */
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-l) 0 var(--spacing-m) 0;
+    border-radius: var(--radius-m);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: var(--transition-250);
+    transition-property: background-color, color;
+    position: relative;
+  }
+
+  .SideMenuItemTile-tile:focus {
+    outline: none;
+  }
+
+  .SideMenuItemTile-focused {
+    box-shadow: var(--focus-default);
+    z-index: var(--z-index-elevated);
+  }
+
+  /* State classes */
+  .SideMenuItemTile-default {
+    color: var(--color-tab-text);
+  }
+
+  .SideMenuItemTile-disabled {
+    color: var(--color-text-disabled);
+    cursor: default;
+  }
+
+  .SideMenuItemTile-selected {
+    color: var(--color-tab-text-selected);
+    background-color: var(--color-paper-background);
+    box-shadow: var(--shadow-m);
+  }
+
+  .SideMenuItemTile-selected.SideMenuItemTile-focused {
+    box-shadow: var(--shadow-m), var(--focus-default);
+  }
+
+  /* Icon styles */
+  .SideMenuItemTile-icon {
+    font-size: var(--icon-l);
+    margin-bottom: var(--spacing-s);
+  }
+
+  .SideMenuItemTile-icon.SideMenuItemTile-iconDefault {
+    color: var(--color-tab-icon);
+  }
+
+  .SideMenuItemTile-icon.SideMenuItemTile-iconDisabled {
+    color: var(--color-icon-disabled);
+  }
+
+  .SideMenuItemTile-icon.SideMenuItemTile-iconSelected {
+    color: var(--color-tab-icon-selected);
+  }
+
+  /* Label styles */
+  .SideMenuItemTile-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding: 0 var(--spacing-xs);
+  }
+
+  /* Hover state - only for default (non-disabled, non-selected) */
+  .SideMenuItemTile-tile.SideMenuItemTile-default:hover {
+    background-color: var(--color-hover);
+    color: var(--color-tab-text-selected);
+  }
+
+  .SideMenuItemTile-tile.SideMenuItemTile-default:hover .SideMenuItemTile-icon {
+    color: var(--color-tab-icon-selected);
+  }
+}

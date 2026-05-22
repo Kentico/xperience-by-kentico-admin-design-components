@@ -1,0 +1,14 @@
+@layer components {
+  /**
+   * BarItemDraggable styles
+   * Converted from BarItemDraggable.BarItemDraggable-module.BarItemDraggable-scss
+   */
+
+  .BarItemDraggable-draggableWrapper {
+    margin-bottom: var(--spacing-s);
+  }
+
+  .BarItemDraggable-dragButtonHidden {
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,40 @@
+@layer components {
+  .TileSelector {
+    width: 100%;
+  }
+
+  .TileSelector-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-l);
+  }
+
+  .TileSelector-messagePaneWrapper {
+    width: 100%;
+  }
+
+  .TileSelector-messagePaneWrapper div {
+    min-height: 0;
+  }
+
+  .TileSelector-messagePane {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 40vh;
+    padding: calc(8 * var(--grid-unit)) 17%;
+    text-align: center;
+    flex: auto;
+    box-sizing: content-box;
+  }
+
+  .TileSelector-subheadline {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--size-s);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text-default-on-light);
+    margin-bottom: var(--spacing-xl);
+  }
+}

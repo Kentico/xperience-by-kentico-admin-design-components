@@ -1,0 +1,38 @@
+@layer components {
+  .LinkButton-anchorButton {
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  .LinkButton-buttonWrapper {
+    display: inline-flex;
+    border-radius: var(--radius-pill);
+  }
+
+  .LinkButton-buttonWrapperFit {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  /* Disabled state for non-button elements (anchor/div don't support :disabled) */
+  .LinkButton-disabled {
+    cursor: default;
+    pointer-events: none;
+    color: var(--color-text-disabled) !important;
+  }
+
+  .LinkButton-disabledPrimary {
+    background: var(--color-background-disabled) !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
+
+  .LinkButton-disabledSecondary {
+    background-color: transparent !important;
+    border-color: var(--color-border-disabled) !important;
+  }
+
+  .LinkButton-disabledTertiary {
+    background-color: transparent !important;
+  }
+}

@@ -1,0 +1,43 @@
+@layer components {
+  /* SelectGroup Container */
+  .SelectGroup-container {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    align-self: stretch;
+    width: inherit;
+  }
+
+  /* Group wrapper - inline flex for horizontal layout */
+  .SelectGroup-group {
+    display: inline-flex;
+    max-width: 100%;
+    width: inherit;
+  }
+
+  /* Paper container for selects */
+  .SelectGroup-paper {
+    height: var(--size-m);
+    display: flex;
+    width: inherit;
+  }
+
+  /* Individual select cell container */
+  .SelectGroup-select {
+    display: flex;
+    min-width: 0;
+    width: inherit;
+  }
+
+  /* Border radius for first and last select buttons */
+  /* Border radius: radius-m (8px) minus border-width-default (1px) = 7px */
+  .SelectGroup-select:first-child button {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
+
+  .SelectGroup-select:last-child button {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+}

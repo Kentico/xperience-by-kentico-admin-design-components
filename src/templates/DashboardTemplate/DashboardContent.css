@@ -1,0 +1,96 @@
+@layer components {
+  /**
+   * DashboardContent styles
+   * Converted from SCSS to CSS Modules
+   *
+   * Source: templates/dashboard/DashboardContent.DashboardContent-module.DashboardContent-scss
+   */
+
+  /*
+   * Variables (converted from SCSS):
+   * $application-gap-md: var(--spacing-m) = 12px
+   * $application-gap-xl: var(--spacing-l) = 16px
+   * $application-width-large: 128px
+   * $application-width-small: 88px
+   * $category-gap-md: var(--spacing-xxxl) = 40px
+   * $category-gap-xl: 64px (8 * 8px grid unit)
+   * $screen-breakpoint-xl: 1920px
+   * $screen-breakpoint-mobile: 599.98px
+   */
+
+  .DashboardContent-categories {
+    margin-left: calc(-1 * var(--spacing-xxxl)); /* -40px */
+    overflow: auto;
+    max-height: 77vh;
+  }
+
+  /* XL screens: margin-left: -64px */
+  @media only screen and (min-width: 1920px) {
+    .DashboardContent-categories {
+      margin-left: -64px;
+    }
+  }
+
+  /* Mobile: margin-left: 0 */
+  @media only screen and (max-width: 599.98px) {
+    .DashboardContent-categories {
+      margin-left: 0;
+    }
+  }
+
+  .DashboardContent-category {
+    padding-bottom: var(--spacing-xxxxl); /* 48px */
+    padding-left: var(--spacing-xxxxl); /* 48px */
+    /* width: 2 * 88px + 40px + 12px = 228px */
+    width: 228px;
+  }
+
+  /* XL screens: padding-left: 64px, width: 2 * 128px + 64px + 16px = 336px */
+  @media only screen and (min-width: 1920px) {
+    .DashboardContent-category {
+      padding-left: 64px;
+      width: 336px;
+    }
+  }
+
+  /* Mobile: padding-left: 0, padding-bottom: 24px, width: initial */
+  @media only screen and (max-width: 599.98px) {
+    .DashboardContent-category {
+      padding-left: 0;
+      padding-bottom: var(--spacing-xl); /* 24px */
+      width: initial;
+    }
+  }
+
+  .DashboardContent-categoryTitle {
+    /* @include headline-M */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-l);
+    line-height: var(--line-xl);
+    color: var(--color-text-default-on-light);
+    margin: 0;
+    padding-bottom: var(--spacing-l); /* 16px */
+  }
+
+  .DashboardContent-applications {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m); /* 12px */
+  }
+
+  /* XL screens: gap: 16px */
+  @media only screen and (min-width: 1920px) {
+    .DashboardContent-applications {
+      gap: var(--spacing-l);
+    }
+  }
+
+  /* Mobile: single column, gap: 8px */
+  @media only screen and (max-width: 599.98px) {
+    .DashboardContent-applications {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-s);
+    }
+  }
+}

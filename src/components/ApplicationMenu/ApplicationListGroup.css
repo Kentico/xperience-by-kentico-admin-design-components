@@ -1,0 +1,84 @@
+@layer components {
+  /* ApplicationListGroup Styles */
+
+  .ApplicationListGroup-header {
+    padding: var(--spacing-s, 8px) 0 var(--spacing-s, 8px) var(--spacing-l, 16px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: calc(42 * var(--grid-unit, 8px));
+    box-sizing: content-box;
+  }
+
+  @media only screen and (max-width: 599.98px) {
+    .ApplicationListGroup-header {
+      padding-right: var(--spacing-l, 16px);
+      width: initial;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .ApplicationListGroup-header.ApplicationListGroup-collapsible .ApplicationListGroup-icon {
+      color: var(--color-icon-default, #151515);
+    }
+  }
+
+  .ApplicationListGroup-categoryTitle {
+    width: calc(40 * var(--grid-unit, 8px));
+    font-family: var(--typeface-product-primary, 'GT Walsheim', sans-serif);
+    font-size: var(--font-size-l, 16px);
+    font-weight: var(--weight-bold, 700);
+    line-height: var(--line-xl);
+    color: var(--color-text-default-on-light, #151515);
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .ApplicationListGroup-categoryTitle.ApplicationListGroup-withToggle {
+    width: calc(33 * var(--grid-unit, 8px));
+  }
+
+  .ApplicationListGroup-icon {
+    font-size: var(--icon-s, 16px);
+    color: var(--color-icon-default, #151515);
+  }
+
+  .ApplicationListGroup-scrollable {
+    height: calc(100vh - 2 * var(--spacing-xl, 24px) - var(--size-m, 40px) - var(--spacing-xl, 24px) - var(--size-m, 40px));
+  }
+
+  .ApplicationListGroup-scrollableContent {
+    height: 100%;
+    overflow: hidden auto;
+    margin-right: calc(-1 * (var(--spacing-xl, 24px) - var(--spacing-xs, 4px)));
+  }
+
+  .ApplicationListGroup-scrollableContent.ApplicationListGroup-listView {
+    margin-left: calc(-1 * var(--spacing-s, 8px));
+  }
+
+  .ApplicationListGroup-list {
+    margin-top: var(--spacing-s, 8px);
+    display: flex;
+    list-style: none;
+    padding-inline-start: 0;
+    margin-left: var(--spacing-xs, 4px);
+  }
+
+  .ApplicationListGroup-list.ApplicationListGroup-listView {
+    flex-direction: column;
+    gap: var(--spacing-xs, 4px);
+    margin-right: var(--spacing-s, 8px);
+  }
+
+  .ApplicationListGroup-list.ApplicationListGroup-tilesView {
+    width: calc(50 * var(--grid-unit, 8px) - 2 * (var(--spacing-xl, 24px) + var(--spacing-xs, 4px)));
+    gap: var(--spacing-l, 16px) var(--spacing-s, 8px);
+    margin-right: var(--spacing-xs, 4px);
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,126 @@
+@layer components {
+  .Tag-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-duration-default) var(--transition-timing-default);
+  }
+
+  .Tag-button:disabled,
+  .Tag-button.Tag-disabled {
+    cursor: default;
+  }
+
+  .Tag-button:focus {
+    outline: none;
+  }
+
+  .Tag-button.Tag-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  .Tag-tagContainer {
+    border-radius: var(--radius-m);
+    display: inline-flex;
+    max-width: 100%;
+  }
+
+  .Tag-tagContainer.Tag-disabled {
+    background: var(--color-background-disabled);
+  }
+
+  .Tag-tagContainer.Tag-fullWidth {
+    display: flex;
+    width: 100%;
+  }
+
+  .Tag-tagContainer.Tag-dragged {
+    box-shadow: var(--shadow-m);
+    background-color: var(--color-hover);
+    pointer-events: all;
+  }
+
+  .Tag-tagMain {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-default-on-light);
+    border-radius: var(--radius-m);
+    padding: var(--spacing-s) var(--spacing-l);
+    flex-shrink: 1;
+    min-width: 0;
+    text-align: start;
+  }
+
+  .Tag-tagLabel {
+    user-select: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Tag-tagMain.Tag-dark {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .Tag-tagMain.Tag-light {
+    color: var(--color-text-default-on-light);
+  }
+
+  .Tag-tagMain.Tag-withRemove {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: var(--spacing-m);
+  }
+
+  .Tag-tagMain.Tag-withLeadingButton {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding-left: var(--spacing-m);
+  }
+
+  .Tag-tagMain.Tag-disabled {
+    color: var(--color-text-disabled);
+  }
+
+  .Tag-tagMain.Tag-fullWidth {
+    width: 100%;
+  }
+
+  .Tag-tagRemove {
+    border-radius: 0 var(--radius-m) var(--radius-m) 0;
+    padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-s);
+  }
+
+  .Tag-leadingButton {
+    border-radius: var(--radius-m) 0 0 var(--radius-m);
+    padding: var(--spacing-s) var(--spacing-s) var(--spacing-s) var(--spacing-m);
+  }
+
+  .Tag-tagRemove,
+  .Tag-leadingButton {
+    display: flex;
+    align-items: center;
+  }
+
+  .Tag-tagRemove:not(:disabled):not(.Tag-disabled):hover,
+  .Tag-leadingButton:not(:disabled):not(.Tag-disabled):hover {
+    background: var(--color-hover);
+  }
+
+  .Tag-tagRemove.Tag-dark,
+  .Tag-leadingButton.Tag-dark {
+    color: var(--color-icon-default-on-dark);
+  }
+
+  .Tag-tagRemove.Tag-light,
+  .Tag-leadingButton.Tag-light {
+    color: var(--color-icon-default);
+  }
+
+  .Tag-tagRemove.Tag-disabled,
+  .Tag-leadingButton.Tag-disabled {
+    color: var(--color-icon-disabled);
+  }
+}

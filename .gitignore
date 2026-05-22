@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+storybook-static
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+.claude/**/*.local.json

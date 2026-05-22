@@ -1,0 +1,276 @@
+@layer components {
+  /* ActionTile Styles */
+  /* Converted from ActionTile.ActionTile-module.ActionTile-scss (4479 bytes) */
+
+  /* ============================================
+   * NAME WRAPPER
+   * Contains tile label with text truncation
+   * ============================================ */
+
+  .ActionTile-nameWrapper {
+    /* label-L-emphasis mixin: GT Walsheim, 500, 14px, 16px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium, 500);
+    font-size: var(--font-size-m, 14px);
+    line-height: var(--line-m, 16px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: var(--spacing-xs, 4px);
+    width: 100%;
+    height: 100%;
+  }
+
+  .ActionTile-tileName {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  .ActionTile-tileName.ActionTile-overflowing {
+    padding: 0 var(--spacing-xs, 4px);
+  }
+
+  /* Size: x-small */
+  .ActionTile-nameWrapper.ActionTile-XS {
+    /* label-M-emphasis mixin: GT Walsheim, 500, 12px, 13.2px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium, 500);
+    font-size: var(--font-size-s, 12px);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+
+    padding: 0 var(--spacing-l, 16px);
+    width: initial;
+  }
+
+  .ActionTile-nameWrapper.ActionTile-XS .ActionTile-tileName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: initial;
+    width: calc(19 * var(--grid-unit, 8px)); /* 152px */
+    text-align: left;
+  }
+
+  .ActionTile-nameWrapper.ActionTile-XS .ActionTile-tileName.ActionTile-overflowing {
+    padding: 0;
+  }
+
+  /* Size: small */
+  .ActionTile-nameWrapper.ActionTile-S {
+    /* label-M-emphasis mixin: GT Walsheim, 500, 12px, 13.2px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium, 500);
+    font-size: var(--font-size-s, 12px);
+    line-height: calc(var(--font-size-s) * var(--line-height-coefficient));
+  }
+
+  .ActionTile-nameWrapper.ActionTile-S .ActionTile-tileName {
+    -webkit-line-clamp: 2;
+  }
+
+  /* Size: large */
+  .ActionTile-nameWrapper.ActionTile-L {
+    /* label-L-emphasis mixin: GT Walsheim, 500, 14px, 16px */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium, 500);
+    font-size: var(--font-size-m, 14px);
+    line-height: var(--line-m, 16px);
+  }
+
+  .ActionTile-nameWrapper.ActionTile-L .ActionTile-tileName {
+    -webkit-line-clamp: 3;
+  }
+
+  /* State colors for all sizes */
+  .ActionTile-nameWrapper.ActionTile-XS.ActionTile-default,
+  .ActionTile-nameWrapper.ActionTile-S.ActionTile-default,
+  .ActionTile-nameWrapper.ActionTile-L.ActionTile-default {
+    color: var(--color-tab-text, #393939);
+  }
+
+  .ActionTile-nameWrapper.ActionTile-XS.ActionTile-selected,
+  .ActionTile-nameWrapper.ActionTile-S.ActionTile-selected,
+  .ActionTile-nameWrapper.ActionTile-L.ActionTile-selected {
+    color: var(--color-tab-text-selected, #151515);
+  }
+
+  .ActionTile-nameWrapper.ActionTile-XS.ActionTile-disabled,
+  .ActionTile-nameWrapper.ActionTile-S.ActionTile-disabled,
+  .ActionTile-nameWrapper.ActionTile-L.ActionTile-disabled,
+  .ActionTile-nameWrapper.ActionTile-XS.ActionTile-loading,
+  .ActionTile-nameWrapper.ActionTile-S.ActionTile-loading,
+  .ActionTile-nameWrapper.ActionTile-L.ActionTile-loading {
+    color: var(--color-text-disabled, #8c8c8c);
+  }
+
+  /* ============================================
+   * ACTION TILE (inner container)
+   * ============================================ */
+
+  .ActionTile {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
+
+  .ActionTile.ActionTile-selected {
+    background: var(--color-background-selected, #e0dcff);
+  }
+
+  .ActionTile.ActionTile-disabled,
+  .ActionTile.ActionTile-loading {
+    border: var(--border-width-default, 1px) solid var(--color-border-disabled, #c6c6c6);
+    box-shadow: var(--shadow-s);
+    background: var(--color-background-disabled, #dfdfdf);
+  }
+
+  .ActionTile.ActionTile-loading {
+    cursor: default;
+  }
+
+  /* Hover state for default and selected */
+  @media (hover: hover) and (pointer: fine) {
+    .ActionTile.ActionTile-default:hover .ActionTile-nameWrapper,
+    .ActionTile.ActionTile-selected:hover .ActionTile-nameWrapper {
+      color: var(--color-tab-text-hover, #262626);
+    }
+  }
+
+  /* Icon wrapper */
+  .ActionTile-iconWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ActionTile-iconWrapper.ActionTile-default {
+    color: var(--color-tab-icon, #393939);
+  }
+
+  .ActionTile-iconWrapper.ActionTile-selected {
+    color: var(--color-tab-icon-selected, #151515);
+  }
+
+  .ActionTile-iconWrapper.ActionTile-disabled,
+  .ActionTile-iconWrapper.ActionTile-loading {
+    color: var(--color-icon-disabled, #8c8c8c);
+  }
+
+  /* Dashboard variant - uses product color */
+  .ActionTile.ActionTile-dashboard .ActionTile-iconWrapper {
+    color: var(--color-product, #7f09b7) !important;
+  }
+
+  /* Size: x-small */
+  .ActionTile.ActionTile-XS {
+    width: var(--tile-action-x-small-height, 44px);
+    height: var(--tile-action-x-small-height, 44px);
+    display: flex;
+    justify-content: center;
+  }
+
+  .ActionTile.ActionTile-XS .ActionTile-iconWrapper {
+    font-size: var(--icon-m, 20px);
+  }
+
+  /* Size: small */
+  .ActionTile.ActionTile-S {
+    padding: var(--spacing-l, 16px) var(--spacing-xs, 4px) var(--spacing-xs, 4px);
+  }
+
+  .ActionTile.ActionTile-S .ActionTile-iconWrapper {
+    font-size: var(--icon-l, 24px);
+  }
+
+  /* Size: large */
+  .ActionTile.ActionTile-L {
+    padding: var(--spacing-xl, 24px) var(--spacing-s, 8px) var(--spacing-s, 8px);
+  }
+
+  .ActionTile.ActionTile-L .ActionTile-iconWrapper {
+    font-size: var(--icon-xxl, 40px);
+  }
+
+  /* ============================================
+   * ACTION TILE WRAPPER (outer button container)
+   * ============================================ */
+
+  .ActionTile-actionTileWrapper {
+    border: none;
+    padding: 0;
+    border-radius: var(--radius-m, 8px);
+    background: transparent;
+  }
+
+  .ActionTile-actionTileWrapper:not(:disabled) {
+    cursor: pointer;
+  }
+
+  .ActionTile-actionTileWrapper:focus {
+    outline: none;
+  }
+
+  .ActionTile-actionTileWrapper.ActionTile-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  /* Paper - inner shadow container for Safari */
+  .ActionTile-paper {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: relative; /* for Safari to display box-shadow in button tag */
+  }
+
+  /* Hover states for wrapper */
+  @media (hover: hover) and (pointer: fine) {
+    .ActionTile-actionTileWrapper:hover .ActionTile.ActionTile-default,
+    .ActionTile-actionTileWrapper:hover .ActionTile.ActionTile-selected {
+      background: var(--color-hover, rgba(156, 136, 127, 0.3));
+    }
+
+    .ActionTile-actionTileWrapper:hover .ActionTile.ActionTile-default .ActionTile-iconWrapper,
+    .ActionTile-actionTileWrapper:hover .ActionTile.ActionTile-selected .ActionTile-iconWrapper {
+      color: var(--color-tab-icon-hover, #262626);
+    }
+  }
+
+  /* Size: x-small */
+  .ActionTile-actionTileWrapper.ActionTile-XS {
+    width: var(--tile-action-x-small-width, 228px);
+    height: var(--tile-action-x-small-height, 44px);
+    display: flex;
+  }
+
+  /* Size: small */
+  .ActionTile-actionTileWrapper.ActionTile-S {
+    width: var(--tile-action-small, 88px);
+    height: var(--tile-action-small, 88px);
+  }
+
+  /* Size: large */
+  .ActionTile-actionTileWrapper.ActionTile-L {
+    width: var(--tile-action-large, 128px);
+    height: var(--tile-action-large, 128px);
+  }
+
+  /* ============================================
+   * NAV LINK
+   * For tiles wrapped in router links
+   * ============================================ */
+
+  .ActionTile-navLink {
+    text-decoration: none;
+    display: flex;
+  }
+}

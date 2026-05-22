@@ -1,0 +1,51 @@
+@layer components {
+  /* ActionButtons container - groups buttons with consistent spacing */
+  .ActionButtons {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Alignment variants */
+  .ActionButtons-start {
+    justify-content: flex-start;
+  }
+
+  .ActionButtons-center {
+    justify-content: center;
+  }
+
+  .ActionButtons-end {
+    justify-content: flex-end;
+  }
+
+  .ActionButtons-space-between {
+    justify-content: space-between;
+  }
+
+  /* Spacing variants */
+  .ActionButtons-S {
+    gap: var(--spacing-s);
+  }
+
+  .ActionButtons-M {
+    gap: var(--spacing-m);
+  }
+
+  .ActionButtons-L {
+    gap: var(--spacing-l);
+  }
+
+  /* Wrap variant */
+  .ActionButtons-wrap {
+    flex-wrap: wrap;
+  }
+
+  /* Fill container variant - buttons fill width equally */
+  .ActionButtons-fillContainer {
+    width: 100%;
+  }
+
+  .ActionButtons-fillContainer > * {
+    flex: 1;
+  }
+}

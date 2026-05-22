@@ -1,0 +1,24 @@
+@layer components {
+  .Shelf {
+    background-color: var(--color-shelf-background);
+    border-radius: var(--radius-m);
+  }
+
+  .Shelf-stickyLeft {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .Shelf-stickyRight {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .Shelf-onPaper {
+    box-shadow: var(--shadow-s);
+  }
+
+  .Shelf-fullHeight {
+    height: 100%;
+  }
+}

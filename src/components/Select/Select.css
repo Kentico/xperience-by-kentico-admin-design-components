@@ -1,0 +1,9 @@
+@layer components {
+  .Select-clickable input {
+    cursor: pointer;
+  }
+
+  .Select input:read-only {
+    background-color: var(--color-input-background) !important;
+  }
+}

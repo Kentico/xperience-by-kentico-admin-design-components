@@ -1,0 +1,13 @@
+@layer components {
+  .Dropzone {
+    width: 100%;
+    display: flex;
+    place-content: center center;
+    flex-direction: column;
+  }
+
+  /* Prevent pointer events on children to ensure drag events fire on the dropzone */
+  .Dropzone > * {
+    pointer-events: none;
+  }
+}

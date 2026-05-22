@@ -1,0 +1,17 @@
+@layer components {
+  .PickerOverlay-picker {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background-selected);
+    visibility: hidden;
+    /* Clear the header button area (4 * grid-unit = 32px) + spacing-xxxl (40px) */
+    padding-top: calc(4 * var(--grid-unit) + var(--spacing-xxxl));
+    padding-bottom: var(--spacing-l);
+  }
+
+  .PickerOverlay-picker.PickerOverlay-opened {
+    visibility: inherit;
+  }
+}

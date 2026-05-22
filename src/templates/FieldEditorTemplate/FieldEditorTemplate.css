@@ -1,0 +1,156 @@
+@layer components {
+  /* Layout */
+  .FieldEditorTemplate-layoutWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xl);
+  }
+
+  /* FieldEditorBarItemHeader styles */
+  .FieldEditorTemplate-eyeIcon {
+    font-size: var(--icon-size-s);
+  }
+
+  .FieldEditorTemplate-main,
+  .FieldEditorTemplate-main span {
+    display: flex;
+    flex: 1;
+    gap: var(--spacing-l);
+    align-self: center;
+    overflow: hidden;
+  }
+
+  .FieldEditorTemplate-right {
+    display: flex;
+    gap: var(--spacing-xxl);
+  }
+
+  .FieldEditorTemplate-requiredSpacer {
+    min-width: calc(3 * var(--spacing-xxl));
+    align-self: center;
+  }
+
+  .FieldEditorTemplate-fieldName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .FieldEditorTemplate-schemaName {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .FieldEditorTemplate-typeIndicator {
+    font-weight: normal;
+    float: right;
+    padding-left: var(--spacing-l);
+    color: var(--color-text-low-emphasis);
+  }
+
+  /* FieldEditorForm styles */
+  .FieldEditorTemplate-formContainer {
+    max-width: calc(60 * var(--grid-unit));
+  }
+
+  .FieldEditorTemplate-firstHeadline {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-l);
+    letter-spacing: var(--letter-spacing-headline);
+    padding-bottom: var(--spacing-l);
+  }
+
+  .FieldEditorTemplate-headline {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-l);
+    letter-spacing: var(--letter-spacing-headline);
+    padding-bottom: var(--spacing-l);
+    padding-top: calc(2 * var(--spacing-l));
+  }
+
+  .FieldEditorTemplate-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-m);
+    padding-top: var(--spacing-xxl);
+  }
+
+  /* FieldEditorSidePanel styles */
+  .FieldEditorTemplate-tableContainer {
+    padding-bottom: var(--spacing-xs);
+  }
+
+  .FieldEditorTemplate-tableHeader {
+    background: var(--palette-white);
+    top: calc(-1 * var(--spacing-xs));
+  }
+
+  /* PageMessagePane styles */
+  .FieldEditorTemplate-pageMessagePane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xxxl);
+    text-align: center;
+  }
+
+  .FieldEditorTemplate-pageMessageTitle {
+    font-size: var(--font-size-m);
+    color: var(--color-text-low-emphasis);
+  }
+
+  /* Form stub styles */
+  .FieldEditorTemplate-formGroup {
+    margin-bottom: var(--spacing-l);
+  }
+
+  .FieldEditorTemplate-formLabel {
+    display: block;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-high-emphasis);
+  }
+
+  .FieldEditorTemplate-formInput {
+    width: 100%;
+    padding: var(--spacing-s) var(--spacing-m);
+    font-size: var(--font-size-m);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--border-radius-small);
+    background: var(--color-input-background);
+  }
+
+  .FieldEditorTemplate-formInput:focus {
+    outline: none;
+    border-color: var(--color-border-active);
+    box-shadow: 0 0 0 2px var(--color-focus-light);
+  }
+
+  .FieldEditorTemplate-formInput:disabled {
+    background: var(--color-background-disabled);
+    cursor: not-allowed;
+  }
+
+  /* ConfigurableCallout styles */
+  .FieldEditorTemplate-configurableCallout {
+    padding: var(--spacing-m);
+    background: var(--color-info-background-low-emphasis);
+    border-radius: var(--border-radius-medium);
+  }
+
+  /* TableComponentStub styles */
+  .FieldEditorTemplate-tableComponentStub {
+    min-height: 200px;
+  }
+
+  .FieldEditorTemplate-noAvailableSchemaText {
+    font-size: var(--font-size-s);
+    margin-top: var(--spacing-s);
+  }
+}

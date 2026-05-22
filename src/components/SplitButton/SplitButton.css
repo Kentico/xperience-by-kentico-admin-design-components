@@ -1,0 +1,183 @@
+@layer components {
+  /* ===== Container (for DropDownActionMenu positioning) ===== */
+  .SplitButton-container {
+    display: inline-flex;
+  }
+
+  /* ===== Wrapper (compound button shell — gets Button base styles via JS) ===== */
+  .SplitButton-wrapper {
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* ===== Disabled states ===== */
+  /* The wrapper is a <div> so :disabled pseudo-class won't apply.
+     We use class-based selectors matching the source BaseButton pattern. */
+  .SplitButton-wrapper.SplitButton-disabled {
+    cursor: default;
+  }
+
+  .SplitButton-wrapper.SplitButton-disabled.SplitButton-primary {
+    background: var(--color-background-disabled);
+    color: var(--color-text-disabled);
+    box-shadow: none;
+  }
+
+  .SplitButton-wrapper.SplitButton-disabled.SplitButton-secondary {
+    background-color: transparent;
+    border-color: var(--color-border-disabled);
+    color: var(--color-text-disabled);
+  }
+
+  /* ===== Hover states (enabled) ===== */
+  .SplitButton-wrapper:not(.SplitButton-disabled).SplitButton-primary:hover {
+    background: var(--gradient-product);
+  }
+
+  .SplitButton-wrapper:not(.SplitButton-disabled).SplitButton-secondary:hover {
+    background: transparent;
+  }
+
+  /* Inner primary element hover/active */
+  .SplitButton-wrapper:not(.SplitButton-disabled) .SplitButton-primary:hover,
+  .SplitButton-wrapper:not(.SplitButton-disabled) .SplitButton-primary.SplitButton-active {
+    background: var(--gradient-product-hover);
+  }
+
+  /* Inner secondary element hover/active */
+  .SplitButton-wrapper:not(.SplitButton-disabled) .SplitButton-secondary:hover,
+  .SplitButton-wrapper:not(.SplitButton-disabled) .SplitButton-secondary.SplitButton-active {
+    background: var(--color-hover);
+  }
+
+  /* Remove default focus outline — handled by .SplitButton-focused class */
+  .SplitButton-wrapper:not(.SplitButton-disabled) :focus {
+    outline: none;
+  }
+
+  .SplitButton-wrapper:not(.SplitButton-disabled) .SplitButton-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  /* ===== Reset styles for inner button/anchor elements ===== */
+  .SplitButton-resetDefaultStyles {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    text-decoration: inherit;
+  }
+
+  /* ===== Main button (left part) ===== */
+  .SplitButton-mainButton {
+    display: flex;
+    gap: var(--grid-unit);
+    align-items: center;
+    height: 100%;
+    border-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .SplitButton-mainButton.SplitButton-L {
+    padding-left: calc(4 * var(--grid-unit));
+    padding-right: calc(3.5 * var(--grid-unit));
+  }
+
+  .SplitButton-mainButton.SplitButton-M {
+    padding-left: calc(3 * var(--grid-unit));
+    padding-right: calc(2.5 * var(--grid-unit));
+  }
+
+  .SplitButton-mainButton.SplitButton-S {
+    padding-left: calc(2.5 * var(--grid-unit));
+    padding-right: calc(2 * var(--grid-unit));
+  }
+
+  /* ===== Divider ===== */
+  .SplitButton-divider {
+    width: var(--border-width-default);
+    height: 100%;
+    background-color: var(--color-divider-default);
+  }
+
+  .SplitButton-dividerSecondary {
+    background-color: var(--color-product);
+  }
+
+  .SplitButton-wrapper.SplitButton-disabled .SplitButton-divider {
+    background-color: var(--color-border-disabled);
+  }
+
+  /* ===== Icon/chevron button (right part) ===== */
+  .SplitButton-iconButton {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .SplitButton-iconButton.SplitButton-L {
+    padding-left: calc(2 * var(--grid-unit));
+    padding-right: calc(2.5 * var(--grid-unit));
+  }
+
+  .SplitButton-iconButton.SplitButton-M {
+    padding-left: calc(1.5 * var(--grid-unit));
+    padding-right: calc(2 * var(--grid-unit));
+  }
+
+  .SplitButton-iconButton.SplitButton-S {
+    padding-left: calc(1 * var(--grid-unit));
+    padding-right: calc(1.5 * var(--grid-unit));
+  }
+
+  /* Partial disabled: main button disabled but chevron still enabled */
+  .SplitButton-iconButton.SplitButton-mainButtonDisabled {
+    cursor: pointer;
+  }
+
+  .SplitButton-iconButton.SplitButton-mainButtonDisabled.SplitButton-primary {
+    background: var(--gradient-product);
+    color: var(--color-text-default-on-dark);
+    box-shadow: var(--glow-primary);
+  }
+
+  .SplitButton-iconButton.SplitButton-mainButtonDisabled.SplitButton-primary:hover {
+    background: var(--gradient-product-hover);
+  }
+
+  .SplitButton-iconButton.SplitButton-mainButtonDisabled.SplitButton-secondary {
+    color: var(--color-product);
+    outline: var(--border-width-default) var(--border-style-default)
+      var(--color-product);
+  }
+
+  .SplitButton-iconButton.SplitButton-mainButtonDisabled.SplitButton-secondary:hover {
+    background: var(--color-hover);
+  }
+
+  /* ===== Icon sizing ===== */
+  .SplitButton-icon.SplitButton-L {
+    font-size: var(--icon-l);
+  }
+
+  .SplitButton-icon.SplitButton-M {
+    font-size: var(--icon-m);
+  }
+
+  .SplitButton-icon.SplitButton-S {
+    font-size: var(--icon-s);
+  }
+
+  /* ===== Absolute spinner (no-icon mode) ===== */
+  .SplitButton-iconLabelLoading {
+    position: absolute;
+  }
+}

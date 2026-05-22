@@ -1,0 +1,87 @@
+@layer components {
+  /**
+   * BarItem Component Styles
+   * Converted from BarItem.BarItem-module.BarItem-scss
+   */
+
+  .BarItem-wrapper {
+    border-radius: var(--radius-m);
+  }
+
+  .BarItem-wrapper.BarItem-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  .BarItem-barItemHeader {
+    height: var(--size-l);
+    border-radius: var(--radius-m);
+    padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
+    background-color: var(--color-paper-background);
+    display: flex;
+    gap: var(--spacing-l);
+    transition: background-color var(--transition-250);
+  }
+
+  .BarItem-barItemHeader > * {
+    align-self: center;
+    display: flex;
+    gap: var(--spacing-l);
+    overflow: hidden;
+  }
+
+  .BarItem-barItemHeader.BarItem-expandable:hover {
+    cursor: pointer;
+    background-color: var(--color-hover);
+  }
+
+  .BarItem-barItemHeader.BarItem-disabled {
+    background-color: var(--color-background-disabled);
+  }
+
+  .BarItem-barItemHeader.BarItem-disabled:hover {
+    background-color: var(--color-background-disabled);
+  }
+
+  .BarItem-barItemHeader.BarItem-expanded {
+    background-color: var(--color-background-highlighted);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .BarItem-barItemHeader.BarItem-drag {
+    box-shadow: var(--shadow-m);
+    background-color: var(--color-hover);
+  }
+
+  .BarItem-barItemHeader:focus {
+    outline: none;
+  }
+
+  .BarItem-barItemColumn {
+    display: flex;
+  }
+
+  .BarItem-barItemColumn > * {
+    font-family: var(--typeface-product-secondary);
+    font-size: var(--font-size-l);
+    line-height: var(--line-l);
+    font-weight: var(--weight-regular);
+    letter-spacing: var(--letter-spacing-m);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .BarItem-barItemColumn > *:not(:last-child) {
+    margin-right: var(--spacing-l);
+  }
+
+  .BarItem-trailingActions {
+    margin: 0 0 0 auto;
+  }
+
+  .BarItem-barItemBody {
+    padding: var(--spacing-xxl);
+  }
+}

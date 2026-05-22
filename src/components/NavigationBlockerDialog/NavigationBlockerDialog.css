@@ -1,0 +1,13 @@
+@layer components {
+  /**
+   * NavigationBlockerDialog styles
+   *
+   * Source uses z-index: 10000 ($z-index-prompt) for the overlay.
+   * The base Dialog defaults to z-index: 2000 (--z-index-dialog).
+   * This override ensures the navigation blocker sits above other dialogs.
+   */
+
+  .NavigationBlockerDialog-overlay {
+    z-index: var(--z-index-prompt);
+  }
+}

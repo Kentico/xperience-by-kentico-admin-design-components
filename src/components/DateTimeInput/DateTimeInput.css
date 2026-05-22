@@ -1,0 +1,97 @@
+@layer components {
+  .DateTimeInput-paperWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-l);
+    padding: var(--spacing-xl);
+  }
+
+  .DateTimeInput-datePicker {
+    width: 100%;
+  }
+
+  .DateTimeInput-dateInput {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+
+    &[data-placeholder] {
+      color: var(--color-text-hint);
+    }
+
+    & span {
+      outline: none;
+
+      &[data-focused] {
+        outline: 2px solid var(--color-product);
+        border-radius: 1px;
+        background-color: var(--color-background-selected-hover);
+      }
+    }
+
+    &[data-disabled] {
+      color: var(--color-text-disabled);
+      background-color: inherit;
+      cursor: initial;
+    }
+  }
+
+  .DateTimeInput-inputGroup {
+    color: var(--color-text-default-on-light);
+    width: 100%;
+    height: var(--size-m);
+    background-color: var(--color-input-background);
+    box-sizing: border-box;
+    transition: background-color var(--transition-250);
+    cursor: text;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+    border-width: var(--border-width-default);
+    border-style: var(--border-style-default);
+    border-color: var(--color-input-border);
+    border-radius: var(--radius-pill);
+    padding: 0 var(--spacing-l);
+
+    &[data-disabled] {
+      color: var(--color-text-disabled);
+      background-color: var(--color-background-disabled);
+      border-color: var(--color-border-disabled) !important;
+      box-shadow: none !important;
+      cursor: initial;
+
+      & input {
+        color: var(--color-text-disabled);
+        background-color: inherit;
+      }
+    }
+
+    &[data-focus-visible] {
+      box-shadow: var(--focus-default);
+    }
+  }
+
+  .DateTimeInput-popover[data-trigger='DatePicker'] {
+    max-width: unset;
+  }
+
+  .DateTimeInput-dateTimeInputTimeActionsRow {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+  }
+
+  .DateTimeInput-inputButtons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xs);
+    align-items: center;
+    justify-content: center;
+    outline: none;
+
+    &[data-focus-visible] {
+      outline: 2px solid var(--color-focus);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@layer components {
+  /**
+   * PromptDialog styles
+   *
+   * Converted from source: PromptDialogComponent.PromptDialog-module.PromptDialog-scss
+   * - Uses z-index-prompt token for higher stacking context
+   */
+
+  .PromptDialog-overlay {
+    z-index: var(--z-index-prompt);
+  }
+
+  .PromptDialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .PromptDialog-message {
+    margin: 0;
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    color: var(--color-text-default-on-light);
+  }
+}

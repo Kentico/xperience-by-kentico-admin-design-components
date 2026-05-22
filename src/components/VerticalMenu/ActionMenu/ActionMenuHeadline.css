@@ -1,0 +1,23 @@
+@layer components {
+  /**
+   * ActionMenuHeadline styles
+   * Section header for grouping menu items
+   */
+
+  .ActionMenuHeadline-headline {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-s) var(--spacing-l);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    user-select: none;
+  }
+
+  /* First headline doesn't need top padding */
+  .ActionMenuHeadline-headline:first-child {
+    padding-top: var(--spacing-xs);
+  }
+}

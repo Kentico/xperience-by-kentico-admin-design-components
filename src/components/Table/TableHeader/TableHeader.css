@@ -1,0 +1,62 @@
+@layer components {
+  /**
+   * TableHeader styles
+   * Converted from TableHeader.TableHeader-module.TableHeader-scss
+   */
+
+  .TableHeader-tableHeaderContainer {
+    position: sticky;
+
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+
+    /* position: sticky tends to create 1px gap between sticky element and the top */
+    top: -1px;
+    z-index: 1;
+    background: inherit;
+
+    height: var(--table-header-height, var(--size-l));
+  }
+
+  .TableHeader-tableHeaderColSelect {
+    display: flex;
+    padding-left: calc(var(--spacing-l) - 4px);
+    padding-right: calc(var(--spacing-l) - 4px);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: calc(var(--z-index-elevated) + 1);
+    /* Use gradient background for sticky column */
+    background: var(--gradient-background-desk) no-repeat center center fixed;
+  }
+
+  .TableHeader-tableHeaderColSelect .TableHeader-checkbox {
+    margin: auto auto auto 0;
+  }
+
+  /* Scroll shadow pseudo-element - visible when scrolled past start */
+  .TableHeader-tableHeaderColSelect::after {
+    content: '';
+    position: absolute;
+    width: var(--table-scroll-shadow-width, 24px);
+    height: 100%;
+    top: 0;
+    left: 100%;
+    right: auto;
+    pointer-events: none;
+    opacity: 0;
+    z-index: var(--z-index-elevated);
+    transition: var(--table-scroll-shadow-transition);
+    background: linear-gradient(to right, var(--table-scroll-shadow-color), transparent);
+  }
+
+  .TableHeader-shadowVisible::after {
+    opacity: 1;
+  }
+
+  .TableHeader-empty {
+    /* Width = spacing-L + 2 * spacing-XS = 16px + 2*4px = 24px */
+    width: calc(var(--spacing-l) + 2 * var(--spacing-xs));
+  }
+}

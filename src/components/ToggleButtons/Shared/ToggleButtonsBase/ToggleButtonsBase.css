@@ -1,0 +1,7 @@
+@layer components {
+  .ToggleButtonsBase-toggleButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-s);
+  }
+}

@@ -1,0 +1,19 @@
+@layer components {
+  /* ApplicationMenuMobile Styles */
+
+  .ApplicationMenuMobile {
+    --mobile-menu-height: calc(9 * var(--grid-unit, 8px));
+
+    width: 100%;
+    height: var(--mobile-menu-height);
+    background: var(--color-paper-background, #fff);
+    box-shadow: var(--shadow-s);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xxl, 32px);
+    z-index: var(--z-index-application-menu, 4000);
+    left: 0;
+    bottom: 0;
+    position: fixed;
+  }
+}

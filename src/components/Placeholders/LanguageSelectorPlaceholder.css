@@ -1,0 +1,17 @@
+@layer components {
+  /* LanguageSelectorPlaceholder Styles */
+
+  .LanguageSelectorPlaceholder {
+    padding-right: var(--spacing-l);
+  }
+
+  .LanguageSelectorPlaceholder:empty {
+    display: none;
+  }
+
+  @media only screen and (max-width: 599.98px) {
+    .LanguageSelectorPlaceholder {
+      min-width: 0;
+    }
+  }
+}

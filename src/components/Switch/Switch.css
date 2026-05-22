@@ -1,0 +1,197 @@
+@layer components {
+  /*
+   * Switch sizing reference (grid-unit = 8px):
+   *
+   * Medium:
+   *   base:        22px × 36px
+   *   trigger-on:  18px × 18px, translateX(16px)
+   *   trigger-off: 16px × 16px, translateX(2px)
+   *
+   * Large:
+   *   base:        26px × 44px
+   *   trigger-on:  22px × 22px, translateX(20px)
+   *   trigger-off: 20px × 20px, translateX(2px)
+   */
+
+  .Switch {
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-s);
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  .Switch-switchBase {
+    border-radius: var(--radius-pill);
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+  }
+
+  .Switch-switchBase:focus {
+    outline: none;
+  }
+
+  .Switch-switchBase.Switch-switchSizeMedium {
+    height: 22px;
+    width: 36px;
+  }
+
+  .Switch-switchBase.Switch-switchSizeLarge {
+    height: 26px;
+    width: 44px;
+  }
+
+  .Switch-switchBase.Switch-switchOn {
+    background-color: var(--color-product-selected);
+  }
+
+  .Switch-switchBase.Switch-switchOn.Switch-disabled {
+    background-color: var(--color-switch-on-disabled-background);
+  }
+
+  .Switch-switchBase.Switch-switchOff {
+    background-color: var(--color-switch-off-background);
+  }
+
+  .Switch-switchBase.Switch-switchOff.Switch-disabled {
+    background-color: var(--color-background-disabled);
+  }
+
+  .Switch.Switch-focused:not(.Switch label) {
+    box-shadow: var(--focus-default);
+  }
+
+  .Switch.Switch-disabledSwitch {
+    cursor: default;
+  }
+
+  .Switch.Switch-switchOn:hover:not(.Switch-disabledSwitch) .Switch-switchBase {
+    background-color: var(--color-product-selected-hover);
+  }
+
+  .Switch.Switch-switchOff:hover:not(.Switch-disabledSwitch) .Switch-switchBase {
+    background-color: var(--color-switch-off-background-hovered);
+  }
+
+  .Switch-switchTrigger {
+    color: var(--color-icon-default-on-dark);
+    border-radius: var(--radius-pill);
+    position: absolute;
+    top: 50%;
+    transition: 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Medium trigger */
+  .Switch-switchTrigger.Switch-switchSizeMedium {
+    background-color: var(--color-icon-default-on-dark);
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeMedium.Switch-switchOn {
+    transform: translate(16px, -50%);
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeMedium.Switch-switchOn.Switch-switchInProgress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeMedium.Switch-switchOn.Switch-switchInProgress .Switch-triggerInProgress {
+    font-size: var(--icon-xs);
+    color: var(--color-icon-default);
+    border-radius: var(--radius-pill);
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeMedium.Switch-switchOff {
+    transform: translate(2px, -50%);
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeMedium.Switch-switchOff.Switch-switchInProgress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeMedium.Switch-switchOff.Switch-switchInProgress .Switch-triggerInProgress {
+    font-size: var(--icon-xs);
+    color: var(--color-icon-default);
+    border-radius: var(--radius-pill);
+  }
+
+  /* Large trigger */
+  .Switch-switchTrigger.Switch-switchSizeLarge {
+    background-color: var(--color-icon-default-on-dark);
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeLarge.Switch-switchOn {
+    transform: translate(20px, -50%);
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeLarge.Switch-switchOn.Switch-switchInProgress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeLarge.Switch-switchOn.Switch-switchInProgress .Switch-triggerInProgress {
+    font-size: var(--icon-s);
+    color: var(--color-icon-default);
+    border-radius: var(--radius-pill);
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeLarge.Switch-switchOff {
+    transform: translate(2px, -50%);
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeLarge.Switch-switchOff.Switch-switchInProgress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Switch-switchTrigger.Switch-switchSizeLarge.Switch-switchOff.Switch-switchInProgress .Switch-triggerInProgress {
+    font-size: var(--icon-s);
+    color: var(--color-icon-default);
+    border-radius: var(--radius-pill);
+  }
+
+  /* Switch label */
+  .Switch-switchLabel {
+    cursor: inherit;
+  }
+
+  .Switch-switchLabel.Switch-switchSizeMedium {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.2px;
+    color: var(--color-text-default-on-light);
+    margin-left: var(--spacing-s);
+  }
+
+  .Switch-switchLabel.Switch-switchSizeLarge {
+    font-family: 'GT Walsheim', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-default-on-light);
+    margin-left: var(--spacing-s);
+  }
+}

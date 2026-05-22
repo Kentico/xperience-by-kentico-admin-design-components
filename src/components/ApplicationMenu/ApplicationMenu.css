@@ -1,0 +1,87 @@
+@layer components {
+  /* ApplicationMenu Styles */
+
+  .ApplicationMenu-sideBar {
+    --sidebar-width: calc(12 * var(--grid-unit, 8px));
+    --menu-padding-top: calc(2 * var(--grid-unit, 8px));
+    --scrollbar-margin: calc(var(--spacing-xl, 24px) - var(--spacing-xs, 4px));
+    --scrollable-width: calc(var(--sidebar-width) + var(--scrollbar-margin));
+
+    width: var(--sidebar-width);
+    background-color: inherit;
+    transition: background-color var(--transition-duration-default) var(--transition-timing-default) var(--transition-duration-expand);
+    height: 100%;
+    z-index: var(--z-index-application-menu, 4000);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing-l, 16px);
+  }
+
+  .ApplicationMenu-sideBar.ApplicationMenu-scrollable {
+    width: var(--scrollable-width);
+  }
+
+  .ApplicationMenu-sideBar ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  .ApplicationMenu-bottom ul {
+    width: var(--sidebar-width);
+    padding-bottom: var(--spacing-xxl, 32px);
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--spacing-xl, 24px);
+  }
+
+  .ApplicationMenu-bottom ul li {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ApplicationMenu-upper {
+    padding: var(--menu-padding-top) var(--spacing-s, 8px) var(--spacing-xs, 4px)
+      var(--spacing-s, 8px);
+    overflow: hidden auto;
+    box-sizing: content-box;
+  }
+
+  .ApplicationMenu-upper ul {
+    width: calc(var(--sidebar-width) - 2 * var(--spacing-s, 8px));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ApplicationMenu-upper ul li:not(:first-child):not(:last-child) {
+    padding-bottom: var(--spacing-l, 16px);
+  }
+
+  .ApplicationMenu-upper ul li.ApplicationMenu-logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: calc(5 * var(--grid-unit, 8px));
+  }
+
+  .ApplicationMenu-upper ul li.ApplicationMenu-logo a {
+    width: var(--icon-xxl, 40px);
+    height: var(--icon-xxl, 40px);
+    background: url('/images/kentico-logo-short.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .ApplicationMenu-sideBar.ApplicationMenu-rollout {
+    background-color: var(--color-paper-background, #fff);
+    box-shadow: var(--shadow-s);
+    transition: none;
+    z-index: calc(var(--z-index-application-menu, 4000) + 1);
+    position: relative;
+  }
+
+  .ApplicationMenu-scrollableApplicationList {
+    left: var(--scrollable-width);
+  }
+}

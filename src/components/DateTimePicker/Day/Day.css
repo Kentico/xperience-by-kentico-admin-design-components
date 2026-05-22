@@ -1,0 +1,64 @@
+@layer components {
+  /* Day cell inside react-datepicker */
+  .Day {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    text-align: center;
+    width: calc(4.75 * var(--grid-unit));
+    height: calc(4.75 * var(--grid-unit));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    user-select: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: var(--transition-250);
+    transition-property: color, background-color;
+  }
+
+  .Day:hover {
+    background-color: var(--color-hover);
+  }
+
+  .react-datepicker__day--selected .Day {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-bold);
+    color: #fff;
+    background-color: var(--color-product);
+  }
+
+  .react-datepicker__day--selected .Day:hover {
+    background-color: var(--color-product-hover);
+  }
+
+  .react-datepicker__day--selected:focus-visible .Day {
+    outline: none;
+    box-shadow: var(--focus-default);
+    z-index: 1;
+    position: relative;
+  }
+
+  .react-datepicker__day--disabled .Day {
+    cursor: default;
+    color: var(--color-text-disabled);
+  }
+
+  .react-datepicker__day--disabled .Day:hover {
+    background-color: transparent;
+  }
+
+  .react-datepicker__day--today .Day {
+    box-shadow: 0 0 0 var(--border-width-default) var(--color-border-default);
+  }
+
+  .react-datepicker__day--keyboard-selected .Day {
+    box-shadow: var(--focus-default);
+    z-index: 1;
+    position: relative;
+  }
+}

@@ -1,0 +1,51 @@
+@layer components {
+  .CalendarHeading-root {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  .CalendarHeading-selectWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+
+  .CalendarHeading-selectTrigger {
+    background: transparent;
+    color: var(--color-text-default-on-light);
+    border: none;
+    height: var(--spacing-xl);
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+    border-radius: var(--radius-s);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-s);
+    align-items: center;
+    justify-content: center;
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--color-hover);
+      color: var(--color-text-default-on-light);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: var(--focus-default);
+    }
+
+    & svg {
+      width: var(--icon-s);
+      height: var(--icon-s);
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@layer components {
+  /**
+   * ImagePreview component styles
+   * Sub-component of BaseTile for displaying tile image preview
+   */
+
+  .ImagePreview-imgWrapper {
+    position: relative;
+    padding-top: var(--tile-preview-aspect-ratio); /* 56.25% for 16:9 ratio */
+    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--radius-m);
+
+    /* Chess pattern background for transparency indication */
+    background-image:
+      linear-gradient(45deg, var(--color-background-disabled) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--color-background-disabled) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--color-background-disabled) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--color-background-disabled) 75%);
+    background-size: var(--spacing-m) var(--spacing-m);
+    background-position:
+      0 0,
+      0 calc(var(--spacing-m) / 2),
+      calc(var(--spacing-m) / 2) calc(var(--spacing-m) / 2 * -1),
+      calc(var(--spacing-m) / 2 * -1) 0;
+  }
+
+  .ImagePreview-imgWrapper.ImagePreview-uploadInProgress {
+    background: var(--gradient-background-desk);
+  }
+
+  .ImagePreview-imgWrapper.ImagePreview-errorImg {
+    position: static;
+    background: var(--color-alert-background-low-emphasis);
+  }
+
+  .ImagePreview-imgWrapper.ImagePreview-errorImg .ImagePreview-noPreview {
+    background: none;
+  }
+
+  .ImagePreview-progressBar {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .ImagePreview-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--radius-m);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ImagePreview-img.ImagePreview-noPreview {
+    background: var(--gradient-background-desk);
+  }
+
+  .ImagePreview-img.ImagePreview-skeleton {
+    background: var(--color-skeleton-content);
+  }
+
+  .ImagePreview-previewIcon {
+    color: var(--color-icon-default);
+  }
+
+  .ImagePreview-previewIcon.ImagePreview-sizeS {
+    font-size: var(--icon-s);
+  }
+
+  .ImagePreview-previewIcon.ImagePreview-sizeXxl {
+    font-size: var(--icon-xxl);
+  }
+}

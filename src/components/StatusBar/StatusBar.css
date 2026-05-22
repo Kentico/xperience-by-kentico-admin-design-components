@@ -1,0 +1,23 @@
+@layer components {
+  .StatusBar {
+    display: flex;
+    min-height: var(--size-m);
+    margin: var(--spacing-l) calc(3.5 * var(--grid-unit)) var(--spacing-l) var(--spacing-l);
+    justify-content: space-between;
+    z-index: var(--z-index-statusbar);
+  }
+
+  .StatusBar-left {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 100000;
+    min-width: 0;
+  }
+
+  .StatusBar-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 1;
+    gap: var(--spacing-xxxl);
+  }
+}

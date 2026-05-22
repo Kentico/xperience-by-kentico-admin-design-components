@@ -1,0 +1,63 @@
+@layer components {
+  /* Outer click target — full width, no background */
+  .SecondaryMenuCell-cell {
+    display: flex;
+    align-items: center;
+    min-height: var(--size-s);
+    padding: 0 var(--spacing-s);
+    color: var(--color-text-default-on-light);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .SecondaryMenuCell-cell:focus-visible {
+    outline: none;
+  }
+
+  .SecondaryMenuCell-cell:focus-visible .SecondaryMenuCell-cellLabel {
+    box-shadow: var(--focus-default);
+  }
+
+  .SecondaryMenuCell-cellDisabled {
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+  }
+
+  /* Inner label — content-hugging pill for active/hover backgrounds */
+  .SecondaryMenuCell-cellLabel {
+    display: inline-block;
+    width: fit-content;
+    padding: var(--spacing-s);
+    border-radius: var(--radius-s);
+    min-height: var(--size-s);
+  }
+
+  /* Text content inside the label — handles line clamping */
+  .SecondaryMenuCell-cellLabelContent {
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+  }
+
+  .SecondaryMenuCell-cell:hover:not(.SecondaryMenuCell-cellDisabled) .SecondaryMenuCell-cellLabel {
+    background-color: var(--color-hover);
+    color: var(--color-text-default-on-light);
+  }
+
+  .SecondaryMenuCell-cellActive .SecondaryMenuCell-cellLabel {
+    background-color: var(--color-product-selected);
+    color: var(--color-text-default-on-dark);
+  }
+
+  .SecondaryMenuCell-cell.SecondaryMenuCell-cellActive:hover .SecondaryMenuCell-cellLabel {
+    background-color: var(--color-product-selected-hover);
+    color: var(--color-text-default-on-dark);
+  }
+}

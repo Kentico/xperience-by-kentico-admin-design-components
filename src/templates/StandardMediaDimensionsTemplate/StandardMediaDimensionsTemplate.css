@@ -1,0 +1,137 @@
+@layer components {
+  /* StandardMediaDimensionsTemplate styles */
+
+  /* Layout wrapper replacement for ContentWithSidebarLayoutWrapper */
+  .StandardMediaDimensionsTemplate-layoutWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-l);
+  }
+
+  /* Standard Media Dimension item */
+  .StandardMediaDimensionsTemplate-standardMediaDimension {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: var(--spacing-m) var(--spacing-l);
+    /* label-L mixin expansion */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    color: var(--color-text-default-on-light);
+  }
+
+  .StandardMediaDimensionsTemplate-contentContainer {
+    flex: 1 1 auto;
+  }
+
+  .StandardMediaDimensionsTemplate-plainTextParameter {
+    display: flex;
+    align-items: center;
+    height: var(--size-m);
+  }
+
+  .StandardMediaDimensionsTemplate-contentName {
+    display: flex;
+  }
+
+  .StandardMediaDimensionsTemplate-inputName {
+    width: 100%;
+  }
+
+  /* Size calculations: 3 * spacing-xxxxl = 3 * 48px = 144px */
+  .StandardMediaDimensionsTemplate-contentNumber {
+    flex: 0 0 144px;
+    min-width: 144px;
+    max-width: 144px;
+  }
+
+  /* Size calculations: 4 * spacing-xl = 4 * 24px = 96px */
+  .StandardMediaDimensionsTemplate-inputNumber {
+    flex: 0 0 96px;
+    min-width: 96px;
+    max-width: 96px;
+  }
+
+  /* Size calculations: 3.5 * spacing-xxxxl = 3.5 * 48px = 168px */
+  .StandardMediaDimensionsTemplate-contentSelect {
+    flex: 0 0 168px;
+    min-width: 168px;
+    max-width: 168px;
+  }
+
+  .StandardMediaDimensionsTemplate-contentButton {
+    flex: 0 0 var(--icon-xl);
+    min-width: var(--icon-xl);
+    max-width: var(--icon-xl);
+    place-content: center center;
+  }
+
+  /* Validation messages */
+  .StandardMediaDimensionsTemplate-validationMessageContainer {
+    padding-top: var(--spacing-s);
+  }
+
+  .StandardMediaDimensionsTemplate-validationMessage {
+    /* caption-alert mixin expansion */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-s);
+    line-height: var(--line-m);
+    letter-spacing: var(--letter-spacing-l);
+    color: var(--color-alert-text);
+    display: flex;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .StandardMediaDimensionsTemplate-alertIcon {
+    margin-right: var(--spacing-xs);
+    fill: var(--color-alert-icon);
+    font-size: var(--icon-s);
+  }
+
+  /* Page message pane for empty state */
+  .StandardMediaDimensionsTemplate-pageMessagePane {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    padding: 64px 17%;
+    box-sizing: content-box;
+    text-align: center;
+    color: var(--color-text-low-emphasis);
+    /* body-M mixin */
+    font-family: var(--typeface-product-secondary);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-m);
+    line-height: var(--line-l);
+  }
+
+  .StandardMediaDimensionsTemplate-pageMessageTitle {
+    /* headline-L mixin */
+    font-family: var(--typeface-product-primary);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-xl);
+    line-height: var(--line-xxl);
+    color: var(--color-text-default-on-light);
+  }
+
+  /* Responsive adjustments */
+  @media only screen and (max-width: 768px) {
+    .StandardMediaDimensionsTemplate-contentNumber,
+    .StandardMediaDimensionsTemplate-contentSelect {
+      flex: 1 1 100%;
+      min-width: 100%;
+      max-width: 100%;
+      margin-top: var(--spacing-s);
+    }
+
+    .StandardMediaDimensionsTemplate-inputName {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+}

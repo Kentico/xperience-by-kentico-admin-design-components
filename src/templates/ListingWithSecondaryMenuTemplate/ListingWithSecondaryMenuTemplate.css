@@ -1,0 +1,132 @@
+@layer components {
+  /* ListingWithSecondaryMenuTemplate styles */
+
+  .ListingWithSecondaryMenuTemplate-templateContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-right: 120px;
+  }
+
+  .ListingWithSecondaryMenuTemplate-templateContent > *:first-child {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .ListingWithSecondaryMenuTemplate-calloutWrapper {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .ListingWithSecondaryMenuTemplate-heading {
+    margin: 0;
+  }
+
+  .ListingWithSecondaryMenuTemplate-actionBar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+  }
+
+  .ListingWithSecondaryMenuTemplate-actionBarSearch {
+    flex: 1;
+  }
+
+  .ListingWithSecondaryMenuTemplate-filtersBar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    flex-wrap: wrap;
+  }
+
+  .ListingWithSecondaryMenuTemplate-appliedFilters {
+    margin-top: 16px;
+  }
+
+  .ListingWithSecondaryMenuTemplate-listingMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+  }
+
+  .ListingWithSecondaryMenuTemplate-itemCount {
+    font-size: var(--font-size-body-s);
+    color: var(--color-text-default);
+  }
+
+  .ListingWithSecondaryMenuTemplate-viewModeActions {
+    display: flex;
+    align-items: center;
+  }
+
+  .ListingWithSecondaryMenuTemplate-viewModeActions > button:first-child {
+    margin-right: 16px;
+  }
+
+  .ListingWithSecondaryMenuTemplate-tableCard {
+    overflow: hidden;
+  }
+
+  .ListingWithSecondaryMenuTemplate-tableContent {
+    flex: 1;
+    min-height: 200px;
+    overflow: auto;
+  }
+
+  .ListingWithSecondaryMenuTemplate-tableFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-m) 0;
+  }
+
+  .ListingWithSecondaryMenuTemplate-pageSizeSelector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    font-size: var(--font-size-body-s);
+    color: var(--color-grey-120);
+  }
+
+  .ListingWithSecondaryMenuTemplate-pageSizeSelector > div:last-child {
+    width: 96px;
+  }
+
+  .ListingWithSecondaryMenuTemplate-statusCell {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .ListingWithSecondaryMenuTemplate-statusIcon {
+    color: var(--color-green-100);
+  }
+
+  .ListingWithSecondaryMenuTemplate-statusText {
+    color: var(--color-green-100);
+  }
+
+  /* Empty search state */
+  .ListingWithSecondaryMenuTemplate-emptySearchState {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-l);
+  }
+
+  .ListingWithSecondaryMenuTemplate-emptySearchHeadline {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-text-default-on-light);
+    margin: 0 0 var(--spacing-xs);
+  }
+
+  .ListingWithSecondaryMenuTemplate-emptySearchSubtitle {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    color: var(--color-text-low-emphasis);
+    margin: 0 0 var(--spacing-xl);
+  }
+}

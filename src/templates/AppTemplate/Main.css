@@ -1,0 +1,52 @@
+@layer components {
+  /**
+   * Main (Desktop) Layout Styles
+   */
+
+  .Main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .Main {
+    display: flex;
+    flex-direction: row;
+    overflow: clip;
+    position: relative;
+    height: 100%;
+  }
+
+  .Main-contentArea {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    overflow: clip;
+    height: 100%;
+    padding-right: var(--spacing-l);
+  }
+
+  .Main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 100%;
+    overflow-x: clip;
+    height: 100%;
+  }
+
+  .Main-canvas {
+    display: flex;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: var(--spacing-xl);
+    padding-left: var(--spacing-l);
+  }
+
+  .Main-placeholder {
+    flex: auto;
+    min-width: 0;
+  }
+}

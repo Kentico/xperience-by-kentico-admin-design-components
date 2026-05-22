@@ -1,0 +1,9 @@
+@layer components {
+  /* VirtualGrid uses inline styles for virtualization - this file is kept for consistency */
+  .VirtualGrid {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

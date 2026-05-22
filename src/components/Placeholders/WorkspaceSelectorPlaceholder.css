@@ -1,0 +1,17 @@
+@layer components {
+  /* WorkspaceSelectorPlaceholder Styles */
+
+  .WorkspaceSelectorPlaceholder {
+    padding-right: var(--spacing-l);
+  }
+
+  .WorkspaceSelectorPlaceholder:empty {
+    display: none;
+  }
+
+  @media only screen and (max-width: 599.98px) {
+    .WorkspaceSelectorPlaceholder {
+      min-width: 0;
+    }
+  }
+}

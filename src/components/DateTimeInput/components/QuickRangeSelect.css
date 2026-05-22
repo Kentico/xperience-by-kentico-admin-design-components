@@ -1,0 +1,11 @@
+@layer components {
+  .QuickRangeSelect-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-l);
+  }
+
+  .QuickRangeSelect-column button {
+    justify-content: flex-start;
+  }
+}

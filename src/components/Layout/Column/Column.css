@@ -1,0 +1,127 @@
+@layer components {
+  .Column {
+    flex: 1 1 auto;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .Column-fullHeight {
+    height: 100%;
+  }
+
+  /* Column widths (12-column grid) */
+  .Column-col-1 { flex: 0 0 8.3333%; max-width: 8.3333%; }
+  .Column-col-2 { flex: 0 0 16.6667%; max-width: 16.6667%; }
+  .Column-col-3 { flex: 0 0 25%; max-width: 25%; }
+  .Column-col-4 { flex: 0 0 33.3333%; max-width: 33.3333%; }
+  .Column-col-5 { flex: 0 0 41.6667%; max-width: 41.6667%; }
+  .Column-col-6 { flex: 0 0 50%; max-width: 50%; }
+  .Column-col-7 { flex: 0 0 58.3333%; max-width: 58.3333%; }
+  .Column-col-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
+  .Column-col-9 { flex: 0 0 75%; max-width: 75%; }
+  .Column-col-10 { flex: 0 0 83.3333%; max-width: 83.3333%; }
+  .Column-col-11 { flex: 0 0 91.6667%; max-width: 91.6667%; }
+  .Column-col-12 { flex: 0 0 100%; max-width: 100%; }
+
+  /* Order (default) */
+  .Column-order-1 { order: 1; }
+  .Column-order-2 { order: 2; }
+  .Column-order-3 { order: 3; }
+  .Column-order-4 { order: 4; }
+  .Column-order-5 { order: 5; }
+  .Column-order-6 { order: 6; }
+  .Column-order-7 { order: 7; }
+  .Column-order-8 { order: 8; }
+  .Column-order-9 { order: 9; }
+  .Column-order-10 { order: 10; }
+  .Column-order-11 { order: 11; }
+  .Column-order-12 { order: 12; }
+
+  /* Small (max-width: 1365.98px) */
+  @media only screen and (max-width: 1365.98px) {
+    .Column-col-sm-1 { flex: 0 0 8.3333%; max-width: 8.3333%; }
+    .Column-col-sm-2 { flex: 0 0 16.6667%; max-width: 16.6667%; }
+    .Column-col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+    .Column-col-sm-4 { flex: 0 0 33.3333%; max-width: 33.3333%; }
+    .Column-col-sm-5 { flex: 0 0 41.6667%; max-width: 41.6667%; }
+    .Column-col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+    .Column-col-sm-7 { flex: 0 0 58.3333%; max-width: 58.3333%; }
+    .Column-col-sm-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
+    .Column-col-sm-9 { flex: 0 0 75%; max-width: 75%; }
+    .Column-col-sm-10 { flex: 0 0 83.3333%; max-width: 83.3333%; }
+    .Column-col-sm-11 { flex: 0 0 91.6667%; max-width: 91.6667%; }
+    .Column-col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+
+    .Column-order-sm-1 { order: 1; }
+    .Column-order-sm-2 { order: 2; }
+    .Column-order-sm-3 { order: 3; }
+    .Column-order-sm-4 { order: 4; }
+    .Column-order-sm-5 { order: 5; }
+    .Column-order-sm-6 { order: 6; }
+    .Column-order-sm-7 { order: 7; }
+    .Column-order-sm-8 { order: 8; }
+    .Column-order-sm-9 { order: 9; }
+    .Column-order-sm-10 { order: 10; }
+    .Column-order-sm-11 { order: 11; }
+    .Column-order-sm-12 { order: 12; }
+  }
+
+  /* Medium (min-width: 1366px and max-width: 1919.98px) */
+  @media only screen and (min-width: 1366px) and (max-width: 1919.98px) {
+    .Column-col-md-1 { flex: 0 0 8.3333%; max-width: 8.3333%; }
+    .Column-col-md-2 { flex: 0 0 16.6667%; max-width: 16.6667%; }
+    .Column-col-md-3 { flex: 0 0 25%; max-width: 25%; }
+    .Column-col-md-4 { flex: 0 0 33.3333%; max-width: 33.3333%; }
+    .Column-col-md-5 { flex: 0 0 41.6667%; max-width: 41.6667%; }
+    .Column-col-md-6 { flex: 0 0 50%; max-width: 50%; }
+    .Column-col-md-7 { flex: 0 0 58.3333%; max-width: 58.3333%; }
+    .Column-col-md-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
+    .Column-col-md-9 { flex: 0 0 75%; max-width: 75%; }
+    .Column-col-md-10 { flex: 0 0 83.3333%; max-width: 83.3333%; }
+    .Column-col-md-11 { flex: 0 0 91.6667%; max-width: 91.6667%; }
+    .Column-col-md-12 { flex: 0 0 100%; max-width: 100%; }
+
+    .Column-order-md-1 { order: 1; }
+    .Column-order-md-2 { order: 2; }
+    .Column-order-md-3 { order: 3; }
+    .Column-order-md-4 { order: 4; }
+    .Column-order-md-5 { order: 5; }
+    .Column-order-md-6 { order: 6; }
+    .Column-order-md-7 { order: 7; }
+    .Column-order-md-8 { order: 8; }
+    .Column-order-md-9 { order: 9; }
+    .Column-order-md-10 { order: 10; }
+    .Column-order-md-11 { order: 11; }
+    .Column-order-md-12 { order: 12; }
+  }
+
+  /* Large (min-width: 1920px) */
+  @media only screen and (min-width: 1920px) {
+    .Column-col-lg-1 { flex: 0 0 8.3333%; max-width: 8.3333%; }
+    .Column-col-lg-2 { flex: 0 0 16.6667%; max-width: 16.6667%; }
+    .Column-col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+    .Column-col-lg-4 { flex: 0 0 33.3333%; max-width: 33.3333%; }
+    .Column-col-lg-5 { flex: 0 0 41.6667%; max-width: 41.6667%; }
+    .Column-col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+    .Column-col-lg-7 { flex: 0 0 58.3333%; max-width: 58.3333%; }
+    .Column-col-lg-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
+    .Column-col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+    .Column-col-lg-10 { flex: 0 0 83.3333%; max-width: 83.3333%; }
+    .Column-col-lg-11 { flex: 0 0 91.6667%; max-width: 91.6667%; }
+    .Column-col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+
+    .Column-order-lg-1 { order: 1; }
+    .Column-order-lg-2 { order: 2; }
+    .Column-order-lg-3 { order: 3; }
+    .Column-order-lg-4 { order: 4; }
+    .Column-order-lg-5 { order: 5; }
+    .Column-order-lg-6 { order: 6; }
+    .Column-order-lg-7 { order: 7; }
+    .Column-order-lg-8 { order: 8; }
+    .Column-order-lg-9 { order: 9; }
+    .Column-order-lg-10 { order: 10; }
+    .Column-order-lg-11 { order: 11; }
+    .Column-order-lg-12 { order: 12; }
+  }
+}

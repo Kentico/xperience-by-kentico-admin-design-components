@@ -1,0 +1,30 @@
+@layer components {
+  /**
+   * OverviewPageTemplate styles
+   *
+   * Layout for the Overview page content area within a SectionLayout.
+   * Matches the Overview.OverviewPageTemplate-png reference screenshot.
+   */
+
+  .OverviewPageTemplate-content {
+    padding-top: var(--spacing-s);
+  }
+
+  .OverviewPageTemplate-quickTip {
+  }
+
+  .OverviewPageTemplate-contentCard {
+    background: var(--color-paper-background);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-xs);
+    padding: var(--spacing-xxl);
+    margin-top: var(--spacing-xl);
+    max-width: 816px;
+  }
+
+  .OverviewPageTemplate-contentPlaceholder {
+    border: 2px dashed var(--color-border-alert);
+    border-radius: var(--radius-m);
+    min-height: 80px;
+  }
+}

@@ -1,0 +1,200 @@
+@layer components {
+  .MenuItem {
+    padding: var(--spacing-s) var(--spacing-l);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 250ms;
+    transition-property: background-color, color;
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-m);
+    line-height: var(--line-m);
+    font-weight: var(--font-weight-regular);
+  }
+
+  .MenuItem .MenuItem-icon {
+    font-size: var(--icon-m);
+  }
+
+  /* Default variant */
+  .MenuItem.MenuItem-default {
+    color: var(--color-text-default-on-light);
+  }
+
+  .MenuItem.MenuItem-default .MenuItem-icon {
+    color: var(--color-icon-default);
+  }
+
+  .MenuItem.MenuItem-default:not(.MenuItem-disabled):not(:active):not(.MenuItem-selected):not(.MenuItem-noHover):hover,
+  .MenuItem.MenuItem-default:not(.MenuItem-disabled).MenuItem-openedSubmenu {
+    background-color: var(--color-hover);
+  }
+
+  .MenuItem.MenuItem-default:not(.MenuItem-disabled).MenuItem-selected {
+    color: var(--color-product-selected);
+    background-color: var(--color-background-selected);
+  }
+
+  .MenuItem.MenuItem-default:not(.MenuItem-disabled).MenuItem-selected.MenuItem-openedSubmenu.MenuItem-noHover {
+    background-color: var(--color-background-selected-hover);
+  }
+
+  .MenuItem.MenuItem-default:not(.MenuItem-disabled) .MenuItem-multiSelect {
+    color: var(--color-product-selected);
+  }
+
+  /* Disabled state */
+  .MenuItem.MenuItem-disabled {
+    color: var(--color-text-disabled);
+    background-color: transparent;
+    cursor: default;
+  }
+
+  .MenuItem.MenuItem-disabled .MenuItem-icon {
+    color: var(--color-icon-disabled);
+  }
+
+  /* Destructive variant */
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled) {
+    color: var(--color-alert-text);
+  }
+
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled) .MenuItem-icon {
+    color: var(--color-alert-icon);
+  }
+
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled):hover,
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled).MenuItem-openedSubmenu {
+    color: var(--color-text-default-on-dark);
+    background-color: var(--color-alert-background-high-emphasis);
+  }
+
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled):hover .MenuItem-icon,
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled).MenuItem-openedSubmenu .MenuItem-icon {
+    color: var(--color-icon-default-on-dark);
+  }
+
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled).MenuItem-selected {
+    color: var(--color-alert-active);
+    background: var(--color-alert-background-low-emphasis);
+  }
+
+  .MenuItem.MenuItem-destructive.MenuItem-focused {
+    box-shadow: var(--focus-alert);
+  }
+
+  /* Focus */
+  .MenuItem:focus {
+    outline: none;
+  }
+
+  .MenuItem.MenuItem-focused {
+    box-shadow: var(--focus-default);
+  }
+
+  /* Active (press) */
+  .MenuItem:not(.MenuItem-disabled):not(.MenuItem-destructive):active {
+    color: var(--color-text-default-on-light);
+    background-color: var(--color-background-highlighted);
+  }
+
+  .MenuItem:not(.MenuItem-disabled):not(.MenuItem-destructive):active .MenuItem-icon {
+    color: var(--color-icon-default);
+  }
+
+  /* Body */
+  .MenuItem-body {
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  /* Primary label */
+  .MenuItem-primaryLabel {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .MenuItem-primaryLabel::after {
+    content: '';
+    display: block;
+  }
+
+  /* Secondary label */
+  .MenuItem-secondaryLabel {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * 1.1);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-low-emphasis);
+    transition: color 250ms;
+  }
+
+  .MenuItem-secondaryLabel::after {
+    content: '';
+    display: block;
+  }
+
+  .MenuItem.MenuItem-disabled > div > .MenuItem-secondaryLabel {
+    color: var(--color-text-disabled);
+  }
+
+  .MenuItem.MenuItem-destructive:not(.MenuItem-disabled):not(.MenuItem-selected):hover .MenuItem-secondaryLabel,
+  .MenuItem.MenuItem-openedSubmenu .MenuItem-secondaryLabel {
+    color: var(--color-text-default-on-dark);
+  }
+
+  .MenuItem-bottomSpacing {
+    padding-bottom: var(--spacing-xs);
+  }
+
+  /* Label style (for trailing label element) */
+  .MenuItem-label {
+    font-family: var(--typeface-product-primary);
+    font-size: var(--font-size-s);
+    line-height: calc(var(--font-size-s) * 1.1);
+    font-weight: var(--font-weight-regular);
+  }
+
+  /* Leading element */
+  .MenuItem-leadingElement {
+    width: calc(3.5 * var(--grid-unit));
+    height: calc(3.5 * var(--grid-unit));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: var(--spacing-s);
+    transition: color 250ms;
+  }
+
+  /* Trailing element */
+  .MenuItem-trailingElement {
+    padding-left: var(--spacing-s);
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    transition: color 250ms;
+  }
+
+  /* Nested placeholder */
+  .MenuItem-nestedPlaceholder {
+    padding-left: var(--spacing-m);
+  }
+
+  /* Multi-select placeholder */
+  .MenuItem-multiSelectPlaceholder {
+    padding-left: calc(3.5 * var(--grid-unit));
+  }
+
+  /* Height helper for large variant */
+  .MenuItem-heightHelper {
+    height: calc(3.5 * var(--grid-unit));
+    width: 0;
+  }
+}
