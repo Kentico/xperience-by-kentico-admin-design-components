@@ -40,14 +40,14 @@ Custom Xperience admin UI extensions built using this design system:
 **Community Portal — QR Code Generator** ([source](https://github.com/Kentico/community-portal/blob/v31.4.2.2/src/Kentico.Community.Portal.Admin/Client/src/features/community-tools/QRCodeGeneratorTemplate.tsx))
 ![Community Portal QR code generator admin UI](./images/screenshot-community-portal-qr-code-generator-admin-ui.jpg)
 
-**KBank — Component Registry** ([source](https://github.com/Kentico/xperience-by-kentico-component-registry/blob/v1.0.1/src/Kentico.Xperience.ComponentRegistry.Admin/Client/src/component-viewer/PageBuilderComponentViewerTemplate.tsx))
-![KBank component registry admin UI](./images/screenshot-kbank-component-registry-admin-ui.jpg)
+**Component Registry** ([source](https://github.com/Kentico/xperience-by-kentico-component-registry/blob/v1.0.1/src/Kentico.Xperience.ComponentRegistry.Admin/Client/src/component-viewer/PageBuilderComponentViewerTemplate.tsx))
+![Component registry admin UI](./images/screenshot-kbank-component-registry-admin-ui.jpg)
 
-**KBank — Virtual Inbox** ([source](https://github.com/Kentico/xperience-by-kentico-virtual-inbox/blob/v1.3.0/src/Kentico.Xperience.VirtualInbox.Admin/Client/src/inbox/VirtualInboxTemplate.tsx))
-![KBank virtual inbox admin UI](./images/screenshot-kbank-virtual-inbox-admin-ui.jpg)
+**Virtual Inbox** ([source](https://github.com/Kentico/xperience-by-kentico-virtual-inbox/blob/v1.3.0/src/Kentico.Xperience.VirtualInbox.Admin/Client/src/inbox/VirtualInboxTemplate.tsx))
+![Virtual inbox admin UI](./images/screenshot-kbank-virtual-inbox-admin-ui.jpg)
 
-**KBank — News Feed** ([source](https://github.com/Kentico/xperience-by-kentico-news-feed/blob/v1.0.1/src/Kentico.Xperience.NewsFeed.Admin/Client/src/layouts/NewsFeedTemplate.tsx))
-![KBank news feed admin UI](./images/screenshot-kbank-news-feed-admin-ui.jpg)
+**News Feed** ([source](https://github.com/Kentico/xperience-by-kentico-news-feed/blob/v1.0.1/src/Kentico.Xperience.NewsFeed.Admin/Client/src/layouts/NewsFeedTemplate.tsx))
+![News feed admin UI](./images/screenshot-kbank-news-feed-admin-ui.jpg)
 
 ## Requirements
 
