@@ -59,11 +59,13 @@ Custom Xperience admin UI extensions built using this design system:
 
 ### Other requirements
 
-- A Xperience by Kentico project using the admin extension pattern (custom React-based admin UI modules)
+- A Xperience by Kentico project using the [admin extension pattern](https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface) (custom React-based admin UI modules).
 
 ## Quick Start
 
-> **Using an AI agent?** See [AGENTS.md](./AGENTS.md) for the full workflow. Claude Code users have `/list-components` and `/add-component` skills available when working in this repo.
+> **Using an AI agent?** See [AGENTS.md](./AGENTS.md) for the full workflow.
+
+Clone this repo locally before proceeding.
 
 ### 1. Using @kentico/xperience-admin-components (recommended)
 

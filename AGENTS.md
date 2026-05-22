@@ -2,6 +2,14 @@
 
 This repo is the **source and reference library** for [`@kentico/xperience-admin-components`](https://www.npmjs.com/package/@kentico/xperience-admin-components) — the React component package for Xperience by Kentico admin UI extensions.
 
+## Getting started
+
+Clone this repo locally so your AI coding tool can read files directly.
+
+Open or reference the cloned directory from your tool when working with the design system. The `registry.json`, `previews/`, and `src/` files are read from disk.
+
+> **Alternative — no clone required:** Files can be fetched via GitHub raw URLs, e.g. `https://raw.githubusercontent.com/Kentico/xperience-by-kentico-admin-design-components/main/registry.json`. This works for one-off lookups if your tool supports HTTP fetching, but browsing source files and previews is less convenient. The `/list-components` and `/add-component` skills are not available in this mode.
+
 ## Use cases
 
 ### 1. Use components from @kentico/xperience-admin-components
