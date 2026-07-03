@@ -94,12 +94,11 @@ export const QuickRangeSelect = (props: SelectTimeRangeProps) => {
         return (
           <Button
             key={opt.key}
+            label={opt.label}
             onClick={handleClick}
             color={ButtonColor.Quinary}
             active={isActive}
-          >
-            {opt.label}
-          </Button>
+          />
         )
       })}
     </div>

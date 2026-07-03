@@ -153,9 +153,8 @@ function ConfigurableCallout({ config }: { config: CalloutConfiguration }) {
       color={ButtonColor.Primary}
       onClick={handleButtonClick}
       disabled={config.actionButton.disabled || config.actionButton.inProgress}
-    >
-      {config.actionButton.text}
-    </Button>
+      label={config.actionButton.text}
+    />
   ) : undefined
 
   return (
@@ -363,9 +362,7 @@ export function ListingWithSecondaryMenuTemplate({
       {/* Action bar: PRIMARY ACTION | Search | FILTER */}
       <div className={'ListingWithSecondaryMenuTemplate-actionBar'}>
         {primaryActionLabel && (
-          <Button color={ButtonColor.Primary} onClick={onPrimaryAction}>
-            {primaryActionLabel}
-          </Button>
+          <Button color={ButtonColor.Primary} onClick={onPrimaryAction} label={primaryActionLabel} />
         )}
         <div className={'ListingWithSecondaryMenuTemplate-actionBarSearch'}>
           <SearchInput
@@ -382,9 +379,8 @@ export function ListingWithSecondaryMenuTemplate({
           color={ButtonColor.Secondary}
           icon={<Icon name="xp-filter-1" size="xs" />}
           onClick={() => setIsFilterPanelOpen(true)}
-        >
-          FILTER
-        </Button>
+          label="FILTER"
+        />
       </div>
 
       {/* Applied filters bar */}
@@ -430,9 +426,8 @@ export function ListingWithSecondaryMenuTemplate({
           <Button
             color={ButtonColor.Primary}
             onClick={() => { setSearchValue(''); setActiveSearchTerm('') }}
-          >
-            CLEAR YOUR SEARCH PHRASE HERE
-          </Button>
+            label="CLEAR YOUR SEARCH PHRASE HERE"
+          />
         </div>
       ) : (
         <div className={'ListingWithSecondaryMenuTemplate-tableCard'}>

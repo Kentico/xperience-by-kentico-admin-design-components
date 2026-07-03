@@ -18,7 +18,7 @@ import type { DropDownSelectMenuProps } from './DropDownSelectMenu.types'
  * // Uncontrolled mode with renderTrigger
  * <DropDownSelectMenu
  *   renderTrigger={(ref, toggle) => (
- *     <Button ref={ref} onClick={toggle}>Choose Option</Button>
+ *     <Button ref={ref} onClick={toggle} label="Choose Option" />
  *   )}
  * >
  *   <MenuItem primaryLabel="Option A" onClick={() => handleSelect('a')} selected={value === 'a'} />

@@ -45,8 +45,8 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: (args) => (
     <ActionButtons {...args}>
-      <Button color="secondary">Cancel</Button>
-      <Button color="primary">Save</Button>
+      <Button color="secondary" label="Cancel" />
+      <Button color="primary" label="Save" />
     </ActionButtons>
   ),
 }
@@ -60,8 +60,8 @@ export const AllAlignments: Story = {
             align=&quot;{align}&quot;
           </div>
           <ActionButtons {...args} align={align}>
-            <Button color="secondary">Cancel</Button>
-            <Button color="primary">Save</Button>
+            <Button color="secondary" label="Cancel" />
+            <Button color="primary" label="Save" />
           </ActionButtons>
         </div>
       ))}
@@ -75,9 +75,9 @@ export const FillContainer: Story = {
   },
   render: (args) => (
     <ActionButtons {...args}>
-      <Button color="secondary">Cancel</Button>
-      <Button color="primary">Confirm</Button>
-      <Button color="primary">Save &amp; Close</Button>
+      <Button color="secondary" label="Cancel" />
+      <Button color="primary" label="Confirm" />
+      <Button color="primary" label="Save & Close" />
     </ActionButtons>
   ),
 }
@@ -89,10 +89,10 @@ export const WithWrap: Story = {
   render: (args) => (
     <div style={{ maxWidth: 300 }}>
       <ActionButtons {...args}>
-        <Button color="secondary">Cancel</Button>
-        <Button color="secondary">Reset</Button>
-        <Button color="primary">Save</Button>
-        <Button color="primary">Save &amp; Close</Button>
+        <Button color="secondary" label="Cancel" />
+        <Button color="secondary" label="Reset" />
+        <Button color="primary" label="Save" />
+        <Button color="primary" label="Save & Close" />
       </ActionButtons>
     </div>
   ),

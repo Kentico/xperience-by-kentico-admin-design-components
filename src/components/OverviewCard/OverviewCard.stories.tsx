@@ -49,12 +49,8 @@ export const WithActions: Story = {
     headline: 'Analytics',
     actions: (
       <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
-        <Button color="secondary" size={ButtonSize.S}>
-          Export
-        </Button>
-        <Button color="primary" size={ButtonSize.S}>
-          View Details
-        </Button>
+        <Button color="secondary" size={ButtonSize.S} label="Export" />
+        <Button color="primary" size={ButtonSize.S} label="View Details" />
       </div>
     ),
   },

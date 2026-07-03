@@ -30,6 +30,7 @@ const ActionList = ({
       {actions.map((action, index) => (
         <Button
           key={action.identifier ?? index}
+          label={action.label}
           color={ButtonColor.Secondary}
           size={ButtonSize.M}
           icon={action.icon}
@@ -37,9 +38,7 @@ const ActionList = ({
           destructive={action.destructive}
           onClick={action.onClick}
           title={action.title}
-        >
-          {action.label}
-        </Button>
+        />
       ))}
     </>
   )

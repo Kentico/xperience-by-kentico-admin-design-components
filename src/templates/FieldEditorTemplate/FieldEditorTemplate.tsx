@@ -503,17 +503,15 @@ function FieldEditorForm({
           size={ButtonSize.M}
           disabled={disabled || inProgress}
           onClick={onCancel}
-        >
-          {translations.cancel}
-        </Button>
+          label={translations.cancel}
+        />
         <Button
           color={ButtonColor.Primary}
           onClick={saveField}
           disabled={disabled}
           inProgress={inProgress}
-        >
-          {translations.save}
-        </Button>
+          label={translations.save}
+        />
       </Box>
     </Box>
   )
@@ -633,17 +631,15 @@ function FieldEditorSidePanel({
         }
         disabled={false}
         inProgress={saveInProgress}
-      >
-        {translations.sidePanelCancelButtonLabel}
-      </Button>
+        label={translations.sidePanelCancelButtonLabel}
+      />
       <Button
         color={ButtonColor.Primary}
         onClick={onSaveButtonClick}
         disabled={identifiers.length === 0}
         inProgress={saveInProgress}
-      >
-        {translations.sidePanelSaveButtonLabel}
-      </Button>
+        label={translations.sidePanelSaveButtonLabel}
+      />
     </>
   )
 
@@ -1269,9 +1265,8 @@ export function FieldEditorTemplate({
                     onClick={onAddNewClick}
                     color={ButtonColor.Primary}
                     disabled={newFieldType !== null}
-                  >
-                    {translations.newFieldButtonLabel}
-                  </Button>
+                    label={translations.newFieldButtonLabel}
+                  />
                 </Box>
                 {supportsCategory ? (
                   <Box spacingBottom={Spacing.XL} spacingLeft={Spacing.L}>
@@ -1279,9 +1274,8 @@ export function FieldEditorTemplate({
                       onClick={onAddNewCategoryClick}
                       color={ButtonColor.Secondary}
                       disabled={newFieldType !== null}
-                    >
-                      {translations.newCategoryButtonLabel}
-                    </Button>
+                      label={translations.newCategoryButtonLabel}
+                    />
                   </Box>
                 ) : null}
                 {supportsSchema ? (
@@ -1290,9 +1284,8 @@ export function FieldEditorTemplate({
                       onClick={onAddNewSchemaClick}
                       color={ButtonColor.Secondary}
                       disabled={newFieldType !== null}
-                    >
-                      {translations.newSchemaButtonLabel}
-                    </Button>
+                      label={translations.newSchemaButtonLabel}
+                    />
                   </Box>
                 ) : null}
               </Row>

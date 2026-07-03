@@ -167,7 +167,7 @@ export const WithActionButton: Story = {
     headline: 'Action Required',
     subheadline: 'Warning',
     children: 'Your session is about to expire. Please save your work.',
-    actionButton: <Button size="M">Save Work</Button>,
+    actionButton: <Button size="M" label="Save Work" />,
   },
 }
 

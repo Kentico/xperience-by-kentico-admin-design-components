@@ -70,12 +70,8 @@ export const WithFooter: Story = {
     ),
     footer: (
       <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
-        <Button color="secondary" size={ButtonSize.S}>
-          Cancel
-        </Button>
-        <Button color="primary" size={ButtonSize.S}>
-          Save
-        </Button>
+        <Button color="secondary" size={ButtonSize.S} label="Cancel" />
+        <Button color="primary" size={ButtonSize.S} label="Save" />
       </div>
     ),
   },
@@ -92,12 +88,8 @@ export const WithHeadlineAndFooter: Story = {
     ),
     footer: (
       <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
-        <Button color="secondary" size={ButtonSize.S}>
-          Cancel
-        </Button>
-        <Button color="primary" size={ButtonSize.S}>
-          Confirm
-        </Button>
+        <Button color="secondary" size={ButtonSize.S} label="Cancel" />
+        <Button color="primary" size={ButtonSize.S} label="Confirm" />
       </div>
     ),
   },

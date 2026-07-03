@@ -374,9 +374,8 @@ const ContentItemMenuActions: FC<{
           onClick={() => actionExecutor(action)}
           disabled={action.disabled || action.inProgress}
           title={action.tooltipText}
-        >
-          {action.label}
-        </Button>
+          label={action.label}
+        />
       ))}
     </Stack>
   )

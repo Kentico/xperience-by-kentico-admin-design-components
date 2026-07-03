@@ -722,9 +722,8 @@ export function StandardMediaDimensionsTemplate({
                       ? ''
                       : t('admin.base.standardMediaDimensions.noChangesToSave')
                   }
-                >
-                  {t('admin.base.standardMediaDimensions.save')}
-                </Button>
+                  label={t('admin.base.standardMediaDimensions.save')}
+                />
               </Box>
               <Box spacingBottom={Spacing.XL} spacingLeft={Spacing.L}>
                 <Button
@@ -742,9 +741,8 @@ export function StandardMediaDimensionsTemplate({
                       ? t('admin.contentHub.missingPermissions')
                       : undefined
                   }
-                >
-                  {t('admin.base.standardMediaDimensions.newCropButtonLabel')}
-                </Button>
+                  label={t('admin.base.standardMediaDimensions.newCropButtonLabel')}
+                />
               </Box>
             </Row>
           </StickyHeader>
