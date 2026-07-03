@@ -36,12 +36,11 @@ export const TimePicker = ({
         timeFormat={timeFormat}
       />
       <Button
+        label={actionLabel}
         color={ButtonColor.Primary}
         size={ButtonSize.M}
         onClick={onActionClick}
-      >
-        {actionLabel}
-      </Button>
+      />
     </div>
   )
 }

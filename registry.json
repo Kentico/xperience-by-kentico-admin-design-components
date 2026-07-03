@@ -16,7 +16,7 @@
       "name": "ActionButtons",
       "category": "layout",
       "storyTitle": "Layout/ActionButtons",
-      "description": "ActionButtons component - a container for grouping action buttons. Provides consistent spacing and alignment for button groups. ```tsx <ActionButtons align=\"end\" spacing=\"M\"> <Button color=\"secondary\">Cancel</Button> <Button color=\"primary\">Save</Button> </ActionButtons> ``` ActionButtonsAlign: 'start' | 'center' | 'end' | 'space-between'. ActionButtonsSpacing: 'S' | 'M' | 'L'.",
+      "description": "ActionButtons component - a container for grouping action buttons. Provides consistent spacing and alignment for button groups. ```tsx <ActionButtons align=\"end\" spacing=\"M\"> <Button color=\"secondary\" label=\"Cancel\" /> <Button color=\"primary\" label=\"Save\" /> </ActionButtons> ``` ActionButtonsAlign: 'start' | 'center' | 'end' | 'space-between'. ActionButtonsSpacing: 'S' | 'M' | 'L'.",
       "visualDescription": "Stories: AllAlignments, FillContainer, WithWrap.",
       "useCases": [
         "AllAlignments",
@@ -439,7 +439,7 @@
       "name": "Button",
       "category": "actions",
       "storyTitle": "Actions/Button",
-      "description": "A flexible button component supporting multiple color variants and sizes. ButtonColor: 'primary' | 'secondary' | 'tertiary' | 'quinary' | 'alert'. ButtonSize: 'XS' | 'S' | 'M' | 'L'.",
+      "description": "A flexible button component supporting multiple color variants and sizes. Button text is provided via the `label` prop, not children (matching the published @kentico/xperience-admin-components package): ```tsx <Button color=\"primary\" label=\"Save\" onClick={handleSave} /> ``` ButtonColor: 'primary' | 'secondary' | 'tertiary' | 'quinary' | 'alert'. ButtonSize: 'XS' | 'S' | 'M' | 'L'.",
       "visualDescription": "Variants: primary, secondary, tertiary, quinary, alert. Sizes: XS, S, M, L. Stories: Primary, AllColors, AllSizes, ColorSizeMatrix, Destructive, WithIcons.",
       "useCases": [
         "Primary",
@@ -1824,7 +1824,7 @@
       "name": "SidePanel",
       "category": "feedback",
       "storyTitle": "Feedback/SidePanel",
-      "description": "SidePanel component - a slide-in panel from the right side of the viewport. Features: - Three size variants: Full, Wrapped, and Stackable - Maximizable option (can expand to cover whole content) - Click-outside to close behavior (configurable) - Scrollable content with dividers - Header with close/maximize buttons - Footer for actions ```tsx <SidePanelManager> <SidePanel headline=\"Panel Title\" size={SidePanelSize.Stackable} isVisible={isOpen} onClose={handleClose} footer={<Button>Save</Button>} > Panel content </SidePanel> </SidePanelManager> ``` SidePanelSize: 'Full' | 'Wrapped' | 'Stackable'. SidePanelCloseSource: 'user_closed' | 'clicked_outside' | 'foreign_panel_open' | 'blocked_by_foreign_panel' | 'parent_panel_closed'.",
+      "description": "SidePanel component - a slide-in panel from the right side of the viewport. Features: - Three size variants: Full, Wrapped, and Stackable - Maximizable option (can expand to cover whole content) - Click-outside to close behavior (configurable) - Scrollable content with dividers - Header with close/maximize buttons - Footer for actions ```tsx <SidePanelManager> <SidePanel headline=\"Panel Title\" size={SidePanelSize.Stackable} isVisible={isOpen} onClose={handleClose} footer={<Button label=\"Save\" />} > Panel content </SidePanel> </SidePanelManager> ``` SidePanelSize: 'Full' | 'Wrapped' | 'Stackable'. SidePanelCloseSource: 'user_closed' | 'clicked_outside' | 'foreign_panel_open' | 'blocked_by_foreign_panel' | 'parent_panel_closed'.",
       "visualDescription": "Sizes: Full, Wrapped, Stackable. Stories: StackableSize, FullSize, WrappedSize, Maximizable, WithoutCloseButton, WithNotification.",
       "useCases": [
         "StackableSize",

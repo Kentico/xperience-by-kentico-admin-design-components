@@ -19,6 +19,11 @@ const renderIcon = (icon: ReactNode, size?: IconSize): ReactNode => {
 
 /**
  * A flexible button component supporting multiple color variants and sizes.
+ * Button text is provided via the `label` prop, not children (matching the
+ * published @kentico/xperience-admin-components package):
+ * ```tsx
+ * <Button color="primary" label="Save" onClick={handleSave} />
+ * ```
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -32,7 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       badge,
       icon,
       trailingIcon,
-      children,
+      label,
       className,
       disabled,
       type = 'button',
@@ -42,8 +47,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const isDisabled = disabled || inProgress
-    const hasChildren = Boolean(children)
-    const isIconOnly = !hasChildren && Boolean(icon || trailingIcon)
+    const hasLabel = Boolean(label)
+    const isIconOnly = !hasLabel && Boolean(icon || trailingIcon)
     const iconSize: IconSize | undefined = color === ButtonColor.Quinary ? 's' : undefined
 
     // Use buttonRef if provided, otherwise use forwardRef
@@ -65,7 +70,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           fillContainer && 'Button-fillContainer',
           className
         )}
-        aria-label={props['aria-label'] || (isIconOnly ? 'button' : undefined)}
+        aria-label={props['aria-label'] || label || (isIconOnly ? 'button' : undefined)}
         {...props}
       >
         {inProgress ? (
@@ -73,7 +78,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ) : icon ? (
           <span className={'Button-icon'}>{renderIcon(icon, iconSize)}</span>
         ) : null}
-        {children}
+        {label}
         {!inProgress && trailingIcon && <span className={'Button-icon'}>{renderIcon(trailingIcon, iconSize)}</span>}
       </button>
     )

@@ -55,15 +55,14 @@ export const HorizontalActionMenu = forwardRef<HTMLDivElement, HorizontalActionM
     const renderActionButton = (action: HorizontalActionMenuItem) => (
       <Button
         key={action.identifier}
+        label={action.label}
         color={action.destructive ? ButtonColor.Alert : ButtonColor.Tertiary}
         size={ButtonSize.S}
         icon={action.icon ? <Icon name={action.icon} /> : undefined}
         disabled={action.disabled}
         onClick={action.onClick}
         title={action.title}
-      >
-        {action.label}
-      </Button>
+      />
     )
 
     return (

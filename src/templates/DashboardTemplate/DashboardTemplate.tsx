@@ -58,9 +58,8 @@ function ConfigurableCallout({
       color={ButtonColor.Primary}
       onClick={handleActionClick}
       disabled={actionButton.disabled || actionButton.inProgress}
-    >
-      {actionButton.text}
-    </Button>
+      label={actionButton.text}
+    />
   )
 
   const subheadlineText =

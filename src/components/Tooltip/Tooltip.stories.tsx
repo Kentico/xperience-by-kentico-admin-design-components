@@ -47,7 +47,7 @@ type Story = StoryObj
 export const Default: Story = {
   render: () => (
     <Tooltip tooltipText="This is a helpful tooltip" placement={TooltipPlacement.Top}>
-      <Button>Hover me</Button>
+      <Button label="Hover me" />
     </Tooltip>
   ),
 }
@@ -72,9 +72,7 @@ export const PlacementVariants: Story = {
             placement={placement}
             withoutShowDelay
           >
-            <Button size="S" style={{ width: '100%' }}>
-              {placement}
-            </Button>
+            <Button size="S" style={{ width: '100%' }} label={placement} />
           </Tooltip>
         ))}
       </div>
@@ -86,13 +84,13 @@ export const TopPlacements: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 24, padding: 80 }}>
       <Tooltip tooltipText="Top Start" placement={TooltipPlacement.TopStart} withoutShowDelay>
-        <Button>Top Start</Button>
+        <Button label="Top Start" />
       </Tooltip>
       <Tooltip tooltipText="Top Center" placement={TooltipPlacement.Top} withoutShowDelay>
-        <Button>Top</Button>
+        <Button label="Top" />
       </Tooltip>
       <Tooltip tooltipText="Top End" placement={TooltipPlacement.TopEnd} withoutShowDelay>
-        <Button>Top End</Button>
+        <Button label="Top End" />
       </Tooltip>
     </div>
   ),
@@ -102,13 +100,13 @@ export const BottomPlacements: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 24, padding: 80 }}>
       <Tooltip tooltipText="Bottom Start" placement={TooltipPlacement.BottomStart} withoutShowDelay>
-        <Button>Bottom Start</Button>
+        <Button label="Bottom Start" />
       </Tooltip>
       <Tooltip tooltipText="Bottom Center" placement={TooltipPlacement.Bottom} withoutShowDelay>
-        <Button>Bottom</Button>
+        <Button label="Bottom" />
       </Tooltip>
       <Tooltip tooltipText="Bottom End" placement={TooltipPlacement.BottomEnd} withoutShowDelay>
-        <Button>Bottom End</Button>
+        <Button label="Bottom End" />
       </Tooltip>
     </div>
   ),
@@ -127,26 +125,26 @@ export const SidePlacements: Story = {
     >
       <div style={{ display: 'flex', gap: 24 }}>
         <Tooltip tooltipText="Left placement" placement={TooltipPlacement.Left} withoutShowDelay>
-          <Button>Left</Button>
+          <Button label="Left" />
         </Tooltip>
         <Tooltip tooltipText="Right placement" placement={TooltipPlacement.Right} withoutShowDelay>
-          <Button>Right</Button>
+          <Button label="Right" />
         </Tooltip>
       </div>
       <div style={{ display: 'flex', gap: 24 }}>
         <Tooltip tooltipText="Left Start" placement={TooltipPlacement.LeftStart} withoutShowDelay>
-          <Button>Left Start</Button>
+          <Button label="Left Start" />
         </Tooltip>
         <Tooltip tooltipText="Right Start" placement={TooltipPlacement.RightStart} withoutShowDelay>
-          <Button>Right Start</Button>
+          <Button label="Right Start" />
         </Tooltip>
       </div>
       <div style={{ display: 'flex', gap: 24 }}>
         <Tooltip tooltipText="Left End" placement={TooltipPlacement.LeftEnd} withoutShowDelay>
-          <Button>Left End</Button>
+          <Button label="Left End" />
         </Tooltip>
         <Tooltip tooltipText="Right End" placement={TooltipPlacement.RightEnd} withoutShowDelay>
-          <Button>Right End</Button>
+          <Button label="Right End" />
         </Tooltip>
       </div>
     </div>
@@ -162,7 +160,7 @@ export const WithShortcuts: Story = {
         placement={TooltipPlacement.Top}
         withoutShowDelay
       >
-        <Button icon={<Icon name="floppy-disk" />}>Save</Button>
+        <Button icon={<Icon name="floppy-disk" />} label="Save" />
       </Tooltip>
       <Tooltip
         tooltipText="Copy selection"
@@ -170,7 +168,7 @@ export const WithShortcuts: Story = {
         placement={TooltipPlacement.Top}
         withoutShowDelay
       >
-        <Button icon={<Icon name="copy" />}>Copy</Button>
+        <Button icon={<Icon name="copy" />} label="Copy" />
       </Tooltip>
       <Tooltip
         tooltipText="Undo last action"
@@ -178,7 +176,7 @@ export const WithShortcuts: Story = {
         placement={TooltipPlacement.Top}
         withoutShowDelay
       >
-        <Button icon={<Icon name="rotate-left" />}>Undo</Button>
+        <Button icon={<Icon name="rotate-left" />} label="Undo" />
       </Tooltip>
     </div>
   ),
@@ -188,7 +186,7 @@ export const ShortcutsOnly: Story = {
   render: () => (
     <div style={{ padding: 40 }}>
       <Tooltip shortcuts="Esc" placement={TooltipPlacement.Top} withoutShowDelay>
-        <Button color="tertiary">Close</Button>
+        <Button color="tertiary" label="Close" />
       </Tooltip>
     </div>
   ),
@@ -201,9 +199,7 @@ export const ControlledVisibility: Story = {
 
       return (
         <div style={{ display: 'flex', gap: 16, alignItems: 'center', padding: 40 }}>
-          <Button onClick={() => setVisible(!visible)}>
-            {visible ? 'Hide Tooltip' : 'Show Tooltip'}
-          </Button>
+          <Button onClick={() => setVisible(!visible)} label={visible ? 'Hide Tooltip' : 'Show Tooltip'} />
           <Tooltip
             tooltipText="This tooltip is controlled externally"
             placement={TooltipPlacement.Right}
@@ -231,14 +227,14 @@ export const WithoutDelay: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 24, padding: 40 }}>
       <Tooltip tooltipText="300ms delay (default)" placement={TooltipPlacement.Top}>
-        <Button color="secondary">Normal Delay</Button>
+        <Button color="secondary" label="Normal Delay" />
       </Tooltip>
       <Tooltip
         tooltipText="No delay - instant!"
         placement={TooltipPlacement.Top}
         withoutShowDelay
       >
-        <Button color="primary">Instant</Button>
+        <Button color="primary" label="Instant" />
       </Tooltip>
     </div>
   ),
@@ -248,10 +244,10 @@ export const Disabled: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 24, padding: 40 }}>
       <Tooltip tooltipText="This tooltip is visible" placement={TooltipPlacement.Top}>
-        <Button>Enabled Tooltip</Button>
+        <Button label="Enabled Tooltip" />
       </Tooltip>
       <Tooltip tooltipText="This won't show" placement={TooltipPlacement.Top} disabled>
-        <Button color="tertiary">Disabled Tooltip</Button>
+        <Button color="tertiary" label="Disabled Tooltip" />
       </Tooltip>
     </div>
   ),
@@ -266,7 +262,7 @@ export const LongContent: Story = {
         withoutShowDelay
         maxGridUnitWidth={30}
       >
-        <Button>Narrow tooltip</Button>
+        <Button label="Narrow tooltip" />
       </Tooltip>
       <Tooltip
         tooltipText="This is a much longer tooltip message that demonstrates how the tooltip handles multi-line content. It will wrap based on the maxGridUnitWidth setting."
@@ -274,7 +270,7 @@ export const LongContent: Story = {
         withoutShowDelay
         maxGridUnitWidth={60}
       >
-        <Button>Wide tooltip</Button>
+        <Button label="Wide tooltip" />
       </Tooltip>
     </div>
   ),

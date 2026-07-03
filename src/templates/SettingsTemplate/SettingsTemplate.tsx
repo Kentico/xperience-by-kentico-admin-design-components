@@ -420,9 +420,8 @@ function SettingsSearchRowComponent() {
           <Button
             color={ButtonColor.Primary}
             onClick={context.invokeOnSubmitHandler}
-          >
-            {translations.save}
-          </Button>
+            label={translations.save}
+          />
         </div>
         <div className={'SettingsTemplate-filter'}>
           <Input
@@ -498,9 +497,8 @@ function SettingsNoResultPage({
             color={ButtonColor.Primary}
             size={ButtonSize.L}
             onClick={clearSearchHandler}
-          >
-            {translations.clearSearchPhrase}
-          </Button>
+            label={translations.clearSearchPhrase}
+          />
         </PageMessagePane>
       ) : (
         <PageMessagePane
@@ -531,9 +529,8 @@ function ConfigurableCallout({ config }: { config: CalloutConfiguration }) {
       color={ButtonColor.Primary}
       onClick={handleButtonClick}
       disabled={config.actionButton.disabled || config.actionButton.inProgress}
-    >
-      {config.actionButton.text}
-    </Button>
+      label={config.actionButton.text}
+    />
   ) : undefined
 
   return (

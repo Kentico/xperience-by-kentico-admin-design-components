@@ -161,21 +161,21 @@ export const WithNestedNavigation: Story = {
                     <strong>Administrators</strong>
                     <p style={{ margin: '4px 0 0', fontSize: 'var(--font-size-s)', color: 'var(--color-text-low-emphasis)' }}>Full access to all resources</p>
                   </div>
-                  <Button color={ButtonColor.Secondary} icon={<Icon name="xp-edit" size="s" />}>Edit</Button>
+                  <Button color={ButtonColor.Secondary} icon={<Icon name="xp-edit" size="s" />} label="Edit" />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 'var(--spacing-m)', borderRadius: 'var(--border-radius-s)', backgroundColor: 'var(--color-grey-5)' }}>
                   <div>
                     <strong>Editors</strong>
                     <p style={{ margin: '4px 0 0', fontSize: 'var(--font-size-s)', color: 'var(--color-text-low-emphasis)' }}>Can create and modify content</p>
                   </div>
-                  <Button color={ButtonColor.Secondary} icon={<Icon name="xp-edit" size="s" />}>Edit</Button>
+                  <Button color={ButtonColor.Secondary} icon={<Icon name="xp-edit" size="s" />} label="Edit" />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 'var(--spacing-m)', borderRadius: 'var(--border-radius-s)', backgroundColor: 'var(--color-grey-5)' }}>
                   <div>
                     <strong>Viewers</strong>
                     <p style={{ margin: '4px 0 0', fontSize: 'var(--font-size-s)', color: 'var(--color-text-low-emphasis)' }}>Read-only access</p>
                   </div>
-                  <Button color={ButtonColor.Secondary} icon={<Icon name="xp-edit" size="s" />}>Edit</Button>
+                  <Button color={ButtonColor.Secondary} icon={<Icon name="xp-edit" size="s" />} label="Edit" />
                 </div>
               </Stack>
             </Box>
@@ -213,7 +213,7 @@ export const WithFormContent: Story = {
                   <Input name="codeName" value="my-application" />
                 </div>
                 <div>
-                  <Button color={ButtonColor.Primary}>Save</Button>
+                  <Button color={ButtonColor.Primary} label="Save" />
                 </div>
               </Stack>
             </Box>

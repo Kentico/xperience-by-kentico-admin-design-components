@@ -27,6 +27,7 @@ const FooterAction: FC<{
 
   return (
     <Button
+      label={action.label}
       color={color}
       size={ButtonSize.M}
       disabled={disabled || action.disabled}
@@ -38,9 +39,7 @@ const FooterAction: FC<{
       onClick={action.onClick}
       buttonRef={buttonRef}
       title={action.tooltipText}
-    >
-      {action.label}
-    </Button>
+    />
   )
 }
 

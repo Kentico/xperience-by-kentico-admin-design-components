@@ -50,14 +50,13 @@ export const FilterStatusIndicator = ({
     const button = (
       <Button
         key={action.identifier}
+        label={action.label}
         icon={action.icon ? <Icon name={action.icon} /> : undefined}
         size={ButtonSize.S}
         color={ButtonColor.Tertiary}
         onClick={action.onClick}
         disabled={action.disabled}
-      >
-        {action.label}
-      </Button>
+      />
     )
 
     return action.title ? (
@@ -74,13 +73,12 @@ export const FilterStatusIndicator = ({
       <Box className={'Filters-label'}>{texts.appliedFiltersLabel}</Box>
       <Box spacingLeft={Spacing.M} spacingRight={Spacing.S}>
         <Button
+          label={texts.clearAllButtonLabel}
           icon={<Icon name="xp-times-circle" size="xs" />}
           size={ButtonSize.S}
           color={ButtonColor.Tertiary}
           onClick={onClearAll}
-        >
-          {texts.clearAllButtonLabel}
-        </Button>
+        />
         {actions?.map(renderAction)}
       </Box>
 
@@ -156,29 +154,26 @@ export const FilterPanel = ({
       footer={
         <div className={'Filters-footerContainer'}>
           <Button
+            label={texts.clearAllButtonLabel}
             destructive
             icon={<Icon name="xp-times-circle" />}
             size={ButtonSize.M}
             color={ButtonColor.Secondary}
             onClick={onClear}
-          >
-            {texts.clearAllButtonLabel}
-          </Button>
+          />
           <div className={'Filters-buttonGroupWrapper'}>
             <Button
+              label={texts.cancelButtonLabel}
               size={ButtonSize.M}
               color={ButtonColor.Secondary}
               onClick={onClose}
-            >
-              {texts.cancelButtonLabel}
-            </Button>
+            />
             <Button
+              label={texts.applyButtonLabel}
               size={ButtonSize.M}
               color={ButtonColor.Primary}
               onClick={onApply}
-            >
-              {texts.applyButtonLabel}
-            </Button>
+            />
           </div>
         </div>
       }

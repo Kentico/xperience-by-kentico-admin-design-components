@@ -161,13 +161,12 @@ export const DateTimeRangeInput = forwardRef(
               />
               <div className={'DateTimeInput-dateTimeInputTimeActionsRow'}>
                 <Button
-                  color={ButtonColor.Primary}
-                  onClick={closeCalendar}
-                >
-                  {t(
+                  label={t(
                     'kxp.components.datetimeinput.datetimerangeinput.done',
                   )}
-                </Button>
+                  color={ButtonColor.Primary}
+                  onClick={closeCalendar}
+                />
               </div>
             </Paper>
           </Dialog>
