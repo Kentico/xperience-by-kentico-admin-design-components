@@ -24,13 +24,12 @@ export const SelectButton = ({
   return (
     <div className={selectButtonClasses}>
       <Button
+        label={label}
         color={ButtonColor.Quinary}
         trailingIcon={icon}
         size={ButtonSize.XS}
         onClick={onClick}
-      >
-        {label}
-      </Button>
+      />
     </div>
   )
 }

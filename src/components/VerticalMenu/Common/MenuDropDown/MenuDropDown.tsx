@@ -18,7 +18,7 @@ import type { MenuDropDownProps } from './MenuDropDown.types'
  * // Uncontrolled mode with renderTrigger
  * <MenuDropDown
  *   renderTrigger={(ref, toggle) => (
- *     <Button ref={ref} onClick={toggle}>Open Menu</Button>
+ *     <Button ref={ref} onClick={toggle} label="Open Menu" />
  *   )}
  * >
  *   <MenuItem primaryLabel="Option 1" onClick={() => {}} />

@@ -64,7 +64,7 @@ export function OverviewPageTemplate({
         </div>
 
         <div>
-          <Button color={ButtonColor.Primary} onClick={onButtonClick}>{buttonLabel}</Button>
+          <Button color={ButtonColor.Primary} onClick={onButtonClick} label={buttonLabel} />
         </div>
 
         <div className={'OverviewPageTemplate-contentCard'}>

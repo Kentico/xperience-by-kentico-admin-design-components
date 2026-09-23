@@ -29,7 +29,7 @@ export type ButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize]
  * Button component props
  */
 export interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'children'> {
   /** Button color variant */
   readonly color?: ButtonColor
   /** Button size */
@@ -46,8 +46,8 @@ export interface ButtonProps
   readonly inProgress?: boolean
   /** Whether the button should fill the width of its container */
   readonly fillContainer?: boolean
-  /** Button content */
-  readonly children?: ReactNode
+  /** Button label text — also used as the default `aria-label` */
+  readonly label?: string
   /** Shows a badge indicator dot on the button */
   readonly badge?: boolean
   /** Ref to the button element */

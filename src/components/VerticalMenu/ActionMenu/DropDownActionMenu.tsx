@@ -18,7 +18,7 @@ import type { DropDownActionMenuProps } from './DropDownActionMenu.types'
  * // Uncontrolled mode with renderTrigger
  * <DropDownActionMenu
  *   renderTrigger={(ref, toggle) => (
- *     <Button ref={ref} onClick={toggle}>Actions</Button>
+ *     <Button ref={ref} onClick={toggle} label="Actions" />
  *   )}
  * >
  *   <MenuItem primaryLabel="Edit" onClick={() => {}} />

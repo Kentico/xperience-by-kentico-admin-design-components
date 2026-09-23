@@ -128,12 +128,11 @@ export const TileSelector = ({
                 <div className={'TileSelector-subheadline'}>{texts.noSearchResultText}</div>
               </Box>
               <Button
+                label={texts.clearButtonLabel}
                 color={ButtonColor.Primary}
                 size={ButtonSize.L}
                 onClick={handleClearSearch}
-              >
-                {texts.clearButtonLabel}
-              </Button>
+              />
             </div>
           </div>
         )}

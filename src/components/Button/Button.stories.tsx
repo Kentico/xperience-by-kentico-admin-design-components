@@ -59,14 +59,14 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
   args: {
-    children: 'Button',
+    label: 'Button',
     size: ButtonSize.M,
   },
 }
 
 export const Primary: Story = {
   args: {
-    children: 'Button',
+    label: 'Button',
     color: ButtonColor.Primary,
     size: ButtonSize.M,
   },
@@ -76,9 +76,7 @@ export const AllColors: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
       {colors.map((color) => (
-        <Button key={color} color={color}>
-          {color}
-        </Button>
+        <Button key={color} color={color} label={color} />
       ))}
     </div>
   ),
@@ -88,9 +86,7 @@ export const AllSizes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
       {sizes.map((size) => (
-        <Button key={size} size={size}>
-          {size}
-        </Button>
+        <Button key={size} size={size} label={size} />
       ))}
     </div>
   ),
@@ -103,9 +99,7 @@ export const ColorSizeMatrix: Story = {
         <div key={color} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           <span style={{ width: 80, fontSize: 12, color: '#666' }}>{color}</span>
           {sizes.map((size) => (
-            <Button key={`${color}-${size}`} color={color} size={size}>
-              {size}
-            </Button>
+            <Button key={`${color}-${size}`} color={color} size={size} label={size} />
           ))}
         </div>
       ))}
@@ -117,9 +111,7 @@ export const Destructive: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
       {colors.map((color) => (
-        <Button key={color} color={color} destructive>
-          {color}
-        </Button>
+        <Button key={color} color={color} destructive label={color} />
       ))}
     </div>
   ),
@@ -128,20 +120,15 @@ export const Destructive: Story = {
 export const WithIcons: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-      <Button icon={<Icon name="plus" />} color={ButtonColor.Primary}>Add item</Button>
-      <Button icon={<Icon name="edit" />} color={ButtonColor.Secondary}>
-        Edit
-      </Button>
-      <Button trailingIcon={<Icon name="arrow-right" />} color={ButtonColor.Tertiary}>
-        Next
-      </Button>
+      <Button icon={<Icon name="plus" />} color={ButtonColor.Primary} label="Add item" />
+      <Button icon={<Icon name="edit" />} color={ButtonColor.Secondary} label="Edit" />
+      <Button trailingIcon={<Icon name="arrow-right" />} color={ButtonColor.Tertiary} label="Next" />
       <Button
         icon={<Icon name="bin" />}
         trailingIcon={<Icon name="exclamation-triangle" />}
         destructive
-      >
-        Delete
-      </Button>
+        label="Delete"
+      />
     </div>
   ),
 }
@@ -161,9 +148,7 @@ export const Disabled: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
       {colors.map((color) => (
-        <Button key={color} color={color} disabled>
-          {color}
-        </Button>
+        <Button key={color} color={color} disabled label={color} />
       ))}
     </div>
   ),
@@ -173,9 +158,7 @@ export const Active: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
       {colors.map((color) => (
-        <Button key={color} color={color} active>
-          {color}
-        </Button>
+        <Button key={color} color={color} active label={color} />
       ))}
     </div>
   ),
@@ -184,13 +167,9 @@ export const Active: Story = {
 export const InProgress: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-      <Button inProgress color={ButtonColor.Primary}>Saving...</Button>
-      <Button inProgress color={ButtonColor.Secondary}>
-        Loading...
-      </Button>
-      <Button inProgress color={ButtonColor.Tertiary}>
-        Processing...
-      </Button>
+      <Button inProgress color={ButtonColor.Primary} label="Saving..." />
+      <Button inProgress color={ButtonColor.Secondary} label="Loading..." />
+      <Button inProgress color={ButtonColor.Tertiary} label="Processing..." />
     </div>
   ),
 }
@@ -198,7 +177,7 @@ export const InProgress: Story = {
 export const FillContainer: Story = {
   render: () => (
     <div style={{ width: 320 }}>
-      <Button fillContainer color={ButtonColor.Primary}>Full Width Button</Button>
+      <Button fillContainer color={ButtonColor.Primary} label="Full Width Button" />
     </div>
   ),
 }
@@ -206,7 +185,7 @@ export const FillContainer: Story = {
 export const WithBadge: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-      <Button badge color={ButtonColor.Secondary}>Notifications</Button>
+      <Button badge color={ButtonColor.Secondary} label="Notifications" />
       <Button badge icon={<Icon name="bell" />} color={ButtonColor.Tertiary} />
       <Button badge icon={<Icon name="bell" size="s" />} color={ButtonColor.Quinary} />
     </div>

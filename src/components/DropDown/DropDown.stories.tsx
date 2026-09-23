@@ -31,9 +31,7 @@ export const OnClick: Story = {
   render: () => (
     <DropDownOnClick
       renderTrigger={(ref, toggle) => (
-        <Button ref={ref as React.RefObject<HTMLButtonElement>} onClick={toggle}>
-          Click me
-        </Button>
+        <Button ref={ref as React.RefObject<HTMLButtonElement>} onClick={toggle} label="Click me" />
       )}
       placement={DropDownPlacement.BottomStart}
     >
@@ -46,9 +44,7 @@ export const OnHover: Story = {
   render: () => (
     <DropDownOnHover
       renderTrigger={(ref, _toggle) => (
-        <Button ref={ref as React.RefObject<HTMLButtonElement>} color={ButtonColor.Secondary}>
-          Hover me
-        </Button>
+        <Button ref={ref as React.RefObject<HTMLButtonElement>} color={ButtonColor.Secondary} label="Hover me" />
       )}
       placement={DropDownPlacement.BottomStart}
       hideDelay={200}
@@ -70,9 +66,8 @@ export const Placements: Story = {
                 ref={ref as React.RefObject<HTMLButtonElement>}
                 color={ButtonColor.Secondary}
                 onClick={toggle}
-              >
-                {placement}
-              </Button>
+                label={placement}
+              />
             )}
             placement={placement}
           >
@@ -88,9 +83,7 @@ export const CloseOnContentClick: Story = {
   render: () => (
     <DropDownOnClick
       renderTrigger={(ref, toggle) => (
-        <Button ref={ref as React.RefObject<HTMLButtonElement>} onClick={toggle}>
-          Closes on item click
-        </Button>
+        <Button ref={ref as React.RefObject<HTMLButtonElement>} onClick={toggle} label="Closes on item click" />
       )}
       closeOnContentClick
     >
@@ -103,9 +96,7 @@ export const WithMaxHeight: Story = {
   render: () => (
     <DropDownOnClick
       renderTrigger={(ref, toggle) => (
-        <Button ref={ref as React.RefObject<HTMLButtonElement>} onClick={toggle}>
-          Scrollable dropdown
-        </Button>
+        <Button ref={ref as React.RefObject<HTMLButtonElement>} onClick={toggle} label="Scrollable dropdown" />
       )}
       maxHeight="150px"
     >

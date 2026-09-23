@@ -12,8 +12,8 @@ import './ActionButtons.css'
  * @example
  * ```tsx
  * <ActionButtons align="end" spacing="M">
- *   <Button color="secondary">Cancel</Button>
- *   <Button color="primary">Save</Button>
+ *   <Button color="secondary" label="Cancel" />
+ *   <Button color="primary" label="Save" />
  * </ActionButtons>
  * ```
  */

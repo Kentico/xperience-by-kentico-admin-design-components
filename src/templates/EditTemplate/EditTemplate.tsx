@@ -402,16 +402,14 @@ const ConfirmationDialog: FC<{
               color={ButtonColor.Secondary}
               onClick={onCancellation}
               disabled={actionInProgress}
-            >
-              {t('dialog.cancel')}
-            </Button>
+              label={t('dialog.cancel')}
+            />
             <Button
               color={ButtonColor.Primary}
               onClick={handleConfirm}
               disabled={actionInProgress}
-            >
-              {confirmationButtonLabel}
-            </Button>
+              label={confirmationButtonLabel}
+            />
           </Row>
         </Box>
       </Paper>
@@ -541,9 +539,8 @@ const NotificationList: FC<{
               notificationBarActionHandler.onAfterExecuteCommand(undefined)
             }}
             disabled={notificationBarActionHandler.disabled}
-          >
-            {message.actionButton.text}
-          </Button>
+            label={message.actionButton.text}
+          />
         )
 
         switch (message.type) {
@@ -647,9 +644,8 @@ function renderCallouts(calloutsConfiguration: EditCalloutConfiguration[]) {
         color={ButtonColor.Primary}
         onClick={handleActionClick}
         disabled={callout.actionButton.disabled || callout.actionButton.inProgress}
-      >
-        {callout.actionButton.text}
-      </Button>
+        label={callout.actionButton.text}
+      />
     )
 
     const calloutType =
@@ -1159,9 +1155,8 @@ export function EditTemplate({
             onClick={() => formRef.current?.submit()}
             disabled={isDisabled || actionInProgress}
             title={submitButton.tooltipText}
-          >
-            {submitButton.label}
-          </Button>
+            label={submitButton.label}
+          />
         ) : null}
         {renderAdditionalActions()}
       </>

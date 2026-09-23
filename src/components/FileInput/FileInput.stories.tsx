@@ -48,9 +48,7 @@ const FileInputDemo = ({
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minWidth: 280 }}>
-      <Button onClick={() => setIsOpen(true)} color="secondary">
-        {label}
-      </Button>
+      <Button onClick={() => setIsOpen(true)} color="secondary" label={label} />
       <FileInput
         isOpen={isOpen}
         allowMultiple={allowMultiple}

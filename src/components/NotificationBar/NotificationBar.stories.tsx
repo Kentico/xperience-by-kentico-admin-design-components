@@ -136,9 +136,7 @@ export const WithActions: Story = {
     children: 'Your session will expire in 5 minutes.',
     actions: (
       <div style={{ display: 'flex', gap: 8 }}>
-        <Button size={ButtonSize.S} color="secondary">
-          Extend Session
-        </Button>
+        <Button size={ButtonSize.S} color="secondary" label="Extend Session" />
       </div>
     ),
     onDismiss: () => {},

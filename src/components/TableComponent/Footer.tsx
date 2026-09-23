@@ -150,12 +150,11 @@ export const Footer = ({ tableManager, messages, texts = defaultTexts }: FooterP
         )}
         {areTableDataFiltered && localization?.clearButtonLabel && (
           <Button
+            label={localization.clearButtonLabel}
             color={ButtonColor.Primary}
             size={ButtonSize.L}
             onClick={clearAll}
-          >
-            {localization.clearButtonLabel}
-          </Button>
+          />
         )}
       </div>
     </Box>

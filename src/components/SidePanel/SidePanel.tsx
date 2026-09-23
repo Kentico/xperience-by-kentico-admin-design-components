@@ -36,7 +36,7 @@ const sidebarWidth = 12 * gridUnit
  *     size={SidePanelSize.Stackable}
  *     isVisible={isOpen}
  *     onClose={handleClose}
- *     footer={<Button>Save</Button>}
+ *     footer={<Button label="Save" />}
  *   >
  *     Panel content
  *   </SidePanel>

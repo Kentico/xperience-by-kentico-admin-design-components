@@ -61,9 +61,7 @@ const SnackbarTrigger = ({
   }
 
   return (
-    <Button onClick={handleClick} color={colorMap[variant] as never}>
-      Show {variant}
-    </Button>
+    <Button onClick={handleClick} color={colorMap[variant] as never} label={`Show ${variant}`} />
   )
 }
 
@@ -196,7 +194,7 @@ export const MultipleMessages: Story = {
         }, 600)
       }, [addMessage])
 
-      return <Button onClick={showAll}>Show queue (3 messages)</Button>
+      return <Button onClick={showAll} label="Show queue (3 messages)" />
     }
 
     return (
@@ -340,15 +338,9 @@ export const HtmlMessage: Story = {
 
       return (
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button onClick={showHtml} color={ButtonColor.Secondary}>
-            Formatted Text
-          </Button>
-          <Button onClick={showLink} color={ButtonColor.Primary}>
-            With Link
-          </Button>
-          <Button onClick={showList} color={ButtonColor.Tertiary}>
-            With List
-          </Button>
+          <Button onClick={showHtml} color={ButtonColor.Secondary} label="Formatted Text" />
+          <Button onClick={showLink} color={ButtonColor.Primary} label="With Link" />
+          <Button onClick={showList} color={ButtonColor.Tertiary} label="With List" />
         </div>
       )
     }
@@ -423,15 +415,9 @@ export const ReactNodeMessage: Story = {
 
       return (
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button onClick={showWithIcon} color={ButtonColor.Primary}>
-            With Icon
-          </Button>
-          <Button onClick={showWithButton} color={ButtonColor.Secondary}>
-            With Action Button
-          </Button>
-          <Button onClick={showMultiLine} color={ButtonColor.Tertiary}>
-            Multi-line
-          </Button>
+          <Button onClick={showWithIcon} color={ButtonColor.Primary} label="With Icon" />
+          <Button onClick={showWithButton} color={ButtonColor.Secondary} label="With Action Button" />
+          <Button onClick={showMultiLine} color={ButtonColor.Tertiary} label="Multi-line" />
         </div>
       )
     }
@@ -522,9 +508,7 @@ export const WithOnCloseCallback: Story = {
 
       return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <Button onClick={showWithCallback} color={ButtonColor.Secondary}>
-            Show Snackbar with Callback
-          </Button>
+          <Button onClick={showWithCallback} color={ButtonColor.Secondary} label="Show Snackbar with Callback" />
           {log.length > 0 && (
             <div style={{
               padding: 12,
@@ -569,12 +553,8 @@ export const ClearAllMessages: Story = {
 
       return (
         <div style={{ display: 'flex', gap: 12 }}>
-          <Button onClick={showMultiple} color={ButtonColor.Primary}>
-            Show 3 Messages
-          </Button>
-          <Button onClick={clearMessages} color={ButtonColor.Alert}>
-            Clear All
-          </Button>
+          <Button onClick={showMultiple} color={ButtonColor.Primary} label="Show 3 Messages" />
+          <Button onClick={clearMessages} color={ButtonColor.Alert} label="Clear All" />
         </div>
       )
     }
@@ -615,16 +595,13 @@ export const RemoveSpecificMessage: Story = {
       return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           <div style={{ display: 'flex', gap: 12 }}>
-            <Button onClick={showMessage} color={ButtonColor.Primary}>
-              Add Message
-            </Button>
+            <Button onClick={showMessage} color={ButtonColor.Primary} label="Add Message" />
             <Button
               onClick={removeFirst}
               color={ButtonColor.Secondary}
               disabled={ids.length === 0}
-            >
-              Remove First (programmatic)
-            </Button>
+              label="Remove First (programmatic)"
+            />
           </div>
           <div style={{ fontSize: 13, color: '#666' }}>
             Active messages: {messages.length}
@@ -685,12 +662,8 @@ export const RapidFire: Story = {
 
       return (
         <div style={{ display: 'flex', gap: 12 }}>
-          <Button onClick={fireRapid} color={ButtonColor.Primary}>
-            Fire 8 Messages
-          </Button>
-          <Button onClick={clearMessages} color={ButtonColor.Secondary}>
-            Clear All
-          </Button>
+          <Button onClick={fireRapid} color={ButtonColor.Primary} label="Fire 8 Messages" />
+          <Button onClick={clearMessages} color={ButtonColor.Secondary} label="Clear All" />
         </div>
       )
     }
@@ -724,12 +697,8 @@ export const CustomId: Story = {
 
       return (
         <div style={{ display: 'flex', gap: 12 }}>
-          <Button onClick={showWithId} color={ButtonColor.Primary}>
-            Show (ID: my-custom-id-123)
-          </Button>
-          <Button onClick={removeById} color={ButtonColor.Secondary}>
-            Remove by ID
-          </Button>
+          <Button onClick={showWithId} color={ButtonColor.Primary} label="Show (ID: my-custom-id-123)" />
+          <Button onClick={removeById} color={ButtonColor.Secondary} label="Remove by ID" />
         </div>
       )
     }

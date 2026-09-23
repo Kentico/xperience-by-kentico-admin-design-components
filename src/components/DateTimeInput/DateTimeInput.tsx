@@ -241,14 +241,13 @@ export const DateTimeInput = forwardRef(
                           maxTime={constraints.maxTime}
                         />
                         <Button
+                          label={t(
+                            'kxp.components.datetimeinput.datetimeinput.done',
+                          )}
                           color={ButtonColor.Primary}
                           onClick={onDoneClick}
                           type="submit"
-                        >
-                          {t(
-                            'kxp.components.datetimeinput.datetimeinput.done',
-                          )}
-                        </Button>
+                        />
                       </div>
                     ) : null}
                   </Paper>

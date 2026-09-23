@@ -59,7 +59,7 @@ const SidePanelDemo = ({
 
   return (
     <div style={{ padding: 24 }}>
-      <Button onClick={() => setIsVisible(true)}>Open Panel</Button>
+      <Button onClick={() => setIsVisible(true)} label="Open Panel" />
 
       <SidePanel
         headline={headline}
@@ -73,10 +73,8 @@ const SidePanelDemo = ({
         footer={
           showFooter ? (
             <>
-              <Button onClick={() => setIsVisible(false)}>Cancel</Button>
-              <Button color={ButtonColor.Primary} onClick={() => setIsVisible(false)}>
-                Save
-              </Button>
+              <Button onClick={() => setIsVisible(false)} label="Cancel" />
+              <Button color={ButtonColor.Primary} onClick={() => setIsVisible(false)} label="Save" />
             </>
           ) : undefined
         }
@@ -187,7 +185,7 @@ export const StackedPanels: Story = {
 
       return (
         <div style={{ padding: 24 }}>
-          <Button onClick={() => setPanel1Visible(true)}>Open First Panel</Button>
+          <Button onClick={() => setPanel1Visible(true)} label="Open First Panel" />
 
           <SidePanel
             headline="First Panel"
@@ -197,10 +195,8 @@ export const StackedPanels: Story = {
             tooltips={{ close: 'Close' }}
             footer={
               <>
-                <Button onClick={() => setPanel1Visible(false)}>Close</Button>
-                <Button color={ButtonColor.Primary} onClick={() => setPanel2Visible(true)}>
-                  Open Second Panel
-                </Button>
+                <Button onClick={() => setPanel1Visible(false)} label="Close" />
+                <Button color={ButtonColor.Primary} onClick={() => setPanel2Visible(true)} label="Open Second Panel" />
               </>
             }
           >
@@ -216,7 +212,7 @@ export const StackedPanels: Story = {
             onClose={handleClose2}
             tooltips={{ close: 'Close' }}
             footer={
-              <Button onClick={() => setPanel2Visible(false)}>Close</Button>
+              <Button onClick={() => setPanel2Visible(false)} label="Close" />
             }
           >
             <div style={{ padding: 16 }}>

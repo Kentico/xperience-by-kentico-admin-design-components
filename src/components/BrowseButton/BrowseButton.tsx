@@ -26,15 +26,14 @@ export const BrowseButton = forwardRef<HTMLButtonElement, BrowseButtonProps>(
           onFileChange={onUpload}
         />
         <Button
+          label={label}
           color={ButtonColor.Secondary}
           disabled={disabled}
           onClick={() => setOpenFileDialog(true)}
           size={ButtonSize.S}
           buttonRef={ref as RefObject<HTMLButtonElement>}
           {...getDataAndAccessibilityProps(props)}
-        >
-          {label}
-        </Button>
+        />
       </>
     )
   }

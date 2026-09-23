@@ -94,9 +94,8 @@ const ActionButton: FC<ActionButtonProps> = ({
       onClick={handleClick}
       disabled={action.disabled}
       title={action.title}
-    >
-      {action.label}
-    </Button>
+      label={action.label}
+    />
   )
 }
 
@@ -173,9 +172,8 @@ export const BuilderButtonEditTemplateActionComponent: FC<
       onClick={onActionClick}
       disabled={props.disabled}
       title={props.title}
-    >
-      {props.label}
-    </Button>
+      label={props.label}
+    />
   )
 }
 
@@ -258,9 +256,8 @@ export const DropdownButtonEditTemplateActionComponent: FC<
           color={ButtonColor.Secondary}
           disabled={disabled}
           title={title}
-        >
-          {label}
-        </Button>
+          label={label}
+        />
       )}
     >
       {actionsWithDisabledState.map((action) => (

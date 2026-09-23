@@ -197,12 +197,10 @@ const BreadcrumbManager = () => {
 
   return (
     <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
-      <Button onClick={handlePush}>Push Breadcrumb</Button>
-      <Button onClick={handlePop} disabled={breadcrumbs.length === 0}>
-        Pop Breadcrumb
-      </Button>
-      <Button onClick={handleSetStatus}>Set Status</Button>
-      <Button onClick={handleClearStatus}>Clear Status</Button>
+      <Button onClick={handlePush} label="Push Breadcrumb" />
+      <Button onClick={handlePop} disabled={breadcrumbs.length === 0} label="Pop Breadcrumb" />
+      <Button onClick={handleSetStatus} label="Set Status" />
+      <Button onClick={handleClearStatus} label="Clear Status" />
     </div>
   )
 }

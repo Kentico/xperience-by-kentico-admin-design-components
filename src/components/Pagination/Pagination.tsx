@@ -49,13 +49,12 @@ export const Pagination = forwardRef(
             className={'Pagination-pageButton'}
           >
             <Button
+              label={label}
               color={ButtonColor.Quinary}
               disabled={disabled}
               onClick={() => onPageChange?.(number)}
               active={number === currentPage}
-            >
-              {label}
-            </Button>
+            />
           </div>
         ))}
         <div className={'Pagination-pageNext'} ref={addRefToVisibleItems(-2)}>

@@ -127,9 +127,7 @@ export const WithLabelActions: Story = {
   args: {
     label: 'Tags',
     labelActionsElement: (
-      <Button size="S" color="secondary">
-        Add
-      </Button>
+      <Button size="S" color="secondary" label="Add" />
     ),
     id: 'tags-input',
     children: <Input placeholder="Enter tags..." name="tags" id="tags-input" />,

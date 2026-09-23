@@ -288,9 +288,8 @@ const TableComponent: FC<TableComponentProps> = ({
               color={ButtonColor.Secondary}
               onClick={action.onClick}
               disabled={action.disabled}
-            >
-              {action.label}
-            </Button>
+              label={action.label}
+            />
           ))}
         </div>
       )}
